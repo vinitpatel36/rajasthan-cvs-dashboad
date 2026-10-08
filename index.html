@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jodhpur District Strategic Monitoring & Decision Support Dashboard | Natural Resources, Commons & Rural
+    Governance</title>
+  <meta name="description"
+    content="Professional Decision Support System for Jodhpur District: Comprehensive monitoring of Land Commons, Pastureland (Gauchar), Wasteland Restoration, Livestock Grazing Pressure, Demographics, and MGNREGA Workforce.">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/leaflet.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Global Loader -->
+  <div id="global-loader"
+    style="position:fixed;inset:0;background:rgba(8,12,22,0.85);backdrop-filter:blur(10px);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column;gap:1rem;color:#f8fafc;">
+    <div
+      style="width:48px;height:48px;border:3px solid rgba(56,189,248,0.2);border-top-color:#38bdf8;border-radius:50%;animation:spin 0.8s linear infinite;">
+    </div>
+    <div style="font-weight:600;font-size:0.9rem;letter-spacing:0.02em;">Loading Jodhpur Analytics Data...</div>
+  </div>
+  <style>
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Application Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-icon">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div class="brand-title">
+          <h1>
+            JODHPUR DISTRICT MONITORING DASHBOARD
+            <span class="brand-badge">Official Record 2026</span>
+          </h1>
+          <div class="brand-subtitle">Strategic Decision Support System • Land Commons, Pastoral Security, Demographics
+            & Livelihood Governance</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Side-by-Side Compare Button -->
+        <!-- <button id="open-compare-btn" class="btn-pill" title="Compare any 2 blocks side-by-side">
+          <i data-lucide="columns-2"></i> Compare Blocks
+        </button> -->
+
+        <!-- Export Excel -->
+        <!-- <button id="export-excel-btn" class="btn-pill emerald" title="Export currently filtered village data to Excel">
+          <i data-lucide="sheet"></i> Export Excel
+        </button> -->
+
+        <!-- Print / PDF -->
+        <!-- <button id="print-report-btn" class="btn-pill" title="Print or save as executive PDF report">
+          <i data-lucide="printer"></i> PDF Report
+        </button> -->
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="btn-pill" title="Toggle Dark / Light Theme" aria-label="Toggle theme">
+          <i id="theme-icon" data-lucide="sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Strategic Filter & Decision Bar -->
+  <nav class="filter-bar" aria-label="Filters and decision triggers">
+    <div class="filter-container">
+      <div class="filter-group">
+        <span class="filter-label"><i data-lucide="map-pin"
+            style="width:14px;height:14px;display:inline-block;vertical-align:middle;"></i> Block:</span>
+        <select id="block-select" class="custom-select" aria-label="Select Block">
+          <option value="ALL">All Blocks (District Overview)</option>
+        </select>
+
+        <span class="filter-label"><i data-lucide="home"
+            style="width:14px;height:14px;display:inline-block;vertical-align:middle;"></i> Panchayat:</span>
+        <select id="panchayat-select" class="custom-select" aria-label="Select Gram Panchayat" disabled>
+          <option value="ALL">All Gram Panchayats</option>
+        </select>
+
+        <button id="reset-filters-btn" class="btn-pill" style="padding:0.4rem 0.75rem;font-size:0.75rem;">
+          <i data-lucide="rotate-ccw"></i> Reset
+        </button>
+      </div>
+
+      <!-- Quick Decision Triggers -->
+      <!-- <div class="decision-tags" role="toolbar" aria-label="Quick Decision Filters">
+        <span class="filter-label">Decision Filters:</span>
+        <button class="decision-tag active" data-filter="ALL">
+          <i data-lucide="layout-grid"></i> All District
+        </button>
+        <button class="decision-tag alert" data-filter="CRITICAL_PASTURE_DEFICIT" title="Blocks with acute grazing stress & pasture deficits">
+          <i data-lucide="alert-triangle"></i> 🚨 Pasture Deficit
+        </button>
+        <button class="decision-tag opportunity" data-filter="HIGH_RESTORATION_POTENTIAL" title="Blocks with high culturable wasteland & restoration scope">
+          <i data-lucide="sprout"></i> 🌱 Wasteland Scope
+        </button>
+        <button class="decision-tag equity" data-filter="HIGH_MARGINALIZED_POP" title="Blocks with high SC & ST population (>25%)">
+          <i data-lucide="users"></i> 👥 SC/ST Priority
+        </button>
+        <button class="decision-tag" data-filter="LABOR_SURPLUS_AVAILABLE" title="Blocks with high MGNREGA workforce activation">
+          <i data-lucide="hammer"></i> 💼 Active Labor
+        </button>
+        <button class="decision-tag" data-filter="GENDER_RATIO_ALERT" title="Blocks with sex ratio below 915 females / 1000 males">
+          <i data-lucide="scale"></i> ⚖️ Low Sex Ratio
+        </button>
+      </div> -->
+    </div>
+  </nav>
+
+  <!-- Main Canvas -->
+  <main class="main-canvas">
+
+    <!-- Action Directives Banner -->
+    <!-- <section class="action-banner" aria-live="polite">
+      <div class="action-banner-text">
+        <div class="action-banner-icon">
+          <i data-lucide="bell-ring"></i>
+        </div>
+        <div class="action-banner-content">
+          <h4 id="action-banner-title">Jodhpur District Strategic Overview — 21 Blocks, 642 Panchayats, 1,863 Villages
+          </h4>
+          <p id="action-banner-desc">Total Geographical Area: 2.24 Million Ha | Common Land: 513,121 Ha (22.9%) | 3.62
+            Million Livestock dependent on 121,883 Ha Pasture.</p>
+        </div>
+      </div>
+      <div>
+        <span id="action-banner-badge" class="decision-badge green">District Active</span>
+      </div>
+    </section> -->
+
+    <!-- Executive KPI Grid (6 Cards) -->
+    <section class="kpi-grid" aria-label="District Summary Metrics">
+      <!-- 1. Total Land -->
+      <article class="kpi-card"
+        style="--kpi-gradient:var(--grad-cyan);--kpi-bg:rgba(6,182,212,0.12);--kpi-color:var(--accent-cyan);">
+        <div class="kpi-header">
+          <span class="kpi-title">Geographical Area</span>
+          <div class="kpi-icon-wrap"><i data-lucide="map"></i></div>
+        </div>
+        <div class="kpi-value-row">
+          <span id="kpi-area-val" class="kpi-value">2.24 M <span class="kpi-unit">Hectares</span></span>
+        </div>
+        <div class="kpi-footer">
+          <span id="kpi-area-sub">21 Blocks • 1,863 Villages</span>
+          <span class="kpi-badge">Census 2011</span>
+        </div>
+      </article>
+
+      <!-- 2. Common Land -->
+      <article class="kpi-card"
+        style="--kpi-gradient:var(--grad-emerald);--kpi-bg:rgba(16,185,129,0.12);--kpi-color:var(--accent-emerald);">
+        <div class="kpi-header">
+          <span class="kpi-title">Total Common Land</span>
+          <div class="kpi-icon-wrap"><i data-lucide="trees"></i></div>
+        </div>
+        <div class="kpi-value-row">
+          <span id="kpi-commons-val" class="kpi-value">507.9 k <span class="kpi-unit">Ha</span></span>
+        </div>
+        <div class="kpi-footer">
+          <span id="kpi-commons-sub">22.9% of district land</span>
+          <span class="kpi-badge">Commons Asset</span>
+        </div>
+      </article>
+
+      <!-- 3. Pasture Land -->
+      <article class="kpi-card"
+        style="--kpi-gradient:var(--grad-amber);--kpi-bg:rgba(245,158,11,0.12);--kpi-color:var(--accent-amber);">
+        <div class="kpi-header">
+          <span class="kpi-title">Pasture (Gauchar) Land</span>
+          <div class="kpi-icon-wrap"><i data-lucide="sun"></i></div>
+        </div>
+        <div class="kpi-value-row">
+          <span id="kpi-pasture-val" class="kpi-value">121.1 k <span class="kpi-unit">Ha</span></span>
+        </div>
+        <div class="kpi-footer">
+          <span id="kpi-pasture-sub">5.5% of total land</span>
+          <span class="kpi-badge warn">Grazing Core</span>
+        </div>
+      </article>
+
+      <!-- 4. Population & Households -->
+      <article class="kpi-card"
+        style="--kpi-gradient:var(--grad-blue);--kpi-bg:rgba(59,130,246,0.12);--kpi-color:var(--accent-blue);">
+        <div class="kpi-header">
+          <span class="kpi-title">Rural Population</span>
+          <div class="kpi-icon-wrap"><i data-lucide="users-2"></i></div>
+        </div>
+        <div class="kpi-value-row">
+          <span id="kpi-pop-val" class="kpi-value">2.42 M <span class="kpi-unit">Persons</span></span>
+        </div>
+        <div class="kpi-footer">
+          <span id="kpi-pop-sub">414,223 Households</span>
+          <span class="kpi-badge">Sex Ratio: 922</span>
+        </div>
+      </article>
+
+      <!-- 5. Livestock Dependent -->
+      <article class="kpi-card"
+        style="--kpi-gradient:var(--grad-rose);--kpi-bg:rgba(244,63,94,0.12);--kpi-color:var(--accent-rose);">
+        <div class="kpi-header">
+          <span class="kpi-title">Livestock Dependent</span>
+          <div class="kpi-icon-wrap"><i data-lucide="beef"></i></div>
+        </div>
+        <div class="kpi-value-row">
+          <span id="kpi-livestock-val" class="kpi-value">3.62 M <span class="kpi-unit">Animals</span></span>
+        </div>
+        <div class="kpi-footer">
+          <span id="kpi-livestock-sub">29.9 animals/ha pasture</span>
+          <span class="kpi-badge alert">High Pressure</span>
+        </div>
+      </article>
+
+      <!-- 6. MGNREGA Active Workforce -->
+      <article class="kpi-card"
+        style="--kpi-gradient:var(--grad-violet);--kpi-bg:rgba(139,92,246,0.12);--kpi-color:var(--accent-violet);">
+        <div class="kpi-header">
+          <span class="kpi-title">MGNREGA Active Labor</span>
+          <div class="kpi-icon-wrap"><i data-lucide="briefcase"></i></div>
+        </div>
+        <div class="kpi-value-row">
+          <span id="kpi-mgnrega-val" class="kpi-value">603.6 k <span class="kpi-unit">Workers</span></span>
+        </div>
+        <div class="kpi-footer">
+          <span id="kpi-mgnrega-sub">443,892 Active Job Cards</span>
+          <span class="kpi-badge">Labor Ready</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- SECTION: NRM Restoration Interventions & Geo-Spatial Map -->
+    <section class="nrm-section" aria-label="NRM Interventions and Geo-Spatial Base Map">
+      <div class="nrm-section-header">
+        <div class="nrm-title-group">
+          <div class="nrm-icon-badge">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <div>
+            <h2>NRM INTERVENTIONS & RESTORATION GOVERNANCE</h2>
+            <p class="nrm-subtitle">Spatial tracking of community restoration plots, water bodies (Nadi/Talab), budget
+              utilization & Charagah Vikas Samitis (CVS)</p>
+          </div>
+        </div>
+        <div class="nrm-badge-group">
+          <span class="decision-badge green" id="nrm-total-plots-badge">1,834 Plots Tracked</span>
+          <span class="decision-badge blue" id="nrm-mapped-plots-badge">712 Geo-Located Plots</span>
+        </div>
+      </div>
+
+      <!-- 4 NRM Key Metric Cards -->
+      <div class="nrm-kpi-grid">
+        <div class="nrm-kpi-card">
+          <div class="nrm-kpi-head">
+            <span class="nrm-kpi-label">Restoration Plots</span>
+            <i data-lucide="sprout" style="color:var(--accent-emerald);"></i>
+          </div>
+          <div class="nrm-kpi-val" id="nrm-plots-val">1,834 <span class="kpi-unit">Plots</span></div>
+          <div class="nrm-kpi-sub" id="nrm-plots-sub">
+            <span class="status-pill green">1,121 Ongoing</span>
+            <span class="status-pill blue">219 Completed</span>
+          </div>
+        </div>
+
+        <div class="nrm-kpi-card">
+          <div class="nrm-kpi-head">
+            <span class="nrm-kpi-label">Financial Progress</span>
+            <i data-lucide="banknote" style="color:var(--accent-amber);"></i>
+          </div>
+          <div class="nrm-kpi-val" id="nrm-budget-val">₹198.8 <span class="kpi-unit">Cr Sanctioned</span></div>
+          <div class="nrm-kpi-sub" id="nrm-budget-sub">
+            <span>₹29.2 Cr Utilized</span>
+            <span class="status-pill amber">14.7% Spent</span>
+          </div>
+        </div>
+
+        <div class="nrm-kpi-card">
+          <div class="nrm-kpi-head">
+            <span class="nrm-kpi-label">Community Institutions</span>
+            <i data-lucide="users-2" style="color:var(--accent-cyan);"></i>
+          </div>
+          <div class="nrm-kpi-val" id="nrm-cvs-val">1,539 <span class="kpi-unit">CVS Formed</span></div>
+          <div class="nrm-kpi-sub" id="nrm-cvs-sub">
+            <span>116,746 Ha Protected</span>
+            <span class="status-pill cyan">ARCP + ACP</span>
+          </div>
+        </div>
+
+        <div class="nrm-kpi-card">
+          <div class="nrm-kpi-head">
+            <span class="nrm-kpi-label">Water Harvesting Works</span>
+            <i data-lucide="droplets" style="color:var(--accent-blue);"></i>
+          </div>
+          <div class="nrm-kpi-val" id="nrm-water-val">232 <span class="kpi-unit">Storage Structures</span></div>
+          <div class="nrm-kpi-sub" id="nrm-water-sub">
+            <span>Nadi / Talab Deepening</span>
+            <span class="status-pill blue">SMC Active</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Map Card -->
+      <div class="map-card">
+        <div class="map-card-toolbar">
+          <div class="map-filter-group" role="toolbar" aria-label="Map Plot Filters">
+            <span class="map-filter-label">Plot Layer:</span>
+            <button class="map-filter-btn active" data-map-filter="ALL">All Plots (<span
+                id="map-cnt-all">712</span>)</button>
+            <button class="map-filter-btn" data-map-filter="ONGOING">Ongoing (<span
+                id="map-cnt-ongoing">480</span>)</button>
+            <button class="map-filter-btn" data-map-filter="COMPLETED">Completed (<span
+                id="map-cnt-completed">160</span>)</button>
+            <button class="map-filter-btn" data-map-filter="WATER">Water Harvesting (<span
+                id="map-cnt-water">110</span>)</button>
+            <button class="map-filter-btn" data-map-filter="CVS">CVS Governed (<span
+                id="map-cnt-cvs">620</span>)</button>
+          </div>
+          <div class="map-layer-selector">
+            <button class="map-layer-btn active" data-layer="osm"><i data-lucide="map"></i> OpenStreetMap</button>
+            <button class="map-layer-btn" data-layer="satellite"><i data-lucide="satellite"></i> Satellite</button>
+            <button id="toggle-wms-boundary-btn" class="map-layer-btn active"
+              title="Toggle 2011 Village Boundaries (GeoServer WMS dist_code = '910811300000000000')"><i
+                data-lucide="layers"></i> Village Boundaries (WMS)</button>
+          </div>
+        </div>
+
+        <!-- Leaflet Map Container -->
+        <div id="nrm-map" class="map-container"></div>
+
+        <!-- Map Footer & Legend -->
+        <div class="map-footer">
+          <div class="map-legend">
+            <span class="legend-item"><span class="legend-dot green"></span> Ongoing Silvipasture & Restoration</span>
+            <span class="legend-item"><span class="legend-dot blue"></span> Completed Works</span>
+            <span class="legend-item"><span class="legend-dot cyan"></span> Water Bodies / Nadi Deepening</span>
+            <span class="legend-item"><span class="legend-dot amber"></span> New / Adopted Commons</span>
+          </div>
+          <div class="map-hint" id="map-status-info">
+            <i data-lucide="info"></i> Click any plot marker or village polygon to inspect details
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="charts-grid-2">
+      <!-- Donut: Land Use Composition -->
+      <div class="chart-card col-5">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="pie-chart" style="color:var(--accent-emerald);"></i> Land Resource Composition</h3>
+            <p>Breakdown of 2.24M Hectares by category</p>
+          </div>
+        </div>
+        <div id="chart-land-distribution" class="chart-container"></div>
+      </div>
+
+      <!-- Stacked Bar: Block-wise Commons & Pasture -->
+      <div class="chart-card col-7">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="bar-chart-3" style="color:var(--accent-cyan);"></i> Block-wise Common Land & Pasture
+              Breakdown</h3>
+            <p>Pasture (Gauchar), Culturable Wasteland, and Barren Land (Sorted by Total Commons)</p>
+          </div>
+        </div>
+        <div id="chart-commons-bar" class="chart-container"></div>
+      </div>
+    </section>
+
+    <!-- SECTION C: Pastoral Economy & Grazing Stress -->
+    <section class="charts-grid-2">
+      <!-- Dual Axis: Tehsil Grazing Pressure -->
+      <div class="chart-card col-7">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="activity" style="color:var(--accent-rose);"></i> Pastoral Grazing Pressure & Livestock
+              by Tehsil</h3>
+            <p>Total Livestock (Bar) vs Animals per Hectare Pasture (Line Alert)</p>
+          </div>
+        </div>
+        <div id="chart-grazing-pressure" class="chart-container"></div>
+      </div>
+
+      <!-- Polar Area: Livestock Species -->
+      <div class="chart-card col-5">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="donut" style="color:var(--accent-violet);"></i> Livestock Species Distribution</h3>
+            <p>3.62 Million Animals (Goats 1.68M, Cattle 848K, Sheep 731K)</p>
+          </div>
+        </div>
+        <div id="chart-livestock-species" class="chart-container"></div>
+      </div>
+    </section>
+
+    <!-- SECTION D: Social Inclusion & Demographic Disparity -->
+    <section class="charts-grid-2">
+      <!-- Stacked: Social Equity -->
+      <div class="chart-card col-7">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="users" style="color:var(--accent-violet);"></i> Social Equity & Vulnerability Profile (%
+              SC & ST)</h3>
+            <p>Proportion of Scheduled Caste and Scheduled Tribe population per block</p>
+          </div>
+        </div>
+        <div id="chart-social-equity" class="chart-container"></div>
+      </div>
+
+      <!-- Bar: Sex Ratio -->
+      <div class="chart-card col-5">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="heart" style="color:var(--accent-rose);"></i> Gender Ratio Disparity by Block</h3>
+            <p>Females per 1000 Males (District Benchmark Line: 922)</p>
+          </div>
+        </div>
+        <div id="chart-sex-ratio" class="chart-container"></div>
+      </div>
+    </section>
+
+    <!-- SECTION E: Labor Capacity & Unutilized Land Transformation -->
+    <section class="charts-grid-2">
+      <!-- MGNREGA Saturation -->
+      <div class="chart-card col-6">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="hammer" style="color:var(--accent-blue);"></i> MGNREGA Rural Workforce Saturation</h3>
+            <p>Total Registered Workers vs Active Workers & Activation Rate (%)</p>
+          </div>
+        </div>
+        <div id="chart-mgnrega" class="chart-container"></div>
+      </div>
+
+      <!-- Fallow & Wasteland -->
+      <div class="chart-card col-6">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="layers" style="color:var(--accent-amber);"></i> Unutilized Land Transformation Potential
+            </h3>
+            <p>Fallow Land (568.4k ha) + Culturable Wasteland (32.5k ha) Available for Silvipasture</p>
+          </div>
+        </div>
+        <div id="chart-fallow-wasteland" class="chart-container"></div>
+      </div>
+    </section>
+
+    <!-- SECTION F: Multi-Dimensional Action Radar & Top Panchayats -->
+    <section class="charts-grid-2">
+      <!-- Radar: Strategic Pillars -->
+      <div class="chart-card col-5">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="radar" style="color:var(--accent-emerald);"></i> Strategic Action Balance Radar</h3>
+            <p>6-Dimensional Assessment: Selection vs District Benchmark</p>
+          </div>
+        </div>
+        <div id="chart-strategic-radar" class="chart-container"></div>
+      </div>
+
+      <!-- Horizontal Bar: Top Panchayats -->
+      <div class="chart-card col-7">
+        <div class="chart-card-header">
+          <div class="chart-title-wrap">
+            <h3><i data-lucide="trophy" style="color:var(--accent-cyan);"></i> Top 10 Gram Panchayats by Common Land
+              Capacity</h3>
+            <p>Highest Common Land and Pasture reserves in selected view</p>
+          </div>
+        </div>
+        <div id="chart-top-panchayats" class="chart-container"></div>
+      </div>
+    </section>
+
+    <!-- SECTION G: Interactive Village Data Explorer & Table -->
+    <section class="table-card" aria-label="Village Dataset Explorer">
+      <div class="table-toolbar">
+        <div>
+          <h3 style="font-size:1.05rem;font-weight:700;display:flex;align-items:center;gap:0.5rem;">
+            <i data-lucide="database" style="color:var(--accent-blue);"></i>
+            Village-Level Natural Resources & Demographics Explorer
+          </h3>
+          <p id="table-count-info" style="font-size:0.75rem;color:var(--text-secondary);">Showing 1,863 Villages across
+            Jodhpur District</p>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+          <div class="search-input-wrap">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="village-search" class="search-input"
+              placeholder="Search village, panchayat, block or code..." aria-label="Search village records">
+          </div>
+          <!-- <button class="btn-pill emerald" onclick="document.getElementById('export-excel-btn').click();">
+            <i data-lucide="download"></i> Excel Export
+          </button> -->
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table" id="village-table">
+          <thead>
+            <tr>
+              <th onclick="window.sortTable('v')" title="Sort by Village Name">Village / Code <i
+                  data-lucide="arrow-up-down" style="width:12px;height:12px;display:inline;"></i></th>
+              <th onclick="window.sortTable('p')" title="Sort by Panchayat">Gram Panchayat</th>
+              <th onclick="window.sortTable('b')" title="Sort by Block">Block</th>
+              <th onclick="window.sortTable('ga')" title="Sort by Geographical Area">Area (ha)</th>
+              <th onclick="window.sortTable('pop')" title="Sort by Population">Population (HH)</th>
+              <th onclick="window.sortTable('sc')" title="Sort by SC Population">SC Pop (%)</th>
+              <th onclick="window.sortTable('pas')" title="Sort by Pasture Land">Pasture (ha)</th>
+              <th onclick="window.sortTable('cw')" title="Sort by Wasteland">Wasteland (ha)</th>
+              <th onclick="window.sortTable('com')" title="Sort by Common Land">Common Land (ha)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="village-table-body">
+            <!-- Dynamic rows populated via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-pagination">
+        <div style="font-size:0.75rem;color:var(--text-muted);">Click any column header to sort • Select any block in
+          top bar to filter</div>
+        <div id="pagination-buttons" class="pagination-controls"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Side-by-Side Comparison Modal -->
+  <div id="compare-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="compare-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="compare-modal-title"><i data-lucide="columns-2"
+            style="color:var(--accent-blue);display:inline-block;vertical-align:middle;margin-right:6px;"></i> Block
+          Side-by-Side Comparison</h3>
+        <button id="close-compare-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="compare-selectors">
+        <div class="compare-block-box">
+          <label style="font-size:0.78rem;font-weight:700;color:var(--accent-cyan);">Primary Block (Cyan):</label>
+          <select id="compare-block-1" class="custom-select"></select>
+        </div>
+        <div class="compare-block-box">
+          <label style="font-size:0.78rem;font-weight:700;color:var(--accent-amber);">Comparison Block (Amber):</label>
+          <select id="compare-block-2" class="custom-select"></select>
+        </div>
+      </div>
+
+      <div class="compare-grid">
+        <div class="chart-card">
+          <div class="chart-title-wrap">
+            <h3>Multi-Pillar Strategic Radar</h3>
+            <p>Commons, Pasture, Labor, Vulnerability & Gender</p>
+          </div>
+          <div id="compare-radar-chart" class="chart-container medium"></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title-wrap">
+            <h3>Resource & Population Metrics</h3>
+            <p>Direct volume comparison</p>
+          </div>
+          <div id="compare-bar-chart" class="chart-container medium"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/echarts.min.js"></script>
+  <script src="assets/js/leaflet.js"></script>
+  <script src="assets/js/lucide.min.js"></script>
+  <script src="assets/js/xlsx.full.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
