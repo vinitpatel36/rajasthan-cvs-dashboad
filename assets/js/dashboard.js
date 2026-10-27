@@ -6,9 +6,21 @@
 (function () {
   'use strict';
 
+  // District Configuration for target districts (1, 5, 6, 7, 8, 15, 16)
+  const DISTRICT_CONFIG = {
+    jodhpur: { id: 'jodhpur', num: 1, name: 'Jodhpur', center: [26.50, 72.85], zoom: 8, dist_code: '910811300000000000' },
+    kota: { id: 'kota', num: 5, name: 'Kota', center: [25.18, 75.83], zoom: 9, dist_code: '910812700000000000' },
+    bundi: { id: 'bundi', num: 6, name: 'Bundi', center: [25.44, 75.64], zoom: 9, dist_code: '910812100000000000' },
+    jhalawar: { id: 'jhalawar', num: 7, name: 'Jhalawar', center: [24.59, 76.16], zoom: 9, dist_code: '910812900000000000' },
+    baran: { id: 'baran', num: 8, name: 'Baran', center: [25.10, 76.51], zoom: 9, dist_code: '910812800000000000' },
+    pali: { id: 'pali', num: 15, name: 'Pali', center: [25.77, 73.32], zoom: 9, dist_code: '910811800000000000' },
+    ajmer: { id: 'ajmer', num: 16, name: 'Ajmer', center: [26.45, 74.64], zoom: 9, dist_code: '910811900000000000' }
+  };
+
   // Global State
   const state = {
     data: null,
+    activeDistrict: localStorage.getItem('rajasthan_active_district') || 'jodhpur',
     villages: [],
     filteredVillages: [],
     plots: [],
@@ -32,8 +44,8 @@
       sortDir: 'desc'
     },
     compare: {
-      block1: 'BAP',
-      block2: 'SHERGARH'
+      block1: '',
+      block2: ''
     },
     charts: {}
   };
@@ -82,7 +94,8 @@
     applyTheme(state.theme);
     setupEventListeners();
     setupMapListeners();
-    await loadData();
+    await loadData(state.activeDistrict);
+    updateDistrictHeaders();
     populateFilters();
     initMap();
     updateDashboard();
@@ -117,31 +130,94 @@
     }
   }
 
-  async function loadData() {
+  async function loadData(districtId = state.activeDistrict) {
     try {
       showLoading(true);
+      const basePath = `data/districts/${districtId}`;
       const [sumRes, vilRes, plotRes] = await Promise.all([
-        fetch('data/summary.json'),
-        fetch('data/villages.json'),
-        fetch('data/plots.json')
+        fetch(`${basePath}/summary.json`).catch(() => fetch('data/summary.json')),
+        fetch(`${basePath}/villages.json`).catch(() => fetch('data/villages.json')),
+        fetch(`${basePath}/plots.json`).catch(() => fetch('data/plots.json'))
       ]);
 
       if (!sumRes.ok || !vilRes.ok) {
-        throw new Error('Failed to load JSON datasets');
+        throw new Error(`Failed to load JSON datasets for ${districtId}`);
       }
 
       state.data = await sumRes.json();
       state.villages = await vilRes.json();
       state.filteredVillages = [...state.villages];
-      if (plotRes.ok) {
+      if (plotRes && plotRes.ok) {
         state.plots = await plotRes.json();
+      } else {
+        state.plots = [];
       }
       showLoading(false);
     } catch (err) {
       console.error('Data load error:', err);
       showLoading(false);
-      showToast('Error loading dataset. Please refresh.', 'error');
+      showToast(`Error loading dataset for ${districtId}. Please refresh.`, 'error');
     }
+  }
+
+  async function switchDistrict(districtId) {
+    if (!DISTRICT_CONFIG[districtId]) return;
+    state.activeDistrict = districtId;
+    localStorage.setItem('rajasthan_active_district', districtId);
+    state.activeBlock = 'ALL';
+    state.activePanchayat = 'ALL';
+    state.activeDecisionFilter = 'ALL';
+    state.table.page = 1;
+    state.table.search = '';
+
+    const searchInput = document.getElementById('village-search');
+    if (searchInput) searchInput.value = '';
+
+    const distSelect = document.getElementById('district-select');
+    if (distSelect) distSelect.value = districtId;
+
+    const loaderMsg = document.getElementById('loader-msg');
+    if (loaderMsg) loaderMsg.textContent = `Loading ${DISTRICT_CONFIG[districtId].name} Analytics Data...`;
+
+    await loadData(districtId);
+    updateDistrictHeaders();
+    populateFilters();
+
+    // Reset compare blocks for comparison modal
+    if (state.data && state.data.blocks && state.data.blocks.length > 0) {
+      state.compare.block1 = state.data.blocks[0].name;
+      state.compare.block2 = state.data.blocks.length > 1 ? state.data.blocks[1].name : state.data.blocks[0].name;
+    }
+
+    // Clear chart instances to rebuild cleanly
+    Object.values(state.charts).forEach(c => {
+      if (c && typeof c.dispose === 'function') c.dispose();
+    });
+    state.charts = {};
+
+    // Update map view & WMS layer
+    const distCfg = DISTRICT_CONFIG[districtId];
+    if (state.map && distCfg) {
+      state.map.setView(distCfg.center, distCfg.zoom);
+      if (state.wmsLayer && distCfg.dist_code) {
+        state.wmsLayer.setParams({ cql_filter: `dist_code = '${distCfg.dist_code}'` });
+      }
+    }
+
+    updateDashboard();
+    initLucideIcons();
+  }
+
+  function updateDistrictHeaders() {
+    if (!state.data || !state.data.district) return;
+    const dName = state.data.district.name || DISTRICT_CONFIG[state.activeDistrict]?.name || 'District';
+    const headerName = document.getElementById('header-district-name');
+    if (headerName) headerName.textContent = dName.toUpperCase();
+
+    const tableName = document.getElementById('table-district-name');
+    if (tableName) tableName.textContent = dName;
+
+    document.title = `${dName} District Strategic Monitoring & Decision Support Dashboard | Natural Resources, Commons & Rural Governance`;
   }
 
   function showLoading(show) {
@@ -166,7 +242,8 @@
     const blockSelect = document.getElementById('block-select');
     if (!blockSelect || !state.data) return;
 
-    blockSelect.innerHTML = '<option value="ALL">All Blocks (District Overview)</option>';
+    const dName = state.data.district.name || DISTRICT_CONFIG[state.activeDistrict]?.name || 'District';
+    blockSelect.innerHTML = `<option value="ALL">All Blocks (${dName} Overview)</option>`;
     state.data.blocks.forEach(b => {
       const opt = document.createElement('option');
       opt.value = b.name;
@@ -180,17 +257,17 @@
     if (c1 && c2) {
       c1.innerHTML = '';
       c2.innerHTML = '';
-      state.data.blocks.forEach(b => {
+      state.data.blocks.forEach((b, idx) => {
         const o1 = document.createElement('option');
         o1.value = b.name;
         o1.textContent = b.name;
-        if (b.name === state.compare.block1) o1.selected = true;
+        if (b.name === state.compare.block1 || (idx === 0 && !state.compare.block1)) o1.selected = true;
         c1.appendChild(o1);
 
         const o2 = document.createElement('option');
         o2.value = b.name;
         o2.textContent = b.name;
-        if (b.name === state.compare.block2) o2.selected = true;
+        if (b.name === state.compare.block2 || (idx === 1 && !state.compare.block2)) o2.selected = true;
         c2.appendChild(o2);
       });
     }
@@ -228,6 +305,15 @@
     if (themeBtn) {
       themeBtn.addEventListener('click', () => {
         applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    // District Filter Change
+    const districtSelect = document.getElementById('district-select');
+    if (districtSelect) {
+      districtSelect.value = state.activeDistrict;
+      districtSelect.addEventListener('change', async (e) => {
+        await switchDistrict(e.target.value);
       });
     }
 
@@ -366,22 +452,40 @@
     const badgeEl = document.getElementById('action-banner-badge');
     if (!titleEl || !descEl || !state.data) return;
 
+    const d = state.data.district;
+    const dName = d.name || DISTRICT_CONFIG[state.activeDistrict]?.name || 'District';
+
     if (state.activeBlock === 'ALL') {
       if (state.activeDecisionFilter === 'CRITICAL_PASTURE_DEFICIT') {
-        titleEl.textContent = 'District Action Alert: Extreme Pasture & Grazing Stress';
-        descEl.textContent = 'Phalodi (136 animals/ha) and Shergarh (230 animals/ha) face severe pasture deficits. Recommend immediate fodder banks and silvipasture development under MGNREGA.';
+        titleEl.textContent = `${dName} Action Alert: Extreme Pasture & Grazing Stress`;
+        const deficitBlocks = (state.data.blocks || [])
+          .filter(b => b.decision_flags && b.decision_flags.includes('CRITICAL_PASTURE_DEFICIT'))
+          .slice(0, 3)
+          .map(b => `${b.name} (${(b.livestock && b.pasture > 0 ? (b.livestock.est_livestock / b.pasture).toFixed(0) : 'High')} animals/ha)`)
+          .join(', ');
+        descEl.textContent = deficitBlocks
+          ? `${deficitBlocks} face severe pasture deficits. Recommend immediate fodder banks and silvipasture development under MGNREGA.`
+          : 'High grazing intensity identified. Recommend prioritized fodder banks and silvipasture development.';
         if (badgeEl) { badgeEl.textContent = 'Deficit Alert'; badgeEl.className = 'decision-badge red'; }
       } else if (state.activeDecisionFilter === 'HIGH_RESTORATION_POTENTIAL') {
-        titleEl.textContent = 'Strategic Opportunity: 118,057 Hectares of Wasteland Available';
-        descEl.textContent = 'Bap (83,500 ha), Phalodi (28,780 ha), and Dechu (22,800 ha) have massive revenue wasteland suitable for community pasture revival, agroforestry, and watershed projects.';
+        titleEl.textContent = `${dName} Strategic Opportunity: Wasteland Available for Restoration`;
+        const highWasteBlocks = (state.data.blocks || [])
+          .slice()
+          .sort((a, b) => (b.restoration_potential || 0) - (a.restoration_potential || 0))
+          .slice(0, 3)
+          .map(b => `${b.name} (${fmt.num(Math.round(b.restoration_potential || 0))} ha)`)
+          .join(', ');
+        descEl.textContent = highWasteBlocks
+          ? `${highWasteBlocks} have massive revenue wasteland suitable for community pasture revival, agroforestry, and watershed projects.`
+          : 'Significant revenue wasteland available for community pasture revival and watershed projects.';
         if (badgeEl) { badgeEl.textContent = 'High Potential'; badgeEl.className = 'decision-badge green'; }
       } else if (state.activeDecisionFilter === 'HIGH_MARGINALIZED_POP') {
-        titleEl.textContent = 'Social Equity Priority: 537,862 Marginalized Individuals (SC & ST)';
+        const totalVulnerable = (d.sc_pop || 0) + (d.st_pop || 0);
+        titleEl.textContent = `${dName} Social Equity Priority: ${fmt.num(totalVulnerable)} Marginalized Individuals (SC & ST)`;
         descEl.textContent = 'Panchayats with SC/ST population > 25% require prioritized common land tenure governance and targeted asset creation under MGNREGA.';
         if (badgeEl) { badgeEl.textContent = 'Equity Focus'; badgeEl.className = 'decision-badge purple'; }
       } else {
-        const d = state.data.district;
-        titleEl.textContent = `Jodhpur District Strategic Overview — ${d.total_blocks} Blocks, ${d.total_panchayats} Panchayats, ${fmt.num(d.total_villages)} Villages`;
+        titleEl.textContent = `${dName} District Strategic Overview — ${d.total_blocks} Blocks, ${d.total_panchayats || state.data.blocks.length * 20} Panchayats, ${fmt.num(d.total_villages)} Villages`;
         descEl.textContent = `Total Geographical Area: ${(d.geo_area / 1e6).toFixed(2)} Million Ha | Common Land: ${fmt.num(d.common_land)} Ha (${d.common_land_pct}%) | ${(d.total_livestock / 1e6).toFixed(2)} Million Livestock dependent on ${fmt.num(d.pasture)} Ha Pasture.`;
         if (badgeEl) { badgeEl.textContent = 'District Active'; badgeEl.className = 'decision-badge green'; }
       }
@@ -389,11 +493,15 @@
       const b = state.data.blocks.find(x => x.name === state.activeBlock);
       if (!b) return;
 
+      const flagText = b.decision_flags && b.decision_flags.length > 0
+        ? b.decision_flags.map(f => f.replace(/_/g, ' ')).join(', ')
+        : 'Stable Resource Balance';
+
       titleEl.textContent = `Block Focus: ${b.name} (${b.villages} Villages | ${fmt.compact(b.population)} Population)`;
-      descEl.textContent = `Common Land: ${fmt.num(b.common_land)} ha (${b.com_pct}%) | Pasture: ${fmt.num(b.pasture)} ha | Wasteland: ${fmt.num(b.restoration_potential)} ha | ${flagText || 'Stable Resource Balance'}`;
+      descEl.textContent = `Common Land: ${fmt.num(b.common_land)} ha (${b.com_pct}%) | Pasture: ${fmt.num(b.pasture)} ha | Wasteland: ${fmt.num(b.restoration_potential)} ha | Flags: ${flagText}`;
       if (badgeEl) {
-        badgeEl.textContent = b.decision_flags.includes('CRITICAL_PASTURE_DEFICIT') ? 'Action Required' : 'Active Scope';
-        badgeEl.className = b.decision_flags.includes('CRITICAL_PASTURE_DEFICIT') ? 'decision-badge red' : 'decision-badge green';
+        badgeEl.textContent = b.decision_flags && b.decision_flags.includes('CRITICAL_PASTURE_DEFICIT') ? 'Action Required' : 'Active Scope';
+        badgeEl.className = b.decision_flags && b.decision_flags.includes('CRITICAL_PASTURE_DEFICIT') ? 'decision-badge red' : 'decision-badge green';
       }
     }
   }
@@ -445,9 +553,11 @@
     const mapDom = document.getElementById('nrm-map');
     if (!mapDom || typeof L === 'undefined' || state.map) return;
 
+    const distCfg = DISTRICT_CONFIG[state.activeDistrict] || DISTRICT_CONFIG.jodhpur;
+
     state.map = L.map('nrm-map', {
-      center: [26.7, 72.8],
-      zoom: 8,
+      center: distCfg.center,
+      zoom: distCfg.zoom,
       zoomControl: true,
       scrollWheelZoom: true
     });
@@ -481,13 +591,13 @@
     // Styled Layer Descriptor (SLD) ensuring dark black crisp village polygon boundaries
     const blackPolygonSld = '<StyledLayerDescriptor version="1.0.0" xmlns="http://www.opengis.net/sld"><NamedLayer><Name>admin:vill_pca_2011</Name><UserStyle><FeatureTypeStyle><Rule><PolygonSymbolizer><Stroke><CssParameter name="stroke">#000000</CssParameter><CssParameter name="stroke-width">0.8</CssParameter><CssParameter name="stroke-opacity">1.0</CssParameter></Stroke></PolygonSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>';
 
-    // GeoServer WMS Layer with CQL filter dist_code = '910811300000000000' and Dark Black Polygon Style
+    // GeoServer WMS Layer with CQL filter dist_code and Dark Black Polygon Style
     state.wmsLayer = L.tileLayer.wms('https://dpmap.observatory.org.in/geoserver/admin/wms', {
       layers: 'admin:vill_pca_2011',
       format: 'image/png',
       transparent: true,
       version: '1.1.1',
-      cql_filter: "dist_code = '910811300000000000'",
+      cql_filter: `dist_code = '${distCfg.dist_code}'`,
       SLD_BODY: blackPolygonSld,
       maxZoom: 19,
       opacity: 1.0,
@@ -755,7 +865,8 @@
         state.map.fitBounds(bounds, { padding: [30, 30] });
       }
     } else if (state.activeBlock === 'ALL') {
-      state.map.setView([26.7, 72.8], 8);
+      const distCfg = DISTRICT_CONFIG[state.activeDistrict] || DISTRICT_CONFIG.jodhpur;
+      state.map.setView(distCfg.center, distCfg.zoom);
     }
   }
 
@@ -786,7 +897,7 @@
 
     // 1. Total Land Area
     setCardValue('kpi-area-val', fmt.compact(d.geo_area), 'Hectares');
-    setCardSub('kpi-area-sub', isAll ? '21 Blocks • 1,847 Villages' : `${d.villages || ''} Villages in Block`);
+    setCardSub('kpi-area-sub', isAll ? `${state.data.district.total_blocks} Blocks • ${fmt.num(state.data.district.total_villages)} Villages` : `${d.villages || ''} Villages in Block`);
 
     // 2. Common Land
     setCardValue('kpi-commons-val', fmt.compact(d.common_land), 'Ha');
@@ -1041,21 +1152,24 @@
 
     const theme = chartThemes[state.theme];
 
-    // Tehsil-level pasturage aggregated
-    const tehsilPastureMap = {
-      'Phalodi': 7831 + 30381 + 5213 + 4900 + 4067 + 4923,
-      'Shergarh': 3586 + 4557 + 2218 + 8337 + 1939,
-      'Osian': 4525 + 4751 + 6131,
-      'Bhopalgarh': 4144,
-      'Bilara': 5466 + 4806,
-      'Jodhpur': 2839 + 2217 + 3976,
-      'Luni': 4033
-    };
-
     const tehsils = state.data.livestock.map(l => l.tehsil);
     const totalAnimals = state.data.livestock.map(l => l.total);
     const pressureRates = state.data.livestock.map(l => {
-      const pas = tehsilPastureMap[l.tehsil] || 5000;
+      const blk = state.data.blocks ? state.data.blocks.find(b => b.name.toLowerCase() === l.tehsil.toLowerCase()) : null;
+      let pas = blk && blk.pasture ? blk.pasture : 0;
+      if (!pas && state.activeDistrict === 'jodhpur') {
+        const jodhpurTehsilPasture = {
+          'Phalodi': 7831 + 30381 + 5213 + 4900 + 4067 + 4923,
+          'Shergarh': 3586 + 4557 + 2218 + 8337 + 1939,
+          'Osian': 4525 + 4751 + 6131,
+          'Bhopalgarh': 4144,
+          'Bilara': 5466 + 4806,
+          'Jodhpur': 2839 + 2217 + 3976,
+          'Luni': 4033
+        };
+        pas = jodhpurTehsilPasture[l.tehsil] || 5000;
+      }
+      if (!pas || pas <= 0) pas = 1000;
       return Number((l.total / pas).toFixed(1));
     });
 
@@ -2053,7 +2167,8 @@ Fallow Land: ${(v.fal + v.cfal).toFixed(1)} ha${plotText}
     const ws = XLSX.utils.json_to_sheet(exportRows);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Villages');
-    const filename = `Jodhpur_${state.activeBlock}_Villages_${new Date().toISOString().slice(0, 10)}.xlsx`;
+    const dName = state.data?.district?.name || DISTRICT_CONFIG[state.activeDistrict]?.name || 'District';
+    const filename = `${dName}_${state.activeBlock}_Villages_${new Date().toISOString().slice(0, 10)}.xlsx`;
     XLSX.writeFile(wb, filename);
     showToast(`Exported ${exportRows.length} villages to Excel`, 'info');
   }

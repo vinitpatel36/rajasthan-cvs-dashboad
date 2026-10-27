@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Data Sources & Column Reference Guide</title>
+  <meta name="description" content="Simple and clear reference guide explaining which Excel file and column every dashboard number, map marker, and chart comes from.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-alt: #f1f5f9;
+      --border-subtle: #e2e8f0;
+      --border-medium: #cbd5e1;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --accent-primary: #0284c7;
+      --accent-emerald: #059669;
+      --accent-amber: #d97706;
+      --accent-purple: #7c3aed;
+      --accent-blue: #2563eb;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem 5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header-box {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.25rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      color: var(--accent-primary);
+    }
+
+    .header-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Summary Flow */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-box {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+    }
+
+    .summary-box .step-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .summary-box h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .summary-box p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      margin-top: 0.75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    thead th {
+      background: #f8fafc;
+      color: var(--text-secondary);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-medium);
+      white-space: nowrap;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    tbody tr:hover {
+      background: #f1f5f9;
+    }
+
+    tbody td {
+      padding: 0.75rem 1rem;
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+
+    tbody td strong {
+      color: var(--text-primary);
+    }
+
+    /* Tags */
+    .col-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0369a1;
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+    .tag-green { background: #d1fae5; color: #065f46; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+    .tag-purple { background: #f3e8ff; color: #6b21a8; }
+
+    /* Formula item */
+    .calc-row {
+      background: #f8fafc;
+      border-left: 4px solid var(--accent-primary);
+      padding: 0.85rem 1.15rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .calc-row strong {
+      color: var(--text-primary);
+    }
+
+    .calc-formula {
+      font-family: var(--font-mono);
+      color: #0369a1;
+      font-size: 0.82rem;
+      margin-top: 0.2rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header-box">
+      <div class="badge-pill">● Reference Guide</div>
+      <h1>Where Does Dashboard Data Come From? <span>(Simple Column Guide)</span></h1>
+      <p class="header-desc">
+        A simple, easy-to-read reference explaining exactly which Excel file, sheet, and column each number on the dashboard is taken from.
+      </p>
+    </header>
+
+    <!-- SECTION 1: The Basics -->
+    <div class="card">
+      <h2 class="card-title">📁 1. How the Data is Organized</h2>
+      <p class="card-subtitle">Every district has an Excel file in the <code>/data</code> folder. Here is how they work:</p>
+
+      <div class="summary-grid">
+        <div class="summary-box">
+          <div class="step-num">Step 1</div>
+          <h4>District Excel File</h4>
+          <p>Each district has 1 main Excel file (for example <code>5Dataset_kota_Oct26.xlsx</code> for Kota).</p>
+        </div>
+        <div class="summary-box">
+          <div class="step-num">Step 2</div>
+          <h4>Block Sheets</h4>
+          <p>Inside each file, there is a separate sheet for every Block (e.g. SANGOD, LADPURA, ITAWA).</p>
+        </div>
+        <div class="summary-box">
+          <div class="step-num">Step 3</div>
+          <h4>Village Rows</h4>
+          <p>Inside every sheet, each row represents 1 revenue village with its area, population, and land details.</p>
+        </div>
+        <div class="summary-box">
+          <div class="step-num">Step 4</div>
+          <h4>Dashboard Display</h4>
+          <p>When you select a district, the dashboard sums up these rows and displays the cards, map, and charts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Top KPI Summary Cards -->
+    <div class="card">
+      <h2 class="card-title">📊 2. Top Summary Metric Cards (KPIs)</h2>
+      <p class="card-subtitle">Where each of the 6 main cards at the top gets its numbers:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dashboard Card</th>
+              <th>Excel Column</th>
+              <th>Column Name in Excel</th>
+              <th>How it is Calculated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Total Land Area</strong></td>
+              <td><span class="col-badge">Column F</span></td>
+              <td><code>Total Geographical Area</code></td>
+              <td>Sum of village areas in Hectares. Subtitle shows block count & village count.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Common Land Area</strong></td>
+              <td><span class="col-badge">Column O + Wasteland</span></td>
+              <td><code>Pasture + Wasteland + Barren</code></td>
+              <td>Total community land (Pasture Gauchar + Culturable Wasteland + Barren land).</td>
+            </tr>
+            <tr>
+              <td><strong>3. Pasture Land (Gauchar)</strong></td>
+              <td><span class="col-badge">Column O</span></td>
+              <td><code>Permanent Pasture & other Grazing Land Area</code></td>
+              <td>Official pasture grazing land in Hectares recorded for each village.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Rural Population & Households</strong></td>
+              <td><span class="col-badge">Column H & Column G</span></td>
+              <td><code>Total Population</code> and <code>Total Households</code></td>
+              <td>Total human population (Col H) and number of families/households (Col G).</td>
+            </tr>
+            <tr>
+              <td><strong>5. Livestock & Grazing Pressure</strong></td>
+              <td><span class="col-badge">Animal Census + Col O</span></td>
+              <td><code>Livestock Count / Column O Pasture</code></td>
+              <td>Number of animals divided by Pasture Hectares = <em>Animals per Ha of Pasture</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>6. MGNREGA Active Workforce</strong></td>
+              <td><span class="col-badge">Column AB + MGNREGA MIS</span></td>
+              <td><code>Work done under Govt schemes</code></td>
+              <td>Active MGNREGA job card workers available for community land development works.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Interactive Map -->
+    <div class="card">
+      <h2 class="card-title">🗺️ 3. Interactive Map & Work Markers</h2>
+      <p class="card-subtitle">Where map boundaries and colored dots come from:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Map Element</th>
+              <th>Source / Column</th>
+              <th>What it Shows</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Village Boundary Lines</strong> (Black outlines)</td>
+              <td>Observatory GeoServer WMS (Census 2011)</td>
+              <td>Official village polygon boundaries matching the village Census Code from <strong>Column E</strong> (<code>CODE11</code>).</td>
+            </tr>
+            <tr>
+              <td><strong>GPS Plot Locations</strong> (Colored dots)</td>
+              <td><span class="col-badge">Column AD & Column AE</span></td>
+              <td><strong>Latitude</strong> (Col AD) and <strong>Longitude</strong> (Col AE) recorded during field survey.</td>
+            </tr>
+            <tr>
+              <td><strong>Work Name & Type</strong></td>
+              <td><span class="col-badge">Column AC</span> (<code>Activities narration</code>)</td>
+              <td>Description of work (e.g. Talab/Pond digging, Charnot pasture restoration, plantation).</td>
+            </tr>
+            <tr>
+              <td><strong>Work Area (Hectares)</strong></td>
+              <td><span class="col-badge">Column AB</span> (<code>Work done under Govt schemes</code>)</td>
+              <td>Plot size in Hectares restored or developed under government schemes.</td>
+            </tr>
+            <tr>
+              <td><strong>CVS Committee Status</strong></td>
+              <td><span class="col-badge">Column Q & Column R</span></td>
+              <td>Shows whether Charagah Vikas Samiti (CVS) community committee is formed (Yes/No).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SECTION 4: Charts & Demographics -->
+    <div class="card">
+      <h2 class="card-title">📈 4. Charts & Demographic Breakdowns</h2>
+      <p class="card-subtitle">Columns used for the visual charts:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Chart Name</th>
+              <th>Columns Used</th>
+              <th>Simple Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Land Resource Composition</strong> (Donut Chart)</td>
+              <td><span class="col-badge">Column F, O, T, R</span></td>
+              <td>Shows percentage share of Pasture (Col O), Wasteland, Barren, and Cultivated land out of Total Area (Col F).</td>
+            </tr>
+            <tr>
+              <td><strong>Block-wise Commons Breakdown</strong> (Bar Chart)</td>
+              <td><span class="col-badge">Column B & Column O</span></td>
+              <td>Shows which blocks have the most Pasture and Common Land, sorted from highest to lowest.</td>
+            </tr>
+            <tr>
+              <td><strong>Social Equity & Caste Demographics</strong> (Bar Chart)</td>
+              <td><span class="col-badge">Column K, L, M, N</span></td>
+              <td>Shows Scheduled Caste population (Col K & L) and Scheduled Tribe population (Col M & N) by block.</td>
+            </tr>
+            <tr>
+              <td><strong>Gender Ratio (Sex Ratio)</strong></td>
+              <td><span class="col-badge">Column I & Column J</span></td>
+              <td>Male count (Col I) vs Female count (Col J). Formula: <code>(Female / Male) * 1000</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SECTION 5: Village Table -->
+    <div class="card">
+      <h2 class="card-title">📋 5. Village Explorer Table (Bottom Section)</h2>
+      <p class="card-subtitle">Every column in the searchable table matches an Excel column directly:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Table Column Name</th>
+              <th>Excel Column</th>
+              <th>Sample Value</th>
+              <th>Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Village Name</strong></td>
+              <td><span class="col-badge">Column D</span></td>
+              <td><code>Aau</code> / <code>Amritkuan</code></td>
+              <td>Official name of the village</td>
+            </tr>
+            <tr>
+              <td><strong>Census Code</strong></td>
+              <td><span class="col-badge">Column E</span></td>
+              <td><code>0811300567084306</code></td>
+              <td>Unique 16-digit Census 2011 code</td>
+            </tr>
+            <tr>
+              <td><strong>Gram Panchayat</strong></td>
+              <td><span class="col-badge">Column C</span></td>
+              <td><code>Aau</code> / <code>Sangod</code></td>
+              <td>Gram Panchayat governing the village</td>
+            </tr>
+            <tr>
+              <td><strong>Block</strong></td>
+              <td><span class="col-badge">Column B</span></td>
+              <td><code>Balesar</code> / <code>Itawa</code></td>
+              <td>Panchayat Samiti / Block name</td>
+            </tr>
+            <tr>
+              <td><strong>Total Area (Ha)</strong></td>
+              <td><span class="col-badge">Column F</span></td>
+              <td><code>2,923 ha</code></td>
+              <td>Total village geographical area</td>
+            </tr>
+            <tr>
+              <td><strong>Households</strong></td>
+              <td><span class="col-badge">Column G</span></td>
+              <td><code>636</code></td>
+              <td>Number of resident households</td>
+            </tr>
+            <tr>
+              <td><strong>Population</strong></td>
+              <td><span class="col-badge">Column H</span></td>
+              <td><code>4,129</code></td>
+              <td>Total resident population</td>
+            </tr>
+            <tr>
+              <td><strong>SC Population</strong></td>
+              <td><span class="col-badge">Column K & L</span></td>
+              <td><code>941 (22.8%)</code></td>
+              <td>Scheduled Caste count & percentage</td>
+            </tr>
+            <tr>
+              <td><strong>ST Population</strong></td>
+              <td><span class="col-badge">Column M & N</span></td>
+              <td><code>754 (18.3%)</code></td>
+              <td>Scheduled Tribe count & percentage</td>
+            </tr>
+            <tr>
+              <td><strong>Pasture Land (Ha)</strong></td>
+              <td><span class="col-badge">Column O</span></td>
+              <td><code>112 ha</code></td>
+              <td>Permanent pasture (Gauchar) land</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SECTION 6: The 7 District Files -->
+    <div class="card">
+      <h2 class="card-title">📂 6. Excel Files for the 7 Districts</h2>
+      <p class="card-subtitle">These 7 files in the <code>/data</code> directory provide all data for the dashboard:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>District</th>
+              <th>Excel Filename in /data/</th>
+              <th>Number of Blocks</th>
+              <th>Number of Villages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1</strong></td>
+              <td><strong>Jodhpur</strong></td>
+              <td><code>1Dataset_Jodhpur_Oct26.xlsx</code></td>
+              <td>21 Blocks</td>
+              <td>1,863 Villages (2,242,967 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>5</strong></td>
+              <td><strong>Kota</strong></td>
+              <td><code>5Dataset_kota_Oct26.xlsx</code></td>
+              <td>5 Blocks</td>
+              <td>936 Villages (458,033 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>6</strong></td>
+              <td><strong>Bundi</strong></td>
+              <td><code>6_Dataset_Bundi_Oct26.xlsx</code></td>
+              <td>5 Blocks</td>
+              <td>1,099 Villages (566,561 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>7</strong></td>
+              <td><strong>Jhalawar</strong></td>
+              <td><code>7Dataset_Jhalawar_Oct26.xlsx</code></td>
+              <td>8 Blocks</td>
+              <td>1,883 Villages (564,602 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>8</strong></td>
+              <td><strong>Baran</strong></td>
+              <td><code>8Dataset_Baran_Oct26.xlsx</code></td>
+              <td>8 Blocks</td>
+              <td>1,409 Villages (682,306 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>15</strong></td>
+              <td><strong>Pali</strong></td>
+              <td><code>15Dataset_Pali_Oct26.xlsx</code></td>
+              <td>10 Blocks</td>
+              <td>1,031 Villages (1,184,962 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>16</strong></td>
+              <td><strong>Ajmer</strong></td>
+              <td><code>16Dataset_Ajmer_Oct26.xlsx</code></td>
+              <td>8 Blocks</td>
+              <td>1,192 Villages (813,251 Ha)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Rajasthan Natural Resources & Commons Monitoring Dashboard • Simple Data Source & Column Reference Guide
+      <br>Direct Link Access
+    </footer>
+
+  </div>
+
+</body>
+</html>

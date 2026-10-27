@@ -1,0 +1,72 @@
+[
+  {
+    "id": "jodhpur",
+    "num": 1,
+    "name": "Jodhpur",
+    "center": [
+      26.5,
+      72.85
+    ],
+    "zoom": 8
+  },
+  {
+    "id": "kota",
+    "num": 5,
+    "name": "Kota",
+    "center": [
+      25.18,
+      75.83
+    ],
+    "zoom": 9
+  },
+  {
+    "id": "bundi",
+    "num": 6,
+    "name": "Bundi",
+    "center": [
+      25.44,
+      75.64
+    ],
+    "zoom": 9
+  },
+  {
+    "id": "jhalawar",
+    "num": 7,
+    "name": "Jhalawar",
+    "center": [
+      24.59,
+      76.16
+    ],
+    "zoom": 9
+  },
+  {
+    "id": "baran",
+    "num": 8,
+    "name": "Baran",
+    "center": [
+      25.1,
+      76.51
+    ],
+    "zoom": 9
+  },
+  {
+    "id": "pali",
+    "num": 15,
+    "name": "Pali",
+    "center": [
+      25.77,
+      73.32
+    ],
+    "zoom": 9
+  },
+  {
+    "id": "ajmer",
+    "num": 16,
+    "name": "Ajmer",
+    "center": [
+      26.45,
+      74.64
+    ],
+    "zoom": 9
+  }
+]

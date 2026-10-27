@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -30,7 +30,7 @@
     <div
       style="width:48px;height:48px;border:3px solid rgba(56,189,248,0.2);border-top-color:#38bdf8;border-radius:50%;animation:spin 0.8s linear infinite;">
     </div>
-    <div style="font-weight:600;font-size:0.9rem;letter-spacing:0.02em;">Loading Jodhpur Analytics Data...</div>
+    <div id="loader-msg" style="font-weight:600;font-size:0.9rem;letter-spacing:0.02em;">Loading Analytics Data...</div>
   </div>
   <style>
     @keyframes spin {
@@ -49,8 +49,7 @@
         </div>
         <div class="brand-title">
           <h1>
-            JODHPUR DISTRICT MONITORING DASHBOARD
-            <span class="brand-badge">Official Record 2026</span>
+            <span id="header-district-name">JODHPUR</span> DISTRICT MONITORING DASHBOARD
           </h1>
           <div class="brand-subtitle">Strategic Decision Support System • Land Commons, Pastoral Security, Demographics
             & Livelihood Governance</div>
@@ -75,7 +74,7 @@
 
         <!-- Theme Toggle -->
         <button id="theme-toggle-btn" class="btn-pill" title="Toggle Dark / Light Theme" aria-label="Toggle theme">
-          <i id="theme-icon" data-lucide="sun"></i>
+          <i id="theme-icon" data-lucide="moon"></i>
         </button>
       </div>
     </div>
@@ -85,17 +84,30 @@
   <nav class="filter-bar" aria-label="Filters and decision triggers">
     <div class="filter-container">
       <div class="filter-group">
+        <span class="filter-label"><i data-lucide="map"
+            style="width:14px;height:14px;display:inline-block;vertical-align:middle;"></i> District:</span>
+        <select id="district-select" class="custom-select" aria-label="Select District"
+          style="font-weight:700;color:var(--accent-cyan);border-color:rgba(56,189,248,0.4);">
+          <option value="jodhpur" selected>Jodhpur</option>
+          <option value="kota">Kota</option>
+          <option value="bundi">Bundi</option>
+          <option value="jhalawar">Jhalawar</option>
+          <option value="baran">Baran</option>
+          <option value="pali">Pali</option>
+          <option value="ajmer">Ajmer</option>
+        </select>
+
         <span class="filter-label"><i data-lucide="map-pin"
             style="width:14px;height:14px;display:inline-block;vertical-align:middle;"></i> Block:</span>
         <select id="block-select" class="custom-select" aria-label="Select Block">
           <option value="ALL">All Blocks (District Overview)</option>
         </select>
 
-        <span class="filter-label"><i data-lucide="home"
+        <!-- <span class="filter-label"><i data-lucide="home"
             style="width:14px;height:14px;display:inline-block;vertical-align:middle;"></i> Panchayat:</span>
         <select id="panchayat-select" class="custom-select" aria-label="Select Gram Panchayat" disabled>
           <option value="ALL">All Gram Panchayats</option>
-        </select>
+        </select> -->
 
         <button id="reset-filters-btn" class="btn-pill" style="padding:0.4rem 0.75rem;font-size:0.75rem;">
           <i data-lucide="rotate-ccw"></i> Reset
@@ -162,7 +174,6 @@
         </div>
         <div class="kpi-footer">
           <span id="kpi-area-sub">21 Blocks • 1,863 Villages</span>
-          <span class="kpi-badge">Census 2011</span>
         </div>
       </article>
 
@@ -178,7 +189,6 @@
         </div>
         <div class="kpi-footer">
           <span id="kpi-commons-sub">22.9% of district land</span>
-          <span class="kpi-badge">Commons Asset</span>
         </div>
       </article>
 
@@ -194,7 +204,6 @@
         </div>
         <div class="kpi-footer">
           <span id="kpi-pasture-sub">5.5% of total land</span>
-          <span class="kpi-badge warn">Grazing Core</span>
         </div>
       </article>
 
@@ -210,7 +219,6 @@
         </div>
         <div class="kpi-footer">
           <span id="kpi-pop-sub">414,223 Households</span>
-          <span class="kpi-badge">Sex Ratio: 922</span>
         </div>
       </article>
 
@@ -226,7 +234,6 @@
         </div>
         <div class="kpi-footer">
           <span id="kpi-livestock-sub">29.9 animals/ha pasture</span>
-          <span class="kpi-badge alert">High Pressure</span>
         </div>
       </article>
 
@@ -242,7 +249,6 @@
         </div>
         <div class="kpi-footer">
           <span id="kpi-mgnrega-sub">443,892 Active Job Cards</span>
-          <span class="kpi-badge">Labor Ready</span>
         </div>
       </article>
     </section>
@@ -365,7 +371,7 @@
         <div class="chart-card-header">
           <div class="chart-title-wrap">
             <h3><i data-lucide="pie-chart" style="color:var(--accent-emerald);"></i> Land Resource Composition</h3>
-            <p>Breakdown of 2.24M Hectares by category</p>
+            <p>Breakdown of geographical area by land use category</p>
           </div>
         </div>
         <div id="chart-land-distribution" class="chart-container"></div>
@@ -403,7 +409,7 @@
         <div class="chart-card-header">
           <div class="chart-title-wrap">
             <h3><i data-lucide="donut" style="color:var(--accent-violet);"></i> Livestock Species Distribution</h3>
-            <p>3.62 Million Animals (Goats 1.68M, Cattle 848K, Sheep 731K)</p>
+            <p>Ruminant livestock species dependent on common grazing land</p>
           </div>
         </div>
         <div id="chart-livestock-species" class="chart-container"></div>
@@ -429,7 +435,7 @@
         <div class="chart-card-header">
           <div class="chart-title-wrap">
             <h3><i data-lucide="heart" style="color:var(--accent-rose);"></i> Gender Ratio Disparity by Block</h3>
-            <p>Females per 1000 Males (District Benchmark Line: 922)</p>
+            <p>Females per 1000 Males compared to district average</p>
           </div>
         </div>
         <div id="chart-sex-ratio" class="chart-container"></div>
@@ -455,36 +461,10 @@
           <div class="chart-title-wrap">
             <h3><i data-lucide="layers" style="color:var(--accent-amber);"></i> Unutilized Land Transformation Potential
             </h3>
-            <p>Fallow Land (568.4k ha) + Culturable Wasteland (32.5k ha) Available for Silvipasture</p>
+            <p>Fallow land and culturable wasteland available for restoration</p>
           </div>
         </div>
         <div id="chart-fallow-wasteland" class="chart-container"></div>
-      </div>
-    </section>
-
-    <!-- SECTION F: Multi-Dimensional Action Radar & Top Panchayats -->
-    <section class="charts-grid-2">
-      <!-- Radar: Strategic Pillars -->
-      <div class="chart-card col-5">
-        <div class="chart-card-header">
-          <div class="chart-title-wrap">
-            <h3><i data-lucide="radar" style="color:var(--accent-emerald);"></i> Strategic Action Balance Radar</h3>
-            <p>6-Dimensional Assessment: Selection vs District Benchmark</p>
-          </div>
-        </div>
-        <div id="chart-strategic-radar" class="chart-container"></div>
-      </div>
-
-      <!-- Horizontal Bar: Top Panchayats -->
-      <div class="chart-card col-7">
-        <div class="chart-card-header">
-          <div class="chart-title-wrap">
-            <h3><i data-lucide="trophy" style="color:var(--accent-cyan);"></i> Top 10 Gram Panchayats by Common Land
-              Capacity</h3>
-            <p>Highest Common Land and Pasture reserves in selected view</p>
-          </div>
-        </div>
-        <div id="chart-top-panchayats" class="chart-container"></div>
       </div>
     </section>
 
@@ -496,8 +476,9 @@
             <i data-lucide="database" style="color:var(--accent-blue);"></i>
             Village-Level Natural Resources & Demographics Explorer
           </h3>
-          <p id="table-count-info" style="font-size:0.75rem;color:var(--text-secondary);">Showing 1,863 Villages across
-            Jodhpur District</p>
+          <p id="table-count-info" style="font-size:0.75rem;color:var(--text-secondary);">Showing villages across
+            <span id="table-district-name">Jodhpur</span> District
+          </p>
         </div>
 
         <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
