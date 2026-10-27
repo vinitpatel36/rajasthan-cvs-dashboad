@@ -7,7 +7,7 @@
   <title>Jodhpur District Strategic Monitoring & Decision Support Dashboard | Natural Resources, Commons & Rural
     Governance</title>
   <meta name="description"
-    content="Professional Decision Support System for Jodhpur District: Comprehensive monitoring of Land Commons, Pastureland (Gauchar), Wasteland Restoration, Livestock Grazing Pressure, Demographics, and MGNREGA Workforce.">
+    content="Professional Decision Support System for Rajasthan: Comprehensive monitoring of Land Commons, Pastureland (Gauchar), Wasteland Restoration, Demographics, and VBGRAMG Workforce.">
   <meta name="referrer" content="no-referrer-when-downgrade">
 
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
@@ -129,7 +129,7 @@
         <button class="decision-tag equity" data-filter="HIGH_MARGINALIZED_POP" title="Blocks with high SC & ST population (>25%)">
           <i data-lucide="users"></i> 👥 SC/ST Priority
         </button>
-        <button class="decision-tag" data-filter="LABOR_SURPLUS_AVAILABLE" title="Blocks with high MGNREGA workforce activation">
+        <button class="decision-tag" data-filter="LABOR_SURPLUS_AVAILABLE" title="Blocks with high VBGRAMG workforce activation">
           <i data-lucide="hammer"></i> 💼 Active Labor
         </button>
         <button class="decision-tag" data-filter="GENDER_RATIO_ALERT" title="Blocks with sex ratio below 915 females / 1000 males">
@@ -151,8 +151,7 @@
         <div class="action-banner-content">
           <h4 id="action-banner-title">Jodhpur District Strategic Overview — 21 Blocks, 642 Panchayats, 1,863 Villages
           </h4>
-          <p id="action-banner-desc">Total Geographical Area: 2.24 Million Ha | Common Land: 513,121 Ha (22.9%) | 3.62
-            Million Livestock dependent on 121,883 Ha Pasture.</p>
+          <p id="action-banner-desc">Total Geographical Area: 2.24 Million Ha | Common Land: 513,121 Ha (22.9%) | Pasture Land (Gauchar): 121,883 Ha.</p>
         </div>
       </div>
       <div>
@@ -222,33 +221,33 @@
         </div>
       </article>
 
-      <!-- 5. Livestock Dependent -->
-      <article class="kpi-card"
-        style="--kpi-gradient:var(--grad-rose);--kpi-bg:rgba(244,63,94,0.12);--kpi-color:var(--accent-rose);">
-        <div class="kpi-header">
-          <span class="kpi-title">Livestock Dependent</span>
-          <div class="kpi-icon-wrap"><i data-lucide="beef"></i></div>
-        </div>
-        <div class="kpi-value-row">
-          <span id="kpi-livestock-val" class="kpi-value">3.62 M <span class="kpi-unit">Animals</span></span>
-        </div>
-        <div class="kpi-footer">
-          <span id="kpi-livestock-sub">29.9 animals/ha pasture</span>
-        </div>
-      </article>
-
-      <!-- 6. MGNREGA Active Workforce -->
+      <!-- 5. Marginalized SC & ST Population -->
       <article class="kpi-card"
         style="--kpi-gradient:var(--grad-violet);--kpi-bg:rgba(139,92,246,0.12);--kpi-color:var(--accent-violet);">
         <div class="kpi-header">
-          <span class="kpi-title">MGNREGA Active Labor</span>
+          <span class="kpi-title">SC & ST Population</span>
+          <div class="kpi-icon-wrap"><i data-lucide="users"></i></div>
+        </div>
+        <div class="kpi-value-row">
+          <span id="kpi-vulnerable-val" class="kpi-value">545 k <span class="kpi-unit">Persons</span></span>
+        </div>
+        <div class="kpi-footer">
+          <span id="kpi-vulnerable-sub">22.2% of rural population</span>
+        </div>
+      </article>
+
+      <!-- 6. VBGRAMG Works Done -->
+      <article class="kpi-card"
+        style="--kpi-gradient:var(--grad-violet);--kpi-bg:rgba(139,92,246,0.12);--kpi-color:var(--accent-violet);">
+        <div class="kpi-header">
+          <span class="kpi-title">VBGRAMG Works Done</span>
           <div class="kpi-icon-wrap"><i data-lucide="briefcase"></i></div>
         </div>
         <div class="kpi-value-row">
-          <span id="kpi-mgnrega-val" class="kpi-value">603.6 k <span class="kpi-unit">Workers</span></span>
+          <span id="kpi-mgnrega-val" class="kpi-value">7.8 k <span class="kpi-unit">Ha</span></span>
         </div>
         <div class="kpi-footer">
-          <span id="kpi-mgnrega-sub">443,892 Active Job Cards</span>
+          <span id="kpi-mgnrega-sub">Villages with Works Done</span>
         </div>
       </article>
     </section>
@@ -272,53 +271,53 @@
         </div>
       </div>
 
-      <!-- 4 NRM Key Metric Cards -->
+      <!-- 4 NRM Key Metric Cards (100% Sourced from Excel) -->
       <div class="nrm-kpi-grid">
         <div class="nrm-kpi-card">
           <div class="nrm-kpi-head">
-            <span class="nrm-kpi-label">Restoration Plots</span>
+            <span class="nrm-kpi-label">Intervention Plots</span>
             <i data-lucide="sprout" style="color:var(--accent-emerald);"></i>
           </div>
-          <div class="nrm-kpi-val" id="nrm-plots-val">1,834 <span class="kpi-unit">Plots</span></div>
+          <div class="nrm-kpi-val" id="nrm-plots-val">-- <span class="kpi-unit">Plots</span></div>
           <div class="nrm-kpi-sub" id="nrm-plots-sub">
-            <span class="status-pill green">1,121 Ongoing</span>
-            <span class="status-pill blue">219 Completed</span>
+            <span class="status-pill green">-- Ongoing</span>
+            <span class="status-pill blue">-- Completed</span>
           </div>
         </div>
 
         <div class="nrm-kpi-card">
           <div class="nrm-kpi-head">
-            <span class="nrm-kpi-label">Financial Progress</span>
-            <i data-lucide="banknote" style="color:var(--accent-amber);"></i>
+            <span class="nrm-kpi-label">Demarcation & Bylaws</span>
+            <i data-lucide="shield-check" style="color:var(--accent-amber);"></i>
           </div>
-          <div class="nrm-kpi-val" id="nrm-budget-val">₹198.8 <span class="kpi-unit">Cr Sanctioned</span></div>
+          <div class="nrm-kpi-val" id="nrm-budget-val">-- <span class="kpi-unit">Villages</span></div>
           <div class="nrm-kpi-sub" id="nrm-budget-sub">
-            <span>₹29.2 Cr Utilized</span>
-            <span class="status-pill amber">14.7% Spent</span>
+            <span>-- Demarcated</span>
+            <span class="status-pill amber">-- Bylaws</span>
           </div>
         </div>
 
         <div class="nrm-kpi-card">
           <div class="nrm-kpi-head">
-            <span class="nrm-kpi-label">Community Institutions</span>
+            <span class="nrm-kpi-label">CVS Formed & Tenure</span>
             <i data-lucide="users-2" style="color:var(--accent-cyan);"></i>
           </div>
-          <div class="nrm-kpi-val" id="nrm-cvs-val">1,539 <span class="kpi-unit">CVS Formed</span></div>
+          <div class="nrm-kpi-val" id="nrm-cvs-val">-- <span class="kpi-unit">CVS Formed</span></div>
           <div class="nrm-kpi-sub" id="nrm-cvs-sub">
-            <span>116,746 Ha Protected</span>
-            <span class="status-pill cyan">ARCP + ACP</span>
+            <span>-- Ha Tenure Recognized</span>
+            <span class="status-pill cyan">Rule 170(1)</span>
           </div>
         </div>
 
         <div class="nrm-kpi-card">
           <div class="nrm-kpi-head">
-            <span class="nrm-kpi-label">Water Harvesting Works</span>
-            <i data-lucide="droplets" style="color:var(--accent-blue);"></i>
+            <span class="nrm-kpi-label">VBGRAMG & Protection</span>
+            <i data-lucide="briefcase" style="color:var(--accent-blue);"></i>
           </div>
-          <div class="nrm-kpi-val" id="nrm-water-val">232 <span class="kpi-unit">Storage Structures</span></div>
+          <div class="nrm-kpi-val" id="nrm-water-val">-- <span class="kpi-unit">Ha</span></div>
           <div class="nrm-kpi-sub" id="nrm-water-sub">
-            <span>Nadi / Talab Deepening</span>
-            <span class="status-pill blue">SMC Active</span>
+            <span>-- Ha Encroach Removed</span>
+            <span class="status-pill blue">Works Done</span>
           </div>
         </div>
       </div>
@@ -390,31 +389,6 @@
       </div>
     </section>
 
-    <!-- SECTION C: Pastoral Economy & Grazing Stress -->
-    <section class="charts-grid-2">
-      <!-- Dual Axis: Tehsil Grazing Pressure -->
-      <div class="chart-card col-7">
-        <div class="chart-card-header">
-          <div class="chart-title-wrap">
-            <h3><i data-lucide="activity" style="color:var(--accent-rose);"></i> Pastoral Grazing Pressure & Livestock
-              by Tehsil</h3>
-            <p>Total Livestock (Bar) vs Animals per Hectare Pasture (Line Alert)</p>
-          </div>
-        </div>
-        <div id="chart-grazing-pressure" class="chart-container"></div>
-      </div>
-
-      <!-- Polar Area: Livestock Species -->
-      <div class="chart-card col-5">
-        <div class="chart-card-header">
-          <div class="chart-title-wrap">
-            <h3><i data-lucide="donut" style="color:var(--accent-violet);"></i> Livestock Species Distribution</h3>
-            <p>Ruminant livestock species dependent on common grazing land</p>
-          </div>
-        </div>
-        <div id="chart-livestock-species" class="chart-container"></div>
-      </div>
-    </section>
 
     <!-- SECTION D: Social Inclusion & Demographic Disparity -->
     <section class="charts-grid-2">
@@ -442,26 +416,25 @@
       </div>
     </section>
 
-    <!-- SECTION E: Labor Capacity & Unutilized Land Transformation -->
+    <!-- SECTION E: VBGRAMG Restoration & CVS Governance -->
     <section class="charts-grid-2">
-      <!-- MGNREGA Saturation -->
+      <!-- VBGRAMG Restoration Works -->
       <div class="chart-card col-6">
         <div class="chart-card-header">
           <div class="chart-title-wrap">
-            <h3><i data-lucide="hammer" style="color:var(--accent-blue);"></i> MGNREGA Rural Workforce Saturation</h3>
-            <p>Total Registered Workers vs Active Workers & Activation Rate (%)</p>
+            <h3><i data-lucide="hammer" style="color:var(--accent-blue);"></i> VBGRAMG Restoration Works by Block</h3>
+            <p>Total Hectares Restored under VBGRAMG & Villages with Works Done</p>
           </div>
         </div>
         <div id="chart-mgnrega" class="chart-container"></div>
       </div>
 
-      <!-- Fallow & Wasteland -->
+      <!-- CVS Formation & Governance -->
       <div class="chart-card col-6">
         <div class="chart-card-header">
           <div class="chart-title-wrap">
-            <h3><i data-lucide="layers" style="color:var(--accent-amber);"></i> Unutilized Land Transformation Potential
-            </h3>
-            <p>Fallow land and culturable wasteland available for restoration</p>
+            <h3><i data-lucide="shield-check" style="color:var(--accent-emerald);"></i> CVS Formation & Pasture Governance</h3>
+            <p>Villages with CVS Formed, Pasture Demarcated & Village Bylaws Passed</p>
           </div>
         </div>
         <div id="chart-fallow-wasteland" class="chart-container"></div>
@@ -505,7 +478,7 @@
               <th onclick="window.sortTable('pop')" title="Sort by Population">Population (HH)</th>
               <th onclick="window.sortTable('sc')" title="Sort by SC Population">SC Pop (%)</th>
               <th onclick="window.sortTable('pas')" title="Sort by Pasture Land">Pasture (ha)</th>
-              <th onclick="window.sortTable('cw')" title="Sort by Wasteland">Wasteland (ha)</th>
+              <th onclick="window.sortTable('cfrr')" title="Sort by Potential CFRR Area">CFRR (ha)</th>
               <th onclick="window.sortTable('com')" title="Sort by Common Land">Common Land (ha)</th>
               <th>Action</th>
             </tr>
@@ -561,6 +534,28 @@
           </div>
           <div id="compare-bar-chart" class="chart-container medium"></div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Village Inspection Details Modal Popup -->
+  <div id="village-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="village-modal-title">
+    <div class="modal-dialog" style="max-width: 860px; width: 95%;">
+      <div class="modal-header">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+            <h3 id="village-modal-title" style="margin: 0; font-size: 1.35rem; font-weight: 700; color: var(--text-primary);">Village Details</h3>
+            <span id="village-modal-code" class="decision-badge" style="background: rgba(6,182,212,0.12); color: var(--accent-cyan); font-family: var(--font-mono); font-size: 0.75rem;">CODE11</span>
+          </div>
+          <div id="village-modal-subtitle" style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Gram Panchayat • Block • District
+          </div>
+        </div>
+        <button id="close-village-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div id="village-modal-body" style="display: flex; flex-direction: column; gap: 1.25rem; max-height: calc(85vh - 120px); overflow-y: auto; padding-right: 4px;">
+        <!-- Populated dynamically via JS -->
       </div>
     </div>
   </div>

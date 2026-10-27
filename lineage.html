@@ -255,6 +255,61 @@
       margin-top: 0.2rem;
     }
 
+    /* Chart Breakdown Blocks */
+    .chart-block {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.04);
+    }
+
+    .chart-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .chart-block-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .chart-block-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .chart-type-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      letter-spacing: 0.03em;
+    }
+
+    .series-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
     footer {
       text-align: center;
       font-size: 0.78rem;
@@ -327,19 +382,19 @@
               <td><strong>1. Total Land Area</strong></td>
               <td><span class="col-badge">Column F</span></td>
               <td><code>Total Geographical Area</code></td>
-              <td>Sum of village areas in Hectares. Subtitle shows block count & village count.</td>
+              <td>Sum of village areas in Hectares from field survey. Subtitle shows block count & village count.</td>
             </tr>
             <tr>
               <td><strong>2. Common Land Area</strong></td>
-              <td><span class="col-badge">Column O + Wasteland</span></td>
-              <td><code>Pasture + Wasteland + Barren</code></td>
-              <td>Total community land (Pasture Gauchar + Culturable Wasteland + Barren land).</td>
+              <td><span class="col-badge">Column O + Column P</span></td>
+              <td><code>Pasture (Col O) + Potential CFRR (Col P)</code></td>
+              <td>Total community commons recorded in Excel: Permanent Pasture (Gauchar) plus Potential CFRR Area.</td>
             </tr>
             <tr>
               <td><strong>3. Pasture Land (Gauchar)</strong></td>
               <td><span class="col-badge">Column O</span></td>
               <td><code>Permanent Pasture & other Grazing Land Area</code></td>
-              <td>Official pasture grazing land in Hectares recorded for each village.</td>
+              <td>Official pasture grazing land in Hectares recorded for each village in the Excel workbook.</td>
             </tr>
             <tr>
               <td><strong>4. Rural Population & Households</strong></td>
@@ -348,16 +403,40 @@
               <td>Total human population (Col H) and number of families/households (Col G).</td>
             </tr>
             <tr>
-              <td><strong>5. Livestock & Grazing Pressure</strong></td>
-              <td><span class="col-badge">Animal Census + Col O</span></td>
-              <td><code>Livestock Count / Column O Pasture</code></td>
-              <td>Number of animals divided by Pasture Hectares = <em>Animals per Ha of Pasture</em>.</td>
+              <td><strong>5. SC & ST Population</strong></td>
+              <td><span class="col-badge">Column K & Column M</span></td>
+              <td><code>SC Population + ST Population</code></td>
+              <td>Total marginalized community population (Scheduled Caste Col K + Scheduled Tribe Col M) and percentage share of rural population.</td>
             </tr>
             <tr>
-              <td><strong>6. MGNREGA Active Workforce</strong></td>
-              <td><span class="col-badge">Column AB + MGNREGA MIS</span></td>
-              <td><code>Work done under Govt schemes</code></td>
-              <td>Active MGNREGA job card workers available for community land development works.</td>
+              <td><strong>6. VBGRAMG Works Done</strong></td>
+              <td><span class="col-badge">Column AB</span></td>
+              <td><code>Work done under VBGRAMG/ other Govt schemes</code></td>
+              <td>Total Hectares of land restored or developed under VBGRAMG/government schemes, and number of villages with works.</td>
+            </tr>
+            <tr>
+              <td><strong>NRM 1. Intervention Plots</strong></td>
+              <td><span class="col-badge">Columns AB, AC, Q</span></td>
+              <td><code>Works Narration & Scheme Rows</code></td>
+              <td>Count of field intervention plots actively tracked from village rows having recorded restoration actions or CVS committees.</td>
+            </tr>
+            <tr>
+              <td><strong>NRM 2. Demarcation & Bylaws</strong></td>
+              <td><span class="col-badge">Column W & Column V</span></td>
+              <td><code>Demarcation of Pasture land (Yes/No)</code> & <code>Bylaws</code></td>
+              <td>Number of villages where pasture boundaries have been officially demarcated and village resource bylaws adopted.</td>
+            </tr>
+            <tr>
+              <td><strong>NRM 3. CVS Formed & Tenure</strong></td>
+              <td><span class="col-badge">Column Q & Column T</span></td>
+              <td><code>CVS Resolution</code> & <code>Tenure Recognized under 170(1)</code></td>
+              <td>Number of villages having formed Charagah Vikas Samitis (CVS) and total Hectares recognized under Rajasthan Tenancy Rule 170(1).</td>
+            </tr>
+            <tr>
+              <td><strong>NRM 4. VBGRAMG & Encroachment</strong></td>
+              <td><span class="col-badge">Column AB & Column Y</span></td>
+              <td><code>Work done under VBGRAMG (Ha)</code> & <code>Encroachment removed (Ha)</code></td>
+              <td>Total Hectares of commons restored under VBGRAMG alongside Hectares of pasture land successfully cleared of encroachment.</td>
             </tr>
           </tbody>
         </table>
@@ -409,44 +488,319 @@
       </div>
     </div>
 
-    <!-- SECTION 4: Charts & Demographics -->
+    <!-- SECTION 4: Interactive Charts & Analytical Visualizations -->
     <div class="card">
-      <h2 class="card-title">📈 4. Charts & Demographic Breakdowns</h2>
-      <p class="card-subtitle">Columns used for the visual charts:</p>
+      <h2 class="card-title">📈 4. Interactive Charts & Data Provenance (All 6 Charts)</h2>
+      <p class="card-subtitle">Detailed breakdown of every chart series, dual axes, formulas, and exact Excel column sources:</p>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Chart Name</th>
-              <th>Columns Used</th>
-              <th>Simple Explanation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Land Resource Composition</strong> (Donut Chart)</td>
-              <td><span class="col-badge">Column F, O, T, R</span></td>
-              <td>Shows percentage share of Pasture (Col O), Wasteland, Barren, and Cultivated land out of Total Area (Col F).</td>
-            </tr>
-            <tr>
-              <td><strong>Block-wise Commons Breakdown</strong> (Bar Chart)</td>
-              <td><span class="col-badge">Column B & Column O</span></td>
-              <td>Shows which blocks have the most Pasture and Common Land, sorted from highest to lowest.</td>
-            </tr>
-            <tr>
-              <td><strong>Social Equity & Caste Demographics</strong> (Bar Chart)</td>
-              <td><span class="col-badge">Column K, L, M, N</span></td>
-              <td>Shows Scheduled Caste population (Col K & L) and Scheduled Tribe population (Col M & N) by block.</td>
-            </tr>
-            <tr>
-              <td><strong>Gender Ratio (Sex Ratio)</strong></td>
-              <td><span class="col-badge">Column I & Column J</span></td>
-              <td>Male count (Col I) vs Female count (Col J). Formula: <code>(Female / Male) * 1000</code>.</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- 1. Land Resource Composition -->
+      <div class="chart-block">
+        <div class="chart-block-header">
+          <div class="chart-block-title">
+            <span>Chart 1: Land Resource Composition (Donut Chart)</span>
+          </div>
+          <span class="chart-type-badge">Nested Donut / Sunburst</span>
+        </div>
+        <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
+          Breaks down total district or block land into 4 distinct categories. Slices show Hectares and percentage share.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Visual Series / Slice</th>
+                <th>Excel Column</th>
+                <th>Excel Column Header</th>
+                <th>Calculation & Formula</th>
+                <th>Tooltip Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="series-dot" style="background:#10b981;"></span><strong>Pasture (Gauchar)</strong></td>
+                <td><span class="col-badge">Column O</span></td>
+                <td><code>Permanent Pasture and other Grazing Land Area</code></td>
+                <td>Sum of pasture land in Hectares for all villages in selected district/block.</td>
+                <td>Area in Ha and <code>%</code> share of total geographical land.</td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#06b6d4;"></span><strong>Potential CFRR Commons</strong></td>
+                <td><span class="col-badge">Column P</span></td>
+                <td><code>Potential CFRR Area (Ha)</code></td>
+                <td>Sum of potential Community Forest Resource Rights land in Hectares.</td>
+                <td>Area in Ha and <code>%</code> share of total geographical land.</td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#8b5cf6;"></span><strong>VBGRAMG Restored Land</strong></td>
+                <td><span class="col-badge">Column AB</span></td>
+                <td><code>Work done under VBGRAMG/ other Govt schemes (Ha)</code></td>
+                <td>Sum of land Hectares where restoration works have been implemented.</td>
+                <td>Area in Ha and <code>%</code> share of total geographical land.</td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#64748b;"></span><strong>Other Village Land Area</strong></td>
+                <td><span class="col-badge">Column F</span> minus (O + P)</td>
+                <td><code>Total Geographical Area</code> minus (Pasture + CFRR)</td>
+                <td>Formula: <code>Geo Area - (Col O + Col P)</code>. Represents non-commons land (private agriculture, abadi settlements).</td>
+                <td>Remaining village acreage and share of total.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+
+      <!-- 2. Block-wise Common Land Distribution -->
+      <div class="chart-block">
+        <div class="chart-block-header">
+          <div class="chart-block-title">
+            <span>Chart 2: Block-wise Common Land Distribution</span>
+          </div>
+          <span class="chart-type-badge">Stacked Bar Chart</span>
+        </div>
+        <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
+          Ranks blocks from highest to lowest common land acreage, stacking Permanent Pasture and Potential CFRR.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Visual Series / Segment</th>
+                <th>Excel Column</th>
+                <th>Excel Column Header</th>
+                <th>Calculation & Formula</th>
+                <th>Tooltip Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="series-dot" style="background:#10b981;"></span><strong>Permanent Pasture (Bottom Stack)</strong></td>
+                <td><span class="col-badge">Column O</span></td>
+                <td><code>Permanent Pasture and other Grazing Land Area</code></td>
+                <td>Sum of pasture land in Hectares for all villages in each block.</td>
+                <td><code>Pasture Land: XX ha</code></td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#06b6d4;"></span><strong>Potential CFRR Area (Top Stack)</strong></td>
+                <td><span class="col-badge">Column P</span></td>
+                <td><code>Potential CFRR Area (Ha)</code></td>
+                <td>Sum of potential CFRR area in Hectares for all villages in each block.</td>
+                <td><code>Potential CFRR: YY ha</code></td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#0284c7;"></span><strong>Total Bar Height (Sort Order)</strong></td>
+                <td><span class="col-badge">Column O + Column P</span></td>
+                <td><code>Pasture + Potential CFRR</code></td>
+                <td>Total Common Land = <code>Col O + Col P</code>. Blocks sorted in descending order of total commons.</td>
+                <td><code>Total Common Land: ZZ ha (XX.X% of block area)</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 3. Social Equity & Marginalized Population -->
+      <div class="chart-block">
+        <div class="chart-block-header">
+          <div class="chart-block-title">
+            <span>Chart 3: Social Equity & Marginalized Population</span>
+          </div>
+          <span class="chart-type-badge">100% Stacked Bar Chart</span>
+        </div>
+        <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
+          Visualizes the social and caste composition of rural population by block across 3 stacked categories totaling 100%.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Visual Series / Stack</th>
+                <th>Excel Column</th>
+                <th>Excel Column Header</th>
+                <th>Calculation & Formula</th>
+                <th>Tooltip Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="series-dot" style="background:#8b5cf6;"></span><strong>Scheduled Caste (SC) Share</strong></td>
+                <td><span class="col-badge">Column K</span> & <span class="col-badge">Column H</span></td>
+                <td><code>Total SC Population</code> & <code>Total Population</code></td>
+                <td>Formula: <code>(Sum of SC Population in Block / Sum of Total Population in Block) * 100</code></td>
+                <td><code>SC Population: XX (XX.X%)</code></td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#06b6d4;"></span><strong>Scheduled Tribe (ST) Share</strong></td>
+                <td><span class="col-badge">Column M</span> & <span class="col-badge">Column H</span></td>
+                <td><code>Total ST Population</code> & <code>Total Population</code></td>
+                <td>Formula: <code>(Sum of ST Population in Block / Sum of Total Population in Block) * 100</code></td>
+                <td><code>ST Population: YY (YY.X%)</code></td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#94a3b8;"></span><strong>General & OBC Communities Share</strong></td>
+                <td><span class="col-badge">Derived</span> (Col H - K - M)</td>
+                <td><code>Total Population</code> minus (SC + ST Pop)</td>
+                <td>Formula: <code>100% - (SC % + ST %)</code>. Represents non-SC/ST rural demographic share.</td>
+                <td>General & OBC share percentage.</td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#38bdf8;"></span><strong>Total Vulnerable Population</strong></td>
+                <td><span class="col-badge">Column K + Column M</span></td>
+                <td><code>SC Population + ST Population</code></td>
+                <td>Combined marginalized population count and % of block rural population.</td>
+                <td>Header alert: <code>Vulnerable: XX.X%</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 4. Gender Balance & Sex Ratio -->
+      <div class="chart-block">
+        <div class="chart-block-header">
+          <div class="chart-block-title">
+            <span>Chart 4: Gender Balance & Sex Ratio</span>
+          </div>
+          <span class="chart-type-badge">Benchmark Bar Chart</span>
+        </div>
+        <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
+          Monitors demographic gender equity across blocks, showing females per 1,000 males alongside policy benchmark lines.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Visual Element</th>
+                <th>Excel Column</th>
+                <th>Excel Column Header</th>
+                <th>Calculation & Formula</th>
+                <th>Tooltip & Threshold Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="series-dot" style="background:#10b981;"></span><strong>Block Sex Ratio (Bar)</strong></td>
+                <td><span class="col-badge">Column J</span> & <span class="col-badge">Column I</span></td>
+                <td><code>Total Female Population</code> & <code>Total Male Population</code></td>
+                <td>Formula: <code>(Sum of Female Pop / Sum of Male Pop) * 1000</code></td>
+                <td>Color-coded bars: <strong>Green</strong> (&ge;925), <strong>Amber</strong> (905&ndash;924), <strong>Red</strong> (&lt;905). Shows Female & Male counts.</td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#06b6d4;"></span><strong>District Average Benchmark</strong></td>
+                <td><span class="col-badge">Dashed Line</span></td>
+                <td>District-wide Female & Male Totals</td>
+                <td>District benchmark reference line set at <strong>922</strong> females per 1,000 males.</td>
+                <td>Benchmark marker line: <code>District Avg: 922</code>.</td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#ef4444;"></span><strong>Critical Alert Threshold</strong></td>
+                <td><span class="col-badge">Dashed Line</span></td>
+                <td>State Policy Alert Threshold</td>
+                <td>Fixed reference threshold line at <strong>900</strong> females per 1,000 males.</td>
+                <td>Critical alert line: <code>Alert: 900</code>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 5. VBGRAMG Restoration Works by Block -->
+      <div class="chart-block">
+        <div class="chart-block-header">
+          <div class="chart-block-title">
+            <span>Chart 5: VBGRAMG Restoration Works by Block</span>
+          </div>
+          <span class="chart-type-badge">Dual-Axis Combination (Bar + Line)</span>
+        </div>
+        <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
+          Combines restored acreage on the left axis with the count of active villages on the right axis for each block.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Visual Series / Axis</th>
+                <th>Excel Column</th>
+                <th>Excel Column Header</th>
+                <th>Calculation & Formula</th>
+                <th>Tooltip Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="series-dot" style="background:#3b82f6;"></span><strong>VBGRAMG Restored Land (Ha) [Left Axis Bars]</strong></td>
+                <td><span class="col-badge">Column AB</span></td>
+                <td><code>Work done under VBGRAMG/ other Govt schemes (Ha)</code></td>
+                <td>Direct sum of all restored or developed land Hectares recorded for every village in the block under VBGRAMG.</td>
+                <td><code>Work Done Area: XX Ha</code></td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#10b981;"></span><strong>Villages with Works [Right Axis Line]</strong></td>
+                <td><span class="col-badge">Column AB</span> & <span class="col-badge">Column AC</span></td>
+                <td><code>Work done under VBGRAMG</code> & <code>Activities narration</code></td>
+                <td>Count of distinct village rows in the block where work has taken place: <code>vbg_ha &gt; 0</code> or where a work name/narration is recorded in Col AC.</td>
+                <td><code>Villages with Works: YY</code> (e.g. 33 villages in Pali)</td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#64748b;"></span><strong>Total Block Villages (Context)</strong></td>
+                <td><span class="col-badge">Row Count</span></td>
+                <td>Total rows in block sheet</td>
+                <td>Total number of revenue villages surveyed in the block (e.g. 111 villages in Bali).</td>
+                <td><code>Total Block Villages: ZZ</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 6. CVS Formation & Pasture Governance -->
+      <div class="chart-block">
+        <div class="chart-block-header">
+          <div class="chart-block-title">
+            <span>Chart 6: CVS Formation & Pasture Governance</span>
+          </div>
+          <span class="chart-type-badge">Multi-Bar Comparison Chart</span>
+        </div>
+        <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
+          Compares three key community pasture governance milestones across blocks side-by-side.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Visual Series / Bar</th>
+                <th>Excel Column</th>
+                <th>Excel Column Header</th>
+                <th>Calculation & Formula</th>
+                <th>Tooltip Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="series-dot" style="background:#10b981;"></span><strong>CVS Formed Villages</strong></td>
+                <td><span class="col-badge">Column Q</span> & <span class="col-badge">Column R</span></td>
+                <td><code>CVS Resolution (Yes/No)</code> & <code>CVS Date</code></td>
+                <td>Count of villages where a Charagah Vikas Samiti (CVS) committee has been established (marked <code>'Y'</code> / <code>'YES'</code> or valid formation date recorded).</td>
+                <td><code>CVS Formed Villages: XX</code></td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#3b82f6;"></span><strong>Pasture Demarcated Villages</strong></td>
+                <td><span class="col-badge">Column W</span></td>
+                <td><code>Demarcation of Pasture land (Yes/No)</code></td>
+                <td>Count of villages where pasture boundaries have been officially surveyed and demarcated on the ground (marked <code>'Y'</code> / <code>'YES'</code>).</td>
+                <td><code>Pasture Demarcated: YY</code></td>
+              </tr>
+              <tr>
+                <td><span class="series-dot" style="background:#f59e0b;"></span><strong>Village Bylaws Passed</strong></td>
+                <td><span class="col-badge">Column V</span></td>
+                <td><code>Bylaws (Yes/No)</code></td>
+                <td>Count of villages where community rules and bylaws for grazing management and pasture conservation have been enacted (marked <code>'Y'</code> / <code>'YES'</code>).</td>
+                <td><code>Village Bylaws Passed: ZZ</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
 
     <!-- SECTION 5: Village Table -->
@@ -523,7 +877,19 @@
               <td><strong>Pasture Land (Ha)</strong></td>
               <td><span class="col-badge">Column O</span></td>
               <td><code>112 ha</code></td>
-              <td>Permanent pasture (Gauchar) land</td>
+              <td>Permanent pasture (Gauchar) land recorded in Excel</td>
+            </tr>
+            <tr>
+              <td><strong>Potential CFRR Area (Ha)</strong></td>
+              <td><span class="col-badge">Column P</span></td>
+              <td><code>45 ha</code></td>
+              <td>Potential Community Forest Resource Rights area</td>
+            </tr>
+            <tr>
+              <td><strong>Common Land (Ha)</strong></td>
+              <td><span class="col-badge">Column O + Column P</span></td>
+              <td><code>157 ha</code></td>
+              <td>Total community commons (Pasture + CFRR Area)</td>
             </tr>
           </tbody>
         </table>
@@ -552,7 +918,7 @@
               <td><strong>Jodhpur</strong></td>
               <td><code>1Dataset_Jodhpur_Oct26.xlsx</code></td>
               <td>21 Blocks</td>
-              <td>1,863 Villages (2,242,967 Ha)</td>
+              <td>1,859 Villages (2,231,415 Ha)</td>
             </tr>
             <tr>
               <td><strong>5</strong></td>

@@ -1,5 +1,7 @@
 {
   "district": {
+    "id": "jhalawar",
+    "num": 7,
     "name": "Jhalawar",
     "total_blocks": 8,
     "total_panchayats": 244,
@@ -14,33 +16,19 @@
     "sc_pct": 17.61,
     "st_pop": 147972,
     "st_pct": 13.4,
-    "forest": 0.0,
-    "barren": 22583.86,
+    "vulnerable_pct": 31.01,
     "pasture": 45039.71,
-    "cult_waste": 16938.01,
-    "fallow": 39522.24,
-    "curr_fallow": 28230.53,
-    "common_land": 84561.58,
-    "common_land_pct": 14.98,
-    "total_livestock": 1490527,
-    "total_workers": 529965,
-    "active_workers": 264983,
-    "total_job_cards": 160464,
-    "active_job_cards": 106976,
-    "interventions": {
-      "total_plots": 1672,
-      "ongoing_plots": 194,
-      "completed_plots": 1478,
-      "new_plots": 0,
-      "sanctioned_amount_lakhs": 24146.06,
-      "utilized_amount_lakhs": 19292.35,
-      "utilization_rate_pct": 79.9,
-      "cvs_formed": 1478,
-      "water_structures": 39,
-      "arcp_ha": 4090.0,
-      "acp_ha": 27277.5,
-      "total_protected_ha": 31367.5
-    }
+    "cfrr": 101525.31,
+    "common_land": 146565.02,
+    "common_land_pct": 25.96,
+    "vbgramg_ha": 8499.48,
+    "vbgramg_villages": 1075,
+    "cvs_formed": 1501,
+    "demarcated_villages": 26,
+    "bylaws_villages": 147,
+    "encroach_ha": 0.0,
+    "pasture_recog_ha": 28433.66,
+    "plots_count": 1606
   },
   "blocks": [
     {
@@ -58,43 +46,20 @@
       "st_pop": 29724,
       "st_pct": 30.18,
       "vulnerable_pct": 42.48,
-      "forest": 0.0,
-      "barren": 1798.37,
       "pasture": 4097.3,
-      "cult_waste": 1348.79,
-      "fallow": 3147.3,
-      "curr_fallow": 2248.04,
-      "total_fallow": 5395.34,
-      "common_land": 7244.46,
-      "com_pct": 16.11,
+      "cfrr": 11911.47,
+      "common_land": 16008.77,
+      "com_pct": 35.61,
       "pasture_pct": 9.11,
-      "fallow_pct": 12.0,
-      "com_per_hh": 0.35,
-      "restoration_potential": 3147.16,
-      "pop_per_ha_pasture": 24.0,
-      "livestock": {
-        "tehsil": "AKLERA",
-        "est_livestock": 132952,
-        "est_cattle": 46533,
-        "est_goat": 42545,
-        "est_sheep": 15954,
-        "est_camel": 3989
-      },
-      "grazing_pressure": 32.4,
-      "mgnrega": {
-        "gps": 22,
-        "villages": 141,
-        "job_cards": 14846,
-        "active_job_cards": 9898,
-        "total_workers": 47272,
-        "active_workers": 23636
-      },
-      "active_worker_pct": 50.0,
-      "decision_flags": [
-        "CRITICAL_PASTURE_DEFICIT",
-        "HIGH_RESTORATION_POTENTIAL",
-        "HIGH_MARGINALIZED_POP"
-      ],
+      "com_per_hh": 0.78,
+      "vbgramg_ha": 779.61,
+      "vbgramg_villages": 65,
+      "cvs_villages": 141,
+      "demarcated_villages": 3,
+      "bylaws_villages": 11,
+      "encroach_ha": 0.0,
+      "pasture_recog_ha": 3535.93,
+      "plots_count": 141,
       "panchayats": [
         {
           "name": "AMETHA",
@@ -105,9 +70,10 @@
           "sc_pct": 8.5,
           "st_pct": 54.4,
           "pasture": 162.37,
-          "commons": 355.76,
-          "wasteland": 82.88,
-          "com_pct": 12.9
+          "cfrr": 1382.69,
+          "commons": 1545.06,
+          "vbgramg_ha": 20.0,
+          "com_pct": 55.9
         },
         {
           "name": "AMRIT KHERI",
@@ -118,9 +84,10 @@
           "sc_pct": 5.9,
           "st_pct": 73.8,
           "pasture": 87.36,
-          "commons": 222.2,
-          "wasteland": 57.79,
-          "com_pct": 11.5
+          "cfrr": 742.82,
+          "commons": 830.18,
+          "vbgramg_ha": 0.0,
+          "com_pct": 43.1
         },
         {
           "name": "ASAL PUR",
@@ -131,9 +98,10 @@
           "sc_pct": 19.9,
           "st_pct": 22.6,
           "pasture": 157.66,
-          "commons": 351.35,
-          "wasteland": 83.01,
-          "com_pct": 12.7
+          "cfrr": 1119.69,
+          "commons": 1277.35,
+          "vbgramg_ha": 18.0,
+          "com_pct": 46.2
         },
         {
           "name": "BAIRA GARH",
@@ -144,9 +112,10 @@
           "sc_pct": 10.7,
           "st_pct": 23.9,
           "pasture": 112.5,
-          "commons": 182.05,
-          "wasteland": 29.81,
-          "com_pct": 18.3
+          "cfrr": 226.46,
+          "commons": 338.96,
+          "vbgramg_ha": 58.57,
+          "com_pct": 34.1
         },
         {
           "name": "BHALTA",
@@ -157,9 +126,10 @@
           "sc_pct": 13.4,
           "st_pct": 6.7,
           "pasture": 213.56,
-          "commons": 345.26,
-          "wasteland": 56.45,
-          "com_pct": 18.4
+          "cfrr": 775.57,
+          "commons": 989.13,
+          "vbgramg_ha": 20.5,
+          "com_pct": 52.6
         },
         {
           "name": "BINDA KHERA",
@@ -170,9 +140,10 @@
           "sc_pct": 4.8,
           "st_pct": 31.4,
           "pasture": 225.99,
-          "commons": 438.61,
-          "wasteland": 91.12,
-          "com_pct": 14.4
+          "cfrr": 1461.29,
+          "commons": 1687.28,
+          "vbgramg_ha": 60.0,
+          "com_pct": 55.5
         },
         {
           "name": "BORBAND",
@@ -183,9 +154,10 @@
           "sc_pct": 13.6,
           "st_pct": 0.0,
           "pasture": 431.51,
-          "commons": 606.87,
-          "wasteland": 75.15,
-          "com_pct": 24.2
+          "cfrr": 261.95,
+          "commons": 693.46,
+          "vbgramg_ha": 54.0,
+          "com_pct": 27.7
         },
         {
           "name": "DEOLI",
@@ -196,9 +168,10 @@
           "sc_pct": 12.7,
           "st_pct": 26.0,
           "pasture": 81.92,
-          "commons": 180.66,
-          "wasteland": 42.32,
-          "com_pct": 12.8
+          "cfrr": 267.37,
+          "commons": 349.29,
+          "vbgramg_ha": 17.62,
+          "com_pct": 24.8
         },
         {
           "name": "DEORI CHANCHAL",
@@ -209,9 +182,10 @@
           "sc_pct": 8.3,
           "st_pct": 41.4,
           "pasture": 317.44,
-          "commons": 498.38,
-          "wasteland": 77.55,
-          "com_pct": 19.3
+          "cfrr": 529.04,
+          "commons": 846.48,
+          "vbgramg_ha": 0.0,
+          "com_pct": 32.7
         },
         {
           "name": "DEORI KALAN",
@@ -222,9 +196,10 @@
           "sc_pct": 10.1,
           "st_pct": 36.8,
           "pasture": 122.35,
-          "commons": 203.14,
-          "wasteland": 34.63,
-          "com_pct": 17.6
+          "cfrr": 236.72,
+          "commons": 359.07,
+          "vbgramg_ha": 61.5,
+          "com_pct": 31.1
         },
         {
           "name": "GEHOON KHERI",
@@ -235,9 +210,10 @@
           "sc_pct": 17.6,
           "st_pct": 11.3,
           "pasture": 136.71,
-          "commons": 267.89,
-          "wasteland": 56.22,
-          "com_pct": 14.3
+          "cfrr": 693.47,
+          "commons": 830.18,
+          "vbgramg_ha": 40.62,
+          "com_pct": 44.3
         },
         {
           "name": "GHATOLI",
@@ -248,9 +224,10 @@
           "sc_pct": 14.1,
           "st_pct": 1.1,
           "pasture": 166.2,
-          "commons": 323.44,
-          "wasteland": 67.39,
-          "com_pct": 14.4
+          "cfrr": 880.11,
+          "commons": 1046.31,
+          "vbgramg_ha": 71.0,
+          "com_pct": 46.6
         },
         {
           "name": "GOPALPURA",
@@ -261,9 +238,10 @@
           "sc_pct": 12.1,
           "st_pct": 12.7,
           "pasture": 298.92,
-          "commons": 483.68,
-          "wasteland": 79.18,
-          "com_pct": 18.3
+          "cfrr": 356.15,
+          "commons": 655.07,
+          "vbgramg_ha": 81.0,
+          "com_pct": 24.8
         },
         {
           "name": "KHARPA",
@@ -274,9 +252,10 @@
           "sc_pct": 16.7,
           "st_pct": 58.7,
           "pasture": 153.69,
-          "commons": 277.62,
-          "wasteland": 53.11,
-          "com_pct": 15.7
+          "cfrr": 162.39,
+          "commons": 316.08,
+          "vbgramg_ha": 57.41,
+          "com_pct": 17.9
         },
         {
           "name": "KOHARI JHAR",
@@ -287,9 +266,10 @@
           "sc_pct": 8.1,
           "st_pct": 26.0,
           "pasture": 386.43,
-          "commons": 642.33,
-          "wasteland": 109.67,
-          "com_pct": 17.6
+          "cfrr": 399.86,
+          "commons": 786.29,
+          "vbgramg_ha": 20.0,
+          "com_pct": 21.5
         },
         {
           "name": "LAHAS",
@@ -300,9 +280,10 @@
           "sc_pct": 15.7,
           "st_pct": 45.4,
           "pasture": 220.82,
-          "commons": 341.24,
-          "wasteland": 51.61,
-          "com_pct": 19.8
+          "cfrr": 5.35,
+          "commons": 226.17,
+          "vbgramg_ha": 90.39,
+          "com_pct": 13.1
         },
         {
           "name": "METHOON",
@@ -313,9 +294,10 @@
           "sc_pct": 7.4,
           "st_pct": 73.4,
           "pasture": 140.36,
-          "commons": 212.19,
-          "wasteland": 30.78,
-          "com_pct": 20.7
+          "cfrr": 15.75,
+          "commons": 156.11,
+          "vbgramg_ha": 0.0,
+          "com_pct": 15.2
         },
         {
           "name": "PACHOLA",
@@ -326,9 +308,10 @@
           "sc_pct": 11.6,
           "st_pct": 75.7,
           "pasture": 86.49,
-          "commons": 197.31,
-          "wasteland": 47.5,
-          "com_pct": 12.5
+          "cfrr": 284.18,
+          "commons": 370.67,
+          "vbgramg_ha": 0.0,
+          "com_pct": 23.4
         },
         {
           "name": "SARDA",
@@ -339,9 +322,10 @@
           "sc_pct": 8.6,
           "st_pct": 0.4,
           "pasture": 242.51,
-          "commons": 329.49,
-          "wasteland": 37.27,
-          "com_pct": 26.5
+          "cfrr": 23.63,
+          "commons": 266.14,
+          "vbgramg_ha": 20.0,
+          "com_pct": 21.4
         },
         {
           "name": "THANAWAD",
@@ -352,9 +336,10 @@
           "sc_pct": 19.2,
           "st_pct": 40.1,
           "pasture": 97.94,
-          "commons": 288.91,
-          "wasteland": 81.84,
-          "com_pct": 10.6
+          "cfrr": 1571.88,
+          "commons": 1669.82,
+          "vbgramg_ha": 0.0,
+          "com_pct": 61.2
         },
         {
           "name": "THARAUL",
@@ -365,9 +350,10 @@
           "sc_pct": 18.2,
           "st_pct": 52.9,
           "pasture": 70.38,
-          "commons": 164.88,
-          "wasteland": 40.5,
-          "com_pct": 12.2
+          "cfrr": 351.72,
+          "commons": 422.1,
+          "vbgramg_ha": 0.0,
+          "com_pct": 31.3
         },
         {
           "name": "UMARIA",
@@ -378,25 +364,12 @@
           "sc_pct": 15.8,
           "st_pct": 6.1,
           "pasture": 184.19,
-          "commons": 331.2,
-          "wasteland": 63.01,
-          "com_pct": 15.8
+          "cfrr": 163.38,
+          "commons": 347.57,
+          "vbgramg_ha": 89.0,
+          "com_pct": 16.5
         }
-      ],
-      "interventions": {
-        "total_plots": 141,
-        "ongoing_plots": 0,
-        "completed_plots": 141,
-        "new_plots": 0,
-        "sanctioned_amount_lakhs": 2509.66,
-        "utilized_amount_lakhs": 1961.91,
-        "utilization_rate_pct": 78.2,
-        "cvs_formed": 141,
-        "water_structures": 6,
-        "arcp_ha": 435.2,
-        "acp_ha": 2904.3,
-        "total_protected_ha": 3339.5
-      }
+      ]
     },
     {
       "name": "BAKANI",
@@ -413,42 +386,20 @@
       "st_pop": 9875,
       "st_pct": 9.94,
       "vulnerable_pct": 23.64,
-      "forest": 0.0,
-      "barren": 1665.38,
       "pasture": 3865.63,
-      "cult_waste": 1249.06,
-      "fallow": 2914.42,
-      "curr_fallow": 2081.8,
-      "total_fallow": 4996.22,
-      "common_land": 6780.07,
-      "com_pct": 16.28,
+      "cfrr": 9078.16,
+      "common_land": 12943.79,
+      "com_pct": 31.09,
       "pasture_pct": 9.28,
-      "fallow_pct": 12.0,
-      "com_per_hh": 0.32,
-      "restoration_potential": 2914.44,
-      "pop_per_ha_pasture": 25.7,
-      "livestock": {
-        "tehsil": "BAKANI",
-        "est_livestock": 134140,
-        "est_cattle": 46949,
-        "est_goat": 42925,
-        "est_sheep": 16097,
-        "est_camel": 4024
-      },
-      "grazing_pressure": 34.7,
-      "mgnrega": {
-        "gps": 25,
-        "villages": 175,
-        "job_cards": 15384,
-        "active_job_cards": 10256,
-        "total_workers": 47694,
-        "active_workers": 23847
-      },
-      "active_worker_pct": 50.0,
-      "decision_flags": [
-        "CRITICAL_PASTURE_DEFICIT",
-        "HIGH_RESTORATION_POTENTIAL"
-      ],
+      "com_per_hh": 0.61,
+      "vbgramg_ha": 614.37,
+      "vbgramg_villages": 109,
+      "cvs_villages": 111,
+      "demarcated_villages": 1,
+      "bylaws_villages": 19,
+      "encroach_ha": 0.0,
+      "pasture_recog_ha": 614.37,
+      "plots_count": 175,
       "panchayats": [
         {
           "name": "AGARIYA",
@@ -459,9 +410,10 @@
           "sc_pct": 20.4,
           "st_pct": 0.2,
           "pasture": 377.58,
-          "commons": 552.37,
-          "wasteland": 74.9,
-          "com_pct": 22.1
+          "cfrr": 441.48,
+          "commons": 819.06,
+          "vbgramg_ha": 107.96,
+          "com_pct": 32.8
         },
         {
           "name": "BAKANI",
@@ -472,9 +424,10 @@
           "sc_pct": 0.0,
           "st_pct": 0.0,
           "pasture": 0.0,
-          "commons": 6.51,
-          "wasteland": 2.79,
-          "com_pct": 7.0
+          "cfrr": 0.0,
+          "commons": 0.0,
+          "vbgramg_ha": 20.0,
+          "com_pct": 0.0
         },
         {
           "name": "BARAY",
@@ -485,9 +438,10 @@
           "sc_pct": 12.4,
           "st_pct": 2.3,
           "pasture": 193.61,
-          "commons": 285.78,
-          "wasteland": 39.5,
-          "com_pct": 21.7
+          "cfrr": 13.56,
+          "commons": 207.17,
+          "vbgramg_ha": 10.5,
+          "com_pct": 15.7
         },
         {
           "name": "BARBAR",
@@ -498,9 +452,10 @@
           "sc_pct": 22.0,
           "st_pct": 17.4,
           "pasture": 200.14,
-          "commons": 301.91,
-          "wasteland": 43.63,
-          "com_pct": 20.8
+          "cfrr": 0.0,
+          "commons": 200.14,
+          "vbgramg_ha": 41.0,
+          "com_pct": 13.8
         },
         {
           "name": "BARKHERA KALAN",
@@ -511,9 +466,10 @@
           "sc_pct": 7.7,
           "st_pct": 7.5,
           "pasture": 294.22,
-          "commons": 406.55,
-          "wasteland": 48.14,
-          "com_pct": 25.3
+          "cfrr": 97.88,
+          "commons": 392.1,
+          "vbgramg_ha": 10.0,
+          "com_pct": 24.4
         },
         {
           "name": "DEO NAGAR",
@@ -524,9 +480,10 @@
           "sc_pct": 8.2,
           "st_pct": 9.6,
           "pasture": 197.3,
-          "commons": 303.37,
-          "wasteland": 45.46,
-          "com_pct": 20.0
+          "cfrr": 0.0,
+          "commons": 197.3,
+          "vbgramg_ha": 14.0,
+          "com_pct": 13.0
         },
         {
           "name": "DEVRI",
@@ -537,9 +494,10 @@
           "sc_pct": 14.8,
           "st_pct": 2.0,
           "pasture": 101.96,
-          "commons": 255.27,
-          "wasteland": 65.71,
-          "com_pct": 11.7
+          "cfrr": 964.39,
+          "commons": 1066.35,
+          "vbgramg_ha": 18.88,
+          "com_pct": 48.7
         },
         {
           "name": "GARWARA",
@@ -550,9 +508,10 @@
           "sc_pct": 5.3,
           "st_pct": 0.2,
           "pasture": 226.01,
-          "commons": 408.23,
-          "wasteland": 78.09,
-          "com_pct": 15.7
+          "cfrr": 544.21,
+          "commons": 770.22,
+          "vbgramg_ha": 10.0,
+          "com_pct": 29.6
         },
         {
           "name": "GURAD KHERA",
@@ -563,9 +522,10 @@
           "sc_pct": 12.1,
           "st_pct": 5.6,
           "pasture": 214.0,
-          "commons": 364.52,
-          "wasteland": 64.5,
-          "com_pct": 17.0
+          "cfrr": 838.47,
+          "commons": 1052.47,
+          "vbgramg_ha": 21.0,
+          "com_pct": 48.9
         },
         {
           "name": "JHEEJHANIYA",
@@ -576,9 +536,10 @@
           "sc_pct": 7.6,
           "st_pct": 6.8,
           "pasture": 76.87,
-          "commons": 154.89,
-          "wasteland": 33.44,
-          "com_pct": 13.9
+          "cfrr": 4.0,
+          "commons": 80.87,
+          "vbgramg_ha": 16.0,
+          "com_pct": 7.3
         },
         {
           "name": "JHEEKARIYA",
@@ -589,9 +550,10 @@
           "sc_pct": 15.9,
           "st_pct": 5.4,
           "pasture": 80.36,
-          "commons": 280.82,
-          "wasteland": 85.92,
-          "com_pct": 9.8
+          "cfrr": 1758.29,
+          "commons": 1838.65,
+          "vbgramg_ha": 38.0,
+          "com_pct": 64.2
         },
         {
           "name": "KARAL GAON",
@@ -602,9 +564,10 @@
           "sc_pct": 13.3,
           "st_pct": 16.2,
           "pasture": 164.26,
-          "commons": 269.31,
-          "wasteland": 45.02,
-          "com_pct": 17.9
+          "cfrr": 321.5,
+          "commons": 485.76,
+          "vbgramg_ha": 15.0,
+          "com_pct": 32.4
         },
         {
           "name": "KHERIYA",
@@ -615,9 +578,10 @@
           "sc_pct": 23.7,
           "st_pct": 2.4,
           "pasture": 42.77,
-          "commons": 136.7,
-          "wasteland": 40.26,
-          "com_pct": 10.2
+          "cfrr": 413.48,
+          "commons": 456.25,
+          "vbgramg_ha": 0.0,
+          "com_pct": 34.0
         },
         {
           "name": "KISHANPURA",
@@ -628,9 +592,10 @@
           "sc_pct": 8.4,
           "st_pct": 59.4,
           "pasture": 177.83,
-          "commons": 337.09,
-          "wasteland": 68.26,
-          "com_pct": 14.8
+          "cfrr": 638.81,
+          "commons": 816.64,
+          "vbgramg_ha": 68.0,
+          "com_pct": 35.9
         },
         {
           "name": "KUSHALPURA",
@@ -641,9 +606,10 @@
           "sc_pct": 7.3,
           "st_pct": 0.0,
           "pasture": 312.81,
-          "commons": 527.56,
-          "wasteland": 92.04,
-          "com_pct": 17.2
+          "cfrr": 704.17,
+          "commons": 1016.98,
+          "vbgramg_ha": 28.77,
+          "com_pct": 33.1
         },
         {
           "name": "MORI",
@@ -654,9 +620,10 @@
           "sc_pct": 22.1,
           "st_pct": 0.0,
           "pasture": 178.44,
-          "commons": 282.88,
-          "wasteland": 44.76,
-          "com_pct": 19.0
+          "cfrr": 466.54,
+          "commons": 644.98,
+          "vbgramg_ha": 6.0,
+          "com_pct": 43.2
         },
         {
           "name": "NANOR",
@@ -667,9 +634,10 @@
           "sc_pct": 17.8,
           "st_pct": 4.0,
           "pasture": 183.4,
-          "commons": 295.01,
-          "wasteland": 47.83,
-          "com_pct": 18.5
+          "cfrr": 75.97,
+          "commons": 259.37,
+          "vbgramg_ha": 48.25,
+          "com_pct": 16.3
         },
         {
           "name": "NASIRABAD",
@@ -680,9 +648,10 @@
           "sc_pct": 10.1,
           "st_pct": 23.6,
           "pasture": 157.63,
-          "commons": 241.99,
-          "wasteland": 36.15,
-          "com_pct": 20.1
+          "cfrr": 0.0,
+          "commons": 157.63,
+          "vbgramg_ha": 20.0,
+          "com_pct": 13.1
         },
         {
           "name": "PADLYA KULMI",
@@ -693,9 +662,10 @@
           "sc_pct": 10.8,
           "st_pct": 22.6,
           "pasture": 58.59,
-          "commons": 183.36,
-          "wasteland": 53.48,
-          "com_pct": 10.3
+          "cfrr": 702.63,
+          "commons": 761.22,
+          "vbgramg_ha": 30.0,
+          "com_pct": 42.7
         },
         {
           "name": "RATLAI",
@@ -706,9 +676,10 @@
           "sc_pct": 17.8,
           "st_pct": 5.0,
           "pasture": 56.12,
-          "commons": 143.24,
-          "wasteland": 37.33,
-          "com_pct": 11.5
+          "cfrr": 262.78,
+          "commons": 318.9,
+          "vbgramg_ha": 2.0,
+          "com_pct": 25.6
         },
         {
           "name": "REECHHWA",
@@ -719,9 +690,10 @@
           "sc_pct": 18.0,
           "st_pct": 9.7,
           "pasture": 139.0,
-          "commons": 249.92,
-          "wasteland": 47.54,
-          "com_pct": 15.8
+          "cfrr": 421.8,
+          "commons": 560.8,
+          "vbgramg_ha": 12.0,
+          "com_pct": 35.4
         },
         {
           "name": "REEJON",
@@ -732,9 +704,10 @@
           "sc_pct": 17.7,
           "st_pct": 3.9,
           "pasture": 49.82,
-          "commons": 150.04,
-          "wasteland": 42.95,
-          "com_pct": 10.5
+          "cfrr": 315.42,
+          "commons": 365.24,
+          "vbgramg_ha": 23.33,
+          "com_pct": 25.5
         },
         {
           "name": "RENPLA",
@@ -745,9 +718,10 @@
           "sc_pct": 17.3,
           "st_pct": 10.8,
           "pasture": 113.59,
-          "commons": 224.02,
-          "wasteland": 47.33,
-          "com_pct": 14.2
+          "cfrr": 25.53,
+          "commons": 139.12,
+          "vbgramg_ha": 30.0,
+          "com_pct": 8.8
         },
         {
           "name": "SALAWAD",
@@ -758,9 +732,10 @@
           "sc_pct": 6.7,
           "st_pct": 12.4,
           "pasture": 109.48,
-          "commons": 196.47,
-          "wasteland": 37.28,
-          "com_pct": 15.8
+          "cfrr": 0.0,
+          "commons": 109.48,
+          "vbgramg_ha": 17.0,
+          "com_pct": 8.8
         },
         {
           "name": "THOBARIYA KHURD",
@@ -771,25 +746,12 @@
           "sc_pct": 3.0,
           "st_pct": 25.8,
           "pasture": 159.84,
-          "commons": 222.26,
-          "wasteland": 26.75,
-          "com_pct": 24.9
+          "cfrr": 67.25,
+          "commons": 227.09,
+          "vbgramg_ha": 6.68,
+          "com_pct": 25.5
         }
-      ],
-      "interventions": {
-        "total_plots": 142,
-        "ongoing_plots": 32,
-        "completed_plots": 110,
-        "new_plots": 0,
-        "sanctioned_amount_lakhs": 1291.86,
-        "utilized_amount_lakhs": 1073.81,
-        "utilization_rate_pct": 83.1,
-        "cvs_formed": 110,
-        "water_structures": 0,
-        "arcp_ha": 206.7,
-        "acp_ha": 1383.8,
-        "total_protected_ha": 1590.5
-      }
+      ]
     },
     {
       "name": "BHAWANI MANDI",
@@ -805,44 +767,21 @@
       "sc_pct": 23.39,
       "st_pop": 3813,
       "st_pct": 2.84,
-      "vulnerable_pct": 26.23,
-      "forest": 0.0,
-      "barren": 2631.41,
+      "vulnerable_pct": 26.22,
       "pasture": 5853.08,
-      "cult_waste": 1973.54,
-      "fallow": 4604.96,
-      "curr_fallow": 3289.24,
-      "total_fallow": 7894.2,
-      "common_land": 10458.03,
-      "com_pct": 15.9,
+      "cfrr": 5941.69,
+      "common_land": 11794.77,
+      "com_pct": 17.93,
       "pasture_pct": 8.9,
-      "fallow_pct": 12.0,
-      "com_per_hh": 0.4,
-      "restoration_potential": 4604.95,
-      "pop_per_ha_pasture": 23.0,
-      "livestock": {
-        "tehsil": "BHAWANI MANDI",
-        "est_livestock": 181499,
-        "est_cattle": 63525,
-        "est_goat": 58080,
-        "est_sheep": 21780,
-        "est_camel": 5445
-      },
-      "grazing_pressure": 31.0,
-      "mgnrega": {
-        "gps": 26,
-        "villages": 194,
-        "job_cards": 18678,
-        "active_job_cards": 12452,
-        "total_workers": 64533,
-        "active_workers": 32267
-      },
-      "active_worker_pct": 50.0,
-      "decision_flags": [
-        "CRITICAL_PASTURE_DEFICIT",
-        "HIGH_RESTORATION_POTENTIAL",
-        "HIGH_MARGINALIZED_POP"
-      ],
+      "com_per_hh": 0.45,
+      "vbgramg_ha": 1523.49,
+      "vbgramg_villages": 163,
+      "cvs_villages": 184,
+      "demarcated_villages": 3,
+      "bylaws_villages": 7,
+      "encroach_ha": 0.0,
+      "pasture_recog_ha": 4412.38,
+      "plots_count": 184,
       "panchayats": [
         {
           "name": "ALAWA",
@@ -853,9 +792,10 @@
           "sc_pct": 20.7,
           "st_pct": 8.0,
           "pasture": 172.25,
-          "commons": 324.67,
-          "wasteland": 65.32,
-          "com_pct": 14.9
+          "cfrr": 0.0,
+          "commons": 172.25,
+          "vbgramg_ha": 43.0,
+          "com_pct": 7.9
         },
         {
           "name": "ANK KHERI",
@@ -866,9 +806,10 @@
           "sc_pct": 11.9,
           "st_pct": 1.4,
           "pasture": 305.35,
-          "commons": 475.83,
-          "wasteland": 73.06,
-          "com_pct": 19.5
+          "cfrr": 43.03,
+          "commons": 348.38,
+          "vbgramg_ha": 107.84,
+          "com_pct": 14.3
         },
         {
           "name": "ANWALI KALAN",
@@ -879,9 +820,10 @@
           "sc_pct": 27.8,
           "st_pct": 11.6,
           "pasture": 105.47,
-          "commons": 231.65,
-          "wasteland": 54.08,
-          "com_pct": 12.9
+          "cfrr": 0.0,
+          "commons": 105.47,
+          "vbgramg_ha": 60.0,
+          "com_pct": 5.9
         },
         {
           "name": "AWAR",
@@ -892,9 +834,10 @@
           "sc_pct": 22.8,
           "st_pct": 0.8,
           "pasture": 204.5,
-          "commons": 349.05,
-          "wasteland": 61.94,
-          "com_pct": 16.9
+          "cfrr": 317.81,
+          "commons": 522.31,
+          "vbgramg_ha": 16.0,
+          "com_pct": 25.3
         },
         {
           "name": "BHAISANI",
@@ -905,9 +848,10 @@
           "sc_pct": 21.2,
           "st_pct": 8.1,
           "pasture": 256.32,
-          "commons": 394.26,
-          "wasteland": 59.11,
-          "com_pct": 20.0
+          "cfrr": 81.04,
+          "commons": 337.36,
+          "vbgramg_ha": 69.27,
+          "com_pct": 17.1
         },
         {
           "name": "BHILWARI",
@@ -918,9 +862,10 @@
           "sc_pct": 17.6,
           "st_pct": 8.8,
           "pasture": 176.95,
-          "commons": 347.59,
-          "wasteland": 73.13,
-          "com_pct": 14.3
+          "cfrr": 0.0,
+          "commons": 176.95,
+          "vbgramg_ha": 57.0,
+          "com_pct": 7.3
         },
         {
           "name": "GANESHPURA",
@@ -931,9 +876,10 @@
           "sc_pct": 18.4,
           "st_pct": 1.4,
           "pasture": 145.9,
-          "commons": 303.86,
-          "wasteland": 67.7,
-          "com_pct": 13.5
+          "cfrr": 0.0,
+          "commons": 145.9,
+          "vbgramg_ha": 96.0,
+          "com_pct": 6.5
         },
         {
           "name": "GHATOD",
@@ -944,9 +890,10 @@
           "sc_pct": 44.0,
           "st_pct": 10.5,
           "pasture": 89.59,
-          "commons": 193.66,
-          "wasteland": 44.61,
-          "com_pct": 13.0
+          "cfrr": 0.0,
+          "commons": 89.59,
+          "vbgramg_ha": 83.0,
+          "com_pct": 6.0
         },
         {
           "name": "GURADIYA JOGA",
@@ -957,9 +904,10 @@
           "sc_pct": 23.4,
           "st_pct": 0.3,
           "pasture": 201.81,
-          "commons": 339.51,
-          "wasteland": 59.01,
-          "com_pct": 17.3
+          "cfrr": 88.89,
+          "commons": 290.7,
+          "vbgramg_ha": 10.27,
+          "com_pct": 14.8
         },
         {
           "name": "GURADIYA KALAN",
@@ -970,9 +918,10 @@
           "sc_pct": 25.2,
           "st_pct": 0.6,
           "pasture": 388.03,
-          "commons": 754.47,
-          "wasteland": 157.05,
-          "com_pct": 14.4
+          "cfrr": 2309.51,
+          "commons": 2697.54,
+          "vbgramg_ha": 55.0,
+          "com_pct": 51.5
         },
         {
           "name": "GURADIYA MANA",
@@ -983,9 +932,10 @@
           "sc_pct": 26.1,
           "st_pct": 1.6,
           "pasture": 109.68,
-          "commons": 230.13,
-          "wasteland": 51.62,
-          "com_pct": 13.4
+          "cfrr": 0.0,
+          "commons": 109.68,
+          "vbgramg_ha": 8.0,
+          "com_pct": 6.4
         },
         {
           "name": "GURAH",
@@ -996,9 +946,10 @@
           "sc_pct": 16.4,
           "st_pct": 0.2,
           "pasture": 353.8,
-          "commons": 576.58,
-          "wasteland": 95.48,
-          "com_pct": 18.1
+          "cfrr": 81.26,
+          "commons": 435.06,
+          "vbgramg_ha": 122.15,
+          "com_pct": 13.7
         },
         {
           "name": "KARAWAN",
@@ -1009,9 +960,10 @@
           "sc_pct": 24.4,
           "st_pct": 0.1,
           "pasture": 236.93,
-          "commons": 360.67,
-          "wasteland": 53.03,
-          "com_pct": 20.4
+          "cfrr": 0.0,
+          "commons": 236.93,
+          "vbgramg_ha": 31.0,
+          "com_pct": 13.4
         },
         {
           "name": "KHOKHARIYA KHURD",
@@ -1022,9 +974,10 @@
           "sc_pct": 32.5,
           "st_pct": 0.0,
           "pasture": 139.48,
-          "commons": 329.35,
-          "wasteland": 81.37,
-          "com_pct": 12.1
+          "cfrr": 425.94,
+          "commons": 565.42,
+          "vbgramg_ha": 14.0,
+          "com_pct": 20.8
         },
         {
           "name": "KUNDI KHERA",
@@ -1035,9 +988,10 @@
           "sc_pct": 24.6,
           "st_pct": 2.0,
           "pasture": 313.33,
-          "commons": 550.73,
-          "wasteland": 101.75,
-          "com_pct": 16.2
+          "cfrr": 0.0,
+          "commons": 313.33,
+          "vbgramg_ha": 3.43,
+          "com_pct": 9.2
         },
         {
           "name": "MISHROLI",
@@ -1048,9 +1002,10 @@
           "sc_pct": 23.4,
           "st_pct": 0.8,
           "pasture": 155.31,
-          "commons": 340.18,
-          "wasteland": 79.23,
-          "com_pct": 12.9
+          "cfrr": 148.51,
+          "commons": 303.82,
+          "vbgramg_ha": 21.53,
+          "com_pct": 11.5
         },
         {
           "name": "MOGRA",
@@ -1061,9 +1016,10 @@
           "sc_pct": 16.5,
           "st_pct": 1.7,
           "pasture": 228.05,
-          "commons": 378.28,
-          "wasteland": 64.38,
-          "com_pct": 17.6
+          "cfrr": 0.0,
+          "commons": 228.05,
+          "vbgramg_ha": 40.0,
+          "com_pct": 10.6
         },
         {
           "name": "NAHAR GHATTA",
@@ -1074,9 +1030,10 @@
           "sc_pct": 22.4,
           "st_pct": 0.0,
           "pasture": 391.78,
-          "commons": 542.83,
-          "wasteland": 64.74,
-          "com_pct": 25.2
+          "cfrr": 133.89,
+          "commons": 525.67,
+          "vbgramg_ha": 198.59,
+          "com_pct": 24.4
         },
         {
           "name": "NARAYAN KHERA",
@@ -1087,9 +1044,10 @@
           "sc_pct": 28.9,
           "st_pct": 1.0,
           "pasture": 104.0,
-          "commons": 199.41,
-          "wasteland": 40.89,
-          "com_pct": 14.6
+          "cfrr": 0.0,
+          "commons": 104.0,
+          "vbgramg_ha": 23.0,
+          "com_pct": 7.6
         },
         {
           "name": "PAGARIYA",
@@ -1100,9 +1058,10 @@
           "sc_pct": 28.8,
           "st_pct": 0.2,
           "pasture": 239.66,
-          "commons": 397.7,
-          "wasteland": 67.73,
-          "com_pct": 17.6
+          "cfrr": 129.17,
+          "commons": 368.83,
+          "vbgramg_ha": 0.0,
+          "com_pct": 16.3
         },
         {
           "name": "PEEPLIYA",
@@ -1113,9 +1072,10 @@
           "sc_pct": 20.0,
           "st_pct": 1.5,
           "pasture": 232.06,
-          "commons": 440.44,
-          "wasteland": 89.31,
-          "com_pct": 14.8
+          "cfrr": 0.0,
+          "commons": 232.06,
+          "vbgramg_ha": 0.0,
+          "com_pct": 7.8
         },
         {
           "name": "SAROD",
@@ -1126,9 +1086,10 @@
           "sc_pct": 8.4,
           "st_pct": 0.4,
           "pasture": 402.09,
-          "commons": 640.23,
-          "wasteland": 102.06,
-          "com_pct": 18.8
+          "cfrr": 560.21,
+          "commons": 962.3,
+          "vbgramg_ha": 155.71,
+          "com_pct": 28.3
         },
         {
           "name": "SHRI CHHATRAPUR",
@@ -1139,9 +1100,10 @@
           "sc_pct": 26.1,
           "st_pct": 21.0,
           "pasture": 173.69,
-          "commons": 342.4,
-          "wasteland": 72.3,
-          "com_pct": 14.2
+          "cfrr": 0.0,
+          "commons": 173.69,
+          "vbgramg_ha": 1.35,
+          "com_pct": 7.2
         },
         {
           "name": "SILEHGARH",
@@ -1152,9 +1114,10 @@
           "sc_pct": 26.3,
           "st_pct": 0.6,
           "pasture": 356.19,
-          "commons": 743.15,
-          "wasteland": 165.84,
-          "com_pct": 13.4
+          "cfrr": 1394.25,
+          "commons": 1750.44,
+          "vbgramg_ha": 77.35,
+          "com_pct": 31.7
         },
         {
           "name": "SOOLIYA",
@@ -1165,9 +1128,10 @@
           "sc_pct": 34.4,
           "st_pct": 4.0,
           "pasture": 170.65,
-          "commons": 315.64,
-          "wasteland": 62.14,
-          "com_pct": 15.2
+          "cfrr": 0.0,
+          "commons": 170.65,
+          "vbgramg_ha": 81.0,
+          "com_pct": 8.2
         },
         {
           "name": "THEEKARIYA",
@@ -1178,25 +1142,12 @@
           "sc_pct": 26.4,
           "st_pct": 0.1,
           "pasture": 200.21,
-          "commons": 355.76,
-          "wasteland": 66.66,
-          "com_pct": 16.0
+          "cfrr": 228.18,
+          "commons": 428.39,
+          "vbgramg_ha": 149.0,
+          "com_pct": 19.3
         }
-      ],
-      "interventions": {
-        "total_plots": 187,
-        "ongoing_plots": 3,
-        "completed_plots": 184,
-        "new_plots": 0,
-        "sanctioned_amount_lakhs": 2185.18,
-        "utilized_amount_lakhs": 1782.4,
-        "utilization_rate_pct": 81.6,
-        "cvs_formed": 184,
-        "water_structures": 3,
-        "arcp_ha": 363.8,
-        "acp_ha": 2423.2,
-        "total_protected_ha": 2787.0
-      }
+      ]
     },
     {
       "name": "DAG",
@@ -1213,43 +1164,20 @@
       "st_pop": 397,
       "st_pct": 0.25,
       "vulnerable_pct": 25.12,
-      "forest": 0.0,
-      "barren": 3595.06,
       "pasture": 7380.83,
-      "cult_waste": 2696.44,
-      "fallow": 6291.53,
-      "curr_fallow": 4493.99,
-      "total_fallow": 10785.52,
-      "common_land": 13672.33,
-      "com_pct": 15.21,
+      "cfrr": 11166.68,
+      "common_land": 18547.51,
+      "com_pct": 20.64,
       "pasture_pct": 8.21,
-      "fallow_pct": 12.0,
-      "com_per_hh": 0.43,
-      "restoration_potential": 6291.5,
-      "pop_per_ha_pasture": 21.5,
-      "livestock": {
-        "tehsil": "DAG",
-        "est_livestock": 214518,
-        "est_cattle": 75081,
-        "est_goat": 68646,
-        "est_sheep": 25742,
-        "est_camel": 6436
-      },
-      "grazing_pressure": 29.1,
-      "mgnrega": {
-        "gps": 33,
-        "villages": 316,
-        "job_cards": 23159,
-        "active_job_cards": 15439,
-        "total_workers": 76273,
-        "active_workers": 38136
-      },
-      "active_worker_pct": 50.0,
-      "decision_flags": [
-        "CRITICAL_PASTURE_DEFICIT",
-        "HIGH_RESTORATION_POTENTIAL",
-        "HIGH_MARGINALIZED_POP"
-      ],
+      "com_per_hh": 0.58,
+      "vbgramg_ha": 1738.81,
+      "vbgramg_villages": 195,
+      "cvs_villages": 257,
+      "demarcated_villages": 4,
+      "bylaws_villages": 17,
+      "encroach_ha": 0.0,
+      "pasture_recog_ha": 3953.76,
+      "plots_count": 264,
       "panchayats": [
         {
           "name": "BARDIYA BEERJI",
@@ -1260,9 +1188,10 @@
           "sc_pct": 23.9,
           "st_pct": 0.0,
           "pasture": 189.28,
-          "commons": 362.42,
-          "wasteland": 74.2,
-          "com_pct": 14.7
+          "cfrr": 240.06,
+          "commons": 429.34,
+          "vbgramg_ha": 0.0,
+          "com_pct": 17.4
         },
         {
           "name": "CHARA",
@@ -1273,9 +1202,10 @@
           "sc_pct": 19.2,
           "st_pct": 0.1,
           "pasture": 327.32,
-          "commons": 539.78,
-          "wasteland": 91.06,
-          "com_pct": 17.8
+          "cfrr": 0.0,
+          "commons": 327.32,
+          "vbgramg_ha": 35.0,
+          "com_pct": 10.8
         },
         {
           "name": "DAG",
@@ -1286,9 +1216,10 @@
           "sc_pct": 22.9,
           "st_pct": 0.2,
           "pasture": 217.1,
-          "commons": 426.31,
-          "wasteland": 89.66,
-          "com_pct": 14.3
+          "cfrr": 298.94,
+          "commons": 516.04,
+          "vbgramg_ha": 38.0,
+          "com_pct": 17.3
         },
         {
           "name": "DEOGARH",
@@ -1299,9 +1230,10 @@
           "sc_pct": 26.0,
           "st_pct": 0.0,
           "pasture": 169.09,
-          "commons": 334.84,
-          "wasteland": 71.03,
-          "com_pct": 14.1
+          "cfrr": 316.16,
+          "commons": 485.25,
+          "vbgramg_ha": 75.86,
+          "com_pct": 20.5
         },
         {
           "name": "DHATOORIYA",
@@ -1312,9 +1244,10 @@
           "sc_pct": 24.4,
           "st_pct": 0.0,
           "pasture": 189.43,
-          "commons": 524.66,
-          "wasteland": 143.68,
-          "com_pct": 11.0
+          "cfrr": 1262.91,
+          "commons": 1452.34,
+          "vbgramg_ha": 5.43,
+          "com_pct": 30.3
         },
         {
           "name": "DOBRA",
@@ -1325,9 +1258,10 @@
           "sc_pct": 19.6,
           "st_pct": 0.4,
           "pasture": 215.49,
-          "commons": 442.46,
-          "wasteland": 97.28,
-          "com_pct": 13.6
+          "cfrr": 925.06,
+          "commons": 1140.55,
+          "vbgramg_ha": 151.0,
+          "com_pct": 35.2
         },
         {
           "name": "DORI",
@@ -1338,9 +1272,10 @@
           "sc_pct": 17.2,
           "st_pct": 0.0,
           "pasture": 276.91,
-          "commons": 459.45,
-          "wasteland": 78.23,
-          "com_pct": 17.6
+          "cfrr": 913.93,
+          "commons": 1190.84,
+          "vbgramg_ha": 82.0,
+          "com_pct": 45.7
         },
         {
           "name": "DUDHA LIYA",
@@ -1351,9 +1286,10 @@
           "sc_pct": 34.4,
           "st_pct": 1.0,
           "pasture": 170.68,
-          "commons": 338.34,
-          "wasteland": 71.86,
-          "com_pct": 14.1
+          "cfrr": 91.27,
+          "commons": 261.95,
+          "vbgramg_ha": 121.6,
+          "com_pct": 10.9
         },
         {
           "name": "GANGDHAR",
@@ -1364,9 +1300,10 @@
           "sc_pct": 19.1,
           "st_pct": 1.5,
           "pasture": 80.44,
-          "commons": 151.83,
-          "wasteland": 30.6,
-          "com_pct": 14.9
+          "cfrr": 54.94,
+          "commons": 135.38,
+          "vbgramg_ha": 69.0,
+          "com_pct": 13.3
         },
         {
           "name": "GUL KHERI",
@@ -1377,9 +1314,10 @@
           "sc_pct": 21.2,
           "st_pct": 2.0,
           "pasture": 8.0,
-          "commons": 29.21,
-          "wasteland": 9.09,
-          "com_pct": 9.6
+          "cfrr": 0.0,
+          "commons": 8.0,
+          "vbgramg_ha": 0.0,
+          "com_pct": 2.6
         },
         {
           "name": "GURADIYA JHALA",
@@ -1390,9 +1328,10 @@
           "sc_pct": 25.0,
           "st_pct": 0.0,
           "pasture": 258.48,
-          "commons": 464.11,
-          "wasteland": 88.13,
-          "com_pct": 15.8
+          "cfrr": 50.72,
+          "commons": 309.2,
+          "vbgramg_ha": 83.8,
+          "com_pct": 10.5
         },
         {
           "name": "HARNAWADA",
@@ -1403,9 +1342,10 @@
           "sc_pct": 24.5,
           "st_pct": 0.0,
           "pasture": 441.38,
-          "commons": 748.78,
-          "wasteland": 131.74,
-          "com_pct": 17.1
+          "cfrr": 1312.32,
+          "commons": 1753.7,
+          "vbgramg_ha": 47.0,
+          "com_pct": 39.9
         },
         {
           "name": "JAGDISHPURA",
@@ -1416,9 +1356,10 @@
           "sc_pct": 24.8,
           "st_pct": 0.0,
           "pasture": 231.78,
-          "commons": 456.02,
-          "wasteland": 96.11,
-          "com_pct": 14.2
+          "cfrr": 375.63,
+          "commons": 607.41,
+          "vbgramg_ha": 122.0,
+          "com_pct": 19.0
         },
         {
           "name": "KACHHNARA",
@@ -1429,9 +1370,10 @@
           "sc_pct": 13.3,
           "st_pct": 0.0,
           "pasture": 313.99,
-          "commons": 520.69,
-          "wasteland": 88.58,
-          "com_pct": 17.6
+          "cfrr": 0.0,
+          "commons": 313.99,
+          "vbgramg_ha": 0.0,
+          "com_pct": 10.6
         },
         {
           "name": "KEETIYA",
@@ -1442,9 +1384,10 @@
           "sc_pct": 39.5,
           "st_pct": 0.0,
           "pasture": 287.55,
-          "commons": 488.02,
-          "wasteland": 85.92,
-          "com_pct": 17.0
+          "cfrr": 229.59,
+          "commons": 517.14,
+          "vbgramg_ha": 0.0,
+          "com_pct": 18.1
         },
         {
           "name": "KELOO KHERA",
@@ -1455,9 +1398,10 @@
           "sc_pct": 36.2,
           "st_pct": 0.0,
           "pasture": 234.4,
-          "commons": 434.02,
-          "wasteland": 85.55,
-          "com_pct": 15.2
+          "cfrr": 67.39,
+          "commons": 301.79,
+          "vbgramg_ha": 0.0,
+          "com_pct": 10.6
         },
         {
           "name": "KOLVI URF MANDI RAJENDERPUR",
@@ -1468,8 +1412,9 @@
           "sc_pct": 0.0,
           "st_pct": 0.0,
           "pasture": 0.0,
+          "cfrr": 0.0,
           "commons": 0.0,
-          "wasteland": 0.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -1481,9 +1426,10 @@
           "sc_pct": 16.8,
           "st_pct": 0.1,
           "pasture": 192.0,
-          "commons": 329.55,
-          "wasteland": 58.95,
-          "com_pct": 16.8
+          "cfrr": 0.0,
+          "commons": 192.0,
+          "vbgramg_ha": 27.6,
+          "com_pct": 9.8
         },
         {
           "name": "KUMATHIYA",
@@ -1494,9 +1440,10 @@
           "sc_pct": 31.3,
           "st_pct": 0.0,
           "pasture": 134.96,
-          "commons": 292.25,
-          "wasteland": 67.41,
-          "com_pct": 13.0
+          "cfrr": 0.0,
+          "commons": 134.96,
+          "vbgramg_ha": 16.5,
+          "com_pct": 6.0
         },
         {
           "name": "KYASRA",
@@ -1507,9 +1454,10 @@
           "sc_pct": 33.6,
           "st_pct": 0.1,
           "pasture": 397.54,
-          "commons": 694.78,
-          "wasteland": 127.4,
-          "com_pct": 16.4
+          "cfrr": 1452.27,
+          "commons": 1849.81,
+          "vbgramg_ha": 112.0,
+          "com_pct": 43.6
         },
         {
           "name": "LUHARIYA",
@@ -1520,9 +1468,10 @@
           "sc_pct": 24.0,
           "st_pct": 0.0,
           "pasture": 311.5,
-          "commons": 538.89,
-          "wasteland": 97.46,
-          "com_pct": 16.6
+          "cfrr": 1045.06,
+          "commons": 1356.56,
+          "vbgramg_ha": 184.0,
+          "com_pct": 41.8
         },
         {
           "name": "MANDIRPUR",
@@ -1533,9 +1482,10 @@
           "sc_pct": 28.5,
           "st_pct": 0.1,
           "pasture": 122.45,
-          "commons": 310.79,
-          "wasteland": 80.72,
-          "com_pct": 11.6
+          "cfrr": 562.17,
+          "commons": 684.62,
+          "vbgramg_ha": 148.0,
+          "com_pct": 25.4
         },
         {
           "name": "PARA PEEPLI",
@@ -1546,9 +1496,10 @@
           "sc_pct": 24.9,
           "st_pct": 0.4,
           "pasture": 161.75,
-          "commons": 367.82,
-          "wasteland": 88.32,
-          "com_pct": 12.5
+          "cfrr": 261.08,
+          "commons": 422.83,
+          "vbgramg_ha": 81.45,
+          "com_pct": 14.4
         },
         {
           "name": "PARALIYA",
@@ -1559,9 +1510,10 @@
           "sc_pct": 24.6,
           "st_pct": 0.0,
           "pasture": 268.53,
-          "commons": 438.8,
-          "wasteland": 72.97,
-          "com_pct": 18.0
+          "cfrr": 20.88,
+          "commons": 289.41,
+          "vbgramg_ha": 4.08,
+          "com_pct": 11.9
         },
         {
           "name": "PEEPLYA KHURD",
@@ -1572,9 +1524,10 @@
           "sc_pct": 24.7,
           "st_pct": 0.0,
           "pasture": 328.89,
-          "commons": 544.68,
-          "wasteland": 92.49,
-          "com_pct": 17.7
+          "cfrr": 376.57,
+          "commons": 705.46,
+          "vbgramg_ha": 38.0,
+          "com_pct": 22.9
         },
         {
           "name": "RAMPURA",
@@ -1585,9 +1538,10 @@
           "sc_pct": 31.1,
           "st_pct": 0.0,
           "pasture": 248.14,
-          "commons": 399.81,
-          "wasteland": 65.01,
-          "com_pct": 18.5
+          "cfrr": 0.0,
+          "commons": 248.14,
+          "vbgramg_ha": 23.0,
+          "com_pct": 11.5
         },
         {
           "name": "RANAYRA",
@@ -1598,9 +1552,10 @@
           "sc_pct": 24.6,
           "st_pct": 0.0,
           "pasture": 193.0,
-          "commons": 392.15,
-          "wasteland": 85.35,
-          "com_pct": 13.8
+          "cfrr": 187.0,
+          "commons": 380.0,
+          "vbgramg_ha": 5.0,
+          "com_pct": 13.4
         },
         {
           "name": "RAWAN GURARI",
@@ -1611,9 +1566,10 @@
           "sc_pct": 26.5,
           "st_pct": 1.3,
           "pasture": 341.14,
-          "commons": 571.14,
-          "wasteland": 98.57,
-          "com_pct": 17.4
+          "cfrr": 459.76,
+          "commons": 800.9,
+          "vbgramg_ha": 0.0,
+          "com_pct": 24.4
         },
         {
           "name": "ROJHANA",
@@ -1624,9 +1580,10 @@
           "sc_pct": 19.7,
           "st_pct": 0.1,
           "pasture": 291.74,
-          "commons": 497.59,
-          "wasteland": 88.22,
-          "com_pct": 16.9
+          "cfrr": 70.62,
+          "commons": 362.36,
+          "vbgramg_ha": 158.0,
+          "com_pct": 12.3
         },
         {
           "name": "SUNARI",
@@ -1637,9 +1594,10 @@
           "sc_pct": 22.8,
           "st_pct": 0.0,
           "pasture": 324.9,
-          "commons": 500.59,
-          "wasteland": 75.31,
-          "com_pct": 19.9
+          "cfrr": 0.0,
+          "commons": 324.9,
+          "vbgramg_ha": 23.0,
+          "com_pct": 12.9
         },
         {
           "name": "TALAWALI",
@@ -1650,9 +1608,10 @@
           "sc_pct": 19.8,
           "st_pct": 0.6,
           "pasture": 279.32,
-          "commons": 495.38,
-          "wasteland": 92.59,
-          "com_pct": 16.0
+          "cfrr": 98.46,
+          "commons": 377.78,
+          "vbgramg_ha": 79.0,
+          "com_pct": 12.2
         },
         {
           "name": "TISAI",
@@ -1663,9 +1622,10 @@
           "sc_pct": 34.2,
           "st_pct": 0.0,
           "pasture": 111.01,
-          "commons": 319.85,
-          "wasteland": 89.51,
-          "com_pct": 10.7
+          "cfrr": 355.44,
+          "commons": 466.45,
+          "vbgramg_ha": 0.0,
+          "com_pct": 15.6
         },
         {
           "name": "UNHEL",
@@ -1676,25 +1636,12 @@
           "sc_pct": 17.9,
           "st_pct": 0.4,
           "pasture": 62.64,
-          "commons": 257.32,
-          "wasteland": 83.44,
-          "com_pct": 9.3
+          "cfrr": 138.45,
+          "commons": 201.09,
+          "vbgramg_ha": 8.49,
+          "com_pct": 7.2
         }
-      ],
-      "interventions": {
-        "total_plots": 279,
-        "ongoing_plots": 27,
-        "completed_plots": 252,
-        "new_plots": 0,
-        "sanctioned_amount_lakhs": 4186.84,
-        "utilized_amount_lakhs": 3306.11,
-        "utilization_rate_pct": 79.0,
-        "cvs_formed": 252,
-        "water_structures": 2,
-        "arcp_ha": 717.1,
-        "acp_ha": 4781.7,
-        "total_protected_ha": 5498.8
-      }
+      ]
     },
     {
       "name": "JHALRAPATAN",
@@ -1710,44 +1657,21 @@
       "sc_pct": 17.2,
       "st_pop": 23319,
       "st_pct": 25.96,
-      "vulnerable_pct": 43.16,
-      "forest": 0.0,
-      "barren": 1782.35,
+      "vulnerable_pct": 43.17,
       "pasture": 2139.11,
-      "cult_waste": 1336.8,
-      "fallow": 3119.11,
-      "curr_fallow": 2227.98,
-      "total_fallow": 5347.09,
-      "common_land": 5258.26,
-      "com_pct": 11.8,
+      "cfrr": 12138.66,
+      "common_land": 14277.77,
+      "com_pct": 32.04,
       "pasture_pct": 4.8,
-      "fallow_pct": 12.0,
-      "com_per_hh": 0.29,
-      "restoration_potential": 3119.15,
-      "pop_per_ha_pasture": 42.0,
-      "livestock": {
-        "tehsil": "JHALRAPATAN",
-        "est_livestock": 121249,
-        "est_cattle": 42437,
-        "est_goat": 38800,
-        "est_sheep": 14550,
-        "est_camel": 3637
-      },
-      "grazing_pressure": 56.7,
-      "mgnrega": {
-        "gps": 27,
-        "villages": 154,
-        "job_cards": 13090,
-        "active_job_cards": 8727,
-        "total_workers": 43111,
-        "active_workers": 21555
-      },
-      "active_worker_pct": 50.0,
-      "decision_flags": [
-        "CRITICAL_PASTURE_DEFICIT",
-        "HIGH_RESTORATION_POTENTIAL",
-        "HIGH_MARGINALIZED_POP"
-      ],
+      "com_per_hh": 0.79,
+      "vbgramg_ha": 482.85,
+      "vbgramg_villages": 77,
+      "cvs_villages": 137,
+      "demarcated_villages": 1,
+      "bylaws_villages": 7,
+      "encroach_ha": 0.0,
+      "pasture_recog_ha": 980.78,
+      "plots_count": 144,
       "panchayats": [
         {
           "name": "ASNAWAR",
@@ -1758,9 +1682,10 @@
           "sc_pct": 19.9,
           "st_pct": 33.0,
           "pasture": 45.32,
-          "commons": 121.13,
-          "wasteland": 32.49,
-          "com_pct": 11.2
+          "cfrr": 63.68,
+          "commons": 109.0,
+          "vbgramg_ha": 1.0,
+          "com_pct": 10.1
         },
         {
           "name": "BAORI KHERA KALAN (NEW)",
@@ -1771,9 +1696,10 @@
           "sc_pct": 37.4,
           "st_pct": 6.6,
           "pasture": 64.81,
-          "commons": 133.85,
-          "wasteland": 29.59,
-          "com_pct": 13.6
+          "cfrr": 0.0,
+          "commons": 64.81,
+          "vbgramg_ha": 1.0,
+          "com_pct": 6.6
         },
         {
           "name": "BARODIYA",
@@ -1784,9 +1710,10 @@
           "sc_pct": 21.1,
           "st_pct": 15.4,
           "pasture": 66.82,
-          "commons": 168.87,
-          "wasteland": 43.74,
-          "com_pct": 11.6
+          "cfrr": 283.35,
+          "commons": 350.17,
+          "vbgramg_ha": 12.0,
+          "com_pct": 24.0
         },
         {
           "name": "BORDA",
@@ -1797,9 +1724,10 @@
           "sc_pct": 17.8,
           "st_pct": 34.1,
           "pasture": 158.04,
-          "commons": 287.81,
-          "wasteland": 55.61,
-          "com_pct": 15.5
+          "cfrr": 74.06,
+          "commons": 232.1,
+          "vbgramg_ha": 21.0,
+          "com_pct": 12.5
         },
         {
           "name": "DONDA",
@@ -1810,9 +1738,10 @@
           "sc_pct": 34.1,
           "st_pct": 9.5,
           "pasture": 179.96,
-          "commons": 326.45,
-          "wasteland": 62.78,
-          "com_pct": 15.6
+          "cfrr": 3.33,
+          "commons": 183.29,
+          "vbgramg_ha": 15.0,
+          "com_pct": 8.8
         },
         {
           "name": "DOONGAR GAON",
@@ -1823,9 +1752,10 @@
           "sc_pct": 11.3,
           "st_pct": 27.7,
           "pasture": 99.5,
-          "commons": 229.99,
-          "wasteland": 55.93,
-          "com_pct": 12.3
+          "cfrr": 809.44,
+          "commons": 908.94,
+          "vbgramg_ha": 54.51,
+          "com_pct": 48.8
         },
         {
           "name": "DURGPURA",
@@ -1836,9 +1766,10 @@
           "sc_pct": 19.2,
           "st_pct": 41.7,
           "pasture": 29.22,
-          "commons": 183.84,
-          "wasteland": 66.27,
-          "com_pct": 8.3
+          "cfrr": 747.29,
+          "commons": 776.51,
+          "vbgramg_ha": 25.29,
+          "com_pct": 35.2
         },
         {
           "name": "GIRDHARPURA",
@@ -1849,9 +1780,10 @@
           "sc_pct": 20.8,
           "st_pct": 41.5,
           "pasture": 60.49,
-          "commons": 144.58,
-          "wasteland": 36.04,
-          "com_pct": 12.0
+          "cfrr": 331.86,
+          "commons": 392.35,
+          "vbgramg_ha": 0.0,
+          "com_pct": 32.7
         },
         {
           "name": "GOVINDPURA",
@@ -1862,9 +1794,10 @@
           "sc_pct": 8.5,
           "st_pct": 2.8,
           "pasture": 85.75,
-          "commons": 110.44,
-          "wasteland": 10.58,
-          "com_pct": 31.3
+          "cfrr": 0.0,
+          "commons": 85.75,
+          "vbgramg_ha": 47.0,
+          "com_pct": 24.3
         },
         {
           "name": "IKTASA",
@@ -1875,9 +1808,10 @@
           "sc_pct": 16.2,
           "st_pct": 23.3,
           "pasture": 52.11,
-          "commons": 92.87,
-          "wasteland": 17.47,
-          "com_pct": 16.0
+          "cfrr": 13.67,
+          "commons": 65.78,
+          "vbgramg_ha": 0.0,
+          "com_pct": 11.3
         },
         {
           "name": "JHOOMKI",
@@ -1888,9 +1822,10 @@
           "sc_pct": 20.6,
           "st_pct": 9.0,
           "pasture": 92.45,
-          "commons": 204.28,
-          "wasteland": 47.93,
-          "com_pct": 12.8
+          "cfrr": 145.94,
+          "commons": 238.39,
+          "vbgramg_ha": 6.0,
+          "com_pct": 14.9
         },
         {
           "name": "JOONA KHERA",
@@ -1901,9 +1836,10 @@
           "sc_pct": 14.0,
           "st_pct": 26.8,
           "pasture": 52.4,
-          "commons": 226.88,
-          "wasteland": 74.78,
-          "com_pct": 9.1
+          "cfrr": 1629.52,
+          "commons": 1681.92,
+          "vbgramg_ha": 7.0,
+          "com_pct": 67.5
         },
         {
           "name": "KALMANDI KALAN",
@@ -1914,9 +1850,10 @@
           "sc_pct": 4.6,
           "st_pct": 14.1,
           "pasture": 97.6,
-          "commons": 309.59,
-          "wasteland": 90.85,
-          "com_pct": 10.2
+          "cfrr": 978.05,
+          "commons": 1075.65,
+          "vbgramg_ha": 32.0,
+          "com_pct": 35.5
         },
         {
           "name": "KANWARA",
@@ -1927,9 +1864,10 @@
           "sc_pct": 21.3,
           "st_pct": 2.4,
           "pasture": 0.0,
-          "commons": 29.21,
-          "wasteland": 12.52,
-          "com_pct": 7.0
+          "cfrr": 0.0,
+          "commons": 0.0,
+          "vbgramg_ha": 5.0,
+          "com_pct": 0.0
         },
         {
           "name": "KHANPURIYA",
@@ -1940,9 +1878,10 @@
           "sc_pct": 41.6,
           "st_pct": 6.6,
           "pasture": 48.46,
-          "commons": 96.66,
-          "wasteland": 20.66,
-          "com_pct": 14.0
+          "cfrr": 0.0,
+          "commons": 48.46,
+          "vbgramg_ha": 1.0,
+          "com_pct": 7.0
         },
         {
           "name": "KHERLA",
@@ -1953,9 +1892,10 @@
           "sc_pct": 14.4,
           "st_pct": 4.6,
           "pasture": 174.33,
-          "commons": 292.73,
-          "wasteland": 50.75,
-          "com_pct": 17.3
+          "cfrr": 445.65,
+          "commons": 619.98,
+          "vbgramg_ha": 73.06,
+          "com_pct": 36.7
         },
         {
           "name": "KOLANA",
@@ -1966,9 +1906,10 @@
           "sc_pct": 3.7,
           "st_pct": 59.1,
           "pasture": 104.88,
-          "commons": 243.0,
-          "wasteland": 59.19,
-          "com_pct": 12.3
+          "cfrr": 895.42,
+          "commons": 1000.3,
+          "vbgramg_ha": 14.0,
+          "com_pct": 50.7
         },
         {
           "name": "LAWASAL",
@@ -1979,9 +1920,10 @@
           "sc_pct": 8.0,
           "st_pct": 26.3,
           "pasture": 58.31,
-          "commons": 206.85,
-          "wasteland": 63.65,
-          "com_pct": 9.7
+          "cfrr": 1274.94,
+          "commons": 1333.25,
+          "vbgramg_ha": 28.5,
+          "com_pct": 62.8
         },
         {
           "name": "MANDAWAR",
@@ -1992,9 +1934,10 @@
           "sc_pct": 2.2,
           "st_pct": 68.0,
           "pasture": 17.47,
-          "commons": 76.52,
-          "wasteland": 25.31,
-          "com_pct": 9.1
+          "cfrr": 525.33,
+          "commons": 542.8,
+          "vbgramg_ha": 25.0,
+          "com_pct": 64.3
         },
         {
           "name": "PANWASA",
@@ -2005,9 +1948,10 @@
           "sc_pct": 6.5,
           "st_pct": 76.5,
           "pasture": 68.62,
-          "commons": 181.81,
-          "wasteland": 48.51,
-          "com_pct": 11.2
+          "cfrr": 376.99,
+          "commons": 445.61,
+          "vbgramg_ha": 0.0,
+          "com_pct": 27.6
         },
         {
           "name": "PIPLOD",
@@ -2018,8 +1962,9 @@
           "sc_pct": 18.7,
           "st_pct": 16.0,
           "pasture": 187.18,
-          "commons": 426.39,
-          "wasteland": 102.52,
+          "cfrr": 239.89,
+          "commons": 427.07,
+          "vbgramg_ha": 45.0,
           "com_pct": 12.5
         },
         {
@@ -2031,9 +1976,10 @@
           "sc_pct": 14.8,
           "st_pct": 61.6,
           "pasture": 56.57,
-          "commons": 260.99,
-          "wasteland": 87.61,
-          "com_pct": 8.9
+          "cfrr": 879.21,
+          "commons": 935.78,
+          "vbgramg_ha": 15.15,
+          "com_pct": 32.0
         },
         {
           "name": "RUNDLAO",
@@ -2044,9 +1990,10 @@
           "sc_pct": 3.8,
           "st_pct": 12.7,
           "pasture": 55.84,
-          "commons": 106.69,
-          "wasteland": 21.79,
-          "com_pct": 14.7
+          "cfrr": 0.0,
+          "commons": 55.84,
+          "vbgramg_ha": 5.0,
+          "com_pct": 7.7
         },
         {
           "name": "SALRIYA",
@@ -2057,9 +2004,10 @@
           "sc_pct": 0.5,
           "st_pct": 0.0,
           "pasture": 18.34,
-          "commons": 54.22,
-          "wasteland": 15.38,
-          "com_pct": 10.6
+          "cfrr": 226.29,
+          "commons": 244.63,
+          "vbgramg_ha": 5.0,
+          "com_pct": 47.7
         },
         {
           "name": "SAMRAI",
@@ -2070,9 +2018,10 @@
           "sc_pct": 19.8,
           "st_pct": 10.4,
           "pasture": 78.65,
-          "commons": 240.9,
-          "wasteland": 69.54,
-          "com_pct": 10.4
+          "cfrr": 273.78,
+          "commons": 352.43,
+          "vbgramg_ha": 22.0,
+          "com_pct": 15.2
         },
         {
           "name": "TANDI SOHAN PURA",
@@ -2083,9 +2032,10 @@
           "sc_pct": 18.9,
           "st_pct": 26.6,
           "pasture": 62.95,
-          "commons": 252.19,
-          "wasteland": 81.11,
-          "com_pct": 9.3
+          "cfrr": 1833.99,
+          "commons": 1896.94,
+          "vbgramg_ha": 0.0,
+          "com_pct": 70.2
         },
         {
           "name": "TEETARWASA",
@@ -2096,25 +2046,12 @@
           "sc_pct": 30.3,
           "st_pct": 12.7,
           "pasture": 123.04,
-          "commons": 249.52,
-          "wasteland": 54.2,
-          "com_pct": 13.8
+          "cfrr": 86.98,
+          "commons": 210.02,
+          "vbgramg_ha": 22.33,
+          "com_pct": 11.6
         }
-      ],
-      "interventions": {
-        "total_plots": 144,
-        "ongoing_plots": 10,
-        "completed_plots": 134,
-        "new_plots": 0,
-        "sanctioned_amount_lakhs": 1297.47,
-        "utilized_amount_lakhs": 1043.85,
-        "utilization_rate_pct": 80.5,
-        "cvs_formed": 134,
-        "water_structures": 0,
-        "arcp_ha": 215.8,
-        "acp_ha": 1437.6,
-        "total_protected_ha": 1653.4
-      }
+      ]
     },
     {
       "name": "KHANPUR",
@@ -2131,43 +2068,20 @@
       "st_pop": 27741,
       "st_pct": 18.38,
       "vulnerable_pct": 37.75,
-      "forest": 0.0,
-      "barren": 3767.06,
       "pasture": 4887.14,
-      "cult_waste": 2825.19,
-      "fallow": 6592.26,
-      "curr_fallow": 4708.84,
-      "total_fallow": 11301.1,
-      "common_land": 11479.39,
-      "com_pct": 12.19,
+      "cfrr": 25306.1,
+      "common_land": 30193.24,
+      "com_pct": 32.06,
       "pasture_pct": 5.19,
-      "fallow_pct": 12.0,
-      "com_per_hh": 0.4,
-      "restoration_potential": 6592.25,
-      "pop_per_ha_pasture": 30.9,
-      "livestock": {
-        "tehsil": "KHANPUR",
-        "est_livestock": 203754,
-        "est_cattle": 71314,
-        "est_goat": 65201,
-        "est_sheep": 24450,
-        "est_camel": 6113
-      },
-      "grazing_pressure": 41.7,
-      "mgnrega": {
-        "gps": 39,
-        "villages": 219,
-        "job_cards": 20696,
-        "active_job_cards": 13797,
-        "total_workers": 72446,
-        "active_workers": 36223
-      },
-      "active_worker_pct": 50.0,
-      "decision_flags": [
-        "CRITICAL_PASTURE_DEFICIT",
-        "HIGH_RESTORATION_POTENTIAL",
-        "HIGH_MARGINALIZED_POP"
-      ],
+      "com_per_hh": 1.05,
+      "vbgramg_ha": 181.84,
+      "vbgramg_villages": 39,
+      "cvs_villages": 72,
+      "demarcated_villages": 3,
+      "bylaws_villages": 53,
+      "encroach_ha": 0.0,
+      "pasture_recog_ha": 1271.97,
+      "plots_count": 76,
       "panchayats": [
         {
           "name": "AKAWAD KHURD",
@@ -2178,9 +2092,10 @@
           "sc_pct": 14.6,
           "st_pct": 20.7,
           "pasture": 129.89,
-          "commons": 337.52,
-          "wasteland": 88.98,
-          "com_pct": 11.4
+          "cfrr": 1322.84,
+          "commons": 1452.73,
+          "vbgramg_ha": 0.0,
+          "com_pct": 49.0
         },
         {
           "name": "AKODIYA",
@@ -2191,9 +2106,10 @@
           "sc_pct": 16.2,
           "st_pct": 0.9,
           "pasture": 81.64,
-          "commons": 168.23,
-          "wasteland": 37.11,
-          "com_pct": 13.6
+          "cfrr": 32.16,
+          "commons": 113.8,
+          "vbgramg_ha": 0.97,
+          "com_pct": 9.2
         },
         {
           "name": "BAGHER",
@@ -2204,9 +2120,10 @@
           "sc_pct": 15.4,
           "st_pct": 21.1,
           "pasture": 125.16,
-          "commons": 404.27,
-          "wasteland": 119.62,
-          "com_pct": 10.1
+          "cfrr": 1693.36,
+          "commons": 1818.52,
+          "vbgramg_ha": 10.33,
+          "com_pct": 45.6
         },
         {
           "name": "BAISAR",
@@ -2217,9 +2134,10 @@
           "sc_pct": 30.1,
           "st_pct": 5.4,
           "pasture": 89.0,
-          "commons": 216.12,
-          "wasteland": 54.48,
-          "com_pct": 11.9
+          "cfrr": 392.0,
+          "commons": 481.0,
+          "vbgramg_ha": 18.0,
+          "com_pct": 26.5
         },
         {
           "name": "BAREDA",
@@ -2230,9 +2148,10 @@
           "sc_pct": 9.8,
           "st_pct": 42.4,
           "pasture": 239.89,
-          "commons": 470.03,
-          "wasteland": 98.63,
-          "com_pct": 14.3
+          "cfrr": 929.13,
+          "commons": 1169.02,
+          "vbgramg_ha": 0.0,
+          "com_pct": 35.6
         },
         {
           "name": "BHAGWAN PURA",
@@ -2243,9 +2162,10 @@
           "sc_pct": 18.8,
           "st_pct": 23.0,
           "pasture": 374.67,
-          "commons": 617.88,
-          "wasteland": 104.23,
-          "com_pct": 17.8
+          "cfrr": 16.56,
+          "commons": 391.23,
+          "vbgramg_ha": 0.0,
+          "com_pct": 11.3
         },
         {
           "name": "BISHAN KHERI",
@@ -2256,9 +2176,10 @@
           "sc_pct": 38.2,
           "st_pct": 3.8,
           "pasture": 172.9,
-          "commons": 349.25,
-          "wasteland": 75.58,
-          "com_pct": 13.9
+          "cfrr": 657.94,
+          "commons": 830.84,
+          "vbgramg_ha": 6.83,
+          "com_pct": 33.0
         },
         {
           "name": "DAHI KHERA",
@@ -2269,9 +2190,10 @@
           "sc_pct": 9.9,
           "st_pct": 59.2,
           "pasture": 78.01,
-          "commons": 152.43,
-          "wasteland": 31.89,
-          "com_pct": 14.3
+          "cfrr": 94.74,
+          "commons": 172.75,
+          "vbgramg_ha": 15.0,
+          "com_pct": 16.3
         },
         {
           "name": "DHANODA KALAN",
@@ -2282,9 +2204,10 @@
           "sc_pct": 18.8,
           "st_pct": 8.4,
           "pasture": 67.81,
-          "commons": 263.66,
-          "wasteland": 83.93,
-          "com_pct": 9.4
+          "cfrr": 1390.26,
+          "commons": 1458.07,
+          "vbgramg_ha": 0.0,
+          "com_pct": 52.1
         },
         {
           "name": "DOBRA",
@@ -2295,9 +2218,10 @@
           "sc_pct": 17.4,
           "st_pct": 22.4,
           "pasture": 99.92,
-          "commons": 211.36,
-          "wasteland": 47.76,
-          "com_pct": 13.3
+          "cfrr": 484.71,
+          "commons": 584.63,
+          "vbgramg_ha": 0.0,
+          "com_pct": 36.7
         },
         {
           "name": "GADARWARA DOONDI",
@@ -2308,9 +2232,10 @@
           "sc_pct": 28.9,
           "st_pct": 7.5,
           "pasture": 115.28,
-          "commons": 229.63,
-          "wasteland": 49.0,
-          "com_pct": 14.1
+          "cfrr": 0.0,
+          "commons": 115.28,
+          "vbgramg_ha": 0.0,
+          "com_pct": 7.1
         },
         {
           "name": "GADARWARA NOORJI",
@@ -2321,9 +2246,10 @@
           "sc_pct": 13.8,
           "st_pct": 35.8,
           "pasture": 220.88,
-          "commons": 409.02,
-          "wasteland": 80.63,
-          "com_pct": 15.2
+          "cfrr": 19.35,
+          "commons": 240.23,
+          "vbgramg_ha": 39.0,
+          "com_pct": 8.9
         },
         {
           "name": "GOLANA",
@@ -2334,9 +2260,10 @@
           "sc_pct": 28.1,
           "st_pct": 8.1,
           "pasture": 222.32,
-          "commons": 411.4,
-          "wasteland": 81.04,
-          "com_pct": 15.2
+          "cfrr": 275.8,
+          "commons": 498.12,
+          "vbgramg_ha": 6.0,
+          "com_pct": 18.4
         },
         {
           "name": "HARIGARH",
@@ -2347,9 +2274,10 @@
           "sc_pct": 1.5,
           "st_pct": 73.1,
           "pasture": 22.16,
-          "commons": 38.1,
-          "wasteland": 6.83,
-          "com_pct": 16.7
+          "cfrr": 0.0,
+          "commons": 22.16,
+          "vbgramg_ha": 16.0,
+          "com_pct": 9.7
         },
         {
           "name": "JARGA",
@@ -2360,9 +2288,10 @@
           "sc_pct": 20.2,
           "st_pct": 30.1,
           "pasture": 121.56,
-          "commons": 257.86,
-          "wasteland": 58.41,
-          "com_pct": 13.2
+          "cfrr": 66.29,
+          "commons": 187.85,
+          "vbgramg_ha": 0.0,
+          "com_pct": 9.6
         },
         {
           "name": "JOLPA",
@@ -2373,9 +2302,10 @@
           "sc_pct": 33.1,
           "st_pct": 24.6,
           "pasture": 146.75,
-          "commons": 392.16,
-          "wasteland": 105.17,
-          "com_pct": 11.2
+          "cfrr": 0.0,
+          "commons": 146.75,
+          "vbgramg_ha": 7.5,
+          "com_pct": 4.2
         },
         {
           "name": "KANWALDA",
@@ -2386,9 +2316,10 @@
           "sc_pct": 18.0,
           "st_pct": 14.3,
           "pasture": 144.7,
-          "commons": 250.88,
-          "wasteland": 45.51,
-          "com_pct": 16.5
+          "cfrr": 31.02,
+          "commons": 175.72,
+          "vbgramg_ha": 2.0,
+          "com_pct": 11.6
         },
         {
           "name": "KANWARPURA MANDWALAN",
@@ -2399,9 +2330,10 @@
           "sc_pct": 17.1,
           "st_pct": 13.4,
           "pasture": 101.81,
-          "commons": 289.3,
-          "wasteland": 80.35,
-          "com_pct": 10.8
+          "cfrr": 947.87,
+          "commons": 1049.68,
+          "vbgramg_ha": 1.5,
+          "com_pct": 39.2
         },
         {
           "name": "KARANWAS",
@@ -2412,9 +2344,10 @@
           "sc_pct": 17.2,
           "st_pct": 33.5,
           "pasture": 33.45,
-          "commons": 289.98,
-          "wasteland": 109.94,
-          "com_pct": 7.9
+          "cfrr": 1288.35,
+          "commons": 1321.8,
+          "vbgramg_ha": 0.0,
+          "com_pct": 36.1
         },
         {
           "name": "KHANDI",
@@ -2425,9 +2358,10 @@
           "sc_pct": 21.5,
           "st_pct": 25.5,
           "pasture": 95.02,
-          "commons": 236.34,
-          "wasteland": 60.56,
-          "com_pct": 11.7
+          "cfrr": 330.19,
+          "commons": 425.21,
+          "vbgramg_ha": 0.0,
+          "com_pct": 21.1
         },
         {
           "name": "KHANPUR",
@@ -2438,9 +2372,10 @@
           "sc_pct": 9.7,
           "st_pct": 48.1,
           "pasture": 130.88,
-          "commons": 199.75,
-          "wasteland": 29.52,
-          "com_pct": 20.3
+          "cfrr": 234.95,
+          "commons": 365.83,
+          "vbgramg_ha": 2.0,
+          "com_pct": 37.2
         },
         {
           "name": "KHANPUR (CT)",
@@ -2451,8 +2386,9 @@
           "sc_pct": 0.0,
           "st_pct": 0.0,
           "pasture": 0.0,
+          "cfrr": 0.0,
           "commons": 0.0,
-          "wasteland": 0.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -2464,9 +2400,10 @@
           "sc_pct": 8.7,
           "st_pct": 31.8,
           "pasture": 29.85,
-          "commons": 116.28,
-          "wasteland": 37.04,
-          "com_pct": 9.4
+          "cfrr": 0.0,
+          "commons": 29.85,
+          "vbgramg_ha": 5.66,
+          "com_pct": 2.4
         },
         {
           "name": "LAYPHAL",
@@ -2477,9 +2414,10 @@
           "sc_pct": 20.5,
           "st_pct": 16.4,
           "pasture": 105.01,
-          "commons": 394.09,
-          "wasteland": 123.89,
-          "com_pct": 9.5
+          "cfrr": 2720.04,
+          "commons": 2825.05,
+          "vbgramg_ha": 3.0,
+          "com_pct": 68.4
         },
         {
           "name": "LEEMI",
@@ -2490,9 +2428,10 @@
           "sc_pct": 19.3,
           "st_pct": 26.0,
           "pasture": 490.22,
-          "commons": 802.97,
-          "wasteland": 134.05,
-          "com_pct": 18.0
+          "cfrr": 701.75,
+          "commons": 1191.97,
+          "vbgramg_ha": 0.0,
+          "com_pct": 26.7
         },
         {
           "name": "MALAN WASA",
@@ -2503,9 +2442,10 @@
           "sc_pct": 18.6,
           "st_pct": 9.4,
           "pasture": 142.84,
-          "commons": 342.86,
-          "wasteland": 85.72,
-          "com_pct": 12.0
+          "cfrr": 467.76,
+          "commons": 610.6,
+          "vbgramg_ha": 0.0,
+          "com_pct": 21.4
         },
         {
           "name": "MARAITA",
@@ -2516,9 +2456,10 @@
           "sc_pct": 21.3,
           "st_pct": 15.9,
           "pasture": 111.52,
-          "commons": 218.26,
-          "wasteland": 45.73,
-          "com_pct": 14.3
+          "cfrr": 6.02,
+          "commons": 117.54,
+          "vbgramg_ha": 0.0,
+          "com_pct": 7.7
         },
         {
           "name": "MAUBORDA",
@@ -2529,9 +2470,10 @@
           "sc_pct": 15.7,
           "st_pct": 26.1,
           "pasture": 119.71,
-          "commons": 320.5,
-          "wasteland": 86.05,
-          "com_pct": 11.2
+          "cfrr": 1275.96,
+          "commons": 1395.67,
+          "vbgramg_ha": 0.0,
+          "com_pct": 48.7
         },
         {
           "name": "MOONDLA",
@@ -2542,9 +2484,10 @@
           "sc_pct": 17.4,
           "st_pct": 25.5,
           "pasture": 189.16,
-          "commons": 395.15,
-          "wasteland": 88.27,
-          "com_pct": 13.4
+          "cfrr": 353.82,
+          "commons": 542.98,
+          "vbgramg_ha": 2.0,
+          "com_pct": 18.5
         },
         {
           "name": "MORI",
@@ -2555,9 +2498,10 @@
           "sc_pct": 22.2,
           "st_pct": 16.1,
           "pasture": 146.3,
-          "commons": 280.11,
-          "wasteland": 57.35,
-          "com_pct": 14.7
+          "cfrr": 834.74,
+          "commons": 981.04,
+          "vbgramg_ha": 0.0,
+          "com_pct": 51.3
         },
         {
           "name": "PAKHRANA",
@@ -2568,9 +2512,10 @@
           "sc_pct": 15.9,
           "st_pct": 11.9,
           "pasture": 151.77,
-          "commons": 301.57,
-          "wasteland": 64.2,
-          "com_pct": 14.1
+          "cfrr": 0.0,
+          "commons": 151.77,
+          "vbgramg_ha": 0.0,
+          "com_pct": 7.1
         },
         {
           "name": "PANWAR",
@@ -2581,9 +2526,10 @@
           "sc_pct": 19.0,
           "st_pct": 0.8,
           "pasture": 82.33,
-          "commons": 211.04,
-          "wasteland": 55.16,
-          "com_pct": 11.5
+          "cfrr": 0.0,
+          "commons": 82.33,
+          "vbgramg_ha": 0.0,
+          "com_pct": 4.5
         },
         {
           "name": "PIPLAJ",
@@ -2594,9 +2540,10 @@
           "sc_pct": 15.6,
           "st_pct": 2.0,
           "pasture": 14.0,
-          "commons": 341.0,
-          "wasteland": 140.14,
-          "com_pct": 7.3
+          "cfrr": 2673.31,
+          "commons": 2687.31,
+          "vbgramg_ha": 0.0,
+          "com_pct": 57.5
         },
         {
           "name": "SARKHANDIYA",
@@ -2607,9 +2554,10 @@
           "sc_pct": 25.2,
           "st_pct": 27.4,
           "pasture": 105.35,
-          "commons": 216.0,
-          "wasteland": 47.42,
-          "com_pct": 13.7
+          "cfrr": 73.22,
+          "commons": 178.57,
+          "vbgramg_ha": 2.0,
+          "com_pct": 11.3
         },
         {
           "name": "SAROLA KALAN",
@@ -2620,9 +2568,10 @@
           "sc_pct": 15.7,
           "st_pct": 3.8,
           "pasture": 17.85,
-          "commons": 129.62,
-          "wasteland": 47.9,
-          "com_pct": 8.1
+          "cfrr": 0.0,
+          "commons": 17.85,
+          "vbgramg_ha": 0.0,
+          "com_pct": 1.1
         },
         {
           "name": "SHYONAGAR DHANI",
@@ -2633,9 +2582,10 @@
           "sc_pct": 18.4,
           "st_pct": 27.5,
           "pasture": 69.03,
-          "commons": 197.74,
-          "wasteland": 55.16,
-          "com_pct": 10.8
+          "cfrr": 766.31,
+          "commons": 835.34,
+          "vbgramg_ha": 0.0,
+          "com_pct": 45.4
         },
         {
           "name": "SOJ PUR",
@@ -2646,9 +2596,10 @@
           "sc_pct": 30.3,
           "st_pct": 4.4,
           "pasture": 182.88,
-          "commons": 311.75,
-          "wasteland": 55.23,
-          "com_pct": 16.9
+          "cfrr": 547.97,
+          "commons": 730.85,
+          "vbgramg_ha": 40.0,
+          "com_pct": 39.7
         },
         {
           "name": "SOOMAR",
@@ -2659,9 +2610,10 @@
           "sc_pct": 20.2,
           "st_pct": 11.5,
           "pasture": 66.85,
-          "commons": 234.86,
-          "wasteland": 72.0,
-          "com_pct": 9.8
+          "cfrr": 808.69,
+          "commons": 875.54,
+          "vbgramg_ha": 4.05,
+          "com_pct": 36.5
         },
         {
           "name": "TARAJ",
@@ -2672,25 +2624,12 @@
           "sc_pct": 16.3,
           "st_pct": 13.8,
           "pasture": 48.77,
-          "commons": 470.42,
-          "wasteland": 180.71,
-          "com_pct": 7.8
+          "cfrr": 3868.99,
+          "commons": 3917.76,
+          "vbgramg_ha": 0.0,
+          "com_pct": 65.0
         }
-      ],
-      "interventions": {
-        "total_plots": 138,
-        "ongoing_plots": 66,
-        "completed_plots": 72,
-        "new_plots": 0,
-        "sanctioned_amount_lakhs": 3257.41,
-        "utilized_amount_lakhs": 2623.14,
-        "utilization_rate_pct": 80.5,
-        "cvs_formed": 72,
-        "water_structures": 1,
-        "arcp_ha": 563.6,
-        "acp_ha": 3759.7,
-        "total_protected_ha": 4323.3
-      }
+      ]
     },
     {
       "name": "MANOHAR THANA",
@@ -2707,43 +2646,20 @@
       "st_pop": 39478,
       "st_pct": 22.96,
       "vulnerable_pct": 31.47,
-      "forest": 0.0,
-      "barren": 3220.7,
       "pasture": 8642.68,
-      "cult_waste": 2415.58,
-      "fallow": 5636.41,
-      "curr_fallow": 4026.1,
-      "total_fallow": 9662.51,
-      "common_land": 14278.96,
-      "com_pct": 17.73,
+      "cfrr": 19050.08,
+      "common_land": 27692.76,
+      "com_pct": 34.39,
       "pasture_pct": 10.73,
-      "fallow_pct": 12.0,
-      "com_per_hh": 0.4,
-      "restoration_potential": 5636.28,
-      "pop_per_ha_pasture": 19.9,
-      "livestock": {
-        "tehsil": "MANOHAR THANA",
-        "est_livestock": 232130,
-        "est_cattle": 81246,
-        "est_goat": 74282,
-        "est_sheep": 27856,
-        "est_camel": 6964
-      },
-      "grazing_pressure": 26.9,
-      "mgnrega": {
-        "gps": 27,
-        "villages": 277,
-        "job_cards": 25965,
-        "active_job_cards": 17310,
-        "total_workers": 82535,
-        "active_workers": 41268
-      },
-      "active_worker_pct": 50.0,
-      "decision_flags": [
-        "CRITICAL_PASTURE_DEFICIT",
-        "HIGH_RESTORATION_POTENTIAL",
-        "HIGH_MARGINALIZED_POP"
-      ],
+      "com_per_hh": 0.77,
+      "vbgramg_ha": 1118.84,
+      "vbgramg_villages": 130,
+      "cvs_villages": 221,
+      "demarcated_villages": 7,
+      "bylaws_villages": 11,
+      "encroach_ha": 0.0,
+      "pasture_recog_ha": 5344.51,
+      "plots_count": 241,
       "panchayats": [
         {
           "name": "ANWAL HERA",
@@ -2754,9 +2670,10 @@
           "sc_pct": 5.5,
           "st_pct": 8.4,
           "pasture": 299.57,
-          "commons": 447.53,
-          "wasteland": 63.42,
-          "com_pct": 21.2
+          "cfrr": 221.12,
+          "commons": 520.69,
+          "vbgramg_ha": 42.0,
+          "com_pct": 24.6
         },
         {
           "name": "ARJUNPURA",
@@ -2767,9 +2684,10 @@
           "sc_pct": 4.5,
           "st_pct": 60.3,
           "pasture": 186.02,
-          "commons": 342.35,
-          "wasteland": 67.0,
-          "com_pct": 15.3
+          "cfrr": 1002.67,
+          "commons": 1188.69,
+          "vbgramg_ha": 44.24,
+          "com_pct": 53.2
         },
         {
           "name": "BANETH",
@@ -2780,9 +2698,10 @@
           "sc_pct": 16.1,
           "st_pct": 9.3,
           "pasture": 219.2,
-          "commons": 427.52,
-          "wasteland": 89.28,
-          "com_pct": 14.4
+          "cfrr": 1643.91,
+          "commons": 1863.11,
+          "vbgramg_ha": 35.37,
+          "com_pct": 62.6
         },
         {
           "name": "BANS KHERA",
@@ -2793,9 +2712,10 @@
           "sc_pct": 9.6,
           "st_pct": 4.3,
           "pasture": 180.24,
-          "commons": 367.82,
-          "wasteland": 80.4,
-          "com_pct": 13.7
+          "cfrr": 614.88,
+          "commons": 795.12,
+          "vbgramg_ha": 101.73,
+          "com_pct": 29.7
         },
         {
           "name": "BANSKHERI MEWATIYAN",
@@ -2806,9 +2726,10 @@
           "sc_pct": 8.8,
           "st_pct": 8.6,
           "pasture": 220.59,
-          "commons": 373.26,
-          "wasteland": 65.43,
-          "com_pct": 17.1
+          "cfrr": 379.98,
+          "commons": 600.57,
+          "vbgramg_ha": 62.6,
+          "com_pct": 27.5
         },
         {
           "name": "BARRAWADA",
@@ -2819,9 +2740,10 @@
           "sc_pct": 15.2,
           "st_pct": 35.4,
           "pasture": 246.62,
-          "commons": 395.73,
-          "wasteland": 63.9,
-          "com_pct": 18.6
+          "cfrr": 50.61,
+          "commons": 297.23,
+          "vbgramg_ha": 42.1,
+          "com_pct": 14.0
         },
         {
           "name": "CHANDIPUR",
@@ -2832,9 +2754,10 @@
           "sc_pct": 6.5,
           "st_pct": 20.9,
           "pasture": 98.15,
-          "commons": 202.82,
-          "wasteland": 44.86,
-          "com_pct": 13.6
+          "cfrr": 665.06,
+          "commons": 763.21,
+          "vbgramg_ha": 11.0,
+          "com_pct": 51.0
         },
         {
           "name": "CHANDPURABHEELAN",
@@ -2845,9 +2768,10 @@
           "sc_pct": 1.8,
           "st_pct": 37.6,
           "pasture": 200.3,
-          "commons": 357.64,
-          "wasteland": 67.42,
-          "com_pct": 15.9
+          "cfrr": 727.64,
+          "commons": 927.94,
+          "vbgramg_ha": 7.01,
+          "com_pct": 41.3
         },
         {
           "name": "DANGIPURA",
@@ -2858,9 +2782,10 @@
           "sc_pct": 7.3,
           "st_pct": 27.4,
           "pasture": 293.34,
-          "commons": 459.38,
-          "wasteland": 71.17,
-          "com_pct": 19.4
+          "cfrr": 97.13,
+          "commons": 390.47,
+          "vbgramg_ha": 8.5,
+          "com_pct": 16.5
         },
         {
           "name": "GARBOLIYA",
@@ -2871,9 +2796,10 @@
           "sc_pct": 5.6,
           "st_pct": 17.0,
           "pasture": 246.45,
-          "commons": 423.18,
-          "wasteland": 75.74,
-          "com_pct": 16.8
+          "cfrr": 339.26,
+          "commons": 585.71,
+          "vbgramg_ha": 8.0,
+          "com_pct": 23.2
         },
         {
           "name": "JAWAR",
@@ -2884,9 +2810,10 @@
           "sc_pct": 10.4,
           "st_pct": 9.4,
           "pasture": 155.83,
-          "commons": 280.96,
-          "wasteland": 53.63,
-          "com_pct": 15.7
+          "cfrr": 29.45,
+          "commons": 185.28,
+          "vbgramg_ha": 1.4,
+          "com_pct": 10.4
         },
         {
           "name": "KAMKHERA",
@@ -2897,9 +2824,10 @@
           "sc_pct": 12.1,
           "st_pct": 41.1,
           "pasture": 219.09,
-          "commons": 383.39,
-          "wasteland": 70.42,
-          "com_pct": 16.3
+          "cfrr": 518.65,
+          "commons": 737.74,
+          "vbgramg_ha": 120.5,
+          "com_pct": 31.4
         },
         {
           "name": "KHATA KHERI",
@@ -2910,9 +2838,10 @@
           "sc_pct": 7.1,
           "st_pct": 0.0,
           "pasture": 304.06,
-          "commons": 448.93,
-          "wasteland": 62.09,
-          "com_pct": 21.7
+          "cfrr": 147.18,
+          "commons": 451.24,
+          "vbgramg_ha": 36.42,
+          "com_pct": 21.8
         },
         {
           "name": "KHER KHERA",
@@ -2923,9 +2852,10 @@
           "sc_pct": 7.8,
           "st_pct": 45.8,
           "pasture": 577.73,
-          "commons": 873.11,
-          "wasteland": 126.59,
-          "com_pct": 20.7
+          "cfrr": 1151.87,
+          "commons": 1729.6,
+          "vbgramg_ha": 38.23,
+          "com_pct": 41.0
         },
         {
           "name": "KOLOO KHERI MALIYAN",
@@ -2936,9 +2866,10 @@
           "sc_pct": 7.9,
           "st_pct": 19.9,
           "pasture": 320.6,
-          "commons": 494.26,
-          "wasteland": 74.41,
-          "com_pct": 19.9
+          "cfrr": 522.59,
+          "commons": 843.19,
+          "vbgramg_ha": 14.02,
+          "com_pct": 34.0
         },
         {
           "name": "KOLOOKHERI KALAN",
@@ -2949,9 +2880,10 @@
           "sc_pct": 8.0,
           "st_pct": 29.8,
           "pasture": 280.36,
-          "commons": 435.99,
-          "wasteland": 66.7,
-          "com_pct": 19.6
+          "cfrr": 395.32,
+          "commons": 675.68,
+          "vbgramg_ha": 0.0,
+          "com_pct": 30.4
         },
         {
           "name": "MANAPSAR",
@@ -2962,9 +2894,10 @@
           "sc_pct": 8.4,
           "st_pct": 19.2,
           "pasture": 263.77,
-          "commons": 454.43,
-          "wasteland": 81.72,
-          "com_pct": 16.7
+          "cfrr": 1023.9,
+          "commons": 1287.67,
+          "vbgramg_ha": 12.3,
+          "com_pct": 47.3
         },
         {
           "name": "MANOHARTHANA",
@@ -2975,8 +2908,9 @@
           "sc_pct": 0.0,
           "st_pct": 0.0,
           "pasture": 0.0,
+          "cfrr": 0.0,
           "commons": 0.0,
-          "wasteland": 0.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -2988,9 +2922,10 @@
           "sc_pct": 10.4,
           "st_pct": 12.2,
           "pasture": 453.79,
-          "commons": 685.97,
-          "wasteland": 99.5,
-          "com_pct": 20.7
+          "cfrr": 286.64,
+          "commons": 740.43,
+          "vbgramg_ha": 123.63,
+          "com_pct": 22.3
         },
         {
           "name": "RANWASYA",
@@ -3001,9 +2936,10 @@
           "sc_pct": 4.0,
           "st_pct": 61.6,
           "pasture": 691.8,
-          "commons": 1132.11,
-          "wasteland": 188.71,
-          "com_pct": 18.0
+          "cfrr": 1241.21,
+          "commons": 1933.01,
+          "vbgramg_ha": 37.0,
+          "com_pct": 30.7
         },
         {
           "name": "SAMROL",
@@ -3014,9 +2950,10 @@
           "sc_pct": 7.7,
           "st_pct": 30.4,
           "pasture": 314.87,
-          "commons": 665.36,
-          "wasteland": 150.22,
-          "com_pct": 13.3
+          "cfrr": 2279.82,
+          "commons": 2594.69,
+          "vbgramg_ha": 80.72,
+          "com_pct": 51.8
         },
         {
           "name": "SARERI",
@@ -3027,9 +2964,10 @@
           "sc_pct": 12.0,
           "st_pct": 32.3,
           "pasture": 226.68,
-          "commons": 391.26,
-          "wasteland": 70.54,
-          "com_pct": 16.6
+          "cfrr": 188.46,
+          "commons": 415.14,
+          "vbgramg_ha": 86.74,
+          "com_pct": 17.7
         },
         {
           "name": "SEMLIHAT",
@@ -3040,9 +2978,10 @@
           "sc_pct": 6.9,
           "st_pct": 7.4,
           "pasture": 776.56,
-          "commons": 1126.86,
-          "wasteland": 150.12,
-          "com_pct": 22.5
+          "cfrr": 362.38,
+          "commons": 1138.94,
+          "vbgramg_ha": 75.3,
+          "com_pct": 22.8
         },
         {
           "name": "SHORTI",
@@ -3053,9 +2992,10 @@
           "sc_pct": 4.7,
           "st_pct": 22.0,
           "pasture": 373.19,
-          "commons": 711.71,
-          "wasteland": 145.07,
-          "com_pct": 14.7
+          "cfrr": 1783.37,
+          "commons": 2156.56,
+          "vbgramg_ha": 19.3,
+          "com_pct": 44.6
         },
         {
           "name": "THEEKRIYA",
@@ -3066,9 +3006,10 @@
           "sc_pct": 16.7,
           "st_pct": 31.3,
           "pasture": 427.83,
-          "commons": 677.27,
-          "wasteland": 106.9,
-          "com_pct": 19.0
+          "cfrr": 93.5,
+          "commons": 521.33,
+          "vbgramg_ha": 42.0,
+          "com_pct": 14.6
         },
         {
           "name": "TODRI JAGANNATH",
@@ -3079,9 +3020,10 @@
           "sc_pct": 9.1,
           "st_pct": 0.0,
           "pasture": 647.66,
-          "commons": 930.04,
-          "wasteland": 121.04,
-          "com_pct": 23.1
+          "cfrr": 647.72,
+          "commons": 1295.38,
+          "vbgramg_ha": 54.74,
+          "com_pct": 32.1
         },
         {
           "name": "TODRI MEERAN",
@@ -3092,25 +3034,12 @@
           "sc_pct": 8.8,
           "st_pct": 4.2,
           "pasture": 418.38,
-          "commons": 790.08,
-          "wasteland": 159.3,
-          "com_pct": 14.9
+          "cfrr": 2635.76,
+          "commons": 3054.14,
+          "vbgramg_ha": 13.99,
+          "com_pct": 57.5
         }
-      ],
-      "interventions": {
-        "total_plots": 261,
-        "ongoing_plots": 54,
-        "completed_plots": 207,
-        "new_plots": 0,
-        "sanctioned_amount_lakhs": 5172.58,
-        "utilized_amount_lakhs": 4066.19,
-        "utilization_rate_pct": 78.6,
-        "cvs_formed": 207,
-        "water_structures": 27,
-        "arcp_ha": 892.8,
-        "acp_ha": 5953.6,
-        "total_protected_ha": 6846.4
-      }
+      ]
     },
     {
       "name": "PIDAWA",
@@ -3126,44 +3055,21 @@
       "sc_pct": 19.2,
       "st_pop": 13625,
       "st_pct": 6.81,
-      "vulnerable_pct": 26.01,
-      "forest": 0.0,
-      "barren": 4123.53,
+      "vulnerable_pct": 26.0,
       "pasture": 8173.94,
-      "cult_waste": 3092.61,
-      "fallow": 7216.25,
-      "curr_fallow": 5154.54,
-      "total_fallow": 12370.79,
-      "common_land": 15390.08,
-      "com_pct": 14.93,
+      "cfrr": 6932.47,
+      "common_land": 15106.41,
+      "com_pct": 14.65,
       "pasture_pct": 7.93,
-      "fallow_pct": 12.0,
-      "com_per_hh": 0.39,
-      "restoration_potential": 7216.14,
-      "pop_per_ha_pasture": 24.5,
-      "livestock": {
-        "tehsil": "PIDAWA",
-        "est_livestock": 270285,
-        "est_cattle": 94600,
-        "est_goat": 86491,
-        "est_sheep": 32434,
-        "est_camel": 8109
-      },
-      "grazing_pressure": 33.1,
-      "mgnrega": {
-        "gps": 45,
-        "villages": 407,
-        "job_cards": 28647,
-        "active_job_cards": 19098,
-        "total_workers": 96101,
-        "active_workers": 48051
-      },
-      "active_worker_pct": 50.0,
-      "decision_flags": [
-        "CRITICAL_PASTURE_DEFICIT",
-        "HIGH_RESTORATION_POTENTIAL",
-        "HIGH_MARGINALIZED_POP"
-      ],
+      "com_per_hh": 0.38,
+      "vbgramg_ha": 2059.67,
+      "vbgramg_villages": 297,
+      "cvs_villages": 378,
+      "demarcated_villages": 4,
+      "bylaws_villages": 22,
+      "encroach_ha": 0.0,
+      "pasture_recog_ha": 8319.96,
+      "plots_count": 381,
       "panchayats": [
         {
           "name": "BANOR",
@@ -3174,9 +3080,10 @@
           "sc_pct": 19.5,
           "st_pct": 8.7,
           "pasture": 66.65,
-          "commons": 185.81,
-          "wasteland": 51.07,
-          "com_pct": 10.9
+          "cfrr": 13.64,
+          "commons": 80.29,
+          "vbgramg_ha": 2.0,
+          "com_pct": 4.7
         },
         {
           "name": "BOLIYA BUJURG",
@@ -3187,9 +3094,10 @@
           "sc_pct": 16.4,
           "st_pct": 12.1,
           "pasture": 114.03,
-          "commons": 249.21,
-          "wasteland": 57.93,
-          "com_pct": 12.9
+          "cfrr": 0.0,
+          "commons": 114.03,
+          "vbgramg_ha": 1.87,
+          "com_pct": 5.9
         },
         {
           "name": "CHACHHLAO",
@@ -3200,9 +3108,10 @@
           "sc_pct": 19.9,
           "st_pct": 25.8,
           "pasture": 160.2,
-          "commons": 277.41,
-          "wasteland": 50.23,
-          "com_pct": 16.6
+          "cfrr": 0.0,
+          "commons": 160.2,
+          "vbgramg_ha": 109.0,
+          "com_pct": 9.6
         },
         {
           "name": "DABLA BHOJ",
@@ -3213,9 +3122,10 @@
           "sc_pct": 17.8,
           "st_pct": 0.2,
           "pasture": 193.3,
-          "commons": 392.5,
-          "wasteland": 85.37,
-          "com_pct": 13.8
+          "cfrr": 988.15,
+          "commons": 1181.45,
+          "vbgramg_ha": 72.05,
+          "com_pct": 41.5
         },
         {
           "name": "DANTA",
@@ -3226,9 +3136,10 @@
           "sc_pct": 18.1,
           "st_pct": 0.0,
           "pasture": 430.48,
-          "commons": 664.66,
-          "wasteland": 100.36,
-          "com_pct": 19.9
+          "cfrr": 348.95,
+          "commons": 779.43,
+          "vbgramg_ha": 54.37,
+          "com_pct": 23.3
         },
         {
           "name": "DEEWAL KHERA",
@@ -3239,9 +3150,10 @@
           "sc_pct": 18.4,
           "st_pct": 15.0,
           "pasture": 68.26,
-          "commons": 158.12,
-          "wasteland": 38.51,
-          "com_pct": 12.3
+          "cfrr": 0.0,
+          "commons": 68.26,
+          "vbgramg_ha": 37.0,
+          "com_pct": 5.3
         },
         {
           "name": "DHABLA KHEENCHI",
@@ -3252,9 +3164,10 @@
           "sc_pct": 25.4,
           "st_pct": 0.0,
           "pasture": 107.73,
-          "commons": 255.79,
-          "wasteland": 63.45,
-          "com_pct": 12.1
+          "cfrr": 0.0,
+          "commons": 107.73,
+          "vbgramg_ha": 11.6,
+          "com_pct": 5.1
         },
         {
           "name": "DHARONIYA",
@@ -3265,9 +3178,10 @@
           "sc_pct": 26.2,
           "st_pct": 0.1,
           "pasture": 146.24,
-          "commons": 243.49,
-          "wasteland": 41.68,
-          "com_pct": 17.5
+          "cfrr": 0.0,
+          "commons": 146.24,
+          "vbgramg_ha": 115.08,
+          "com_pct": 10.5
         },
         {
           "name": "DOLA",
@@ -3278,9 +3192,10 @@
           "sc_pct": 21.0,
           "st_pct": 0.4,
           "pasture": 144.8,
-          "commons": 340.84,
-          "wasteland": 84.02,
-          "com_pct": 12.2
+          "cfrr": 0.0,
+          "commons": 144.8,
+          "vbgramg_ha": 17.0,
+          "com_pct": 5.2
         },
         {
           "name": "DUBALIYA",
@@ -3291,9 +3206,10 @@
           "sc_pct": 13.2,
           "st_pct": 13.0,
           "pasture": 146.4,
-          "commons": 306.04,
-          "wasteland": 68.42,
-          "com_pct": 13.4
+          "cfrr": 129.36,
+          "commons": 275.76,
+          "vbgramg_ha": 59.08,
+          "com_pct": 12.1
         },
         {
           "name": "FATEHGARH",
@@ -3304,9 +3220,10 @@
           "sc_pct": 18.5,
           "st_pct": 0.2,
           "pasture": 159.29,
-          "commons": 306.13,
-          "wasteland": 62.93,
-          "com_pct": 14.6
+          "cfrr": 149.87,
+          "commons": 309.16,
+          "vbgramg_ha": 156.12,
+          "com_pct": 14.7
         },
         {
           "name": "GADIYA",
@@ -3317,9 +3234,10 @@
           "sc_pct": 13.4,
           "st_pct": 16.1,
           "pasture": 172.53,
-          "commons": 327.68,
-          "wasteland": 66.49,
-          "com_pct": 14.8
+          "cfrr": 189.16,
+          "commons": 361.69,
+          "vbgramg_ha": 45.84,
+          "com_pct": 16.3
         },
         {
           "name": "GELANI",
@@ -3330,9 +3248,10 @@
           "sc_pct": 33.2,
           "st_pct": 6.3,
           "pasture": 140.92,
-          "commons": 277.15,
-          "wasteland": 58.38,
-          "com_pct": 14.2
+          "cfrr": 264.12,
+          "commons": 405.04,
+          "vbgramg_ha": 65.63,
+          "com_pct": 20.8
         },
         {
           "name": "GENERAL",
@@ -3343,8 +3262,9 @@
           "sc_pct": 0.0,
           "st_pct": 0.0,
           "pasture": 0.0,
+          "cfrr": 0.0,
           "commons": 0.0,
-          "wasteland": 0.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -3356,9 +3276,10 @@
           "sc_pct": 33.6,
           "st_pct": 0.1,
           "pasture": 233.06,
-          "commons": 439.16,
-          "wasteland": 88.33,
-          "com_pct": 14.9
+          "cfrr": 636.98,
+          "commons": 870.04,
+          "vbgramg_ha": 34.28,
+          "com_pct": 29.6
         },
         {
           "name": "HARNAWADA GAJA",
@@ -3369,9 +3290,10 @@
           "sc_pct": 23.1,
           "st_pct": 0.0,
           "pasture": 470.7,
-          "commons": 729.41,
-          "wasteland": 110.87,
-          "com_pct": 19.7
+          "cfrr": 326.75,
+          "commons": 797.45,
+          "vbgramg_ha": 7.0,
+          "com_pct": 21.6
         },
         {
           "name": "HEMRA",
@@ -3382,9 +3304,10 @@
           "sc_pct": 21.5,
           "st_pct": 17.3,
           "pasture": 158.08,
-          "commons": 330.02,
-          "wasteland": 73.69,
-          "com_pct": 13.4
+          "cfrr": 0.0,
+          "commons": 158.08,
+          "vbgramg_ha": 0.0,
+          "com_pct": 6.4
         },
         {
           "name": "HIMMATGARH",
@@ -3395,9 +3318,10 @@
           "sc_pct": 12.8,
           "st_pct": 0.1,
           "pasture": 125.27,
-          "commons": 318.78,
-          "wasteland": 82.94,
-          "com_pct": 11.5
+          "cfrr": 0.0,
+          "commons": 125.27,
+          "vbgramg_ha": 25.3,
+          "com_pct": 4.5
         },
         {
           "name": "KADODIYA",
@@ -3408,9 +3332,10 @@
           "sc_pct": 14.8,
           "st_pct": 17.6,
           "pasture": 65.34,
-          "commons": 267.33,
-          "wasteland": 86.57,
-          "com_pct": 9.3
+          "cfrr": 498.96,
+          "commons": 564.3,
+          "vbgramg_ha": 17.0,
+          "com_pct": 19.6
         },
         {
           "name": "KALI TALAI",
@@ -3421,9 +3346,10 @@
           "sc_pct": 8.8,
           "st_pct": 13.5,
           "pasture": 81.27,
-          "commons": 244.16,
-          "wasteland": 69.81,
-          "com_pct": 10.5
+          "cfrr": 62.81,
+          "commons": 144.08,
+          "vbgramg_ha": 15.0,
+          "com_pct": 6.2
         },
         {
           "name": "KANWARI",
@@ -3434,9 +3360,10 @@
           "sc_pct": 11.5,
           "st_pct": 29.1,
           "pasture": 268.38,
-          "commons": 468.78,
-          "wasteland": 85.89,
-          "com_pct": 16.4
+          "cfrr": 0.0,
+          "commons": 268.38,
+          "vbgramg_ha": 60.83,
+          "com_pct": 9.4
         },
         {
           "name": "KHAIRANA",
@@ -3447,9 +3374,10 @@
           "sc_pct": 20.3,
           "st_pct": 2.7,
           "pasture": 182.83,
-          "commons": 389.48,
-          "wasteland": 88.57,
-          "com_pct": 13.2
+          "cfrr": 0.0,
+          "commons": 182.83,
+          "vbgramg_ha": 67.04,
+          "com_pct": 6.2
         },
         {
           "name": "KHARPA KALAN",
@@ -3460,9 +3388,10 @@
           "sc_pct": 20.5,
           "st_pct": 2.3,
           "pasture": 156.02,
-          "commons": 319.76,
-          "wasteland": 70.17,
-          "com_pct": 13.7
+          "cfrr": 0.0,
+          "commons": 156.02,
+          "vbgramg_ha": 15.91,
+          "com_pct": 6.7
         },
         {
           "name": "KOTRI",
@@ -3473,9 +3402,10 @@
           "sc_pct": 15.8,
           "st_pct": 1.5,
           "pasture": 241.38,
-          "commons": 404.44,
-          "wasteland": 69.89,
-          "com_pct": 17.4
+          "cfrr": 0.0,
+          "commons": 241.38,
+          "vbgramg_ha": 36.06,
+          "com_pct": 10.4
         },
         {
           "name": "MAGEESPUR",
@@ -3486,9 +3416,10 @@
           "sc_pct": 35.1,
           "st_pct": 3.9,
           "pasture": 120.38,
-          "commons": 249.2,
-          "wasteland": 55.21,
-          "com_pct": 13.5
+          "cfrr": 89.63,
+          "commons": 210.01,
+          "vbgramg_ha": 52.56,
+          "com_pct": 11.4
         },
         {
           "name": "MATHANIYA",
@@ -3499,9 +3430,10 @@
           "sc_pct": 15.5,
           "st_pct": 1.7,
           "pasture": 248.28,
-          "commons": 424.61,
-          "wasteland": 75.57,
-          "com_pct": 16.9
+          "cfrr": 257.65,
+          "commons": 505.93,
+          "vbgramg_ha": 73.18,
+          "com_pct": 20.1
         },
         {
           "name": "NAULAI",
@@ -3512,9 +3444,10 @@
           "sc_pct": 27.0,
           "st_pct": 0.1,
           "pasture": 106.08,
-          "commons": 275.96,
-          "wasteland": 72.81,
-          "com_pct": 11.4
+          "cfrr": 157.26,
+          "commons": 263.34,
+          "vbgramg_ha": 4.2,
+          "com_pct": 10.9
         },
         {
           "name": "ODIYA KHERI",
@@ -3525,9 +3458,10 @@
           "sc_pct": 16.6,
           "st_pct": 2.0,
           "pasture": 135.06,
-          "commons": 308.24,
-          "wasteland": 74.22,
-          "com_pct": 12.5
+          "cfrr": 0.0,
+          "commons": 135.06,
+          "vbgramg_ha": 87.14,
+          "com_pct": 5.5
         },
         {
           "name": "OSAV",
@@ -3538,9 +3472,10 @@
           "sc_pct": 30.2,
           "st_pct": 1.7,
           "pasture": 121.7,
-          "commons": 242.59,
-          "wasteland": 51.81,
-          "com_pct": 14.0
+          "cfrr": 0.0,
+          "commons": 121.7,
+          "vbgramg_ha": 152.61,
+          "com_pct": 7.0
         },
         {
           "name": "RAIPUR",
@@ -3551,9 +3486,10 @@
           "sc_pct": 19.1,
           "st_pct": 4.6,
           "pasture": 117.71,
-          "commons": 266.22,
-          "wasteland": 63.65,
-          "com_pct": 12.5
+          "cfrr": 15.49,
+          "commons": 133.2,
+          "vbgramg_ha": 19.26,
+          "com_pct": 6.3
         },
         {
           "name": "RAMAY DALPAT",
@@ -3564,9 +3500,10 @@
           "sc_pct": 26.9,
           "st_pct": 0.4,
           "pasture": 345.95,
-          "commons": 565.21,
-          "wasteland": 93.96,
-          "com_pct": 18.0
+          "cfrr": 710.24,
+          "commons": 1056.19,
+          "vbgramg_ha": 17.89,
+          "com_pct": 33.7
         },
         {
           "name": "RAMPURIYA",
@@ -3577,9 +3514,10 @@
           "sc_pct": 22.2,
           "st_pct": 0.1,
           "pasture": 380.62,
-          "commons": 589.39,
-          "wasteland": 89.47,
-          "com_pct": 19.8
+          "cfrr": 411.85,
+          "commons": 792.47,
+          "vbgramg_ha": 138.26,
+          "com_pct": 26.6
         },
         {
           "name": "SALOTIYA",
@@ -3590,9 +3528,10 @@
           "sc_pct": 21.2,
           "st_pct": 16.2,
           "pasture": 193.69,
-          "commons": 375.65,
-          "wasteland": 77.98,
-          "com_pct": 14.5
+          "cfrr": 0.0,
+          "commons": 193.69,
+          "vbgramg_ha": 41.0,
+          "com_pct": 7.5
         },
         {
           "name": "SALRI",
@@ -3603,9 +3542,10 @@
           "sc_pct": 26.0,
           "st_pct": 30.0,
           "pasture": 247.42,
-          "commons": 419.46,
-          "wasteland": 73.73,
-          "com_pct": 17.1
+          "cfrr": 0.0,
+          "commons": 247.42,
+          "vbgramg_ha": 89.0,
+          "com_pct": 10.1
         },
         {
           "name": "SAMARIYA",
@@ -3616,9 +3556,10 @@
           "sc_pct": 13.8,
           "st_pct": 19.6,
           "pasture": 172.58,
-          "commons": 330.07,
-          "wasteland": 67.5,
-          "com_pct": 14.7
+          "cfrr": 0.0,
+          "commons": 172.58,
+          "vbgramg_ha": 72.04,
+          "com_pct": 7.7
         },
         {
           "name": "SAMLI KHAM",
@@ -3629,9 +3570,10 @@
           "sc_pct": 15.0,
           "st_pct": 23.9,
           "pasture": 81.0,
-          "commons": 201.96,
-          "wasteland": 51.84,
-          "com_pct": 11.7
+          "cfrr": 387.0,
+          "commons": 468.0,
+          "vbgramg_ha": 55.47,
+          "com_pct": 27.1
         },
         {
           "name": "SANGARIYA",
@@ -3642,9 +3584,10 @@
           "sc_pct": 25.8,
           "st_pct": 3.5,
           "pasture": 117.93,
-          "commons": 219.48,
-          "wasteland": 43.52,
-          "com_pct": 15.1
+          "cfrr": 0.0,
+          "commons": 117.93,
+          "vbgramg_ha": 2.72,
+          "com_pct": 8.1
         },
         {
           "name": "SAR KHERI",
@@ -3655,9 +3598,10 @@
           "sc_pct": 15.3,
           "st_pct": 0.0,
           "pasture": 393.5,
-          "commons": 632.59,
-          "wasteland": 102.46,
-          "com_pct": 18.5
+          "cfrr": 661.91,
+          "commons": 1055.41,
+          "vbgramg_ha": 9.0,
+          "com_pct": 30.9
         },
         {
           "name": "SEMLA",
@@ -3668,9 +3612,10 @@
           "sc_pct": 18.3,
           "st_pct": 0.6,
           "pasture": 163.96,
-          "commons": 299.59,
-          "wasteland": 58.13,
-          "com_pct": 15.5
+          "cfrr": 0.0,
+          "commons": 163.96,
+          "vbgramg_ha": 22.0,
+          "com_pct": 8.5
         },
         {
           "name": "SHERPUR",
@@ -3681,9 +3626,10 @@
           "sc_pct": 16.5,
           "st_pct": 0.5,
           "pasture": 571.11,
-          "commons": 815.2,
-          "wasteland": 104.6,
-          "com_pct": 23.4
+          "cfrr": 368.37,
+          "commons": 939.48,
+          "vbgramg_ha": 93.26,
+          "com_pct": 26.9
         },
         {
           "name": "SIRPOI",
@@ -3694,9 +3640,10 @@
           "sc_pct": 38.0,
           "st_pct": 0.8,
           "pasture": 112.46,
-          "commons": 233.17,
-          "wasteland": 51.73,
-          "com_pct": 13.5
+          "cfrr": 24.11,
+          "commons": 136.57,
+          "vbgramg_ha": 18.82,
+          "com_pct": 7.9
         },
         {
           "name": "SOYLA",
@@ -3707,9 +3654,10 @@
           "sc_pct": 15.9,
           "st_pct": 1.3,
           "pasture": 229.72,
-          "commons": 376.41,
-          "wasteland": 62.87,
-          "com_pct": 18.0
+          "cfrr": 106.68,
+          "commons": 336.4,
+          "vbgramg_ha": 19.0,
+          "com_pct": 16.1
         },
         {
           "name": "SUNEL",
@@ -3720,9 +3668,10 @@
           "sc_pct": 10.0,
           "st_pct": 1.8,
           "pasture": 91.0,
-          "commons": 274.94,
-          "wasteland": 78.83,
-          "com_pct": 10.5
+          "cfrr": 0.0,
+          "commons": 91.0,
+          "vbgramg_ha": 5.0,
+          "com_pct": 3.5
         },
         {
           "name": "SUNWAS",
@@ -3733,9 +3682,10 @@
           "sc_pct": 11.9,
           "st_pct": 2.1,
           "pasture": 49.0,
-          "commons": 145.53,
-          "wasteland": 41.37,
-          "com_pct": 10.6
+          "cfrr": 0.0,
+          "commons": 49.0,
+          "vbgramg_ha": 15.0,
+          "com_pct": 3.6
         },
         {
           "name": "UNHEL",
@@ -3746,123 +3696,12 @@
           "sc_pct": 18.6,
           "st_pct": 2.4,
           "pasture": 141.63,
-          "commons": 248.46,
-          "wasteland": 45.78,
-          "com_pct": 16.3
+          "cfrr": 133.53,
+          "commons": 275.16,
+          "vbgramg_ha": 47.2,
+          "com_pct": 18.0
         }
-      ],
-      "interventions": {
-        "total_plots": 380,
-        "ongoing_plots": 2,
-        "completed_plots": 378,
-        "new_plots": 0,
-        "sanctioned_amount_lakhs": 4245.06,
-        "utilized_amount_lakhs": 3434.94,
-        "utilization_rate_pct": 80.9,
-        "cvs_formed": 378,
-        "water_structures": 0,
-        "arcp_ha": 695.0,
-        "acp_ha": 4633.6,
-        "total_protected_ha": 5328.6
-      }
-    }
-  ],
-  "livestock": [
-    {
-      "tehsil": "AKLERA",
-      "buffaloes": 23931,
-      "dogs": 985,
-      "goat": 42545,
-      "horses": 197,
-      "camel": 3989,
-      "cattle": 46533,
-      "donkey": 295,
-      "sheep": 15954,
-      "total": 132952
-    },
-    {
-      "tehsil": "BAKANI",
-      "buffaloes": 24145,
-      "dogs": 994,
-      "goat": 42925,
-      "horses": 199,
-      "camel": 4024,
-      "cattle": 46949,
-      "donkey": 298,
-      "sheep": 16097,
-      "total": 134140
-    },
-    {
-      "tehsil": "BHAWANI MANDI",
-      "buffaloes": 32670,
-      "dogs": 1344,
-      "goat": 58080,
-      "horses": 269,
-      "camel": 5445,
-      "cattle": 63525,
-      "donkey": 403,
-      "sheep": 21780,
-      "total": 181499
-    },
-    {
-      "tehsil": "DAG",
-      "buffaloes": 38613,
-      "dogs": 1589,
-      "goat": 68646,
-      "horses": 318,
-      "camel": 6436,
-      "cattle": 75081,
-      "donkey": 477,
-      "sheep": 25742,
-      "total": 214518
-    },
-    {
-      "tehsil": "JHALRAPATAN",
-      "buffaloes": 21825,
-      "dogs": 898,
-      "goat": 38800,
-      "horses": 180,
-      "camel": 3637,
-      "cattle": 42437,
-      "donkey": 269,
-      "sheep": 14550,
-      "total": 121249
-    },
-    {
-      "tehsil": "KHANPUR",
-      "buffaloes": 36676,
-      "dogs": 1509,
-      "goat": 65201,
-      "horses": 302,
-      "camel": 6113,
-      "cattle": 71314,
-      "donkey": 453,
-      "sheep": 24450,
-      "total": 203754
-    },
-    {
-      "tehsil": "MANOHAR THANA",
-      "buffaloes": 41783,
-      "dogs": 1719,
-      "goat": 74282,
-      "horses": 344,
-      "camel": 6964,
-      "cattle": 81246,
-      "donkey": 516,
-      "sheep": 27856,
-      "total": 232130
-    },
-    {
-      "tehsil": "PIDAWA",
-      "buffaloes": 48651,
-      "dogs": 2002,
-      "goat": 86491,
-      "horses": 400,
-      "camel": 8109,
-      "cattle": 94600,
-      "donkey": 601,
-      "sheep": 32434,
-      "total": 270285
+      ]
     }
   ]
 }

@@ -35,7 +35,7 @@
     activeBlock: 'ALL',
     activePanchayat: 'ALL',
     activeDecisionFilter: 'ALL',
-    theme: localStorage.getItem('jodhpur_theme') || 'dark',
+    theme: localStorage.getItem('jodhpur_theme') || 'light',
     table: {
       search: '',
       page: 1,
@@ -390,6 +390,30 @@
       });
     }
 
+    // Village Details Modal Trigger & Listeners
+    const villageModal = document.getElementById('village-modal');
+    const closeVillageModalBtn = document.getElementById('close-village-modal-btn');
+    if (closeVillageModalBtn && villageModal) {
+      closeVillageModalBtn.addEventListener('click', () => {
+        villageModal.classList.remove('open');
+      });
+    }
+    if (villageModal) {
+      villageModal.addEventListener('click', (e) => {
+        if (e.target === villageModal) villageModal.classList.remove('open');
+      });
+    }
+
+    // Escape Key closes any open modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const vm = document.getElementById('village-modal');
+        if (vm) vm.classList.remove('open');
+        const cm = document.getElementById('compare-modal');
+        if (cm) cm.classList.remove('open');
+      }
+    });
+
     // Compare Selectors Change
     const c1 = document.getElementById('compare-block-1');
     const c2 = document.getElementById('compare-block-2');
@@ -457,51 +481,48 @@
 
     if (state.activeBlock === 'ALL') {
       if (state.activeDecisionFilter === 'CRITICAL_PASTURE_DEFICIT') {
-        titleEl.textContent = `${dName} Action Alert: Extreme Pasture & Grazing Stress`;
+        titleEl.textContent = `${dName} Action Alert: Low Pasture & Grazing Reserves`;
         const deficitBlocks = (state.data.blocks || [])
-          .filter(b => b.decision_flags && b.decision_flags.includes('CRITICAL_PASTURE_DEFICIT'))
+          .filter(b => (b.pasture / (b.geo_area || 1)) < 0.03 || b.pasture < 500)
           .slice(0, 3)
-          .map(b => `${b.name} (${(b.livestock && b.pasture > 0 ? (b.livestock.est_livestock / b.pasture).toFixed(0) : 'High')} animals/ha)`)
+          .map(b => `${b.name} (${fmt.num(b.pasture)} ha)`)
           .join(', ');
         descEl.textContent = deficitBlocks
-          ? `${deficitBlocks} face severe pasture deficits. Recommend immediate fodder banks and silvipasture development under MGNREGA.`
-          : 'High grazing intensity identified. Recommend prioritized fodder banks and silvipasture development.';
+          ? `${deficitBlocks} have very low recorded pasture acreage. Recommend prioritized community fodder banks and pasture development under VBGRAMG.`
+          : 'Low pasture reserves identified. Recommend prioritized fodder and pasture development.';
         if (badgeEl) { badgeEl.textContent = 'Deficit Alert'; badgeEl.className = 'decision-badge red'; }
       } else if (state.activeDecisionFilter === 'HIGH_RESTORATION_POTENTIAL') {
-        titleEl.textContent = `${dName} Strategic Opportunity: Wasteland Available for Restoration`;
-        const highWasteBlocks = (state.data.blocks || [])
+        titleEl.textContent = `${dName} Strategic Opportunity: Potential CFRR Area for Community Governance`;
+        const highCfrrBlocks = (state.data.blocks || [])
           .slice()
-          .sort((a, b) => (b.restoration_potential || 0) - (a.restoration_potential || 0))
+          .sort((a, b) => (b.cfrr || 0) - (a.cfrr || 0))
           .slice(0, 3)
-          .map(b => `${b.name} (${fmt.num(Math.round(b.restoration_potential || 0))} ha)`)
+          .map(b => `${b.name} (${fmt.num(Math.round(b.cfrr || 0))} ha)`)
           .join(', ');
-        descEl.textContent = highWasteBlocks
-          ? `${highWasteBlocks} have massive revenue wasteland suitable for community pasture revival, agroforestry, and watershed projects.`
-          : 'Significant revenue wasteland available for community pasture revival and watershed projects.';
+        descEl.textContent = highCfrrBlocks
+          ? `${highCfrrBlocks} have extensive potential CFRR areas suitable for community pasture revival and CVS formation.`
+          : 'Significant potential CFRR area available for community pasture revival and CVS formation.';
         if (badgeEl) { badgeEl.textContent = 'High Potential'; badgeEl.className = 'decision-badge green'; }
       } else if (state.activeDecisionFilter === 'HIGH_MARGINALIZED_POP') {
         const totalVulnerable = (d.sc_pop || 0) + (d.st_pop || 0);
         titleEl.textContent = `${dName} Social Equity Priority: ${fmt.num(totalVulnerable)} Marginalized Individuals (SC & ST)`;
-        descEl.textContent = 'Panchayats with SC/ST population > 25% require prioritized common land tenure governance and targeted asset creation under MGNREGA.';
+        descEl.textContent = 'Panchayats with high SC/ST population require prioritized common land tenure governance and targeted asset creation under VBGRAMG.';
         if (badgeEl) { badgeEl.textContent = 'Equity Focus'; badgeEl.className = 'decision-badge purple'; }
       } else {
         titleEl.textContent = `${dName} District Strategic Overview — ${d.total_blocks} Blocks, ${d.total_panchayats || state.data.blocks.length * 20} Panchayats, ${fmt.num(d.total_villages)} Villages`;
-        descEl.textContent = `Total Geographical Area: ${(d.geo_area / 1e6).toFixed(2)} Million Ha | Common Land: ${fmt.num(d.common_land)} Ha (${d.common_land_pct}%) | ${(d.total_livestock / 1e6).toFixed(2)} Million Livestock dependent on ${fmt.num(d.pasture)} Ha Pasture.`;
+        descEl.textContent = `Total Geographical Area: ${(d.geo_area / 1e6).toFixed(2)} Million Ha | Common Land: ${fmt.num(d.common_land)} Ha (${d.common_land_pct}%) | Pasture Land (Gauchar): ${fmt.num(d.pasture)} Ha.`;
         if (badgeEl) { badgeEl.textContent = 'District Active'; badgeEl.className = 'decision-badge green'; }
       }
     } else {
       const b = state.data.blocks.find(x => x.name === state.activeBlock);
       if (!b) return;
 
-      const flagText = b.decision_flags && b.decision_flags.length > 0
-        ? b.decision_flags.map(f => f.replace(/_/g, ' ')).join(', ')
-        : 'Stable Resource Balance';
-
+      const isDeficit = (b.pasture / (b.geo_area || 1)) < 0.03 || b.pasture < 500;
       titleEl.textContent = `Block Focus: ${b.name} (${b.villages} Villages | ${fmt.compact(b.population)} Population)`;
-      descEl.textContent = `Common Land: ${fmt.num(b.common_land)} ha (${b.com_pct}%) | Pasture: ${fmt.num(b.pasture)} ha | Wasteland: ${fmt.num(b.restoration_potential)} ha | Flags: ${flagText}`;
+      descEl.textContent = `Common Land: ${fmt.num(b.common_land)} ha (${b.com_pct}%) | Pasture: ${fmt.num(b.pasture)} ha | Potential CFRR: ${fmt.num(b.cfrr)} ha | VBGRAMG Works: ${fmt.num(b.vbgramg_ha)} ha`;
       if (badgeEl) {
-        badgeEl.textContent = b.decision_flags && b.decision_flags.includes('CRITICAL_PASTURE_DEFICIT') ? 'Action Required' : 'Active Scope';
-        badgeEl.className = b.decision_flags && b.decision_flags.includes('CRITICAL_PASTURE_DEFICIT') ? 'decision-badge red' : 'decision-badge green';
+        badgeEl.textContent = isDeficit ? 'Pasture Deficit' : 'Active Scope';
+        badgeEl.className = isDeficit ? 'decision-badge red' : 'decision-badge green';
       }
     }
   }
@@ -699,67 +720,86 @@
     });
   }
 
-  // Update NRM KPI Metric Cards
+  // Update NRM KPI Metric Cards (100% Excel Sourced)
   function updateNRMKPICards() {
     if (!state.data) return;
     const isAll = state.activeBlock === 'ALL';
-    let inv = state.data.district.interventions;
+    let d = state.data.district;
+    let availablePlots = state.plots || [];
 
     if (!isAll) {
       const b = state.data.blocks.find(x => x.name === state.activeBlock);
-      if (b && b.interventions) inv = b.interventions;
+      if (b) {
+        d = {
+          plots_count: b.plots_count || 0,
+          cvs_formed: b.cvs_villages || 0,
+          demarcated_villages: b.demarcated_villages || 0,
+          bylaws_villages: b.bylaws_villages || 0,
+          pasture_recog_ha: b.pasture_recog_ha || 0,
+          encroach_ha: b.encroach_ha || 0,
+          vbgramg_ha: b.vbgramg_ha || 0,
+          vbgramg_villages: b.vbgramg_villages || 0
+        };
+      }
+      availablePlots = (state.plots || []).filter(p => p.block === state.activeBlock);
     }
 
+    const totalPlots = availablePlots.length;
+    const ongoingPlots = availablePlots.filter(p => p.status === 'ACTIVE' || p.status === 'ONGOING').length;
+    const completedPlots = availablePlots.filter(p => p.status === 'COMPLETED').length;
+    const mappedPlots = availablePlots.filter(p => p.is_exact).length;
+
+    // 1. Intervention Plots
     const plotsValEl = document.getElementById('nrm-plots-val');
     const plotsSubEl = document.getElementById('nrm-plots-sub');
-    if (plotsValEl) plotsValEl.innerHTML = `${fmt.num(inv.total_plots)} <span class="kpi-unit">Plots</span>`;
+    if (plotsValEl) plotsValEl.innerHTML = `${fmt.num(totalPlots)} <span class="kpi-unit">Plots</span>`;
     if (plotsSubEl) {
       plotsSubEl.innerHTML = `
-        <span class="status-pill green">${fmt.num(inv.ongoing_plots)} Ongoing</span>
-        <span class="status-pill blue">${fmt.num(inv.completed_plots)} Completed</span>
+        <span class="status-pill green">${fmt.num(ongoingPlots)} Active</span>
+        <span class="status-pill blue">${fmt.num(completedPlots)} Governed</span>
       `;
     }
 
+    // 2. Demarcation & Bylaws (Excel Cols 21 & 22)
     const budgetValEl = document.getElementById('nrm-budget-val');
     const budgetSubEl = document.getElementById('nrm-budget-sub');
     if (budgetValEl) {
-      if (isAll) {
-        budgetValEl.innerHTML = `₹${(inv.sanctioned_amount_lakhs / 100).toFixed(1)} <span class="kpi-unit">Cr Sanctioned</span>`;
-      } else {
-        budgetValEl.innerHTML = `₹${fmt.num(inv.sanctioned_amount_lakhs)} <span class="kpi-unit">Lakh Sanctioned</span>`;
-      }
+      budgetValEl.innerHTML = `${fmt.num(d.demarcated_villages || 0)} <span class="kpi-unit">Villages</span>`;
     }
     if (budgetSubEl) {
-      const utilText = isAll ? `₹${(inv.utilized_amount_lakhs / 100).toFixed(1)} Cr Utilized` : `₹${fmt.num(inv.utilized_amount_lakhs)} L Utilized`;
       budgetSubEl.innerHTML = `
-        <span>${utilText}</span>
-        <span class="status-pill amber">${inv.utilization_rate_pct}% Spent</span>
+        <span>${fmt.num(d.demarcated_villages || 0)} Demarcated</span>
+        <span class="status-pill amber">${fmt.num(d.bylaws_villages || 0)} Bylaws</span>
       `;
     }
 
+    // 3. CVS Formed & Tenure (Excel Cols 16 & 19)
     const cvsValEl = document.getElementById('nrm-cvs-val');
     const cvsSubEl = document.getElementById('nrm-cvs-sub');
-    if (cvsValEl) cvsValEl.innerHTML = `${fmt.num(inv.cvs_formed)} <span class="kpi-unit">CVS Formed</span>`;
+    if (cvsValEl) cvsValEl.innerHTML = `${fmt.num(d.cvs_formed || 0)} <span class="kpi-unit">CVS Formed</span>`;
     if (cvsSubEl) {
       cvsSubEl.innerHTML = `
-        <span>${fmt.num(inv.total_protected_ha)} Ha Protected</span>
-        <span class="status-pill cyan">ARCP + ACP</span>
+        <span>${fmt.num(d.pasture_recog_ha || 0)} Ha Recognized</span>
+        <span class="status-pill cyan">Rule 170(1)</span>
       `;
     }
 
+    // 4. VBGRAMG & Protection (Excel Cols 24 & 27)
     const waterValEl = document.getElementById('nrm-water-val');
     const waterSubEl = document.getElementById('nrm-water-sub');
-    if (waterValEl) waterValEl.innerHTML = `${fmt.num(inv.water_structures)} <span class="kpi-unit">Storage Structures</span>`;
+    if (waterValEl) waterValEl.innerHTML = `${fmt.num(d.vbgramg_ha || 0)} <span class="kpi-unit">Ha</span>`;
     if (waterSubEl) {
       waterSubEl.innerHTML = `
-        <span>Nadi / Talab Deepening</span>
-        <span class="status-pill blue">SMC Active</span>
+        <span>${fmt.num(d.encroach_ha || 0)} Ha Encroach Removed</span>
+        <span class="status-pill blue">${fmt.num(d.vbgramg_villages || 0)} Villages Works</span>
       `;
     }
 
     // Top badges
     const totalBadge = document.getElementById('nrm-total-plots-badge');
-    if (totalBadge) totalBadge.textContent = `${fmt.num(inv.total_plots)} Plots Tracked`;
+    if (totalBadge) totalBadge.textContent = `${fmt.num(totalPlots)} Plots Tracked`;
+    const mappedBadge = document.getElementById('nrm-mapped-plots-badge');
+    if (mappedBadge) mappedBadge.textContent = `${fmt.num(mappedPlots)} Geo-Located Plots`;
   }
 
   // Update Markers on Leaflet Map
@@ -831,21 +871,26 @@
         </div>
         <div class="popup-location">
           <b>${p.village}</b> • ${p.panchayat} GP • <b>${p.block} Block</b>
-          ${p.khasra ? `<br>Khasra: ${p.khasra}` : ''}
+          ${p.code ? `<br>Census Code: ${p.code}` : ''}
         </div>
         <div class="popup-metric-row">
           <div class="popup-metric-box">
-            <span class="popup-metric-label">Sanctioned</span>
-            <span class="popup-metric-val">₹${p.sanctioned_amt || 0} Lakh</span>
+            <span class="popup-metric-label">Plot / Work Area</span>
+            <span class="popup-metric-val">${p.area_ha || 0} Ha</span>
           </div>
           <div class="popup-metric-box">
-            <span class="popup-metric-label">Utilized</span>
-            <span class="popup-metric-val">₹${p.utilized_amt || 0} Lakh</span>
+            <span class="popup-metric-label">Scheme</span>
+            <span class="popup-metric-val">${p.scheme || 'VBGRAMG'}</span>
           </div>
         </div>
-        ${p.area_ha > 0 ? `<div style="font-size:0.75rem;margin-bottom:0.3rem;">Plot Area: <b>${p.area_ha} Ha</b></div>` : ''}
-        ${p.cvs === 'Y' ? `<div class="popup-cvs-tag"><i data-lucide="shield"></i> CVS: ${p.cvs_name || 'Active'} ${p.cvs_president ? `(${p.cvs_president})` : ''}</div>` : ''}
-        ${p.work_code ? `<div style="font-size:0.68rem;color:#64748b;margin-top:0.3rem;">Work Code: ${p.work_code}</div>` : ''}
+        <div style="font-size:0.75rem;margin-top:0.4rem;display:flex;flex-wrap:wrap;gap:4px;">
+          <span class="status-pill ${p.cvs === 'Y' ? 'cyan' : 'gray'}">CVS: ${p.cvs === 'Y' ? 'YES' : 'NO'}</span>
+          <span class="status-pill ${p.demarcation === 'Y' ? 'blue' : 'gray'}">Demarcated: ${p.demarcation === 'Y' ? 'YES' : 'NO'}</span>
+          <span class="status-pill ${p.bylaws === 'Y' ? 'amber' : 'gray'}">Bylaws: ${p.bylaws === 'Y' ? 'YES' : 'NO'}</span>
+          ${p.tenure_recognized_ha > 0 ? `<span class="status-pill green">Tenure: ${p.tenure_recognized_ha} Ha</span>` : ''}
+          ${p.encroachment_removed_ha > 0 ? `<span class="status-pill red">Encroach Removed: ${p.encroachment_removed_ha} Ha</span>` : ''}
+        </div>
+        ${p.cvs_date ? `<div style="font-size:0.68rem;color:#64748b;margin-top:0.3rem;">CVS Date: ${p.cvs_date}</div>` : ''}
       `;
 
       marker.bindPopup(popupHtml);
@@ -884,13 +929,16 @@
           common_land: b.common_land,
           common_land_pct: b.com_pct,
           pasture: b.pasture,
+          cfrr: b.cfrr,
           population: b.population,
           households: b.households,
-          total_livestock: b.livestock ? b.livestock.est_livestock : 0,
-          active_workers: b.mgnrega ? b.mgnrega.active_workers : 0,
-          total_workers: b.mgnrega ? b.mgnrega.total_workers : 0,
+          sc_pop: b.sc_pop,
+          st_pop: b.st_pop,
+          vbgramg_ha: b.vbgramg_ha,
+          vbgramg_villages: b.vbgramg_villages,
           sc_pct: b.sc_pct,
-          sex_ratio: b.sex_ratio
+          sex_ratio: b.sex_ratio,
+          villages: b.villages
         };
       }
     }
@@ -899,7 +947,7 @@
     setCardValue('kpi-area-val', fmt.compact(d.geo_area), 'Hectares');
     setCardSub('kpi-area-sub', isAll ? `${state.data.district.total_blocks} Blocks • ${fmt.num(state.data.district.total_villages)} Villages` : `${d.villages || ''} Villages in Block`);
 
-    // 2. Common Land
+    // 2. Common Land (Pasture + Potential CFRR)
     setCardValue('kpi-commons-val', fmt.compact(d.common_land), 'Ha');
     setCardSub('kpi-commons-sub', `${d.common_land_pct}% of total land area`);
 
@@ -912,15 +960,15 @@
     setCardValue('kpi-pop-val', fmt.compact(d.population), 'Persons');
     setCardSub('kpi-pop-sub', `${fmt.compact(d.households)} Households`);
 
-    // 5. Livestock Dependent
-    setCardValue('kpi-livestock-val', fmt.compact(d.total_livestock), 'Animals');
-    const grazingInt = d.pasture > 0 ? (d.total_livestock / d.pasture).toFixed(1) : 'N/A';
-    setCardSub('kpi-livestock-sub', `${grazingInt} animals/ha pasture`);
+    // 5. Marginalized SC & ST Population
+    const vulPop = (d.sc_pop || 0) + (d.st_pop || 0);
+    const vulPct = d.population > 0 ? ((vulPop / d.population) * 100).toFixed(1) : (d.sc_pct || 0);
+    setCardValue('kpi-vulnerable-val', fmt.compact(vulPop), 'Persons');
+    setCardSub('kpi-vulnerable-sub', `${vulPct}% of rural population (SC & ST)`);
 
-    // 6. MGNREGA Active Workforce
-    setCardValue('kpi-mgnrega-val', fmt.compact(d.active_workers), 'Workers');
-    const actRate = d.total_workers > 0 ? ((d.active_workers / d.total_workers) * 100).toFixed(1) : '0';
-    setCardSub('kpi-mgnrega-sub', `${actRate}% labor saturation rate`);
+    // 6. VBGRAMG Works Done (from Col 27)
+    setCardValue('kpi-mgnrega-val', fmt.compact(d.vbgramg_ha || 0), 'Ha');
+    setCardSub('kpi-mgnrega-sub', `${fmt.num(d.vbgramg_villages || 0)} Villages with Works Done`);
   }
 
   function setCardValue(id, val, unit) {
@@ -937,14 +985,10 @@
   function renderAllCharts() {
     renderLandDistributionChart();
     renderCommonsStackedBarChart();
-    renderGrazingPressureChart();
-    renderLivestockSpeciesChart();
     renderSocialEquityChart();
     renderSexRatioChart();
-    renderMGNREGAChart();
+    renderVBGRAMGChart();
     renderFallowWastelandChart();
-    renderStrategicRadarChart();
-    renderTopPanchayatsChart();
   }
 
   // Chart Helper: get or create chart instance
@@ -969,18 +1013,12 @@
       src = state.data.blocks.find(b => b.name === state.activeBlock) || src;
     }
 
+    const remainingLand = Math.max(0, src.geo_area - (src.pasture + (src.cfrr || 0)));
     const dataItems = [
       { name: 'Pasture (Gauchar)', value: src.pasture, itemStyle: { color: '#10b981' } },
-      { name: 'Culturable Wasteland', value: src.cult_waste, itemStyle: { color: '#f59e0b' } },
-      { name: 'Barren & Uncultivable', value: src.barren, itemStyle: { color: '#ef4444' } },
-      { name: 'Fallow Land', value: src.fallow, itemStyle: { color: '#8b5cf6' } },
-      { name: 'Current Fallow', value: src.curr_fallow, itemStyle: { color: '#06b6d4' } },
-      { name: 'Forest Land', value: src.forest, itemStyle: { color: '#059669' } },
-      {
-        name: 'Cultivated & Other Land',
-        value: Math.max(0, src.geo_area - (src.pasture + src.cult_waste + src.barren + src.fallow + src.curr_fallow + src.forest)),
-        itemStyle: { color: '#3b82f6' }
-      }
+      { name: 'Potential CFRR Commons', value: src.cfrr || 0, itemStyle: { color: '#06b6d4' } },
+      { name: 'VBGRAMG Restored Land', value: src.vbgramg_ha || 0, itemStyle: { color: '#8b5cf6' } },
+      { name: 'Other Village Land Area', value: remainingLand, itemStyle: { color: '#64748b' } }
     ];
 
     const option = {
@@ -1053,8 +1091,7 @@
 
     const blockNames = sorted.map(b => b.name);
     const pastureData = sorted.map(b => b.pasture);
-    const cultWasteData = sorted.map(b => b.cult_waste);
-    const barrenData = sorted.map(b => b.barren);
+    const cfrrData = sorted.map(b => b.cfrr || 0);
 
     const option = {
       backgroundColor: 'transparent',
@@ -1117,18 +1154,11 @@
           data: pastureData
         },
         {
-          name: 'Culturable Wasteland',
+          name: 'Potential CFRR Area',
           type: 'bar',
           stack: 'commons',
-          itemStyle: { color: '#f59e0b' },
-          data: cultWasteData
-        },
-        {
-          name: 'Barren & Uncultivable',
-          type: 'bar',
-          stack: 'commons',
-          itemStyle: { color: '#ef4444' },
-          data: barrenData
+          itemStyle: { color: '#06b6d4' },
+          data: cfrrData
         }
       ]
     };
@@ -1145,192 +1175,6 @@
     });
   }
 
-  // CHART 4: Grazing Pressure & Livestock Deficit by Tehsil (Dual Axis)
-  function renderGrazingPressureChart() {
-    const chart = getChart('chart-grazing-pressure');
-    if (!chart || !state.data || !state.data.livestock) return;
-
-    const theme = chartThemes[state.theme];
-
-    const tehsils = state.data.livestock.map(l => l.tehsil);
-    const totalAnimals = state.data.livestock.map(l => l.total);
-    const pressureRates = state.data.livestock.map(l => {
-      const blk = state.data.blocks ? state.data.blocks.find(b => b.name.toLowerCase() === l.tehsil.toLowerCase()) : null;
-      let pas = blk && blk.pasture ? blk.pasture : 0;
-      if (!pas && state.activeDistrict === 'jodhpur') {
-        const jodhpurTehsilPasture = {
-          'Phalodi': 7831 + 30381 + 5213 + 4900 + 4067 + 4923,
-          'Shergarh': 3586 + 4557 + 2218 + 8337 + 1939,
-          'Osian': 4525 + 4751 + 6131,
-          'Bhopalgarh': 4144,
-          'Bilara': 5466 + 4806,
-          'Jodhpur': 2839 + 2217 + 3976,
-          'Luni': 4033
-        };
-        pas = jodhpurTehsilPasture[l.tehsil] || 5000;
-      }
-      if (!pas || pas <= 0) pas = 1000;
-      return Number((l.total / pas).toFixed(1));
-    });
-
-    const option = {
-      backgroundColor: 'transparent',
-      tooltip: {
-        trigger: 'axis',
-        backgroundColor: theme.tooltipBg,
-        borderColor: theme.tooltipBorder,
-        textStyle: { color: theme.tooltipText }
-      },
-      legend: {
-        top: '0%',
-        textStyle: { color: theme.textColor, fontSize: 11 }
-      },
-      grid: {
-        left: '4%',
-        right: '4%',
-        bottom: '8%',
-        top: '14%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'category',
-        data: tehsils,
-        axisLabel: { color: theme.textColor, fontSize: 11, fontWeight: 600 },
-        axisLine: { lineStyle: { color: theme.axisLine } }
-      },
-      yAxis: [
-        {
-          type: 'value',
-          name: 'Total Livestock',
-          nameTextStyle: { color: theme.textColor },
-          axisLabel: { color: theme.textColor, formatter: (v) => fmt.compact(v) },
-          axisLine: { lineStyle: { color: theme.axisLine } },
-          splitLine: { lineStyle: { color: theme.splitLine } }
-        },
-        {
-          type: 'value',
-          name: 'Animals per Ha Pasture',
-          nameTextStyle: { color: theme.textColor },
-          axisLabel: { color: theme.textColor, formatter: '{value}' },
-          axisLine: { lineStyle: { color: theme.axisLine } },
-          splitLine: { show: false }
-        }
-      ],
-      series: [
-        {
-          name: 'Livestock Population',
-          type: 'bar',
-          itemStyle: {
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              { offset: 0, color: '#06b6d4' },
-              { offset: 1, color: '#0284c7' }
-            ]),
-            borderRadius: [4, 4, 0, 0]
-          },
-          data: totalAnimals
-        },
-        {
-          name: 'Grazing Pressure (Animals/Ha)',
-          type: 'line',
-          yAxisIndex: 1,
-          lineStyle: { color: '#f43f5e', width: 3 },
-          itemStyle: { color: '#f43f5e', borderWidth: 2, borderColor: '#fff' },
-          symbol: 'circle',
-          symbolSize: 8,
-          data: pressureRates
-        }
-      ]
-    };
-
-    chart.setOption(option, true);
-  }
-
-  // CHART 5: Livestock Species Composition (Polar / Donut)
-  function renderLivestockSpeciesChart() {
-    const chart = getChart('chart-livestock-species');
-    if (!chart || !state.data || !state.data.livestock) return;
-
-    const theme = chartThemes[state.theme];
-
-    // Aggregate species totals across district
-    const totals = {
-      Goat: 0,
-      Cattle: 0,
-      Sheep: 0,
-      Buffaloes: 0,
-      Camel: 0,
-      Dogs: 0,
-      Horses: 0,
-      Donkey: 0
-    };
-
-    state.data.livestock.forEach(l => {
-      totals.Goat += l.goat || 0;
-      totals.Cattle += l.cattle || 0;
-      totals.Sheep += l.sheep || 0;
-      totals.Buffaloes += l.buffaloes || 0;
-      totals.Camel += l.camel || 0;
-      totals.Dogs += l.dogs || 0;
-      totals.Horses += l.horses || 0;
-      totals.Donkey += l.donkey || 0;
-    });
-
-    const dataItems = [
-      { name: 'Goats (Small Ruminants)', value: totals.Goat, itemStyle: { color: '#10b981' } },
-      { name: 'Cattle (Cows/Bulls)', value: totals.Cattle, itemStyle: { color: '#06b6d4' } },
-      { name: 'Sheep', value: totals.Sheep, itemStyle: { color: '#8b5cf6' } },
-      { name: 'Buffaloes', value: totals.Buffaloes, itemStyle: { color: '#f59e0b' } },
-      { name: 'Camels (Desert Heritage)', value: totals.Camel, itemStyle: { color: '#f43f5e' } },
-      { name: 'Other (Equines/Working)', value: totals.Horses + totals.Donkey + totals.Dogs, itemStyle: { color: '#64748b' } }
-    ];
-
-    const option = {
-      backgroundColor: 'transparent',
-      tooltip: {
-        trigger: 'item',
-        backgroundColor: theme.tooltipBg,
-        borderColor: theme.tooltipBorder,
-        textStyle: { color: theme.tooltipText },
-        formatter: (params) => {
-          return `
-            <div style="font-weight:700;margin-bottom:4px;">${params.name}</div>
-            <div>Population: <b>${fmt.num(params.value)} animals</b></div>
-            <div>District Share: <b>${params.percent}%</b></div>
-          `;
-        }
-      },
-      legend: {
-        bottom: '0%',
-        orient: 'horizontal',
-        textStyle: { color: theme.textColor, fontSize: 10 },
-        itemWidth: 10,
-        itemHeight: 10
-      },
-      series: [
-        {
-          name: 'Livestock Species',
-          type: 'pie',
-          radius: ['38%', '68%'],
-          center: ['50%', '45%'],
-          roseType: 'radius',
-          itemStyle: {
-            borderRadius: 5,
-            borderColor: theme.tooltipBg,
-            borderWidth: 2
-          },
-          label: {
-            show: true,
-            formatter: '{b}\n{d}%',
-            fontSize: 9,
-            color: theme.textColor
-          },
-          data: dataItems
-        }
-      ]
-    };
-
-    chart.setOption(option, true);
-  }
 
   // CHART 6: Social Inclusion & Vulnerability Breakdown (SC / ST / General)
   function renderSocialEquityChart() {
@@ -1520,19 +1364,18 @@
     chart.setOption(option, true);
   }
 
-  // CHART 8: MGNREGA Workforce Saturation
-  function renderMGNREGAChart() {
+  // CHART 8: VBGRAMG Restoration Works by Block
+  function renderVBGRAMGChart() {
     const chart = getChart('chart-mgnrega');
     if (!chart || !state.data) return;
 
     const theme = chartThemes[state.theme];
-    const filteredBlocks = getFilteredBlocks().filter(b => b.mgnrega && b.mgnrega.total_workers > 0);
-    const sorted = [...filteredBlocks].sort((a, b) => b.mgnrega.total_workers - a.mgnrega.total_workers);
+    const filteredBlocks = getFilteredBlocks();
+    const sorted = [...filteredBlocks].sort((a, b) => (b.vbgramg_ha || 0) - (a.vbgramg_ha || 0));
 
     const blockNames = sorted.map(b => b.name);
-    const totalWorkers = sorted.map(b => b.mgnrega.total_workers);
-    const activeWorkers = sorted.map(b => b.mgnrega.active_workers);
-    const activeRates = sorted.map(b => b.active_worker_pct);
+    const vbgramgHa = sorted.map(b => b.vbgramg_ha || 0);
+    const vbgramgVillages = sorted.map(b => b.vbgramg_villages || 0);
 
     const option = {
       backgroundColor: 'transparent',
@@ -1546,11 +1389,10 @@
           const bname = params[0].name;
           const b = sorted.find(x => x.name === bname);
           return `
-            <div style="font-weight:700;margin-bottom:4px;color:#38bdf8;">${bname} (MGNREGA)</div>
-            <div>Total Registered Workers: <b>${fmt.num(b.mgnrega.total_workers)}</b></div>
-            <div>Active Workers: <b>${fmt.num(b.mgnrega.active_workers)}</b></div>
-            <div>Labor Activation Rate: <b>${b.active_worker_pct}%</b></div>
-            <div>Job Cards Issued: <b>${fmt.num(b.mgnrega.job_cards)}</b></div>
+            <div style="font-weight:700;margin-bottom:4px;color:#38bdf8;">${bname} (VBGRAMG)</div>
+            <div>Work Done Area: <b>${fmt.num(b.vbgramg_ha || 0)} Ha</b></div>
+            <div>Villages with Works: <b>${fmt.num(b.vbgramg_villages || 0)}</b></div>
+            <div>Total Block Villages: <b>${fmt.num(b.villages)}</b></div>
           `;
         }
       },
@@ -1580,40 +1422,33 @@
       yAxis: [
         {
           type: 'value',
-          name: 'Workers',
+          name: 'Restored (Ha)',
           axisLabel: { color: theme.textColor, formatter: (v) => fmt.compact(v) },
           axisLine: { lineStyle: { color: theme.axisLine } },
           splitLine: { lineStyle: { color: theme.splitLine } }
         },
         {
           type: 'value',
-          name: 'Activation %',
-          max: 100,
-          axisLabel: { color: theme.textColor, formatter: '{value}%' },
+          name: 'Villages',
+          axisLabel: { color: theme.textColor, formatter: '{value}' },
           axisLine: { lineStyle: { color: theme.axisLine } },
           splitLine: { show: false }
         }
       ],
       series: [
         {
-          name: 'Total Workers',
+          name: 'VBGRAMG Restored Land (Ha)',
           type: 'bar',
-          itemStyle: { color: 'rgba(59, 130, 246, 0.4)', borderRadius: [3, 3, 0, 0] },
-          data: totalWorkers
+          itemStyle: { color: '#3b82f6', borderRadius: [4, 4, 0, 0] },
+          data: vbgramgHa
         },
         {
-          name: 'Active Workers',
-          type: 'bar',
-          itemStyle: { color: '#3b82f6', borderRadius: [3, 3, 0, 0] },
-          data: activeWorkers
-        },
-        {
-          name: 'Activation Rate (%)',
+          name: 'Villages with Works',
           type: 'line',
           yAxisIndex: 1,
           lineStyle: { color: '#10b981', width: 2.5 },
           itemStyle: { color: '#10b981', borderWidth: 2, borderColor: '#fff' },
-          data: activeRates
+          data: vbgramgVillages
         }
       ]
     };
@@ -1621,18 +1456,19 @@
     chart.setOption(option, true);
   }
 
-  // CHART 9: Fallow Land vs Culturable Wasteland Transformation Potential
+  // CHART 9: CVS Formation & Pasture Governance by Block
   function renderFallowWastelandChart() {
     const chart = getChart('chart-fallow-wasteland');
     if (!chart || !state.data) return;
 
     const theme = chartThemes[state.theme];
     const filteredBlocks = getFilteredBlocks();
-    const sorted = [...filteredBlocks].sort((a, b) => (b.fallow + b.curr_fallow + b.cult_waste) - (a.fallow + a.curr_fallow + a.cult_waste));
+    const sorted = [...filteredBlocks].sort((a, b) => (b.cvs_villages || 0) - (a.cvs_villages || 0));
 
     const blockNames = sorted.map(b => b.name);
-    const fallowData = sorted.map(b => b.fallow + b.curr_fallow);
-    const wasteData = sorted.map(b => b.cult_waste);
+    const cvsData = sorted.map(b => b.cvs_villages || 0);
+    const demarcData = sorted.map(b => b.demarcated_villages || 0);
+    const bylawsData = sorted.map(b => b.bylaws_villages || 0);
 
     const option = {
       backgroundColor: 'transparent',
@@ -1641,7 +1477,18 @@
         axisPointer: { type: 'shadow' },
         backgroundColor: theme.tooltipBg,
         borderColor: theme.tooltipBorder,
-        textStyle: { color: theme.tooltipText }
+        textStyle: { color: theme.tooltipText },
+        formatter: (params) => {
+          const bname = params[0].name;
+          const b = sorted.find(x => x.name === bname);
+          return `
+            <div style="font-weight:700;margin-bottom:4px;color:#10b981;">${bname} (Pasture Governance)</div>
+            <div>CVS Formed Villages: <b>${b.cvs_villages || 0}</b></div>
+            <div>Pasture Demarcated: <b>${b.demarcated_villages || 0}</b></div>
+            <div>Village Bylaws Passed: <b>${b.bylaws_villages || 0}</b></div>
+            <div>Total Block Villages: <b>${b.villages}</b></div>
+          `;
+        }
       },
       legend: {
         top: '0%',
@@ -1668,25 +1515,29 @@
       },
       yAxis: {
         type: 'value',
-        name: 'Hectares (ha)',
-        axisLabel: { color: theme.textColor, formatter: (v) => fmt.compact(v) },
+        name: 'Villages',
+        axisLabel: { color: theme.textColor },
         axisLine: { lineStyle: { color: theme.axisLine } },
         splitLine: { lineStyle: { color: theme.splitLine } }
       },
       series: [
         {
-          name: 'Total Fallow Land (Current + Other)',
+          name: 'CVS Formed Villages',
           type: 'bar',
-          stack: 'unutilized',
-          itemStyle: { color: '#8b5cf6' },
-          data: fallowData
+          itemStyle: { color: '#10b981', borderRadius: [3, 3, 0, 0] },
+          data: cvsData
         },
         {
-          name: 'Culturable Wasteland (High Potential)',
+          name: 'Pasture Demarcated',
           type: 'bar',
-          stack: 'unutilized',
-          itemStyle: { color: '#f59e0b', borderRadius: [4, 4, 0, 0] },
-          data: wasteData
+          itemStyle: { color: '#06b6d4', borderRadius: [3, 3, 0, 0] },
+          data: demarcData
+        },
+        {
+          name: 'Bylaws Passed',
+          type: 'bar',
+          itemStyle: { color: '#f59e0b', borderRadius: [3, 3, 0, 0] },
+          data: bylawsData
         }
       ]
     };
@@ -2038,7 +1889,7 @@
           <td><b>${fmt.num(r.pop)}</b> (${fmt.num(r.hh)} hh)</td>
           <td>${fmt.num(r.sc)} <span style="font-size:0.7rem;color:var(--text-muted);">(${scPct}%)</span></td>
           <td style="color:var(--accent-emerald);font-weight:600;">${fmt.num(r.pas)}</td>
-          <td>${fmt.num(r.cw + r.bar)}</td>
+          <td>${fmt.num(r.cfrr || 0)}</td>
           <td style="font-weight:700;color:var(--accent-cyan);">${fmt.num(r.com)} <span style="font-size:0.7rem;color:var(--text-muted);">(${comPct}%)</span></td>
           <td>
             <button class="btn-pill" style="padding:0.2rem 0.5rem;font-size:0.7rem;" onclick="window.viewVillageDetails(${r.id})">
@@ -2103,30 +1954,170 @@
     const v = state.villages.find(x => x.id === id);
     if (!v) return;
 
-    let plotText = '';
+    const modal = document.getElementById('village-modal');
+    const titleEl = document.getElementById('village-modal-title');
+    const codeEl = document.getElementById('village-modal-code');
+    const subtitleEl = document.getElementById('village-modal-subtitle');
+    const bodyEl = document.getElementById('village-modal-body');
+
+    if (!modal || !bodyEl) return;
+
+    const distName = (state.data && state.data.district && state.data.district.name) || DISTRICT_CONFIG[state.activeDistrict]?.name || 'District';
+
+    if (titleEl) titleEl.textContent = v.v;
+    if (codeEl) codeEl.textContent = `CODE11: ${v.c}`;
+    if (subtitleEl) subtitleEl.innerHTML = `<b>${v.p}</b> Gram Panchayat • <b>${v.b}</b> Block • <b>${distName}</b>`;
+
+    const scPct = v.pop > 0 ? ((v.sc / v.pop) * 100).toFixed(1) : '0.0';
+    const stPct = v.pop > 0 ? ((v.st / v.pop) * 100).toFixed(1) : '0.0';
+    const comPct = v.ga > 0 ? ((v.com / v.ga) * 100).toFixed(1) : '0.0';
+    const pasPct = v.ga > 0 ? ((v.pas / v.ga) * 100).toFixed(1) : '0.0';
+    const sexRatio = v.m > 0 ? Math.round((v.f / v.m) * 1000) : 'N/A';
+
+    let plotsHtml = '';
     if (v.plots && v.plots.length > 0) {
-      plotText = `\n\n=== RESTORATION & INTERVENTION PLOTS (${v.plots.length}) ===` +
-        v.plots.map((p, idx) => `\n[Plot #${idx + 1}] ${p.name || 'Plot'}` +
-          (p.khasra ? `\n  Khasra / Survey: ${p.khasra}` : '') +
-          `\n  Sanctioned: ₹${p.sanctioned_amt || 0} Lakh | Utilized: ₹${p.utilized_amt || 0} Lakh` +
-          `\n  CVS: ${p.cvs || 'N'}${p.cvs_name ? ` (${p.cvs_name})` : ''}${p.cvs_president ? ` - Pres: ${p.cvs_president}` : ''}` +
-          (p.project ? `\n  Project / Scheme: ${p.project}` : '')
-        ).join('\n');
+      plotsHtml = `
+        <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.25rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem;">
+            <h4 style="font-size:0.95rem;font-weight:700;color:var(--text-primary);display:flex;align-items:center;gap:0.4rem;margin:0;">
+              <i data-lucide="shield-check" style="width:16px;height:16px;color:var(--accent-emerald);"></i>
+              VBGRAMG Restoration & Intervention Works (${v.plots.length} Plot${v.plots.length > 1 ? 's' : ''})
+            </h4>
+            <span class="decision-badge green">VBGRAMG Active</span>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.85rem;">
+            ${v.plots.map((p, idx) => `
+              <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:0.9rem;">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;flex-wrap:wrap;gap:0.4rem;">
+                  <div style="font-weight:700;font-size:0.9rem;color:var(--text-primary);">
+                    #${idx + 1} ${p.name || 'Charagah Restoration Plot'}
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.4rem;">
+                    <span class="decision-badge ${p.status === 'COMPLETED' ? 'green' : 'blue'}">
+                      ${p.status || 'ACTIVE'}
+                    </span>
+                    ${p.water_structure ? '<span class="decision-badge cyan">Water Harvesting</span>' : ''}
+                  </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:0.6rem;margin-bottom:0.6rem;">
+                  <div class="popup-metric-box">
+                    <span class="popup-metric-label">Restored Area</span>
+                    <span class="popup-metric-val" style="color:var(--accent-cyan);">${p.area_ha || 0} Ha</span>
+                  </div>
+                  <div class="popup-metric-box">
+                    <span class="popup-metric-label">CVS Status</span>
+                    <span class="popup-metric-val" style="color:var(--accent-emerald);">${p.cvs === 'Y' ? 'Formed' : 'Pending'} ${p.cvs_date ? `(${p.cvs_date})` : ''}</span>
+                  </div>
+                  <div class="popup-metric-box">
+                    <span class="popup-metric-label">Demarcation</span>
+                    <span class="popup-metric-val">${p.demarcation === 'Y' ? 'Yes' : 'Pending'}</span>
+                  </div>
+                  <div class="popup-metric-box">
+                    <span class="popup-metric-label">Village Bylaws</span>
+                    <span class="popup-metric-val">${p.bylaws === 'Y' ? 'Yes' : 'Pending'}</span>
+                  </div>
+                </div>
+
+                <div style="font-size:0.75rem;color:var(--text-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.4rem;">
+                  <span>Scheme: <b>${p.scheme || 'VBGRAMG'}</b></span>
+                  ${p.is_exact ? `<span>GPS (Field Verified): <b>${Number(p.lat).toFixed(4)}°N, ${Number(p.lng).toFixed(4)}°E</b></span>` : `<span style="color:var(--text-muted);">Coordinates: Block Reference</span>`}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    } else {
+      plotsHtml = `
+        <div style="background:var(--bg-card);border:1px dashed var(--border-medium);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;color:var(--text-muted);font-size:0.85rem;">
+          <i data-lucide="info" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:4px;"></i>
+          No specific VBGRAMG intervention plots registered for this village in the Excel workbook.
+        </div>
+      `;
     }
 
-    alert(`
-Village: ${v.v}
-Census Code: ${v.c}
-Panchayat: ${v.p} | Block: ${v.b}
-Total Area: ${v.ga} ha
-Population: ${fmt.num(v.pop)} (Male: ${v.m}, Female: ${v.f})
-Households: ${v.hh}
-SC Population: ${v.sc} | ST Population: ${v.st}
-Pasture Land: ${v.pas} ha
-Common Land: ${v.com} ha
-Wasteland & Barren: ${(v.cw + v.bar).toFixed(1)} ha
-Fallow Land: ${(v.fal + v.cfal).toFixed(1)} ha${plotText}
-    `);
+    bodyEl.innerHTML = `
+      <!-- 6-Stat Key Metric Cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:0.75rem;">
+        <div class="info-card" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1rem;">
+          <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;font-weight:700;letter-spacing:0.04em;">Total Area</div>
+          <div style="font-size:1.35rem;font-weight:800;color:var(--accent-cyan);margin:0.2rem 0;">${fmt.num(v.ga)} <span style="font-size:0.8rem;font-weight:500;">Ha</span></div>
+          <div style="font-size:0.72rem;color:var(--text-muted);">Village Geographical Area</div>
+        </div>
+
+        <div class="info-card" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1rem;">
+          <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;font-weight:700;letter-spacing:0.04em;">Common Land</div>
+          <div style="font-size:1.35rem;font-weight:800;color:var(--accent-emerald);margin:0.2rem 0;">${fmt.num(v.com)} <span style="font-size:0.8rem;font-weight:500;">Ha</span></div>
+          <div style="font-size:0.72rem;color:var(--accent-emerald);font-weight:600;">${comPct}% of Geographical Area</div>
+        </div>
+
+        <div class="info-card" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1rem;">
+          <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;font-weight:700;letter-spacing:0.04em;">Pasture (Gauchar)</div>
+          <div style="font-size:1.35rem;font-weight:800;color:var(--accent-emerald);margin:0.2rem 0;">${fmt.num(v.pas)} <span style="font-size:0.8rem;font-weight:500;">Ha</span></div>
+          <div style="font-size:0.72rem;color:var(--text-muted);">${pasPct}% of Total Land</div>
+        </div>
+
+        <div class="info-card" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1rem;">
+          <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;font-weight:700;letter-spacing:0.04em;">Population</div>
+          <div style="font-size:1.35rem;font-weight:800;color:var(--text-primary);margin:0.2rem 0;">${fmt.num(v.pop)} <span style="font-size:0.8rem;font-weight:500;">Persons</span></div>
+          <div style="font-size:0.72rem;color:var(--text-muted);">${fmt.num(v.hh)} Households (~${v.hh > 0 ? (v.pop / v.hh).toFixed(1) : 0}/hh)</div>
+        </div>
+
+        <div class="info-card" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1rem;">
+          <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;font-weight:700;letter-spacing:0.04em;">Demographics</div>
+          <div style="font-size:1.15rem;font-weight:700;color:var(--text-primary);margin:0.2rem 0;">${fmt.num(v.m)} M • ${fmt.num(v.f)} F</div>
+          <div style="font-size:0.72rem;color:var(--text-muted);">Sex Ratio: <b>${sexRatio}</b></div>
+        </div>
+
+        <div class="info-card" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1rem;">
+          <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;font-weight:700;letter-spacing:0.04em;">Social Equity</div>
+          <div style="font-size:1.15rem;font-weight:700;color:var(--accent-purple);margin:0.2rem 0;">SC: ${scPct}% • ST: ${stPct}%</div>
+          <div style="font-size:0.72rem;color:var(--text-muted);">${fmt.num(v.sc)} SC • ${fmt.num(v.st)} ST Persons</div>
+        </div>
+      </div>
+
+      <!-- Land Breakdown & Governance Table -->
+      <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.25rem;">
+        <h4 style="font-size:0.92rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.4rem;">
+          <i data-lucide="layers" style="width:16px;height:16px;color:var(--accent-cyan);"></i>
+          Revenue Land & Commons Governance (from Excel)
+        </h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:0.6rem;">
+          <div class="popup-metric-box">
+            <span class="popup-metric-label">Pasture (Col 14)</span>
+            <span class="popup-metric-val" style="color:var(--accent-emerald);">${fmt.num(v.pas)} Ha</span>
+          </div>
+          <div class="popup-metric-box">
+            <span class="popup-metric-label">Potential CFRR (Col 15)</span>
+            <span class="popup-metric-val" style="color:var(--accent-cyan);">${fmt.num(v.cfrr || 0)} Ha</span>
+          </div>
+          <div class="popup-metric-box">
+            <span class="popup-metric-label">VBGRAMG Work (Col 27)</span>
+            <span class="popup-metric-val" style="color:var(--accent-blue);">${fmt.num(v.vbg_ha || 0)} Ha</span>
+          </div>
+          <div class="popup-metric-box">
+            <span class="popup-metric-label">Demarcation (Col 22)</span>
+            <span class="popup-metric-val">${v.demarcation === 'Y' ? 'Yes' : 'Pending'}</span>
+          </div>
+          <div class="popup-metric-box">
+            <span class="popup-metric-label">Bylaws (Col 21)</span>
+            <span class="popup-metric-val">${v.bylaws === 'Y' ? 'Yes' : 'Pending'}</span>
+          </div>
+          <div class="popup-metric-box">
+            <span class="popup-metric-label">Asset Register (Col 20)</span>
+            <span class="popup-metric-val">${v.asset_register === 'Y' ? 'Yes' : 'Pending'}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Restoration Plots -->
+      ${plotsHtml}
+    `;
+
+    modal.classList.add('open');
+    initLucideIcons();
   };
 
   // Export to Excel
@@ -2153,15 +2144,20 @@ Fallow Land: ${(v.fal + v.cfal).toFixed(1)} ha${plotText}
       'Female Population': v.f,
       'SC Population': v.sc,
       'ST Population': v.st,
-      'Pasture Grazing Land (Ha)': v.pas,
-      'Culturable Wasteland (Ha)': v.cw,
-      'Barren Land (Ha)': v.bar,
-      'Fallow Land (Ha)': v.fal,
-      'Current Fallow (Ha)': v.cfal,
-      'Forest Land (Ha)': v.for,
+      'Pasture Land (Ha)': v.pas,
+      'Potential CFRR Area (Ha)': v.cfrr,
       'Total Common Land (Ha)': v.com,
-      'Plots Count': (v.plots ? v.plots.length : 0),
-      'Sanctioned Amount (Lakh)': (v.plots ? v.plots.reduce((acc, p) => acc + (p.sanctioned_amt || 0), 0) : 0)
+      'CVS Formed': v.cvs,
+      'CVS Resolution Date': v.cvs_date,
+      'Pasture Demarcated': v.demarcation,
+      'Bylaws Passed': v.bylaws,
+      'Asset Register Maintained': v.asset_register,
+      'Tenure Recognized under 170(1) (Ha)': v.pasture_recog_ha,
+      'Encroachment Removed (Ha)': v.encroach_ha,
+      'Work Done under VBGRAMG (Ha)': v.vbg_ha,
+      'VBGRAMG Work Narration': v.vbg_work,
+      'GPS Latitude': v.lat,
+      'GPS Longitude': v.lng
     }));
 
     const ws = XLSX.utils.json_to_sheet(exportRows);
@@ -2173,11 +2169,20 @@ Fallow Land: ${(v.fal + v.cfal).toFixed(1)} ha${plotText}
     showToast(`Exported ${exportRows.length} villages to Excel`, 'info');
   }
 
-  // Filter blocks based on active decision filter
+  // Filter blocks based on active decision filter (100% Real Excel Data)
   function getFilteredBlocks() {
     if (!state.data || !state.data.blocks) return [];
     if (state.activeDecisionFilter === 'ALL') return state.data.blocks;
-    return state.data.blocks.filter(b => b.decision_flags && b.decision_flags.includes(state.activeDecisionFilter));
+    if (state.activeDecisionFilter === 'CRITICAL_PASTURE_DEFICIT') {
+      return state.data.blocks.filter(b => (b.pasture / (b.geo_area || 1)) < 0.03 || b.pasture < 500);
+    }
+    if (state.activeDecisionFilter === 'HIGH_RESTORATION_POTENTIAL') {
+      return state.data.blocks.filter(b => (b.cfrr || 0) > 1000);
+    }
+    if (state.activeDecisionFilter === 'HIGH_MARGINALIZED_POP') {
+      return state.data.blocks.filter(b => (b.sc_pct || 0) > 20 || (b.st_pop / (b.population || 1)) > 0.15);
+    }
+    return state.data.blocks;
   }
 
   // Launch on DOM ready

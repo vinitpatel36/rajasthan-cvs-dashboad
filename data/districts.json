@@ -7,7 +7,9 @@
       26.5,
       72.85
     ],
-    "zoom": 8
+    "zoom": 8,
+    "dist_code": "910811300000000000",
+    "excel_file": "1Dataset_Jodhpur_Oct26.xlsx"
   },
   {
     "id": "kota",
@@ -17,7 +19,9 @@
       25.18,
       75.83
     ],
-    "zoom": 9
+    "zoom": 9,
+    "dist_code": "910812700000000000",
+    "excel_file": "5Dataset_kota_Oct26.xlsx"
   },
   {
     "id": "bundi",
@@ -27,7 +31,9 @@
       25.44,
       75.64
     ],
-    "zoom": 9
+    "zoom": 9,
+    "dist_code": "910812100000000000",
+    "excel_file": "6_Dataset_Bundi_Oct26.xlsx"
   },
   {
     "id": "jhalawar",
@@ -37,7 +43,9 @@
       24.59,
       76.16
     ],
-    "zoom": 9
+    "zoom": 9,
+    "dist_code": "910812900000000000",
+    "excel_file": "7Dataset_Jhalawar_Oct26.xlsx"
   },
   {
     "id": "baran",
@@ -47,7 +55,9 @@
       25.1,
       76.51
     ],
-    "zoom": 9
+    "zoom": 9,
+    "dist_code": "910812800000000000",
+    "excel_file": "8Dataset_Baran_Oct26.xlsx"
   },
   {
     "id": "pali",
@@ -57,7 +67,9 @@
       25.77,
       73.32
     ],
-    "zoom": 9
+    "zoom": 9,
+    "dist_code": "910811800000000000",
+    "excel_file": "15Dataset_Pali_Oct26.xlsx"
   },
   {
     "id": "ajmer",
@@ -67,6 +79,8 @@
       26.45,
       74.64
     ],
-    "zoom": 9
+    "zoom": 9,
+    "dist_code": "910811900000000000",
+    "excel_file": "16Dataset_Ajmer_Oct26.xlsx"
   }
 ]
