@@ -4,7 +4,7 @@
     "num": 6,
     "name": "Bundi",
     "total_blocks": 5,
-    "total_panchayats": 188,
+    "total_panchayats": 147,
     "total_villages": 1099,
     "geo_area": 566560.93,
     "households": 178056,
@@ -21,14 +21,14 @@
     "cfrr": 139126.14,
     "common_land": 163027.43,
     "common_land_pct": 28.77,
-    "vbgramg_ha": 5841.87,
-    "vbgramg_villages": 457,
+    "vbgramg_ha": 0.0,
+    "vbgramg_villages": 0,
     "cvs_formed": 748,
     "demarcated_villages": 0,
     "bylaws_villages": 0,
     "encroach_ha": 0.0,
-    "pasture_recog_ha": 16610.89,
-    "plots_count": 836
+    "pasture_recog_ha": 16422.54,
+    "plots_count": 781
   },
   "blocks": [
     {
@@ -52,14 +52,14 @@
       "com_pct": 33.95,
       "pasture_pct": 5.43,
       "com_per_hh": 1.1,
-      "vbgramg_ha": 955.23,
-      "vbgramg_villages": 72,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 90,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 2375.28,
-      "plots_count": 93,
+      "plots_count": 90,
       "panchayats": [
         {
           "name": "AJETA",
@@ -72,7 +72,7 @@
           "pasture": 232.0,
           "cfrr": 0.0,
           "commons": 232.0,
-          "vbgramg_ha": 40.88,
+          "vbgramg_ha": 0.0,
           "com_pct": 13.1
         },
         {
@@ -86,7 +86,7 @@
           "pasture": 69.0,
           "cfrr": 0.0,
           "commons": 69.0,
-          "vbgramg_ha": 3.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.6
         },
         {
@@ -100,7 +100,7 @@
           "pasture": 126.0,
           "cfrr": 0.0,
           "commons": 126.0,
-          "vbgramg_ha": 3.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.8
         },
         {
@@ -156,7 +156,7 @@
           "pasture": 128.0,
           "cfrr": 246.0,
           "commons": 374.0,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 20.9
         },
         {
@@ -198,7 +198,7 @@
           "pasture": 262.26,
           "cfrr": 8490.48,
           "commons": 8752.74,
-          "vbgramg_ha": 205.2,
+          "vbgramg_ha": 0.0,
           "com_pct": 69.7
         },
         {
@@ -226,7 +226,7 @@
           "pasture": 85.0,
           "cfrr": 590.0,
           "commons": 675.0,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 23.2
         },
         {
@@ -254,7 +254,7 @@
           "pasture": 114.0,
           "cfrr": 251.0,
           "commons": 365.0,
-          "vbgramg_ha": 72.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 16.0
         },
         {
@@ -296,7 +296,7 @@
           "pasture": 407.67,
           "cfrr": 4318.86,
           "commons": 4726.53,
-          "vbgramg_ha": 34.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 66.3
         },
         {
@@ -310,7 +310,7 @@
           "pasture": 229.0,
           "cfrr": 269.0,
           "commons": 498.0,
-          "vbgramg_ha": 34.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 21.3
         },
         {
@@ -324,7 +324,7 @@
           "pasture": 324.32,
           "cfrr": 49.69,
           "commons": 374.01,
-          "vbgramg_ha": 110.5,
+          "vbgramg_ha": 0.0,
           "com_pct": 16.8
         },
         {
@@ -338,7 +338,7 @@
           "pasture": 219.93,
           "cfrr": 4329.25,
           "commons": 4549.18,
-          "vbgramg_ha": 25.94,
+          "vbgramg_ha": 0.0,
           "com_pct": 56.1
         },
         {
@@ -352,7 +352,7 @@
           "pasture": 212.27,
           "cfrr": 0.0,
           "commons": 212.27,
-          "vbgramg_ha": 24.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.8
         },
         {
@@ -380,7 +380,7 @@
           "pasture": 200.49,
           "cfrr": 639.91,
           "commons": 840.4,
-          "vbgramg_ha": 144.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 32.8
         },
         {
@@ -422,7 +422,7 @@
           "pasture": 256.0,
           "cfrr": 0.0,
           "commons": 256.0,
-          "vbgramg_ha": 35.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 10.1
         },
         {
@@ -436,7 +436,7 @@
           "pasture": 0.0,
           "cfrr": 0.0,
           "commons": 0.0,
-          "vbgramg_ha": 22.71,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -450,7 +450,7 @@
           "pasture": 133.0,
           "cfrr": 41.0,
           "commons": 174.0,
-          "vbgramg_ha": 20.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.8
         },
         {
@@ -464,7 +464,7 @@
           "pasture": 220.0,
           "cfrr": 579.0,
           "commons": 799.0,
-          "vbgramg_ha": 96.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 26.1
         },
         {
@@ -478,7 +478,7 @@
           "pasture": 143.0,
           "cfrr": 148.0,
           "commons": 291.0,
-          "vbgramg_ha": 29.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 11.1
         },
         {
@@ -506,14 +506,14 @@
           "pasture": 99.24,
           "cfrr": 0.0,
           "commons": 99.24,
-          "vbgramg_ha": 19.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.6
         }
       ]
     },
     {
       "name": "HINDOLI",
-      "gps": 42,
+      "gps": 1,
       "villages": 242,
       "geo_area": 134988.8,
       "households": 45896,
@@ -532,602 +532,28 @@
       "com_pct": 37.42,
       "pasture_pct": 4.29,
       "com_per_hh": 1.1,
-      "vbgramg_ha": 1267.32,
-      "vbgramg_villages": 115,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 130,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
-      "pasture_recog_ha": 3315.12,
-      "plots_count": 201,
+      "pasture_recog_ha": 3126.77,
+      "plots_count": 157,
       "panchayats": [
         {
-          "name": "AKODA",
-          "villages": 7,
-          "area": 6769.0,
-          "households": 1157,
-          "pop": 5345,
-          "sc_pct": 14.4,
-          "st_pct": 4.4,
-          "pasture": 283.0,
-          "cfrr": 3763.0,
-          "commons": 4046.0,
-          "vbgramg_ha": 63.0,
-          "com_pct": 59.8
-        },
-        {
-          "name": "ALOD",
-          "villages": 4,
-          "area": 1397.0,
-          "households": 1306,
-          "pop": 6365,
-          "sc_pct": 6.0,
-          "st_pct": 4.9,
-          "pasture": 54.0,
-          "cfrr": 83.0,
-          "commons": 137.0,
-          "vbgramg_ha": 24.4,
-          "com_pct": 9.8
-        },
-        {
-          "name": "ANANT GANJ",
-          "villages": 4,
-          "area": 1461.0,
-          "households": 967,
-          "pop": 5100,
-          "sc_pct": 19.2,
-          "st_pct": 10.2,
-          "pasture": 95.0,
-          "cfrr": 0.0,
-          "commons": 95.0,
-          "vbgramg_ha": 0.0,
-          "com_pct": 6.5
-        },
-        {
-          "name": "BADGAON",
-          "villages": 5,
-          "area": 4376.0,
-          "households": 988,
-          "pop": 4502,
-          "sc_pct": 28.0,
-          "st_pct": 6.2,
-          "pasture": 43.0,
-          "cfrr": 141.0,
-          "commons": 184.0,
-          "vbgramg_ha": 45.74,
-          "com_pct": 4.2
-        },
-        {
-          "name": "BARA NAYA GAON",
-          "villages": 5,
-          "area": 2080.75,
-          "households": 1689,
-          "pop": 8734,
-          "sc_pct": 14.6,
-          "st_pct": 17.7,
-          "pasture": 119.83,
-          "cfrr": 80.97,
-          "commons": 200.8,
-          "vbgramg_ha": 0.0,
-          "com_pct": 9.7
-        },
-        {
-          "name": "BARODIYA",
-          "villages": 5,
-          "area": 2867.0,
-          "households": 2203,
-          "pop": 11584,
-          "sc_pct": 17.4,
-          "st_pct": 14.0,
-          "pasture": 396.0,
-          "cfrr": 158.0,
-          "commons": 554.0,
-          "vbgramg_ha": 30.56,
-          "com_pct": 19.3
-        },
-        {
-          "name": "BASOLI",
-          "villages": 4,
-          "area": 6633.0,
-          "households": 826,
-          "pop": 3735,
-          "sc_pct": 26.6,
-          "st_pct": 21.7,
-          "pasture": 240.0,
-          "cfrr": 4997.0,
-          "commons": 5237.0,
-          "vbgramg_ha": 10.0,
-          "com_pct": 79.0
-        },
-        {
-          "name": "BHAWANI PURA",
-          "villages": 5,
-          "area": 3435.0,
-          "households": 1214,
-          "pop": 6210,
-          "sc_pct": 41.7,
-          "st_pct": 3.2,
-          "pasture": 133.0,
-          "cfrr": 804.0,
-          "commons": 937.0,
-          "vbgramg_ha": 21.0,
-          "com_pct": 27.3
-        },
-        {
-          "name": "CHATAR GANJ",
-          "villages": 10,
-          "area": 1902.54,
-          "households": 1144,
-          "pop": 5784,
-          "sc_pct": 25.0,
-          "st_pct": 0.3,
-          "pasture": 49.75,
-          "cfrr": 232.19,
-          "commons": 281.94,
-          "vbgramg_ha": 33.0,
-          "com_pct": 14.8
-        },
-        {
-          "name": "CHETA",
-          "villages": 6,
-          "area": 2254.0,
-          "households": 1230,
-          "pop": 6661,
-          "sc_pct": 23.6,
-          "st_pct": 4.3,
-          "pasture": 59.0,
-          "cfrr": 152.0,
-          "commons": 211.0,
-          "vbgramg_ha": 60.0,
-          "com_pct": 9.4
-        },
-        {
-          "name": "CHHABARIYON KA NAYA GAON",
-          "villages": 6,
-          "area": 1898.0,
-          "households": 810,
-          "pop": 4132,
-          "sc_pct": 44.4,
-          "st_pct": 2.5,
-          "pasture": 108.0,
-          "cfrr": 35.0,
-          "commons": 143.0,
-          "vbgramg_ha": 32.5,
-          "com_pct": 7.5
-        },
-        {
-          "name": "DABETA",
-          "villages": 6,
-          "area": 5051.0,
-          "households": 1080,
-          "pop": 5297,
-          "sc_pct": 11.5,
-          "st_pct": 11.2,
-          "pasture": 356.0,
-          "cfrr": 2128.0,
-          "commons": 2484.0,
-          "vbgramg_ha": 94.8,
-          "com_pct": 49.2
-        },
-        {
-          "name": "DABLANA",
-          "villages": 4,
-          "area": 2439.0,
-          "households": 1049,
-          "pop": 5175,
-          "sc_pct": 13.8,
-          "st_pct": 0.8,
-          "pasture": 197.0,
-          "cfrr": 100.0,
-          "commons": 297.0,
-          "vbgramg_ha": 20.0,
-          "com_pct": 12.2
-        },
-        {
-          "name": "DATOONDA",
-          "villages": 4,
-          "area": 6498.29,
-          "households": 905,
-          "pop": 4297,
-          "sc_pct": 22.6,
-          "st_pct": 15.9,
-          "pasture": 155.85,
-          "cfrr": 4138.09,
-          "commons": 4293.94,
-          "vbgramg_ha": 11.0,
-          "com_pct": 66.1
-        },
-        {
-          "name": "DHBHAIYON KA NAYA GAON",
-          "villages": 5,
-          "area": 1833.0,
-          "households": 676,
-          "pop": 3310,
-          "sc_pct": 28.8,
-          "st_pct": 10.7,
-          "pasture": 62.0,
-          "cfrr": 219.0,
-          "commons": 281.0,
-          "vbgramg_ha": 35.91,
-          "com_pct": 15.3
-        },
-        {
-          "name": "DHOWARA",
-          "villages": 4,
-          "area": 2953.0,
-          "households": 1209,
-          "pop": 5551,
-          "sc_pct": 15.3,
-          "st_pct": 18.7,
-          "pasture": 199.0,
-          "cfrr": 684.0,
-          "commons": 883.0,
-          "vbgramg_ha": 40.57,
-          "com_pct": 29.9
-        },
-        {
-          "name": "GOTHRA",
-          "villages": 4,
-          "area": 3283.0,
-          "households": 1514,
-          "pop": 7270,
-          "sc_pct": 14.3,
-          "st_pct": 19.3,
-          "pasture": 25.0,
-          "cfrr": 331.1,
-          "commons": 356.1,
-          "vbgramg_ha": 22.0,
-          "com_pct": 10.8
-        },
-        {
-          "name": "GUDHA BANDH",
-          "villages": 5,
-          "area": 1876.0,
-          "households": 715,
-          "pop": 3585,
-          "sc_pct": 25.5,
-          "st_pct": 6.9,
-          "pasture": 68.0,
-          "cfrr": 64.0,
-          "commons": 132.0,
-          "vbgramg_ha": 13.0,
-          "com_pct": 7.0
-        },
-        {
-          "name": "GUDHA GOKUL PURA",
-          "villages": 4,
-          "area": 2134.0,
-          "households": 890,
-          "pop": 4008,
-          "sc_pct": 17.3,
-          "st_pct": 60.5,
-          "pasture": 147.0,
-          "cfrr": 494.0,
-          "commons": 641.0,
-          "vbgramg_ha": 66.0,
-          "com_pct": 30.0
-        },
-        {
           "name": "HINDOLI",
-          "villages": 3,
-          "area": 4231.0,
-          "households": 2508,
-          "pop": 12186,
-          "sc_pct": 12.5,
-          "st_pct": 2.7,
-          "pasture": 214.0,
-          "cfrr": 1941.0,
-          "commons": 2155.0,
-          "vbgramg_ha": 9.0,
-          "com_pct": 50.9
-        },
-        {
-          "name": "KACHHOLA",
-          "villages": 3,
-          "area": 3384.0,
-          "households": 791,
-          "pop": 3612,
+          "villages": 242,
+          "area": 134988.8,
+          "households": 45896,
+          "pop": 224836,
           "sc_pct": 18.2,
-          "st_pct": 19.4,
-          "pasture": 61.0,
-          "cfrr": 1266.0,
-          "commons": 1327.0,
+          "st_pct": 18.0,
+          "pasture": 5794.83,
+          "cfrr": 44712.06,
+          "commons": 50506.89,
           "vbgramg_ha": 0.0,
-          "com_pct": 39.2
-        },
-        {
-          "name": "KHEENYA",
-          "villages": 3,
-          "area": 8775.0,
-          "households": 927,
-          "pop": 4374,
-          "sc_pct": 16.0,
-          "st_pct": 35.8,
-          "pasture": 0.0,
-          "cfrr": 6634.0,
-          "commons": 6634.0,
-          "vbgramg_ha": 0.0,
-          "com_pct": 75.6
-        },
-        {
-          "name": "KHERKHATA",
-          "villages": 6,
-          "area": 2571.0,
-          "households": 946,
-          "pop": 4149,
-          "sc_pct": 24.0,
-          "st_pct": 11.2,
-          "pasture": 281.0,
-          "cfrr": 994.0,
-          "commons": 1275.0,
-          "vbgramg_ha": 10.0,
-          "com_pct": 49.6
-        },
-        {
-          "name": "MANGLI KALAN",
-          "villages": 4,
-          "area": 1521.0,
-          "households": 802,
-          "pop": 4068,
-          "sc_pct": 19.4,
-          "st_pct": 17.2,
-          "pasture": 62.0,
-          "cfrr": 46.0,
-          "commons": 108.0,
-          "vbgramg_ha": 0.0,
-          "com_pct": 7.1
-        },
-        {
-          "name": "MENDI",
-          "villages": 6,
-          "area": 4286.0,
-          "households": 1262,
-          "pop": 6105,
-          "sc_pct": 14.0,
-          "st_pct": 9.0,
-          "pasture": 151.0,
-          "cfrr": 1860.0,
-          "commons": 2011.0,
-          "vbgramg_ha": 40.0,
-          "com_pct": 46.9
-        },
-        {
-          "name": "NEGARH",
-          "villages": 13,
-          "area": 4078.0,
-          "households": 1015,
-          "pop": 4554,
-          "sc_pct": 17.5,
-          "st_pct": 9.2,
-          "pasture": 296.0,
-          "cfrr": 1157.0,
-          "commons": 1453.0,
-          "vbgramg_ha": 47.0,
-          "com_pct": 35.6
-        },
-        {
-          "name": "OWAN",
-          "villages": 5,
-          "area": 2604.89,
-          "households": 844,
-          "pop": 3751,
-          "sc_pct": 20.1,
-          "st_pct": 21.8,
-          "pasture": 11.05,
-          "cfrr": 1039.0,
-          "commons": 1050.05,
-          "vbgramg_ha": 0.0,
-          "com_pct": 40.3
-        },
-        {
-          "name": "PAGARA",
-          "villages": 6,
-          "area": 3677.0,
-          "households": 750,
-          "pop": 3423,
-          "sc_pct": 13.4,
-          "st_pct": 34.8,
-          "pasture": 118.0,
-          "cfrr": 1267.4,
-          "commons": 1385.4,
-          "vbgramg_ha": 53.0,
-          "com_pct": 37.7
-        },
-        {
-          "name": "PECH KI BAVARI",
-          "villages": 10,
-          "area": 2519.64,
-          "households": 1239,
-          "pop": 6031,
-          "sc_pct": 15.6,
-          "st_pct": 46.4,
-          "pasture": 196.78,
-          "cfrr": 180.0,
-          "commons": 376.78,
-          "vbgramg_ha": 45.28,
-          "com_pct": 15.0
-        },
-        {
-          "name": "RAMCHANDRAJI KA KHERA",
-          "villages": 7,
-          "area": 1472.0,
-          "households": 1145,
-          "pop": 5520,
-          "sc_pct": 15.3,
-          "st_pct": 37.2,
-          "pasture": 103.0,
-          "cfrr": 0.0,
-          "commons": 103.0,
-          "vbgramg_ha": 6.7,
-          "com_pct": 7.0
-        },
-        {
-          "name": "RANIPURA",
-          "villages": 6,
-          "area": 1662.12,
-          "households": 1009,
-          "pop": 5140,
-          "sc_pct": 16.6,
-          "st_pct": 3.9,
-          "pasture": 137.08,
-          "cfrr": 10.15,
-          "commons": 147.23,
-          "vbgramg_ha": 40.76,
-          "com_pct": 8.9
-        },
-        {
-          "name": "RONEEJA",
-          "villages": 2,
-          "area": 3451.0,
-          "households": 798,
-          "pop": 4095,
-          "sc_pct": 18.7,
-          "st_pct": 10.1,
-          "pasture": 122.0,
-          "cfrr": 1812.0,
-          "commons": 1934.0,
-          "vbgramg_ha": 0.0,
-          "com_pct": 56.0
-        },
-        {
-          "name": "ROSANDA",
-          "villages": 5,
-          "area": 2444.0,
-          "households": 987,
-          "pop": 4434,
-          "sc_pct": 16.4,
-          "st_pct": 65.0,
-          "pasture": 51.0,
-          "cfrr": 114.0,
-          "commons": 165.0,
-          "vbgramg_ha": 33.0,
-          "com_pct": 6.8
-        },
-        {
-          "name": "SAHASPURIYA",
-          "villages": 9,
-          "area": 2512.0,
-          "households": 1012,
-          "pop": 5200,
-          "sc_pct": 12.9,
-          "st_pct": 0.4,
-          "pasture": 50.0,
-          "cfrr": 630.0,
-          "commons": 680.0,
-          "vbgramg_ha": 51.0,
-          "com_pct": 27.1
-        },
-        {
-          "name": "SANWATGARH",
-          "villages": 17,
-          "area": 3658.0,
-          "households": 1436,
-          "pop": 7093,
-          "sc_pct": 18.8,
-          "st_pct": 26.1,
-          "pasture": 197.0,
-          "cfrr": 295.0,
-          "commons": 492.0,
-          "vbgramg_ha": 145.46,
-          "com_pct": 13.4
-        },
-        {
-          "name": "SATHOOR",
-          "villages": 7,
-          "area": 4416.0,
-          "households": 1269,
-          "pop": 6480,
-          "sc_pct": 11.1,
-          "st_pct": 14.3,
-          "pasture": 97.0,
-          "cfrr": 2446.0,
-          "commons": 2543.0,
-          "vbgramg_ha": 35.0,
-          "com_pct": 57.6
-        },
-        {
-          "name": "TALAB GAON",
-          "villages": 4,
-          "area": 2542.31,
-          "households": 847,
-          "pop": 4880,
-          "sc_pct": 15.8,
-          "st_pct": 6.1,
-          "pasture": 206.0,
-          "cfrr": 918.0,
-          "commons": 1124.0,
-          "vbgramg_ha": 0.0,
-          "com_pct": 44.2
-        },
-        {
-          "name": "THANA",
-          "villages": 4,
-          "area": 2944.0,
-          "households": 961,
-          "pop": 4434,
-          "sc_pct": 22.3,
-          "st_pct": 53.8,
-          "pasture": 1.0,
-          "cfrr": 777.0,
-          "commons": 778.0,
-          "vbgramg_ha": 1.0,
-          "com_pct": 26.4
-        },
-        {
-          "name": "THEEKARDA",
-          "villages": 6,
-          "area": 1922.0,
-          "households": 859,
-          "pop": 4420,
-          "sc_pct": 11.5,
-          "st_pct": 3.1,
-          "pasture": 75.0,
-          "cfrr": 438.0,
-          "commons": 513.0,
-          "vbgramg_ha": 0.0,
-          "com_pct": 26.7
-        },
-        {
-          "name": "TONKRA",
-          "villages": 4,
-          "area": 2435.03,
-          "households": 802,
-          "pop": 3896,
-          "sc_pct": 18.5,
-          "st_pct": 19.5,
-          "pasture": 290.49,
-          "cfrr": 682.16,
-          "commons": 972.65,
-          "vbgramg_ha": 13.0,
-          "com_pct": 39.9
-        },
-        {
-          "name": "UMAR",
-          "villages": 9,
-          "area": 3547.0,
-          "households": 1216,
-          "pop": 5775,
-          "sc_pct": 21.0,
-          "st_pct": 64.0,
-          "pasture": 111.0,
-          "cfrr": 605.0,
-          "commons": 716.0,
-          "vbgramg_ha": 41.64,
-          "com_pct": 20.2
-        },
-        {
-          "name": "VIJAIGARH",
-          "villages": 6,
-          "area": 3195.23,
-          "households": 899,
-          "pop": 4571,
-          "sc_pct": 10.8,
-          "st_pct": 59.0,
-          "pasture": 173.0,
-          "cfrr": 996.0,
-          "commons": 1169.0,
-          "vbgramg_ha": 72.0,
-          "com_pct": 36.6
+          "com_pct": 37.4
         }
       ]
     },
@@ -1152,14 +578,14 @@
       "com_pct": 13.6,
       "pasture_pct": 3.3,
       "com_per_hh": 0.45,
-      "vbgramg_ha": 1152.49,
-      "vbgramg_villages": 102,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 231,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 4244.85,
-      "plots_count": 237,
+      "plots_count": 234,
       "panchayats": [
         {
           "name": "AJANDA",
@@ -1200,7 +626,7 @@
           "pasture": 86.88,
           "cfrr": 321.42,
           "commons": 408.3,
-          "vbgramg_ha": 76.89,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.4
         },
         {
@@ -1214,7 +640,7 @@
           "pasture": 279.0,
           "cfrr": 0.0,
           "commons": 279.0,
-          "vbgramg_ha": 146.92,
+          "vbgramg_ha": 0.0,
           "com_pct": 10.9
         },
         {
@@ -1228,7 +654,7 @@
           "pasture": 0.0,
           "cfrr": 0.0,
           "commons": 0.0,
-          "vbgramg_ha": 8.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -1242,7 +668,7 @@
           "pasture": 0.0,
           "cfrr": 0.0,
           "commons": 0.0,
-          "vbgramg_ha": 30.68,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -1256,7 +682,7 @@
           "pasture": 122.0,
           "cfrr": 1090.0,
           "commons": 1212.0,
-          "vbgramg_ha": 29.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 31.7
         },
         {
@@ -1270,7 +696,7 @@
           "pasture": 84.25,
           "cfrr": 1389.7,
           "commons": 1473.95,
-          "vbgramg_ha": 38.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 45.6
         },
         {
@@ -1312,7 +738,7 @@
           "pasture": 61.68,
           "cfrr": 256.62,
           "commons": 318.3,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 10.8
         },
         {
@@ -1326,7 +752,7 @@
           "pasture": 18.76,
           "cfrr": 0.0,
           "commons": 18.76,
-          "vbgramg_ha": 8.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.4
         },
         {
@@ -1354,7 +780,7 @@
           "pasture": 33.51,
           "cfrr": 0.0,
           "commons": 33.51,
-          "vbgramg_ha": 15.09,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.3
         },
         {
@@ -1382,7 +808,7 @@
           "pasture": 90.66,
           "cfrr": 0.0,
           "commons": 90.66,
-          "vbgramg_ha": 36.62,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.6
         },
         {
@@ -1410,7 +836,7 @@
           "pasture": 76.0,
           "cfrr": 1055.0,
           "commons": 1131.0,
-          "vbgramg_ha": 31.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 23.5
         },
         {
@@ -1438,7 +864,7 @@
           "pasture": 122.72,
           "cfrr": 76.84,
           "commons": 199.56,
-          "vbgramg_ha": 170.82,
+          "vbgramg_ha": 0.0,
           "com_pct": 10.5
         },
         {
@@ -1452,7 +878,7 @@
           "pasture": 36.0,
           "cfrr": 0.0,
           "commons": 36.0,
-          "vbgramg_ha": 19.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.3
         },
         {
@@ -1466,7 +892,7 @@
           "pasture": 0.0,
           "cfrr": 315.0,
           "commons": 315.0,
-          "vbgramg_ha": 10.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 11.4
         },
         {
@@ -1522,7 +948,7 @@
           "pasture": 110.0,
           "cfrr": 110.0,
           "commons": 220.0,
-          "vbgramg_ha": 61.63,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.0
         },
         {
@@ -1536,7 +962,7 @@
           "pasture": 65.76,
           "cfrr": 0.0,
           "commons": 65.76,
-          "vbgramg_ha": 18.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.5
         },
         {
@@ -1564,7 +990,7 @@
           "pasture": 186.0,
           "cfrr": 427.0,
           "commons": 613.0,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 20.4
         },
         {
@@ -1578,7 +1004,7 @@
           "pasture": 6.0,
           "cfrr": 0.0,
           "commons": 6.0,
-          "vbgramg_ha": 7.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.4
         },
         {
@@ -1592,7 +1018,7 @@
           "pasture": 34.34,
           "cfrr": 0.0,
           "commons": 34.34,
-          "vbgramg_ha": 55.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.2
         },
         {
@@ -1648,7 +1074,7 @@
           "pasture": 150.75,
           "cfrr": 1400.21,
           "commons": 1550.96,
-          "vbgramg_ha": 22.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 52.2
         },
         {
@@ -1662,7 +1088,7 @@
           "pasture": 57.3,
           "cfrr": 1027.0,
           "commons": 1084.3,
-          "vbgramg_ha": 62.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 31.7
         },
         {
@@ -1704,7 +1130,7 @@
           "pasture": 238.0,
           "cfrr": 1010.0,
           "commons": 1248.0,
-          "vbgramg_ha": 8.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 31.0
         },
         {
@@ -1718,7 +1144,7 @@
           "pasture": 21.07,
           "cfrr": 0.0,
           "commons": 21.07,
-          "vbgramg_ha": 24.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.2
         },
         {
@@ -1732,7 +1158,7 @@
           "pasture": 127.0,
           "cfrr": 130.17,
           "commons": 257.17,
-          "vbgramg_ha": 5.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.7
         },
         {
@@ -1746,7 +1172,7 @@
           "pasture": 54.0,
           "cfrr": 316.0,
           "commons": 370.0,
-          "vbgramg_ha": 19.46,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.2
         },
         {
@@ -1760,7 +1186,7 @@
           "pasture": 267.0,
           "cfrr": 1211.0,
           "commons": 1478.0,
-          "vbgramg_ha": 119.38,
+          "vbgramg_ha": 0.0,
           "com_pct": 24.9
         },
         {
@@ -1788,7 +1214,7 @@
           "pasture": 124.0,
           "cfrr": 0.0,
           "commons": 124.0,
-          "vbgramg_ha": 36.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.8
         },
         {
@@ -1802,7 +1228,7 @@
           "pasture": 29.0,
           "cfrr": 19.0,
           "commons": 48.0,
-          "vbgramg_ha": 17.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.4
         },
         {
@@ -1816,7 +1242,7 @@
           "pasture": 131.0,
           "cfrr": 1338.0,
           "commons": 1469.0,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 32.7
         }
       ]
@@ -1842,14 +1268,14 @@
       "com_pct": 23.43,
       "pasture_pct": 4.83,
       "com_per_hh": 0.75,
-      "vbgramg_ha": 2105.72,
-      "vbgramg_villages": 139,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 197,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 4601.24,
-      "plots_count": 204,
+      "plots_count": 200,
       "panchayats": [
         {
           "name": "ANTARDA",
@@ -1862,7 +1288,7 @@
           "pasture": 46.0,
           "cfrr": 483.59,
           "commons": 529.59,
-          "vbgramg_ha": 84.84,
+          "vbgramg_ha": 0.0,
           "com_pct": 18.1
         },
         {
@@ -1876,7 +1302,7 @@
           "pasture": 39.0,
           "cfrr": 159.0,
           "commons": 198.0,
-          "vbgramg_ha": 14.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.6
         },
         {
@@ -1890,7 +1316,7 @@
           "pasture": 89.0,
           "cfrr": 0.0,
           "commons": 89.0,
-          "vbgramg_ha": 11.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.8
         },
         {
@@ -1904,7 +1330,7 @@
           "pasture": 181.0,
           "cfrr": 0.0,
           "commons": 181.0,
-          "vbgramg_ha": 47.03,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.8
         },
         {
@@ -1918,7 +1344,7 @@
           "pasture": 139.7,
           "cfrr": 315.89,
           "commons": 455.59,
-          "vbgramg_ha": 50.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 26.6
         },
         {
@@ -1932,7 +1358,7 @@
           "pasture": 41.25,
           "cfrr": 395.0,
           "commons": 436.25,
-          "vbgramg_ha": 5.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 15.0
         },
         {
@@ -1960,7 +1386,7 @@
           "pasture": 136.0,
           "cfrr": 0.0,
           "commons": 136.0,
-          "vbgramg_ha": 82.32,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.9
         },
         {
@@ -1974,7 +1400,7 @@
           "pasture": 171.0,
           "cfrr": 0.0,
           "commons": 171.0,
-          "vbgramg_ha": 70.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.2
         },
         {
@@ -1988,7 +1414,7 @@
           "pasture": 249.0,
           "cfrr": 152.95,
           "commons": 401.95,
-          "vbgramg_ha": 185.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.8
         },
         {
@@ -2002,7 +1428,7 @@
           "pasture": 0.0,
           "cfrr": 0.0,
           "commons": 0.0,
-          "vbgramg_ha": 53.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -2016,7 +1442,7 @@
           "pasture": 80.0,
           "cfrr": 0.0,
           "commons": 80.0,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.1
         },
         {
@@ -2044,7 +1470,7 @@
           "pasture": 263.0,
           "cfrr": 5045.0,
           "commons": 5308.0,
-          "vbgramg_ha": 117.53,
+          "vbgramg_ha": 0.0,
           "com_pct": 72.3
         },
         {
@@ -2058,7 +1484,7 @@
           "pasture": 536.07,
           "cfrr": 2024.13,
           "commons": 2560.2,
-          "vbgramg_ha": 37.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 47.7
         },
         {
@@ -2072,7 +1498,7 @@
           "pasture": 56.31,
           "cfrr": 0.0,
           "commons": 56.31,
-          "vbgramg_ha": 30.4,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.2
         },
         {
@@ -2086,7 +1512,7 @@
           "pasture": 146.0,
           "cfrr": 751.3,
           "commons": 897.3,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 24.9
         },
         {
@@ -2100,7 +1526,7 @@
           "pasture": 198.0,
           "cfrr": 663.0,
           "commons": 861.0,
-          "vbgramg_ha": 187.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 23.8
         },
         {
@@ -2114,7 +1540,7 @@
           "pasture": 105.34,
           "cfrr": 38.13,
           "commons": 143.47,
-          "vbgramg_ha": 29.89,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.7
         },
         {
@@ -2128,7 +1554,7 @@
           "pasture": 95.0,
           "cfrr": 19.0,
           "commons": 114.0,
-          "vbgramg_ha": 18.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.6
         },
         {
@@ -2142,7 +1568,7 @@
           "pasture": 184.0,
           "cfrr": 562.0,
           "commons": 746.0,
-          "vbgramg_ha": 149.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 21.1
         },
         {
@@ -2156,7 +1582,7 @@
           "pasture": 105.7,
           "cfrr": 24.0,
           "commons": 129.7,
-          "vbgramg_ha": 181.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.2
         },
         {
@@ -2170,7 +1596,7 @@
           "pasture": 241.0,
           "cfrr": 151.0,
           "commons": 392.0,
-          "vbgramg_ha": 135.41,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.2
         },
         {
@@ -2184,7 +1610,7 @@
           "pasture": 221.0,
           "cfrr": 1045.0,
           "commons": 1266.0,
-          "vbgramg_ha": 30.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 49.2
         },
         {
@@ -2198,7 +1624,7 @@
           "pasture": 257.32,
           "cfrr": 303.0,
           "commons": 560.32,
-          "vbgramg_ha": 180.74,
+          "vbgramg_ha": 0.0,
           "com_pct": 14.2
         },
         {
@@ -2212,7 +1638,7 @@
           "pasture": 296.55,
           "cfrr": 2843.37,
           "commons": 3139.92,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 57.9
         },
         {
@@ -2226,7 +1652,7 @@
           "pasture": 72.53,
           "cfrr": 296.35,
           "commons": 368.88,
-          "vbgramg_ha": 62.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.3
         },
         {
@@ -2240,7 +1666,7 @@
           "pasture": 243.0,
           "cfrr": 0.0,
           "commons": 243.0,
-          "vbgramg_ha": 94.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.0
         },
         {
@@ -2268,7 +1694,7 @@
           "pasture": 270.36,
           "cfrr": 65.28,
           "commons": 335.64,
-          "vbgramg_ha": 76.56,
+          "vbgramg_ha": 0.0,
           "com_pct": 11.4
         },
         {
@@ -2282,7 +1708,7 @@
           "pasture": 53.0,
           "cfrr": 0.0,
           "commons": 53.0,
-          "vbgramg_ha": 13.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.9
         },
         {
@@ -2296,7 +1722,7 @@
           "pasture": 242.5,
           "cfrr": 308.0,
           "commons": 550.5,
-          "vbgramg_ha": 28.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 16.7
         },
         {
@@ -2310,7 +1736,7 @@
           "pasture": 130.2,
           "cfrr": 0.0,
           "commons": 130.2,
-          "vbgramg_ha": 23.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.8
         },
         {
@@ -2324,7 +1750,7 @@
           "pasture": 161.32,
           "cfrr": 5001.72,
           "commons": 5163.04,
-          "vbgramg_ha": 28.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 63.8
         }
       ]
@@ -2350,14 +1776,14 @@
       "com_pct": 38.89,
       "pasture_pct": 3.46,
       "com_per_hh": 1.29,
-      "vbgramg_ha": 361.11,
-      "vbgramg_villages": 29,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 100,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 2074.4,
-      "plots_count": 101,
+      "plots_count": 100,
       "panchayats": [
         {
           "name": "AKTASA",
@@ -2426,7 +1852,7 @@
           "pasture": 37.74,
           "cfrr": 0.0,
           "commons": 37.74,
-          "vbgramg_ha": 13.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.0
         },
         {
@@ -2454,7 +1880,7 @@
           "pasture": 77.94,
           "cfrr": 675.66,
           "commons": 753.6,
-          "vbgramg_ha": 56.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 44.9
         },
         {
@@ -2468,7 +1894,7 @@
           "pasture": 308.13,
           "cfrr": 1643.49,
           "commons": 1951.62,
-          "vbgramg_ha": 75.76,
+          "vbgramg_ha": 0.0,
           "com_pct": 51.0
         },
         {
@@ -2524,7 +1950,7 @@
           "pasture": 231.74,
           "cfrr": 4513.72,
           "commons": 4745.46,
-          "vbgramg_ha": 39.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 54.9
         },
         {
@@ -2552,7 +1978,7 @@
           "pasture": 109.06,
           "cfrr": 1147.85,
           "commons": 1256.91,
-          "vbgramg_ha": 30.43,
+          "vbgramg_ha": 0.0,
           "com_pct": 41.0
         },
         {
@@ -2566,7 +1992,7 @@
           "pasture": 248.14,
           "cfrr": 1221.8,
           "commons": 1469.94,
-          "vbgramg_ha": 66.92,
+          "vbgramg_ha": 0.0,
           "com_pct": 50.6
         },
         {
@@ -2650,7 +2076,7 @@
           "pasture": 200.0,
           "cfrr": 0.0,
           "commons": 200.0,
-          "vbgramg_ha": 21.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.2
         },
         {
@@ -2734,7 +2160,7 @@
           "pasture": 250.81,
           "cfrr": 624.18,
           "commons": 874.99,
-          "vbgramg_ha": 23.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 29.4
         },
         {
@@ -2748,7 +2174,7 @@
           "pasture": 37.0,
           "cfrr": 0.0,
           "commons": 37.0,
-          "vbgramg_ha": 21.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.5
         },
         {
@@ -2818,7 +2244,7 @@
           "pasture": 190.54,
           "cfrr": 0.0,
           "commons": 190.54,
-          "vbgramg_ha": 15.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 11.6
         }
       ]

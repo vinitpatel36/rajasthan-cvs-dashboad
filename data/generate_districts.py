@@ -3,13 +3,21 @@
 100% Raw Excel Data Generator for Rajasthan CVS Dashboard.
 Sourced strictly from the field Excel workbooks in /var/www/dashboard/data/
 Target Districts:
-  1:  Jodhpur  (1Dataset_Jodhpur_Oct26.xlsx)
-  5:  Kota     (5Dataset_kota_Oct26.xlsx)
-  6:  Bundi    (6_Dataset_Bundi_Oct26.xlsx)
-  7:  Jhalawar (7Dataset_Jhalawar_Oct26.xlsx)
-  8:  Baran    (8Dataset_Baran_Oct26.xlsx)
-  15: Pali     (15Dataset_Pali_Oct26.xlsx)
-  16: Ajmer    (16Dataset_Ajmer_Oct26.xlsx)
+  1:  Jodhpur    (1Dataset_Jodhpur_Oct26.xlsx)
+  2:  Barmer     (2Dataset_Barmer_Oct26.xlsx)
+  3:  Jaisalmer  (3Dataset_Jaisalemer_Oct 26.xlsx)
+  4:  Bikaner    (4Dataset_Bikaner_Oct26FF.xlsx)
+  5:  Kota       (5Dataset_kota_Oct26.xlsx)
+  6:  Bundi      (6_Dataset_Bundi_Oct26.xlsx)
+  7:  Jhalawar   (7Dataset_Jhalawar_Oct26.xlsx)
+  8:  Baran      (8Dataset_Baran_Oct26.xlsx)
+  10: Bhilwara   (10Dataset_Bhilwara_Oct26.xlsx)
+  11: Rajsamand  (11Dataset_Udaipur-Devgarh_Oct 26.xlsx)
+  11: Udaipur    (11Dataset_Udaipur- Rajsamand_Oct 26.xls)
+  12: Pratapgarh (12Dataset_Pratapgarh_Oct 26.xls)
+  13: Sirohi     (13Dataset_Sirohi_Oct 26.xlsx)
+  15: Pali       (15Dataset_Pali_Oct26.xlsx)
+  16: Ajmer      (16Dataset_Ajmer_Oct26.xlsx)
 
 NO static multipliers, NO external datasets, NO synthetic numbers.
 """
@@ -17,6 +25,7 @@ NO static multipliers, NO external datasets, NO synthetic numbers.
 import os
 import re
 import json
+import io
 import openpyxl
 
 DISTRICTS_CONFIG = {
@@ -35,6 +44,50 @@ DISTRICTS_CONFIG = {
             'LUNI': [26.05, 73.02], 'MANDOR': [26.35, 73.04], 'OSIAN': [26.72, 72.90],
             'PEEPAD SAHAR': [26.38, 73.55], 'PHALODI': [27.13, 72.36], 'SEKHALA': [26.32, 72.40],
             'BAWADI': [26.60, 73.08], 'TINWARI': [26.54, 72.95], 'SHERGARH': [26.32, 72.28]
+        }
+    },
+    'barmer': {
+        'num': 2,
+        'name': 'Barmer',
+        'file': '2Dataset_Barmer_Oct26.xlsx',
+        'center': [25.75, 71.39],
+        'zoom': 8,
+        'dist_code': '910811500000000000',
+        'block_centroids': {
+            'AADEL': [25.45, 71.67], 'BALTORA': [25.84, 72.16], 'BARMER': [25.72, 71.35],
+            'BARMER RURAL': [25.80, 71.50], 'BAYTOO': [25.96, 71.65], 'CHOHTAN': [25.46, 71.17],
+            'DHANAU': [25.24, 71.07], 'DHORIMANNA': [25.22, 71.39], 'DOODHU': [25.28, 71.35],
+            'FAGLIYA': [24.86, 71.20], 'GADRA ROAD': [25.87, 70.62], 'GIRA': [25.98, 71.83],
+            'GUDHAMALANI': [25.18, 71.72], 'KALYANPUR': [26.00, 72.47], 'PANYLA KLA': [25.40, 71.85],
+            'PATODI': [26.04, 72.04], 'RAMSAR': [25.69, 70.92], 'SAMDARI': [25.81, 72.58],
+            'SEDWA': [25.03, 71.12], 'SHEO': [26.26, 71.31], 'SINDHARI': [25.56, 71.92],
+            'SIWANA': [25.67, 72.37]
+        }
+    },
+    'jaisalmer': {
+        'num': 3,
+        'name': 'Jaisalmer',
+        'file': '3Dataset_Jaisalemer_Oct 26.xlsx',
+        'center': [26.91, 70.91],
+        'zoom': 8,
+        'dist_code': '910811400000000000',
+        'block_centroids': {
+            'BHANIYANA': [26.85, 71.71], 'FATEHGARH': [26.44, 71.04], 'JAISALMER': [26.92, 70.95],
+            'MOHANGARH': [27.25, 71.00], 'NACHANA': [27.46, 71.83], 'SAM': [26.80, 70.69],
+            'SANKRA': [26.87, 71.73]
+        }
+    },
+    'bikaner': {
+        'num': 4,
+        'name': 'Bikaner',
+        'file': '4Dataset_Bikaner_Oct26FF.xlsx',
+        'center': [28.01, 73.31],
+        'zoom': 8,
+        'dist_code': '910810100000000000',
+        'block_centroids': {
+            'BAJJU KHALSA': [27.86, 72.35], 'BIKANER': [28.11, 73.35], 'KHAJUWALA': [28.58, 72.96],
+            'KOLAYAT': [27.77, 72.87], 'LUNKARANSAR': [28.52, 73.73], 'NOKHA': [27.69, 73.61],
+            'PANCHOO': [27.50, 73.32], 'POOGAL': [28.54, 73.09], 'SRI DUNGARGARH': [27.94, 74.19]
         }
     },
     'kota': {
@@ -89,6 +142,71 @@ DISTRICTS_CONFIG = {
             'KISHANGANJ': [25.13, 76.82], 'SHAHBAD': [25.19, 77.17]
         }
     },
+    'bhilwara': {
+        'num': 10,
+        'name': 'Bhilwara',
+        'file': '10Dataset_Bhilwara_Oct26.xlsx',
+        'center': [25.35, 74.63],
+        'zoom': 9,
+        'dist_code': '910812200000000000',
+        'block_centroids': {
+            'ASIND': [25.73, 74.33], 'BANERA': [25.50, 74.68], 'BEEJOLIYA': [25.16, 75.32],
+            'HURDA': [25.90, 74.68], 'JAHAZPUR': [25.62, 75.28], 'KOTRI': [25.40, 74.92],
+            'MANDAL': [25.44, 74.57], 'MANDALGARH': [25.21, 75.10], 'RAIPUR': [25.34, 74.19],
+            'SAHADA': [25.25, 74.24], 'SHAHPURA': [25.63, 74.93]
+        }
+    },
+    'rajsamand': {
+        'num': 11,
+        'name': 'Rajsamand (Devgarh)',
+        'file': '11Dataset_Udaipur-Devgarh_Oct 26.xlsx',
+        'center': [25.07, 73.88],
+        'zoom': 9,
+        'dist_code': '910812300000000000',
+        'block_centroids': {
+            'AMET': [25.31, 73.93], 'BHIM': [25.82, 74.09], 'DEOGARH': [25.53, 73.91],
+            'KHAMNOR': [24.98, 73.72], 'KUMBHALGARH': [25.15, 73.58], 'RAILMAGRA': [25.01, 74.13],
+            'RAJSAMAND': [25.07, 73.88]
+        }
+    },
+    'udaipur': {
+        'num': 11,
+        'name': 'Udaipur',
+        'file': '11Dataset_Udaipur- Rajsamand_Oct 26.xls',
+        'center': [24.58, 73.68],
+        'zoom': 9,
+        'dist_code': '910813000000000000',
+        'block_centroids': {
+            'BARGAON': [24.63, 73.67], 'BHINDAR': [24.50, 74.18], 'GIRWA': [24.58, 73.71],
+            'GOGUNDA': [24.76, 73.53], 'JHADOL': [24.40, 73.48], 'KHERWARA': [23.99, 73.59],
+            'KOTRA': [24.36, 73.18], 'LASADIYA': [24.23, 74.32], 'MAVLI': [24.78, 73.99],
+            'SALUMBAR': [24.13, 74.04], 'SARADA': [24.14, 73.83]
+        }
+    },
+    'pratapgarh': {
+        'num': 12,
+        'name': 'Pratapgarh',
+        'file': '12Dataset_Pratapgarh_Oct 26.xls',
+        'center': [24.03, 74.78],
+        'zoom': 9,
+        'dist_code': '910813100000000000',
+        'block_centroids': {
+            'ARNOD': [23.88, 74.82], 'CHHOTISADRI': [24.38, 74.71], 'DHARIAWAD': [24.10, 74.44],
+            'PEEPALKHOONT': [23.80, 74.58], 'PRATAPGARH': [24.03, 74.78]
+        }
+    },
+    'sirohi': {
+        'num': 13,
+        'name': 'Sirohi',
+        'file': '13Dataset_Sirohi_Oct 26.xlsx',
+        'center': [24.88, 72.86],
+        'zoom': 9,
+        'dist_code': '910811700000000000',
+        'block_centroids': {
+            'ABU ROAD': [24.48, 72.78], 'PINDWARA': [24.80, 73.05], 'REODAR': [24.62, 72.52],
+            'SHEOGANJ': [25.15, 73.07], 'SIROHI': [24.88, 72.86]
+        }
+    },
     'pali': {
         'num': 15,
         'name': 'Pali',
@@ -118,7 +236,6 @@ DISTRICTS_CONFIG = {
     }
 }
 
-DIST_NAMES = {'jodhpur', 'kota', 'bundi', 'jhalawar', 'baran', 'pali', 'ajmer'}
 HEADER_FILTER = {
     'village', 'village name', 'name of village', 'panchayat', 'gram panchayat',
     'district', 'none', 'total', 'hac', 'ha', 'code', 'code11', 'no.', '%', 's.no.'
@@ -132,6 +249,11 @@ BLOCK_NAME_CLEAN = {
     'BH MANDI': 'BHAWANI MANDI',
     'KHERABAD': 'KHAIRABAD',
     'SILORA- KISHANGARH': 'KISHANGARH'
+}
+
+SKIP_SHEETS = {
+    'barmer 21 blocks', 'jaisalmer district', 'bikaner dist', 'format',
+    'sirohi_district', 'ff data', 'sheet1', 'sheet2'
 }
 
 def to_f(val):
@@ -158,10 +280,71 @@ def clean_name(s):
     s = str(s).strip()
     return re.sub(r'\s+', ' ', s)
 
-def process_district(dist_id, cfg, data_dir='/var/www/dashboard/data'):
+def get_col_map(header_row):
+    m = {}
+    for i, c in enumerate(header_row):
+        if c is None:
+            continue
+        t = str(c).strip().lower()
+        if 'district' in t and 'dist' not in m:
+            m['dist'] = i
+        elif 'block' in t and 'block' not in m:
+            m['block'] = i
+        elif 'panchayat' in t and 'asset' not in t and 'panch' not in m:
+            m['panch'] = i
+        elif 'village' in t and not any(k in t for k in ['bylaw', 'recog', 'asset', 'panchayat']) and 'vill' not in m:
+            m['vill'] = i
+        elif any(k in t for k in ['code11', 'code', 'census']) and 'code' not in m:
+            m['code'] = i
+        elif 'geographical' in t and 'ga' not in m:
+            m['ga'] = i
+        elif 'household' in t and 'hh' not in m:
+            m['hh'] = i
+        elif 'population' in t and not any(k in t for k in ['sc', 'st', 'male', 'female', '%']) and 'pop' not in m:
+            m['pop'] = i
+        elif 'male' in t and 'female' not in t and 'male' not in m:
+            m['male'] = i
+        elif 'female' in t and 'female' not in m:
+            m['female'] = i
+        elif 'sc' in t and 'population' in t and '%' not in t and 'sc' not in m:
+            m['sc'] = i
+        elif 'st' in t and 'population' in t and '%' not in t and 'st' not in m:
+            m['st'] = i
+        elif 'pasture' in t and any(k in t for k in ['grazing', 'land', 'area', 'pastu']) and not any(k in t for k in ['applied', 'recog', '170', 'demarc', 'bylaw', 'enchro', 'encro', 'ecoresto', 'entry', 'asset']) and 'pas' not in m:
+            m['pas'] = i
+        elif ('cfrr' in t or 'cfr' in t or 'forest' in t) and not any(k in t for k in ['appli', 'resol', 'claim', 'mange']) and 'cfrr' not in m:
+            m['cfrr'] = i
+        elif ('cvs' in t or 'resolution' in t) and any(k in t for k in ['formation', 'reorganisation', 'formed']) and not any(k in t for k in ['frc', 'application']) and 'cvs' not in m:
+            m['cvs'] = i
+        elif 'date' in t and 'cvs_date' not in m:
+            m['cvs_date'] = i
+        elif ('170' in t or 'sahmati' in t or 'tenure' in t) and 'pasture' in t and 'recog' not in m:
+            m['recog'] = i
+        elif 'demarc' in t and 'demarc' not in m:
+            m['demarc'] = i
+        elif 'bylaw' in t and 'bylaws' not in m:
+            m['bylaws'] = i
+        elif 'asset' in t and 'register' in t and 'asset' not in m:
+            m['asset'] = i
+        elif any(k in t for k in ['removal of encro', 'encroachment removed']) and 'encroach' not in m:
+            m['encroach'] = i
+        elif any(k in t for k in ['vbgramg', 'vbgmrg', 'govt scheme', 'ecorestoration work', 'work done under']) and not any(k in t for k in ['narration', 'activities']) and 'vbg_ha' not in m:
+            m['vbg_ha'] = i
+        elif any(k in t for k in ['narration', 'activities of work']) and 'vbg_work' not in m:
+            m['vbg_work'] = i
+        elif any(k in t for k in ['gps', 'coordinate']) and 'gps' not in m:
+            m['gps'] = i
+    return m
+
+def process_district(dist_id, cfg, data_dir):
     fpath = os.path.join(data_dir, cfg['file'])
     print(f"=== Processing {cfg['name']} (District {cfg['num']}) from {fpath} ===")
-    wb = openpyxl.load_workbook(fpath, read_only=True, data_only=True)
+    
+    if cfg['file'].endswith('.xls'):
+        with open(fpath, 'rb') as f:
+            wb = openpyxl.load_workbook(io.BytesIO(f.read()), read_only=True, data_only=True)
+    else:
+        wb = openpyxl.load_workbook(fpath, read_only=True, data_only=True)
 
     villages = []
     plots = []
@@ -170,7 +353,7 @@ def process_district(dist_id, cfg, data_dir='/var/www/dashboard/data'):
     for sname in wb.sheetnames:
         sheet = wb[sname]
         raw_bname = sname.replace('FF ', '').replace(' Block', '').strip().upper()
-        if raw_bname in ('SHEET1', 'FORMAT'):
+        if raw_bname.lower() in SKIP_SHEETS:
             continue
 
         bname = BLOCK_NAME_CLEAN.get(raw_bname, raw_bname)
@@ -182,85 +365,124 @@ def process_district(dist_id, cfg, data_dir='/var/www/dashboard/data'):
 
         # Header detection
         h_idx = 1
-        for ri in range(min(4, len(rows))):
+        for ri in range(min(5, len(rows))):
             line = [str(c).strip().lower() if c is not None else '' for c in rows[ri]]
             if any('village' in c for c in line) and any('geographical' in c for c in line):
                 h_idx = ri
                 break
+
+        col_map = get_col_map(rows[h_idx])
 
         for r_idx in range(h_idx + 1, len(rows)):
             r = rows[r_idx]
             if not r or not any(r):
                 continue
 
-            r0 = str(r[0]).strip().lower() if r[0] is not None else ''
-            r1 = str(r[1]).strip().lower() if len(r) > 1 and r[1] is not None else ''
-
-            if r0 in DIST_NAMES:
-                offset = 0
-            elif r1 in DIST_NAMES or r0.isdigit() or r0 in ('p', 's'):
-                offset = 1
-            else:
-                offset = 0
-
-            vname = clean_name(r[3 + offset] if len(r) > (3 + offset) and r[3 + offset] else '')
+            v_idx = col_map.get('vill', 3)
+            vname = clean_name(r[v_idx] if len(r) > v_idx else '')
             v_clean = vname.strip().lower()
             if not vname or v_clean in HEADER_FILTER or v_clean.startswith('total') or v_clean == 'grand total':
                 continue
 
-            pname = clean_name(r[2 + offset] if len(r) > (2 + offset) and r[2 + offset] else '')
+            p_idx = col_map.get('panch', 2)
+            pname = clean_name(r[p_idx] if len(r) > p_idx else '')
             if not pname or pname.strip().lower() in HEADER_FILTER:
                 pname = 'GENERAL'
             pname = pname.upper()
 
-            code = clean_name(r[4 + offset] if len(r) > (4 + offset) and r[4 + offset] else '')
-            ga = to_f(r[5 + offset] if len(r) > (5 + offset) else 0)
+            code_idx = col_map.get('code', 4)
+            code = clean_name(r[code_idx] if len(r) > code_idx else '')
+            
+            ga_idx = col_map.get('ga', 5)
+            ga = to_f(r[ga_idx] if len(r) > ga_idx else 0)
 
             # Fix if census code was in column 5
-            if ga > 35000:
+            if ga > 35000 and len(r) > (ga_idx + 1):
                 code = str(int(ga))
-                ga = to_f(r[6 + offset] if len(r) > (6 + offset) else 0)
-                hh = to_i(r[7 + offset] if len(r) > (7 + offset) else 0)
-                pop = to_i(r[8 + offset] if len(r) > (8 + offset) else 0)
-                m = to_i(r[9 + offset] if len(r) > (9 + offset) else 0)
-                f = to_i(r[10 + offset] if len(r) > (10 + offset) else 0)
-                sc = to_i(r[11 + offset] if len(r) > (11 + offset) else 0)
-                st = to_i(r[13 + offset] if len(r) > (13 + offset) else 0)
-                pas = to_f(r[15 + offset] if len(r) > (15 + offset) else 0)
-                cfrr = to_f(r[16 + offset] if len(r) > (16 + offset) else 0)
-                cvs_res = str(r[17 + offset]).strip().upper() if len(r) > (17 + offset) and r[17 + offset] else ''
-                cvs_date = clean_name(r[18 + offset] if len(r) > (18 + offset) and r[18 + offset] else '')
-                pasture_appl_ha = to_f(r[19 + offset] if len(r) > (19 + offset) else 0)
-                pasture_recog_ha = to_f(r[20 + offset] if len(r) > (20 + offset) else 0)
-                asset_reg = str(r[21 + offset]).strip().upper() if len(r) > (21 + offset) and r[21 + offset] else ''
-                bylaws = str(r[22 + offset]).strip().upper() if len(r) > (22 + offset) and r[22 + offset] else ''
-                demarc = str(r[23 + offset]).strip().upper() if len(r) > (23 + offset) and r[23 + offset] else ''
-                encroach_ha = to_f(r[25 + offset] if len(r) > (25 + offset) else 0)
-                vbg_ha = to_f(r[28 + offset] if len(r) > (28 + offset) else 0)
-                vbg_work = clean_name(r[29 + offset] if len(r) > (29 + offset) else '')
-                c1_val = r[30 + offset] if len(r) > (30 + offset) else None
-                c2_val = r[31 + offset] if len(r) > (31 + offset) else None
+                ga = to_f(r[ga_idx + 1])
+                hh = to_i(r[col_map.get('hh', 6) + 1] if len(r) > (col_map.get('hh', 6) + 1) else 0)
+                pop = to_i(r[col_map.get('pop', 7) + 1] if len(r) > (col_map.get('pop', 7) + 1) else 0)
+                m = to_i(r[col_map.get('male', 8) + 1] if len(r) > (col_map.get('male', 8) + 1) else 0)
+                f = to_i(r[col_map.get('female', 9) + 1] if len(r) > (col_map.get('female', 9) + 1) else 0)
+                sc = to_i(r[col_map.get('sc', 10) + 1] if len(r) > (col_map.get('sc', 10) + 1) else 0)
+                st = to_i(r[col_map.get('st', 12) + 1] if len(r) > (col_map.get('st', 12) + 1) else 0)
+                pas = to_f(r[col_map.get('pas', 14) + 1] if len(r) > (col_map.get('pas', 14) + 1) else 0)
+                cfrr = to_f(r[col_map.get('cfrr', 15) + 1] if len(r) > (col_map.get('cfrr', 15) + 1) else 0)
+                
+                cvs_idx = (col_map.get('cvs', 16) + 1)
+                cvs_res = str(r[cvs_idx]).strip().upper() if len(r) > cvs_idx and r[cvs_idx] else ''
+                
+                date_idx = (col_map.get('cvs_date', 17) + 1)
+                cvs_date = clean_name(r[date_idx] if len(r) > date_idx and r[date_idx] else '')
+                
+                recog_idx = (col_map.get('recog', 19) + 1)
+                pasture_recog_ha = to_f(r[recog_idx] if len(r) > recog_idx else 0)
+                
+                asset_idx = (col_map.get('asset', 20) + 1)
+                asset_reg = str(r[asset_idx]).strip().upper() if len(r) > asset_idx and r[asset_idx] else ''
+                
+                bylaws_idx = (col_map.get('bylaws', 21) + 1)
+                bylaws = str(r[bylaws_idx]).strip().upper() if len(r) > bylaws_idx and r[bylaws_idx] else ''
+                
+                demarc_idx = (col_map.get('demarc', 22) + 1)
+                demarc = str(r[demarc_idx]).strip().upper() if len(r) > demarc_idx and r[demarc_idx] else ''
+                
+                encroach_idx = (col_map.get('encroach', 24) + 1)
+                encroach_ha = to_f(r[encroach_idx] if len(r) > encroach_idx else 0)
+                
+                vbg_idx = (col_map.get('vbg_ha', 27) + 1)
+                vbg_ha = to_f(r[vbg_idx] if len(r) > vbg_idx else 0)
+                
+                work_idx = (col_map.get('vbg_work', 28) + 1)
+                vbg_work = clean_name(r[work_idx] if len(r) > work_idx and r[work_idx] else '')
+                
+                gps_idx = col_map.get('gps', 29) + 1
+                c1_val = r[gps_idx] if len(r) > gps_idx else None
+                c2_val = r[gps_idx + 1] if len(r) > (gps_idx + 1) else None
             else:
-                hh = to_i(r[6 + offset] if len(r) > (6 + offset) else 0)
-                pop = to_i(r[7 + offset] if len(r) > (7 + offset) else 0)
-                m = to_i(r[8 + offset] if len(r) > (8 + offset) else 0)
-                f = to_i(r[9 + offset] if len(r) > (9 + offset) else 0)
-                sc = to_i(r[10 + offset] if len(r) > (10 + offset) else 0)
-                st = to_i(r[12 + offset] if len(r) > (12 + offset) else 0)
-                pas = to_f(r[14 + offset] if len(r) > (14 + offset) else 0)
-                cfrr = to_f(r[15 + offset] if len(r) > (15 + offset) else 0)
-                cvs_res = str(r[16 + offset]).strip().upper() if len(r) > (16 + offset) and r[16 + offset] else ''
-                cvs_date = clean_name(r[17 + offset] if len(r) > (17 + offset) and r[17 + offset] else '')
-                pasture_appl_ha = to_f(r[18 + offset] if len(r) > (18 + offset) else 0)
-                pasture_recog_ha = to_f(r[19 + offset] if len(r) > (19 + offset) else 0)
-                asset_reg = str(r[20 + offset]).strip().upper() if len(r) > (20 + offset) and r[20 + offset] else ''
-                bylaws = str(r[21 + offset]).strip().upper() if len(r) > (21 + offset) and r[21 + offset] else ''
-                demarc = str(r[22 + offset]).strip().upper() if len(r) > (22 + offset) and r[22 + offset] else ''
-                encroach_ha = to_f(r[24 + offset] if len(r) > (24 + offset) else 0)
-                vbg_ha = to_f(r[27 + offset] if len(r) > (27 + offset) else 0)
-                vbg_work = clean_name(r[28 + offset] if len(r) > (28 + offset) else '')
-                c1_val = r[29 + offset] if len(r) > (29 + offset) else None
-                c2_val = r[30 + offset] if len(r) > (30 + offset) else None
+                hh = to_i(r[col_map.get('hh', 6)] if col_map.get('hh') is not None and len(r) > col_map['hh'] else 0)
+                pop = to_i(r[col_map.get('pop', 7)] if col_map.get('pop') is not None and len(r) > col_map['pop'] else 0)
+                m = to_i(r[col_map.get('male', 8)] if col_map.get('male') is not None and len(r) > col_map['male'] else 0)
+                f = to_i(r[col_map.get('female', 9)] if col_map.get('female') is not None and len(r) > col_map['female'] else 0)
+                sc = to_i(r[col_map.get('sc', 10)] if col_map.get('sc') is not None and len(r) > col_map['sc'] else 0)
+                st = to_i(r[col_map.get('st', 12)] if col_map.get('st') is not None and len(r) > col_map['st'] else 0)
+                pas = to_f(r[col_map.get('pas', 14)] if col_map.get('pas') is not None and len(r) > col_map['pas'] else 0)
+                cfrr = to_f(r[col_map.get('cfrr', 15)] if col_map.get('cfrr') is not None and len(r) > col_map['cfrr'] else 0)
+                
+                cvs_idx = col_map.get('cvs', 16)
+                cvs_res = str(r[cvs_idx]).strip().upper() if cvs_idx is not None and len(r) > cvs_idx and r[cvs_idx] else ''
+                
+                date_idx = col_map.get('cvs_date', 17)
+                cvs_date = clean_name(r[date_idx] if date_idx is not None and len(r) > date_idx and r[date_idx] else '')
+                
+                recog_idx = col_map.get('recog', 19)
+                pasture_recog_ha = to_f(r[recog_idx] if recog_idx is not None and len(r) > recog_idx else 0)
+                
+                asset_idx = col_map.get('asset', 20)
+                asset_reg = str(r[asset_idx]).strip().upper() if asset_idx is not None and len(r) > asset_idx and r[asset_idx] else ''
+                
+                bylaws_idx = col_map.get('bylaws', 21)
+                bylaws = str(r[bylaws_idx]).strip().upper() if bylaws_idx is not None and len(r) > bylaws_idx and r[bylaws_idx] else ''
+                
+                demarc_idx = col_map.get('demarc', 22)
+                demarc = str(r[demarc_idx]).strip().upper() if demarc_idx is not None and len(r) > demarc_idx and r[demarc_idx] else ''
+                
+                encroach_idx = col_map.get('encroach', 24)
+                encroach_ha = to_f(r[encroach_idx] if encroach_idx is not None and len(r) > encroach_idx else 0)
+                
+                vbg_idx = col_map.get('vbg_ha', 27)
+                vbg_ha = to_f(r[vbg_idx] if vbg_idx is not None and len(r) > vbg_idx else 0)
+                
+                work_idx = col_map.get('vbg_work', 28)
+                vbg_work = clean_name(r[work_idx] if work_idx is not None and len(r) > work_idx and r[work_idx] else '')
+                
+                gps_idx = col_map.get('gps')
+                if gps_idx is not None:
+                    c1_val = r[gps_idx] if len(r) > gps_idx else None
+                    c2_val = r[gps_idx + 1] if len(r) > (gps_idx + 1) else None
+                else:
+                    c1_val = r[-2] if len(r) >= 2 else None
+                    c2_val = r[-1] if len(r) >= 1 else None
 
             # Commons in Excel is Pasture + Potential CFRR
             com = round(pas + cfrr, 2)
@@ -271,8 +493,8 @@ def process_district(dist_id, cfg, data_dir='/var/www/dashboard/data'):
             is_exact = False
             if c1_val is not None and c2_val is not None:
                 try:
-                    c1 = float(str(c1_val).strip())
-                    c2 = float(str(c2_val).strip())
+                    c1 = float(str(c1_val).strip().replace(',', ''))
+                    c2 = float(str(c2_val).strip().replace(',', ''))
                     if (23.0 <= c1 <= 30.5 and 69.0 <= c2 <= 79.5):
                         lat, lng = c1, c2
                         is_exact = True
@@ -579,8 +801,9 @@ def process_district(dist_id, cfg, data_dir='/var/www/dashboard/data'):
     print(f"-> Saved {cfg['name']}: {len(villages)} villages, {len(blocks_data)} blocks, {len(plots)} plots.")
 
 def main():
-    data_dir = '/var/www/dashboard/data'
-    print("Starting Raw Excel Data Generation for 7 Districts...")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = script_dir
+    print(f"Starting Raw Excel Data Generation for {len(DISTRICTS_CONFIG)} Districts in {data_dir}...")
     districts_list = []
 
     for dist_id, cfg in DISTRICTS_CONFIG.items():
@@ -599,7 +822,7 @@ def main():
     with open(os.path.join(data_dir, 'districts.json'), 'w', encoding='utf-8') as f:
         json.dump(districts_list, f, indent=2)
 
-    print("All 7 districts generated 100% directly from Excel!")
+    print(f"All {len(DISTRICTS_CONFIG)} districts generated 100% directly from Excel!")
 
 if __name__ == '__main__':
     main()

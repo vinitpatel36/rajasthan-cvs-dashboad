@@ -12,6 +12,42 @@
     "excel_file": "1Dataset_Jodhpur_Oct26.xlsx"
   },
   {
+    "id": "barmer",
+    "num": 2,
+    "name": "Barmer",
+    "center": [
+      25.75,
+      71.39
+    ],
+    "zoom": 8,
+    "dist_code": "910811500000000000",
+    "excel_file": "2Dataset_Barmer_Oct26.xlsx"
+  },
+  {
+    "id": "jaisalmer",
+    "num": 3,
+    "name": "Jaisalmer",
+    "center": [
+      26.91,
+      70.91
+    ],
+    "zoom": 8,
+    "dist_code": "910811400000000000",
+    "excel_file": "3Dataset_Jaisalemer_Oct 26.xlsx"
+  },
+  {
+    "id": "bikaner",
+    "num": 4,
+    "name": "Bikaner",
+    "center": [
+      28.01,
+      73.31
+    ],
+    "zoom": 8,
+    "dist_code": "910810100000000000",
+    "excel_file": "4Dataset_Bikaner_Oct26FF.xlsx"
+  },
+  {
     "id": "kota",
     "num": 5,
     "name": "Kota",
@@ -58,6 +94,66 @@
     "zoom": 9,
     "dist_code": "910812800000000000",
     "excel_file": "8Dataset_Baran_Oct26.xlsx"
+  },
+  {
+    "id": "bhilwara",
+    "num": 10,
+    "name": "Bhilwara",
+    "center": [
+      25.35,
+      74.63
+    ],
+    "zoom": 9,
+    "dist_code": "910812200000000000",
+    "excel_file": "10Dataset_Bhilwara_Oct26.xlsx"
+  },
+  {
+    "id": "rajsamand",
+    "num": 11,
+    "name": "Rajsamand (Devgarh)",
+    "center": [
+      25.07,
+      73.88
+    ],
+    "zoom": 9,
+    "dist_code": "910812300000000000",
+    "excel_file": "11Dataset_Udaipur-Devgarh_Oct 26.xlsx"
+  },
+  {
+    "id": "udaipur",
+    "num": 11,
+    "name": "Udaipur",
+    "center": [
+      24.58,
+      73.68
+    ],
+    "zoom": 9,
+    "dist_code": "910813000000000000",
+    "excel_file": "11Dataset_Udaipur- Rajsamand_Oct 26.xls"
+  },
+  {
+    "id": "pratapgarh",
+    "num": 12,
+    "name": "Pratapgarh",
+    "center": [
+      24.03,
+      74.78
+    ],
+    "zoom": 9,
+    "dist_code": "910813100000000000",
+    "excel_file": "12Dataset_Pratapgarh_Oct 26.xls"
+  },
+  {
+    "id": "sirohi",
+    "num": 13,
+    "name": "Sirohi",
+    "center": [
+      24.88,
+      72.86
+    ],
+    "zoom": 9,
+    "dist_code": "910811700000000000",
+    "excel_file": "13Dataset_Sirohi_Oct 26.xlsx"
   },
   {
     "id": "pali",

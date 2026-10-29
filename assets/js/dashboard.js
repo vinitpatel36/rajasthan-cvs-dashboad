@@ -6,13 +6,21 @@
 (function () {
   'use strict';
 
-  // District Configuration for target districts (1, 5, 6, 7, 8, 15, 16)
+  // District Configuration for all 15 target districts
   const DISTRICT_CONFIG = {
     jodhpur: { id: 'jodhpur', num: 1, name: 'Jodhpur', center: [26.50, 72.85], zoom: 8, dist_code: '910811300000000000' },
+    barmer: { id: 'barmer', num: 2, name: 'Barmer', center: [25.75, 71.39], zoom: 8, dist_code: '910811500000000000' },
+    jaisalmer: { id: 'jaisalmer', num: 3, name: 'Jaisalmer', center: [26.91, 70.91], zoom: 8, dist_code: '910811400000000000' },
+    bikaner: { id: 'bikaner', num: 4, name: 'Bikaner', center: [28.01, 73.31], zoom: 8, dist_code: '910810100000000000' },
     kota: { id: 'kota', num: 5, name: 'Kota', center: [25.18, 75.83], zoom: 9, dist_code: '910812700000000000' },
     bundi: { id: 'bundi', num: 6, name: 'Bundi', center: [25.44, 75.64], zoom: 9, dist_code: '910812100000000000' },
     jhalawar: { id: 'jhalawar', num: 7, name: 'Jhalawar', center: [24.59, 76.16], zoom: 9, dist_code: '910812900000000000' },
     baran: { id: 'baran', num: 8, name: 'Baran', center: [25.10, 76.51], zoom: 9, dist_code: '910812800000000000' },
+    bhilwara: { id: 'bhilwara', num: 10, name: 'Bhilwara', center: [25.35, 74.63], zoom: 9, dist_code: '910812200000000000' },
+    rajsamand: { id: 'rajsamand', num: 11, name: 'Rajsamand (Devgarh)', center: [25.07, 73.88], zoom: 9, dist_code: '910812300000000000' },
+    udaipur: { id: 'udaipur', num: 11, name: 'Udaipur', center: [24.58, 73.68], zoom: 9, dist_code: '910813000000000000' },
+    pratapgarh: { id: 'pratapgarh', num: 12, name: 'Pratapgarh', center: [24.03, 74.78], zoom: 9, dist_code: '910813100000000000' },
+    sirohi: { id: 'sirohi', num: 13, name: 'Sirohi', center: [24.88, 72.86], zoom: 9, dist_code: '910811700000000000' },
     pali: { id: 'pali', num: 15, name: 'Pali', center: [25.77, 73.32], zoom: 9, dist_code: '910811800000000000' },
     ajmer: { id: 'ajmer', num: 16, name: 'Ajmer', center: [26.45, 74.64], zoom: 9, dist_code: '910811900000000000' }
   };
@@ -640,6 +648,9 @@
         const sw = bounds.getSouthWest();
         const ne = bounds.getNorthEast();
 
+        const activeDistCfg = DISTRICT_CONFIG[state.activeDistrict] || DISTRICT_CONFIG.jodhpur;
+        const curDistCode = activeDistCfg.dist_code || '910811300000000000';
+
         const params = new URLSearchParams({
           service: 'WMS',
           version: '1.1.1',
@@ -653,7 +664,7 @@
           x: Math.round(point.x),
           y: Math.round(point.y),
           info_format: 'application/json',
-          cql_filter: "dist_code = '910811300000000000'"
+          cql_filter: `dist_code = '${curDistCode}'`
         });
 
         const resp = await fetch(`https://dpmap.observatory.org.in/geoserver/admin/wms?${params.toString()}`);
@@ -688,7 +699,7 @@
                   <div><strong style="color:#e2e8f0;">FES ID:</strong><br>${fesId}</div>
                 </div>
                 <div style="margin-top:6px;font-size:0.65rem;color:#64748b;font-style:italic;">
-                  dist_code = '910811300000000000'
+                  dist_code = '${curDistCode}' (${activeDistCfg.name})
                 </div>
               </div>
             `)

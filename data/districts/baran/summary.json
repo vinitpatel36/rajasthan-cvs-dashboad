@@ -21,14 +21,14 @@
     "cfrr": 195251.3,
     "common_land": 288388.42,
     "common_land_pct": 42.27,
-    "vbgramg_ha": 9688.19,
-    "vbgramg_villages": 823,
-    "cvs_formed": 858,
+    "vbgramg_ha": 0.0,
+    "vbgramg_villages": 0,
+    "cvs_formed": 841,
     "demarcated_villages": 0,
     "bylaws_villages": 0,
     "encroach_ha": 0.0,
     "pasture_recog_ha": 22908.97,
-    "plots_count": 1156
+    "plots_count": 1087
   },
   "blocks": [
     {
@@ -52,14 +52,14 @@
       "com_pct": 7.47,
       "pasture_pct": 3.26,
       "com_per_hh": 0.22,
-      "vbgramg_ha": 1694.0,
-      "vbgramg_villages": 73,
-      "cvs_villages": 67,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
+      "cvs_villages": 66,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 1640.27,
-      "plots_count": 84,
+      "plots_count": 79,
       "panchayats": [
         {
           "name": "AMALSARA",
@@ -72,7 +72,7 @@
           "pasture": 101.32,
           "cfrr": 241.06,
           "commons": 342.38,
-          "vbgramg_ha": 47.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 17.4
         },
         {
@@ -86,7 +86,7 @@
           "pasture": 40.87,
           "cfrr": 0.0,
           "commons": 40.87,
-          "vbgramg_ha": 34.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.7
         },
         {
@@ -100,7 +100,7 @@
           "pasture": 64.95,
           "cfrr": 83.23,
           "commons": 148.18,
-          "vbgramg_ha": 39.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.9
         },
         {
@@ -114,7 +114,7 @@
           "pasture": 39.69,
           "cfrr": 166.01,
           "commons": 205.7,
-          "vbgramg_ha": 34.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 10.6
         },
         {
@@ -128,7 +128,7 @@
           "pasture": 77.72,
           "cfrr": 0.0,
           "commons": 77.72,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.3
         },
         {
@@ -142,7 +142,7 @@
           "pasture": 41.41,
           "cfrr": 0.0,
           "commons": 41.41,
-          "vbgramg_ha": 8.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.6
         },
         {
@@ -156,7 +156,7 @@
           "pasture": 86.83,
           "cfrr": 0.0,
           "commons": 86.83,
-          "vbgramg_ha": 11.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.6
         },
         {
@@ -170,7 +170,7 @@
           "pasture": 0.0,
           "cfrr": 0.0,
           "commons": 0.0,
-          "vbgramg_ha": 11.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -198,7 +198,7 @@
           "pasture": 138.44,
           "cfrr": 0.0,
           "commons": 138.44,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.9
         },
         {
@@ -212,7 +212,7 @@
           "pasture": 8.0,
           "cfrr": 0.0,
           "commons": 8.0,
-          "vbgramg_ha": 27.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.7
         },
         {
@@ -226,7 +226,7 @@
           "pasture": 0.0,
           "cfrr": 159.0,
           "commons": 159.0,
-          "vbgramg_ha": 7.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 116.1
         },
         {
@@ -240,7 +240,7 @@
           "pasture": 75.9,
           "cfrr": 0.0,
           "commons": 75.9,
-          "vbgramg_ha": 22.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.0
         },
         {
@@ -254,7 +254,7 @@
           "pasture": 78.1,
           "cfrr": 0.0,
           "commons": 78.1,
-          "vbgramg_ha": 41.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.8
         },
         {
@@ -268,7 +268,7 @@
           "pasture": 79.54,
           "cfrr": 49.14,
           "commons": 128.68,
-          "vbgramg_ha": 58.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.7
         },
         {
@@ -282,7 +282,7 @@
           "pasture": 7.87,
           "cfrr": 0.0,
           "commons": 7.87,
-          "vbgramg_ha": 11.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.7
         },
         {
@@ -296,7 +296,7 @@
           "pasture": 115.25,
           "cfrr": 0.0,
           "commons": 115.25,
-          "vbgramg_ha": 41.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.2
         },
         {
@@ -310,7 +310,7 @@
           "pasture": 27.1,
           "cfrr": 0.0,
           "commons": 27.1,
-          "vbgramg_ha": 31.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.6
         },
         {
@@ -324,7 +324,7 @@
           "pasture": 161.23,
           "cfrr": 801.0,
           "commons": 962.23,
-          "vbgramg_ha": 112.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 22.7
         },
         {
@@ -338,7 +338,7 @@
           "pasture": 43.26,
           "cfrr": 0.29,
           "commons": 43.55,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.4
         },
         {
@@ -352,7 +352,7 @@
           "pasture": 0.0,
           "cfrr": 169.31,
           "commons": 169.31,
-          "vbgramg_ha": 14.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.7
         },
         {
@@ -366,7 +366,7 @@
           "pasture": 66.49,
           "cfrr": 0.0,
           "commons": 66.49,
-          "vbgramg_ha": 31.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.0
         },
         {
@@ -380,7 +380,7 @@
           "pasture": 103.14,
           "cfrr": 0.0,
           "commons": 103.14,
-          "vbgramg_ha": 39.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.4
         },
         {
@@ -394,7 +394,7 @@
           "pasture": 38.77,
           "cfrr": 0.0,
           "commons": 38.77,
-          "vbgramg_ha": 11.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.9
         },
         {
@@ -422,7 +422,7 @@
           "pasture": 54.93,
           "cfrr": 0.0,
           "commons": 54.93,
-          "vbgramg_ha": 41.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.7
         },
         {
@@ -436,7 +436,7 @@
           "pasture": 202.93,
           "cfrr": 531.94,
           "commons": 734.87,
-          "vbgramg_ha": 9.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 18.1
         },
         {
@@ -450,7 +450,7 @@
           "pasture": 5.49,
           "cfrr": 0.19,
           "commons": 5.68,
-          "vbgramg_ha": 924.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.4
         }
       ]
@@ -476,14 +476,14 @@
       "com_pct": 24.58,
       "pasture_pct": 6.54,
       "com_per_hh": 0.84,
-      "vbgramg_ha": 1199.6,
-      "vbgramg_villages": 108,
-      "cvs_villages": 114,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
+      "cvs_villages": 98,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 3753.1,
-      "plots_count": 162,
+      "plots_count": 154,
       "panchayats": [
         {
           "name": "ANTANA",
@@ -496,7 +496,7 @@
           "pasture": 164.07,
           "cfrr": 0.0,
           "commons": 164.07,
-          "vbgramg_ha": 34.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.6
         },
         {
@@ -510,7 +510,7 @@
           "pasture": 182.48,
           "cfrr": 0.0,
           "commons": 182.48,
-          "vbgramg_ha": 38.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.9
         },
         {
@@ -524,7 +524,7 @@
           "pasture": 0.0,
           "cfrr": 2271.0,
           "commons": 2271.0,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 64.8
         },
         {
@@ -552,7 +552,7 @@
           "pasture": 136.0,
           "cfrr": 0.0,
           "commons": 136.0,
-          "vbgramg_ha": 54.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.9
         },
         {
@@ -566,7 +566,7 @@
           "pasture": 299.0,
           "cfrr": 127.0,
           "commons": 426.0,
-          "vbgramg_ha": 24.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.3
         },
         {
@@ -580,7 +580,7 @@
           "pasture": 170.0,
           "cfrr": 0.0,
           "commons": 170.0,
-          "vbgramg_ha": 87.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.6
         },
         {
@@ -594,7 +594,7 @@
           "pasture": 273.09,
           "cfrr": 407.13,
           "commons": 680.22,
-          "vbgramg_ha": 59.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 21.6
         },
         {
@@ -608,7 +608,7 @@
           "pasture": 186.09,
           "cfrr": 217.16,
           "commons": 403.25,
-          "vbgramg_ha": 21.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 11.1
         },
         {
@@ -622,7 +622,7 @@
           "pasture": 175.26,
           "cfrr": 13.0,
           "commons": 188.26,
-          "vbgramg_ha": 35.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.7
         },
         {
@@ -636,7 +636,7 @@
           "pasture": 110.0,
           "cfrr": 0.0,
           "commons": 110.0,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 10.8
         },
         {
@@ -664,7 +664,7 @@
           "pasture": 127.0,
           "cfrr": 0.0,
           "commons": 127.0,
-          "vbgramg_ha": 41.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.3
         },
         {
@@ -678,7 +678,7 @@
           "pasture": 217.0,
           "cfrr": 1433.0,
           "commons": 1650.0,
-          "vbgramg_ha": 56.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 47.6
         },
         {
@@ -692,7 +692,7 @@
           "pasture": 160.84,
           "cfrr": 1463.88,
           "commons": 1624.72,
-          "vbgramg_ha": 43.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 37.7
         },
         {
@@ -706,7 +706,7 @@
           "pasture": 236.74,
           "cfrr": 44.51,
           "commons": 281.25,
-          "vbgramg_ha": 47.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 14.6
         },
         {
@@ -720,7 +720,7 @@
           "pasture": 123.96,
           "cfrr": 452.08,
           "commons": 576.04,
-          "vbgramg_ha": 6.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 48.5
         },
         {
@@ -734,7 +734,7 @@
           "pasture": 188.95,
           "cfrr": 610.42,
           "commons": 799.37,
-          "vbgramg_ha": 47.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 36.5
         },
         {
@@ -748,7 +748,7 @@
           "pasture": 207.04,
           "cfrr": 0.0,
           "commons": 207.04,
-          "vbgramg_ha": 52.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.1
         },
         {
@@ -776,7 +776,7 @@
           "pasture": 310.28,
           "cfrr": 721.0,
           "commons": 1031.28,
-          "vbgramg_ha": 38.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 23.7
         },
         {
@@ -790,7 +790,7 @@
           "pasture": 62.72,
           "cfrr": 0.0,
           "commons": 62.72,
-          "vbgramg_ha": 35.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.7
         },
         {
@@ -804,7 +804,7 @@
           "pasture": 103.58,
           "cfrr": 0.0,
           "commons": 103.58,
-          "vbgramg_ha": 42.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.6
         },
         {
@@ -832,7 +832,7 @@
           "pasture": 341.28,
           "cfrr": 332.96,
           "commons": 674.24,
-          "vbgramg_ha": 22.6,
+          "vbgramg_ha": 0.0,
           "com_pct": 15.3
         },
         {
@@ -846,7 +846,7 @@
           "pasture": 31.0,
           "cfrr": 0.0,
           "commons": 31.0,
-          "vbgramg_ha": 62.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.8
         },
         {
@@ -860,7 +860,7 @@
           "pasture": 234.0,
           "cfrr": 215.0,
           "commons": 449.0,
-          "vbgramg_ha": 47.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 28.1
         },
         {
@@ -874,7 +874,7 @@
           "pasture": 260.02,
           "cfrr": 0.0,
           "commons": 260.02,
-          "vbgramg_ha": 31.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.5
         },
         {
@@ -888,7 +888,7 @@
           "pasture": 117.0,
           "cfrr": 47.0,
           "commons": 164.0,
-          "vbgramg_ha": 57.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.2
         },
         {
@@ -902,7 +902,7 @@
           "pasture": 80.0,
           "cfrr": 735.0,
           "commons": 815.0,
-          "vbgramg_ha": 14.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 47.4
         },
         {
@@ -916,7 +916,7 @@
           "pasture": 136.78,
           "cfrr": 0.0,
           "commons": 136.78,
-          "vbgramg_ha": 61.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.3
         },
         {
@@ -930,7 +930,7 @@
           "pasture": 2.0,
           "cfrr": 0.0,
           "commons": 2.0,
-          "vbgramg_ha": 50.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.6
         },
         {
@@ -944,7 +944,7 @@
           "pasture": 74.0,
           "cfrr": 4383.02,
           "commons": 4457.02,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 88.4
         },
         {
@@ -958,7 +958,7 @@
           "pasture": 116.16,
           "cfrr": 50.01,
           "commons": 166.17,
-          "vbgramg_ha": 47.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 14.7
         }
       ]
@@ -984,14 +984,14 @@
       "com_pct": 7.4,
       "pasture_pct": 6.83,
       "com_per_hh": 0.23,
-      "vbgramg_ha": 809.87,
-      "vbgramg_villages": 80,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 84,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 1928.19,
-      "plots_count": 113,
+      "plots_count": 103,
       "panchayats": [
         {
           "name": "BADAN",
@@ -1004,7 +1004,7 @@
           "pasture": 171.25,
           "cfrr": 0.0,
           "commons": 171.25,
-          "vbgramg_ha": 30.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.1
         },
         {
@@ -1018,7 +1018,7 @@
           "pasture": 81.48,
           "cfrr": 0.0,
           "commons": 81.48,
-          "vbgramg_ha": 27.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.3
         },
         {
@@ -1032,7 +1032,7 @@
           "pasture": 147.05,
           "cfrr": 0.0,
           "commons": 147.05,
-          "vbgramg_ha": 40.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.2
         },
         {
@@ -1046,7 +1046,7 @@
           "pasture": 118.68,
           "cfrr": 0.0,
           "commons": 118.68,
-          "vbgramg_ha": 21.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.2
         },
         {
@@ -1060,7 +1060,7 @@
           "pasture": 102.0,
           "cfrr": 0.0,
           "commons": 102.0,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.8
         },
         {
@@ -1074,7 +1074,7 @@
           "pasture": 130.0,
           "cfrr": 0.0,
           "commons": 130.0,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.4
         },
         {
@@ -1088,7 +1088,7 @@
           "pasture": 107.4,
           "cfrr": 0.0,
           "commons": 107.4,
-          "vbgramg_ha": 16.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.8
         },
         {
@@ -1102,7 +1102,7 @@
           "pasture": 102.15,
           "cfrr": 0.0,
           "commons": 102.15,
-          "vbgramg_ha": 6.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.3
         },
         {
@@ -1116,7 +1116,7 @@
           "pasture": 109.0,
           "cfrr": 15.0,
           "commons": 124.0,
-          "vbgramg_ha": 9.72,
+          "vbgramg_ha": 0.0,
           "com_pct": 11.1
         },
         {
@@ -1130,7 +1130,7 @@
           "pasture": 136.02,
           "cfrr": 146.0,
           "commons": 282.02,
-          "vbgramg_ha": 39.27,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.7
         },
         {
@@ -1144,7 +1144,7 @@
           "pasture": 258.0,
           "cfrr": 0.0,
           "commons": 258.0,
-          "vbgramg_ha": 60.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.3
         },
         {
@@ -1158,7 +1158,7 @@
           "pasture": 227.92,
           "cfrr": 0.0,
           "commons": 227.92,
-          "vbgramg_ha": 32.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.0
         },
         {
@@ -1172,7 +1172,7 @@
           "pasture": 202.15,
           "cfrr": 124.0,
           "commons": 326.15,
-          "vbgramg_ha": 61.88,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.9
         },
         {
@@ -1186,7 +1186,7 @@
           "pasture": 86.03,
           "cfrr": 0.0,
           "commons": 86.03,
-          "vbgramg_ha": 4.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.3
         },
         {
@@ -1200,7 +1200,7 @@
           "pasture": 95.5,
           "cfrr": 0.0,
           "commons": 95.5,
-          "vbgramg_ha": 60.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.4
         },
         {
@@ -1214,7 +1214,7 @@
           "pasture": 214.0,
           "cfrr": 0.0,
           "commons": 214.0,
-          "vbgramg_ha": 29.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.3
         },
         {
@@ -1228,7 +1228,7 @@
           "pasture": 178.59,
           "cfrr": 11.09,
           "commons": 189.68,
-          "vbgramg_ha": 54.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.5
         },
         {
@@ -1242,7 +1242,7 @@
           "pasture": 155.1,
           "cfrr": 14.0,
           "commons": 169.1,
-          "vbgramg_ha": 29.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.8
         },
         {
@@ -1256,7 +1256,7 @@
           "pasture": 99.29,
           "cfrr": 0.0,
           "commons": 99.29,
-          "vbgramg_ha": 27.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.1
         },
         {
@@ -1270,7 +1270,7 @@
           "pasture": 152.25,
           "cfrr": 0.0,
           "commons": 152.25,
-          "vbgramg_ha": 21.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.1
         },
         {
@@ -1284,7 +1284,7 @@
           "pasture": 148.0,
           "cfrr": 6.24,
           "commons": 154.24,
-          "vbgramg_ha": 26.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.6
         },
         {
@@ -1298,7 +1298,7 @@
           "pasture": 157.46,
           "cfrr": 0.0,
           "commons": 157.46,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.9
         },
         {
@@ -1312,7 +1312,7 @@
           "pasture": 109.53,
           "cfrr": 0.0,
           "commons": 109.53,
-          "vbgramg_ha": 16.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.8
         },
         {
@@ -1326,7 +1326,7 @@
           "pasture": 122.57,
           "cfrr": 0.0,
           "commons": 122.57,
-          "vbgramg_ha": 66.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.7
         },
         {
@@ -1340,7 +1340,7 @@
           "pasture": 154.0,
           "cfrr": 0.0,
           "commons": 154.0,
-          "vbgramg_ha": 45.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.2
         },
         {
@@ -1354,7 +1354,7 @@
           "pasture": 245.52,
           "cfrr": 0.0,
           "commons": 245.52,
-          "vbgramg_ha": 20.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.3
         }
       ]
@@ -1380,8 +1380,8 @@
       "com_pct": 5.54,
       "pasture_pct": 5.54,
       "com_per_hh": 0.19,
-      "vbgramg_ha": 1868.0,
-      "vbgramg_villages": 155,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 192,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
@@ -1400,7 +1400,7 @@
           "pasture": 242.0,
           "cfrr": 0.0,
           "commons": 242.0,
-          "vbgramg_ha": 73.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.8
         },
         {
@@ -1414,7 +1414,7 @@
           "pasture": 88.0,
           "cfrr": 0.0,
           "commons": 88.0,
-          "vbgramg_ha": 115.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.3
         },
         {
@@ -1428,7 +1428,7 @@
           "pasture": 90.0,
           "cfrr": 0.0,
           "commons": 90.0,
-          "vbgramg_ha": 14.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.9
         },
         {
@@ -1442,7 +1442,7 @@
           "pasture": 158.0,
           "cfrr": 0.0,
           "commons": 158.0,
-          "vbgramg_ha": 86.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.8
         },
         {
@@ -1456,7 +1456,7 @@
           "pasture": 158.0,
           "cfrr": 0.0,
           "commons": 158.0,
-          "vbgramg_ha": 87.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.0
         },
         {
@@ -1470,7 +1470,7 @@
           "pasture": 131.11,
           "cfrr": 0.0,
           "commons": 131.11,
-          "vbgramg_ha": 103.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.8
         },
         {
@@ -1484,7 +1484,7 @@
           "pasture": 95.0,
           "cfrr": 0.0,
           "commons": 95.0,
-          "vbgramg_ha": 28.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.8
         },
         {
@@ -1498,7 +1498,7 @@
           "pasture": 217.0,
           "cfrr": 0.0,
           "commons": 217.0,
-          "vbgramg_ha": 41.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.9
         },
         {
@@ -1512,7 +1512,7 @@
           "pasture": 159.0,
           "cfrr": 0.0,
           "commons": 159.0,
-          "vbgramg_ha": 82.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.1
         },
         {
@@ -1526,7 +1526,7 @@
           "pasture": 0.0,
           "cfrr": 0.0,
           "commons": 0.0,
-          "vbgramg_ha": 11.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 0.0
         },
         {
@@ -1540,7 +1540,7 @@
           "pasture": 134.0,
           "cfrr": 0.0,
           "commons": 134.0,
-          "vbgramg_ha": 57.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.2
         },
         {
@@ -1554,7 +1554,7 @@
           "pasture": 96.0,
           "cfrr": 0.0,
           "commons": 96.0,
-          "vbgramg_ha": 31.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.5
         },
         {
@@ -1568,7 +1568,7 @@
           "pasture": 140.0,
           "cfrr": 0.0,
           "commons": 140.0,
-          "vbgramg_ha": 75.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.8
         },
         {
@@ -1582,7 +1582,7 @@
           "pasture": 171.0,
           "cfrr": 0.0,
           "commons": 171.0,
-          "vbgramg_ha": 56.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.8
         },
         {
@@ -1596,7 +1596,7 @@
           "pasture": 183.37,
           "cfrr": 0.0,
           "commons": 183.37,
-          "vbgramg_ha": 56.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.1
         },
         {
@@ -1610,7 +1610,7 @@
           "pasture": 140.0,
           "cfrr": 0.0,
           "commons": 140.0,
-          "vbgramg_ha": 83.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.1
         },
         {
@@ -1624,7 +1624,7 @@
           "pasture": 210.0,
           "cfrr": 0.0,
           "commons": 210.0,
-          "vbgramg_ha": 34.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.7
         },
         {
@@ -1638,7 +1638,7 @@
           "pasture": 110.9,
           "cfrr": 0.0,
           "commons": 110.9,
-          "vbgramg_ha": 59.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.9
         },
         {
@@ -1652,7 +1652,7 @@
           "pasture": 130.0,
           "cfrr": 0.0,
           "commons": 130.0,
-          "vbgramg_ha": 46.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.0
         },
         {
@@ -1666,7 +1666,7 @@
           "pasture": 161.0,
           "cfrr": 0.0,
           "commons": 161.0,
-          "vbgramg_ha": 53.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.0
         },
         {
@@ -1680,7 +1680,7 @@
           "pasture": 114.2,
           "cfrr": 0.0,
           "commons": 114.2,
-          "vbgramg_ha": 107.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.5
         },
         {
@@ -1694,7 +1694,7 @@
           "pasture": 128.0,
           "cfrr": 0.0,
           "commons": 128.0,
-          "vbgramg_ha": 106.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.2
         },
         {
@@ -1708,7 +1708,7 @@
           "pasture": 207.57,
           "cfrr": 0.0,
           "commons": 207.57,
-          "vbgramg_ha": 62.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 9.0
         },
         {
@@ -1722,7 +1722,7 @@
           "pasture": 185.0,
           "cfrr": 0.0,
           "commons": 185.0,
-          "vbgramg_ha": 84.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.7
         },
         {
@@ -1736,7 +1736,7 @@
           "pasture": 283.0,
           "cfrr": 0.0,
           "commons": 283.0,
-          "vbgramg_ha": 83.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.5
         },
         {
@@ -1750,7 +1750,7 @@
           "pasture": 158.0,
           "cfrr": 0.0,
           "commons": 158.0,
-          "vbgramg_ha": 26.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.4
         },
         {
@@ -1764,7 +1764,7 @@
           "pasture": 158.0,
           "cfrr": 0.0,
           "commons": 158.0,
-          "vbgramg_ha": 77.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.2
         },
         {
@@ -1778,7 +1778,7 @@
           "pasture": 311.55,
           "cfrr": 0.0,
           "commons": 311.55,
-          "vbgramg_ha": 133.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.5
         }
       ]
@@ -1804,14 +1804,14 @@
       "com_pct": 45.78,
       "pasture_pct": 7.25,
       "com_per_hh": 1.19,
-      "vbgramg_ha": 1125.29,
-      "vbgramg_villages": 117,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 171,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 4218.09,
-      "plots_count": 205,
+      "plots_count": 193,
       "panchayats": [
         {
           "name": "AJNAWAR",
@@ -1824,7 +1824,7 @@
           "pasture": 288.0,
           "cfrr": 0.0,
           "commons": 288.0,
-          "vbgramg_ha": 31.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 10.4
         },
         {
@@ -1838,7 +1838,7 @@
           "pasture": 253.0,
           "cfrr": 3992.0,
           "commons": 4245.0,
-          "vbgramg_ha": 65.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 69.2
         },
         {
@@ -1852,7 +1852,7 @@
           "pasture": 132.0,
           "cfrr": 66.0,
           "commons": 198.0,
-          "vbgramg_ha": 39.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 10.0
         },
         {
@@ -1866,7 +1866,7 @@
           "pasture": 218.0,
           "cfrr": 996.0,
           "commons": 1214.0,
-          "vbgramg_ha": 55.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 39.8
         },
         {
@@ -1880,7 +1880,7 @@
           "pasture": 256.0,
           "cfrr": 874.0,
           "commons": 1130.0,
-          "vbgramg_ha": 42.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 43.2
         },
         {
@@ -1894,7 +1894,7 @@
           "pasture": 410.0,
           "cfrr": 1734.0,
           "commons": 2144.0,
-          "vbgramg_ha": 20.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 40.1
         },
         {
@@ -1922,7 +1922,7 @@
           "pasture": 205.43,
           "cfrr": 2082.5,
           "commons": 2287.93,
-          "vbgramg_ha": 1.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 60.4
         },
         {
@@ -1936,7 +1936,7 @@
           "pasture": 235.2,
           "cfrr": 812.1,
           "commons": 1047.3,
-          "vbgramg_ha": 65.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 50.0
         },
         {
@@ -1950,7 +1950,7 @@
           "pasture": 229.55,
           "cfrr": 94.0,
           "commons": 323.55,
-          "vbgramg_ha": 39.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 14.1
         },
         {
@@ -1964,7 +1964,7 @@
           "pasture": 259.37,
           "cfrr": 803.29,
           "commons": 1062.66,
-          "vbgramg_ha": 36.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 36.6
         },
         {
@@ -1978,7 +1978,7 @@
           "pasture": 90.0,
           "cfrr": 142.5,
           "commons": 232.5,
-          "vbgramg_ha": 8.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 14.9
         },
         {
@@ -1992,7 +1992,7 @@
           "pasture": 274.09,
           "cfrr": 209.01,
           "commons": 483.1,
-          "vbgramg_ha": 114.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 22.6
         },
         {
@@ -2006,7 +2006,7 @@
           "pasture": 213.0,
           "cfrr": 149.03,
           "commons": 362.03,
-          "vbgramg_ha": 37.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 17.5
         },
         {
@@ -2020,7 +2020,7 @@
           "pasture": 312.0,
           "cfrr": 1393.0,
           "commons": 1705.0,
-          "vbgramg_ha": 55.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 58.2
         },
         {
@@ -2034,7 +2034,7 @@
           "pasture": 73.0,
           "cfrr": 1587.0,
           "commons": 1660.0,
-          "vbgramg_ha": 41.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 68.6
         },
         {
@@ -2048,7 +2048,7 @@
           "pasture": 107.0,
           "cfrr": 506.0,
           "commons": 613.0,
-          "vbgramg_ha": 52.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 23.9
         },
         {
@@ -2062,7 +2062,7 @@
           "pasture": 229.6,
           "cfrr": 2913.3,
           "commons": 3142.9,
-          "vbgramg_ha": 27.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 69.3
         },
         {
@@ -2090,7 +2090,7 @@
           "pasture": 202.0,
           "cfrr": 1465.0,
           "commons": 1667.0,
-          "vbgramg_ha": 17.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 55.3
         },
         {
@@ -2104,7 +2104,7 @@
           "pasture": 189.0,
           "cfrr": 1459.55,
           "commons": 1648.55,
-          "vbgramg_ha": 70.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 70.1
         },
         {
@@ -2118,7 +2118,7 @@
           "pasture": 174.0,
           "cfrr": 4111.0,
           "commons": 4285.0,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 71.1
         },
         {
@@ -2132,7 +2132,7 @@
           "pasture": 235.34,
           "cfrr": 539.96,
           "commons": 775.3,
-          "vbgramg_ha": 4.29,
+          "vbgramg_ha": 0.0,
           "com_pct": 33.8
         },
         {
@@ -2146,7 +2146,7 @@
           "pasture": 267.0,
           "cfrr": 520.1,
           "commons": 787.1,
-          "vbgramg_ha": 48.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 34.6
         },
         {
@@ -2160,7 +2160,7 @@
           "pasture": 119.0,
           "cfrr": 342.0,
           "commons": 461.0,
-          "vbgramg_ha": 47.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 25.5
         },
         {
@@ -2174,7 +2174,7 @@
           "pasture": 111.0,
           "cfrr": 294.0,
           "commons": 405.0,
-          "vbgramg_ha": 16.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 19.1
         },
         {
@@ -2188,7 +2188,7 @@
           "pasture": 70.0,
           "cfrr": 63.0,
           "commons": 133.0,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 12.3
         },
         {
@@ -2202,7 +2202,7 @@
           "pasture": 170.0,
           "cfrr": 1742.0,
           "commons": 1912.0,
-          "vbgramg_ha": 31.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 67.6
         },
         {
@@ -2216,7 +2216,7 @@
           "pasture": 366.24,
           "cfrr": 1431.99,
           "commons": 1798.23,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 53.2
         },
         {
@@ -2230,7 +2230,7 @@
           "pasture": 202.0,
           "cfrr": 246.12,
           "commons": 448.12,
-          "vbgramg_ha": 95.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 25.6
         }
       ]
@@ -2256,14 +2256,14 @@
       "com_pct": 56.33,
       "pasture_pct": 3.76,
       "com_per_hh": 2.42,
-      "vbgramg_ha": 954.48,
-      "vbgramg_villages": 107,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 141,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 1673.1,
-      "plots_count": 164,
+      "plots_count": 151,
       "panchayats": [
         {
           "name": "ASNAWAR",
@@ -2276,7 +2276,7 @@
           "pasture": 212.55,
           "cfrr": 236.45,
           "commons": 449.0,
-          "vbgramg_ha": 70.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 17.0
         },
         {
@@ -2290,7 +2290,7 @@
           "pasture": 92.0,
           "cfrr": 1996.0,
           "commons": 2088.0,
-          "vbgramg_ha": 46.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 54.6
         },
         {
@@ -2304,7 +2304,7 @@
           "pasture": 76.0,
           "cfrr": 612.0,
           "commons": 688.0,
-          "vbgramg_ha": 11.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 25.7
         },
         {
@@ -2318,7 +2318,7 @@
           "pasture": 238.16,
           "cfrr": 1690.21,
           "commons": 1928.37,
-          "vbgramg_ha": 18.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 51.6
         },
         {
@@ -2332,7 +2332,7 @@
           "pasture": 124.57,
           "cfrr": 729.56,
           "commons": 854.13,
-          "vbgramg_ha": 41.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 44.1
         },
         {
@@ -2346,7 +2346,7 @@
           "pasture": 129.0,
           "cfrr": 1152.0,
           "commons": 1281.0,
-          "vbgramg_ha": 43.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 52.1
         },
         {
@@ -2360,7 +2360,7 @@
           "pasture": 48.44,
           "cfrr": 2300.12,
           "commons": 2348.56,
-          "vbgramg_ha": 9.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 69.4
         },
         {
@@ -2374,7 +2374,7 @@
           "pasture": 262.15,
           "cfrr": 2818.02,
           "commons": 3080.17,
-          "vbgramg_ha": 20.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 63.2
         },
         {
@@ -2388,7 +2388,7 @@
           "pasture": 211.0,
           "cfrr": 1426.0,
           "commons": 1637.0,
-          "vbgramg_ha": 64.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 47.8
         },
         {
@@ -2402,7 +2402,7 @@
           "pasture": 155.0,
           "cfrr": 362.25,
           "commons": 517.25,
-          "vbgramg_ha": 30.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 26.1
         },
         {
@@ -2416,7 +2416,7 @@
           "pasture": 112.04,
           "cfrr": 3091.79,
           "commons": 3203.83,
-          "vbgramg_ha": 44.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 73.6
         },
         {
@@ -2430,7 +2430,7 @@
           "pasture": 13.2,
           "cfrr": 674.51,
           "commons": 687.71,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 35.8
         },
         {
@@ -2458,7 +2458,7 @@
           "pasture": 76.75,
           "cfrr": 761.26,
           "commons": 838.01,
-          "vbgramg_ha": 8.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 38.1
         },
         {
@@ -2472,7 +2472,7 @@
           "pasture": 237.67,
           "cfrr": 5250.9,
           "commons": 5488.57,
-          "vbgramg_ha": 0.48,
+          "vbgramg_ha": 0.0,
           "com_pct": 77.2
         },
         {
@@ -2486,7 +2486,7 @@
           "pasture": 32.47,
           "cfrr": 895.59,
           "commons": 928.06,
-          "vbgramg_ha": 5.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 38.1
         },
         {
@@ -2500,7 +2500,7 @@
           "pasture": 119.0,
           "cfrr": 494.0,
           "commons": 613.0,
-          "vbgramg_ha": 47.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 29.5
         },
         {
@@ -2514,7 +2514,7 @@
           "pasture": 167.0,
           "cfrr": 10.0,
           "commons": 177.0,
-          "vbgramg_ha": 10.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.4
         },
         {
@@ -2528,7 +2528,7 @@
           "pasture": 310.82,
           "cfrr": 2906.22,
           "commons": 3217.04,
-          "vbgramg_ha": 37.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 62.1
         },
         {
@@ -2542,7 +2542,7 @@
           "pasture": 174.25,
           "cfrr": 2431.65,
           "commons": 2605.9,
-          "vbgramg_ha": 62.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 63.1
         },
         {
@@ -2556,7 +2556,7 @@
           "pasture": 103.02,
           "cfrr": 4778.11,
           "commons": 4881.13,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 78.2
         },
         {
@@ -2570,7 +2570,7 @@
           "pasture": 229.31,
           "cfrr": 0.0,
           "commons": 229.31,
-          "vbgramg_ha": 15.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 13.3
         },
         {
@@ -2584,7 +2584,7 @@
           "pasture": 8.0,
           "cfrr": 837.0,
           "commons": 845.0,
-          "vbgramg_ha": 6.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 34.8
         },
         {
@@ -2598,7 +2598,7 @@
           "pasture": 271.35,
           "cfrr": 4968.4,
           "commons": 5239.75,
-          "vbgramg_ha": 2.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 66.0
         },
         {
@@ -2612,7 +2612,7 @@
           "pasture": 222.52,
           "cfrr": 3365.54,
           "commons": 3588.06,
-          "vbgramg_ha": 44.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 60.7
         },
         {
@@ -2626,7 +2626,7 @@
           "pasture": 159.04,
           "cfrr": 439.7,
           "commons": 598.74,
-          "vbgramg_ha": 11.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 24.1
         },
         {
@@ -2640,7 +2640,7 @@
           "pasture": 0.0,
           "cfrr": 3591.47,
           "commons": 3591.47,
-          "vbgramg_ha": 14.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 62.7
         },
         {
@@ -2654,7 +2654,7 @@
           "pasture": 193.0,
           "cfrr": 423.0,
           "commons": 616.0,
-          "vbgramg_ha": 9.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 24.6
         },
         {
@@ -2668,7 +2668,7 @@
           "pasture": 49.29,
           "cfrr": 2610.44,
           "commons": 2659.73,
-          "vbgramg_ha": 9.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 64.5
         },
         {
@@ -2682,7 +2682,7 @@
           "pasture": 33.7,
           "cfrr": 226.28,
           "commons": 259.98,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 30.7
         },
         {
@@ -2710,7 +2710,7 @@
           "pasture": 222.65,
           "cfrr": 8203.1,
           "commons": 8425.75,
-          "vbgramg_ha": 79.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 83.4
         },
         {
@@ -2724,7 +2724,7 @@
           "pasture": 83.68,
           "cfrr": 633.04,
           "commons": 716.72,
-          "vbgramg_ha": 2.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 27.0
         },
         {
@@ -2738,7 +2738,7 @@
           "pasture": 61.1,
           "cfrr": 632.77,
           "commons": 693.87,
-          "vbgramg_ha": 13.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 43.2
         },
         {
@@ -2766,7 +2766,7 @@
           "pasture": 81.0,
           "cfrr": 375.0,
           "commons": 456.0,
-          "vbgramg_ha": 2.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 26.8
         },
         {
@@ -2794,7 +2794,7 @@
           "pasture": 77.0,
           "cfrr": 6550.0,
           "commons": 6627.0,
-          "vbgramg_ha": 41.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 89.4
         },
         {
@@ -2808,7 +2808,7 @@
           "pasture": 406.81,
           "cfrr": 6511.84,
           "commons": 6918.65,
-          "vbgramg_ha": 59.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 73.1
         }
       ]
@@ -2834,14 +2834,14 @@
       "com_pct": 5.66,
       "pasture_pct": 4.09,
       "com_per_hh": 0.15,
-      "vbgramg_ha": 525.0,
-      "vbgramg_villages": 55,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 21,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 1306.99,
-      "plots_count": 57,
+      "plots_count": 55,
       "panchayats": [
         {
           "name": "BAMORI KALAN",
@@ -2854,7 +2854,7 @@
           "pasture": 90.56,
           "cfrr": 0.0,
           "commons": 90.56,
-          "vbgramg_ha": 28.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.2
         },
         {
@@ -2868,7 +2868,7 @@
           "pasture": 81.17,
           "cfrr": 0.0,
           "commons": 81.17,
-          "vbgramg_ha": 39.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 4.8
         },
         {
@@ -2882,7 +2882,7 @@
           "pasture": 166.22,
           "cfrr": 0.0,
           "commons": 166.22,
-          "vbgramg_ha": 35.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.9
         },
         {
@@ -2896,7 +2896,7 @@
           "pasture": 30.02,
           "cfrr": 0.0,
           "commons": 30.02,
-          "vbgramg_ha": 18.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.8
         },
         {
@@ -2910,7 +2910,7 @@
           "pasture": 130.33,
           "cfrr": 0.0,
           "commons": 130.33,
-          "vbgramg_ha": 36.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 5.5
         },
         {
@@ -2924,7 +2924,7 @@
           "pasture": 168.58,
           "cfrr": 0.0,
           "commons": 168.58,
-          "vbgramg_ha": 36.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 7.3
         },
         {
@@ -2938,7 +2938,7 @@
           "pasture": 51.92,
           "cfrr": 0.0,
           "commons": 51.92,
-          "vbgramg_ha": 16.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.5
         },
         {
@@ -2952,7 +2952,7 @@
           "pasture": 84.93,
           "cfrr": 104.31,
           "commons": 189.24,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.1
         },
         {
@@ -2966,7 +2966,7 @@
           "pasture": 31.12,
           "cfrr": 0.0,
           "commons": 31.12,
-          "vbgramg_ha": 14.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 1.6
         },
         {
@@ -2980,7 +2980,7 @@
           "pasture": 60.5,
           "cfrr": 323.78,
           "commons": 384.28,
-          "vbgramg_ha": 45.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 13.1
         },
         {
@@ -2994,7 +2994,7 @@
           "pasture": 148.0,
           "cfrr": 0.0,
           "commons": 148.0,
-          "vbgramg_ha": 7.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 6.6
         },
         {
@@ -3008,7 +3008,7 @@
           "pasture": 64.14,
           "cfrr": 0.0,
           "commons": 64.14,
-          "vbgramg_ha": 23.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.7
         },
         {
@@ -3022,7 +3022,7 @@
           "pasture": 100.41,
           "cfrr": 0.0,
           "commons": 100.41,
-          "vbgramg_ha": 45.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.9
         },
         {
@@ -3036,7 +3036,7 @@
           "pasture": 63.0,
           "cfrr": 0.0,
           "commons": 63.0,
-          "vbgramg_ha": 57.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.7
         },
         {
@@ -3050,7 +3050,7 @@
           "pasture": 209.05,
           "cfrr": 73.0,
           "commons": 282.05,
-          "vbgramg_ha": 37.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.9
         },
         {
@@ -3064,7 +3064,7 @@
           "pasture": 67.49,
           "cfrr": 0.0,
           "commons": 67.49,
-          "vbgramg_ha": 17.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 2.5
         },
         {
@@ -3078,7 +3078,7 @@
           "pasture": 95.49,
           "cfrr": 0.0,
           "commons": 95.49,
-          "vbgramg_ha": 30.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 3.4
         },
         {
@@ -3092,7 +3092,7 @@
           "pasture": 121.71,
           "cfrr": 174.68,
           "commons": 296.39,
-          "vbgramg_ha": 17.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 8.1
         }
       ]
@@ -3118,14 +3118,14 @@
       "com_pct": 92.28,
       "pasture_pct": 44.19,
       "com_per_hh": 4.76,
-      "vbgramg_ha": 1511.95,
-      "vbgramg_villages": 128,
+      "vbgramg_ha": 0.0,
+      "vbgramg_villages": 0,
       "cvs_villages": 68,
       "demarcated_villages": 0,
       "bylaws_villages": 0,
       "encroach_ha": 0.0,
       "pasture_recog_ha": 4450.89,
-      "plots_count": 154,
+      "plots_count": 135,
       "panchayats": [
         {
           "name": "AGAR",
@@ -3138,7 +3138,7 @@
           "pasture": 274.82,
           "cfrr": 3587.6,
           "commons": 3862.42,
-          "vbgramg_ha": 61.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 69.7
         },
         {
@@ -3152,7 +3152,7 @@
           "pasture": 146.0,
           "cfrr": 3709.0,
           "commons": 3855.0,
-          "vbgramg_ha": 54.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 63.7
         },
         {
@@ -3166,7 +3166,7 @@
           "pasture": 266.0,
           "cfrr": 1486.0,
           "commons": 1752.0,
-          "vbgramg_ha": 39.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 50.6
         },
         {
@@ -3180,7 +3180,7 @@
           "pasture": 1652.0,
           "cfrr": 1208.0,
           "commons": 2860.0,
-          "vbgramg_ha": 42.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 73.4
         },
         {
@@ -3194,7 +3194,7 @@
           "pasture": 658.0,
           "cfrr": 825.0,
           "commons": 1483.0,
-          "vbgramg_ha": 60.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 32.6
         },
         {
@@ -3208,7 +3208,7 @@
           "pasture": 803.0,
           "cfrr": 2275.88,
           "commons": 3078.88,
-          "vbgramg_ha": 79.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 89.8
         },
         {
@@ -3222,7 +3222,7 @@
           "pasture": 3626.88,
           "cfrr": 4817.0,
           "commons": 8443.88,
-          "vbgramg_ha": 13.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 150.2
         },
         {
@@ -3236,7 +3236,7 @@
           "pasture": 2872.96,
           "cfrr": 1331.96,
           "commons": 4204.92,
-          "vbgramg_ha": 23.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 94.0
         },
         {
@@ -3250,7 +3250,7 @@
           "pasture": 4356.0,
           "cfrr": 5396.0,
           "commons": 9752.0,
-          "vbgramg_ha": 62.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 131.4
         },
         {
@@ -3278,7 +3278,7 @@
           "pasture": 1956.0,
           "cfrr": 570.0,
           "commons": 2526.0,
-          "vbgramg_ha": 18.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 74.5
         },
         {
@@ -3292,7 +3292,7 @@
           "pasture": 828.0,
           "cfrr": 2089.0,
           "commons": 2917.0,
-          "vbgramg_ha": 52.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 76.2
         },
         {
@@ -3306,7 +3306,7 @@
           "pasture": 247.0,
           "cfrr": 477.0,
           "commons": 724.0,
-          "vbgramg_ha": 13.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 59.6
         },
         {
@@ -3320,7 +3320,7 @@
           "pasture": 3074.0,
           "cfrr": 5618.08,
           "commons": 8692.08,
-          "vbgramg_ha": 145.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 125.4
         },
         {
@@ -3334,7 +3334,7 @@
           "pasture": 2812.0,
           "cfrr": 207.98,
           "commons": 3019.98,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 91.5
         },
         {
@@ -3348,7 +3348,7 @@
           "pasture": 2610.06,
           "cfrr": 4285.79,
           "commons": 6895.85,
-          "vbgramg_ha": 19.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 147.9
         },
         {
@@ -3362,7 +3362,7 @@
           "pasture": 3873.79,
           "cfrr": 1742.0,
           "commons": 5615.79,
-          "vbgramg_ha": 43.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 106.0
         },
         {
@@ -3376,7 +3376,7 @@
           "pasture": 0.0,
           "cfrr": 170.0,
           "commons": 170.0,
-          "vbgramg_ha": 18.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 25.2
         },
         {
@@ -3390,7 +3390,7 @@
           "pasture": 1185.0,
           "cfrr": 194.0,
           "commons": 1379.0,
-          "vbgramg_ha": 39.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 39.9
         },
         {
@@ -3404,7 +3404,7 @@
           "pasture": 213.0,
           "cfrr": 252.0,
           "commons": 465.0,
-          "vbgramg_ha": 16.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 32.0
         },
         {
@@ -3418,7 +3418,7 @@
           "pasture": 344.0,
           "cfrr": 470.0,
           "commons": 814.0,
-          "vbgramg_ha": 27.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 30.4
         },
         {
@@ -3432,7 +3432,7 @@
           "pasture": 364.0,
           "cfrr": 2072.0,
           "commons": 2436.0,
-          "vbgramg_ha": 35.95,
+          "vbgramg_ha": 0.0,
           "com_pct": 51.4
         },
         {
@@ -3446,7 +3446,7 @@
           "pasture": 592.0,
           "cfrr": 1597.0,
           "commons": 2189.0,
-          "vbgramg_ha": 165.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 83.9
         },
         {
@@ -3460,7 +3460,7 @@
           "pasture": 2202.0,
           "cfrr": 2831.28,
           "commons": 5033.28,
-          "vbgramg_ha": 25.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 122.4
         },
         {
@@ -3474,7 +3474,7 @@
           "pasture": 850.0,
           "cfrr": 1060.42,
           "commons": 1910.42,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 70.9
         },
         {
@@ -3488,7 +3488,7 @@
           "pasture": 2559.0,
           "cfrr": 2532.15,
           "commons": 5091.15,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 101.1
         },
         {
@@ -3502,7 +3502,7 @@
           "pasture": 3152.85,
           "cfrr": 4100.0,
           "commons": 7252.85,
-          "vbgramg_ha": 33.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 158.4
         },
         {
@@ -3516,7 +3516,7 @@
           "pasture": 1201.0,
           "cfrr": 1324.52,
           "commons": 2525.52,
-          "vbgramg_ha": 15.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 79.2
         },
         {
@@ -3530,7 +3530,7 @@
           "pasture": 2253.0,
           "cfrr": 477.8,
           "commons": 2730.8,
-          "vbgramg_ha": 101.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 108.7
         },
         {
@@ -3544,7 +3544,7 @@
           "pasture": 4098.0,
           "cfrr": 1796.63,
           "commons": 5894.63,
-          "vbgramg_ha": 44.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 84.0
         },
         {
@@ -3558,7 +3558,7 @@
           "pasture": 0.0,
           "cfrr": 2674.02,
           "commons": 2674.02,
-          "vbgramg_ha": 13.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 202.6
         },
         {
@@ -3572,7 +3572,7 @@
           "pasture": 2236.8,
           "cfrr": 7269.0,
           "commons": 9505.8,
-          "vbgramg_ha": 50.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 208.3
         },
         {
@@ -3586,7 +3586,7 @@
           "pasture": 8073.17,
           "cfrr": 1284.0,
           "commons": 9357.17,
-          "vbgramg_ha": 68.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 97.2
         },
         {
@@ -3600,7 +3600,7 @@
           "pasture": 1646.0,
           "cfrr": 0.0,
           "commons": 1646.0,
-          "vbgramg_ha": 12.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 34.1
         },
         {
@@ -3614,7 +3614,7 @@
           "pasture": 2078.0,
           "cfrr": 0.0,
           "commons": 2078.0,
-          "vbgramg_ha": 46.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 56.7
         },
         {
@@ -3628,7 +3628,7 @@
           "pasture": 792.0,
           "cfrr": 0.0,
           "commons": 792.0,
-          "vbgramg_ha": 45.0,
+          "vbgramg_ha": 0.0,
           "com_pct": 24.2
         }
       ]
