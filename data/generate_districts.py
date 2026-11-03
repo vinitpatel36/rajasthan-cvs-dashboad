@@ -328,12 +328,16 @@ def get_col_map(header_row):
             m['asset'] = i
         elif any(k in t for k in ['removal of encro', 'encroachment removed']) and 'encroach' not in m:
             m['encroach'] = i
-        elif any(k in t for k in ['vbgramg', 'vbgmrg', 'govt scheme', 'ecorestoration work', 'work done under']) and not any(k in t for k in ['narration', 'activities']) and 'vbg_ha' not in m:
-            m['vbg_ha'] = i
-        elif any(k in t for k in ['narration', 'activities of work']) and 'vbg_work' not in m:
+        elif any(k in t for k in ['narration', 'activities of work', 'activities narration']) and 'vbg_work' not in m:
             m['vbg_work'] = i
+        elif any(k in t for k in ['work done under', 'work done']) and not any(k in t for k in ['narration', 'activities']) and 'vbg_ha' not in m:
+            m['vbg_ha'] = i
+        elif any(k in t for k in ['integrated', 'ecorestoration work', 'vbgmrg']) and not any(k in t for k in ['narration', 'activities', 'plan']) and 'vbg_int' not in m:
+            m['vbg_int'] = i
         elif any(k in t for k in ['gps', 'coordinate']) and 'gps' not in m:
             m['gps'] = i
+    if 'vbg_ha' not in m and 'vbg_int' in m:
+        m['vbg_ha'] = m['vbg_int']
     return m
 
 def process_district(dist_id, cfg, data_dir):
@@ -432,6 +436,11 @@ def process_district(dist_id, cfg, data_dir):
                 
                 vbg_idx = (col_map.get('vbg_ha', 27) + 1)
                 vbg_ha = to_f(r[vbg_idx] if len(r) > vbg_idx else 0)
+                int_idx = (col_map['vbg_int'] + 1) if col_map.get('vbg_int') is not None else None
+                if vbg_ha == 0.0 and int_idx is not None and len(r) > int_idx:
+                    alt_ha = to_f(r[int_idx])
+                    if alt_ha > 0:
+                        vbg_ha = alt_ha
                 
                 work_idx = (col_map.get('vbg_work', 28) + 1)
                 vbg_work = clean_name(r[work_idx] if len(r) > work_idx and r[work_idx] else '')
@@ -472,6 +481,11 @@ def process_district(dist_id, cfg, data_dir):
                 
                 vbg_idx = col_map.get('vbg_ha', 27)
                 vbg_ha = to_f(r[vbg_idx] if vbg_idx is not None and len(r) > vbg_idx else 0)
+                int_idx = col_map.get('vbg_int')
+                if vbg_ha == 0.0 and int_idx is not None and len(r) > int_idx:
+                    alt_ha = to_f(r[int_idx])
+                    if alt_ha > 0:
+                        vbg_ha = alt_ha
                 
                 work_idx = col_map.get('vbg_work', 28)
                 vbg_work = clean_name(r[work_idx] if work_idx is not None and len(r) > work_idx and r[work_idx] else '')
