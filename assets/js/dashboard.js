@@ -766,8 +766,8 @@
     if (plotsValEl) plotsValEl.innerHTML = `${fmt.num(totalPlots)} <span class="kpi-unit">Plots</span>`;
     if (plotsSubEl) {
       plotsSubEl.innerHTML = `
-        <span class="status-pill green">${fmt.num(ongoingPlots)} Active</span>
-        <span class="status-pill blue">${fmt.num(completedPlots)} Governed</span>
+        <span class="status-pill green" title="Restoration works ongoing; CVS resolution pending">${fmt.num(ongoingPlots)} Active</span>
+        <span class="status-pill blue" title="Formal CVS committee formed & resolution passed">${fmt.num(completedPlots)} Governed</span>
       `;
     }
 
@@ -775,12 +775,18 @@
     const budgetValEl = document.getElementById('nrm-budget-val');
     const budgetSubEl = document.getElementById('nrm-budget-sub');
     if (budgetValEl) {
-      budgetValEl.innerHTML = `${fmt.num(d.demarcated_villages || 0)} <span class="kpi-unit">Villages</span>`;
+      budgetValEl.innerHTML = `
+        <span style="color:var(--accent-amber,#f59e0b);font-weight:700;">${fmt.num(d.demarcated_villages || 0)}</span>
+        <span style="font-size:12px;font-weight:500;color:var(--text-muted);margin-right:6px;">Demarcated</span>
+        <span style="color:rgba(255,255,255,0.2);font-weight:300;margin-right:6px;">|</span>
+        <span style="color:var(--accent-emerald,#10b981);font-weight:700;">${fmt.num(d.bylaws_villages || 0)}</span>
+        <span style="font-size:12px;font-weight:500;color:var(--text-muted);">Bylaws</span>
+      `;
     }
     if (budgetSubEl) {
       budgetSubEl.innerHTML = `
-        <span>${fmt.num(d.demarcated_villages || 0)} Demarcated</span>
-        <span class="status-pill amber">${fmt.num(d.bylaws_villages || 0)} Bylaws</span>
+        <span class="status-pill amber">${fmt.num(d.demarcated_villages || 0)} Demarcated Villages</span>
+        <span class="status-pill green">${fmt.num(d.bylaws_villages || 0)} Bylaws Adopted</span>
       `;
     }
 
@@ -795,14 +801,14 @@
       `;
     }
 
-    // 4. VBGRAMG & Protection (Excel Cols 24 & 27)
+    // 4. VBGRAMG / MGNREGS & Protection (Excel Cols 24 & 27)
     const waterValEl = document.getElementById('nrm-water-val');
     const waterSubEl = document.getElementById('nrm-water-sub');
     if (waterValEl) waterValEl.innerHTML = `${fmt.num(d.vbgramg_ha || 0)} <span class="kpi-unit">Ha</span>`;
     if (waterSubEl) {
       waterSubEl.innerHTML = `
         <span>${fmt.num(d.encroach_ha || 0)} Ha Encroach Removed</span>
-        <span class="status-pill blue">${fmt.num(d.vbgramg_villages || 0)} Villages Works</span>
+        <span class="status-pill blue">${fmt.num(d.vbgramg_villages || 0)} Villages Works (VBGRAMG / MGNREGS)</span>
       `;
     }
 
@@ -1013,6 +1019,12 @@
   }
 
 
+  // Standard block sequence across all charts for consistent visual comparison
+  function getStandardBlockSequence(blocks) {
+    if (!blocks || !blocks.length) return [];
+    return [...blocks].sort((a, b) => a.name.localeCompare(b.name));
+  }
+
   // CHART 2: Land Resource Composition (Nested Donut / Sunburst)
   function renderLandDistributionChart() {
     const chart = getChart('chart-land-distribution');
@@ -1028,7 +1040,6 @@
     const dataItems = [
       { name: 'Pasture (Gauchar)', value: src.pasture, itemStyle: { color: '#10b981' } },
       { name: 'Potential CFRR Commons', value: src.cfrr || 0, itemStyle: { color: '#06b6d4' } },
-      { name: 'VBGRAMG Restored Land', value: src.vbgramg_ha || 0, itemStyle: { color: '#8b5cf6' } },
       { name: 'Other Village Land Area', value: remainingLand, itemStyle: { color: '#64748b' } }
     ];
 
@@ -1097,8 +1108,8 @@
     const theme = chartThemes[state.theme];
     const filteredBlocks = getFilteredBlocks();
 
-    // Sort by Total Common Land desc
-    const sorted = [...filteredBlocks].sort((a, b) => b.common_land - a.common_land);
+    // Standard sequence across all charts
+    const sorted = getStandardBlockSequence(filteredBlocks);
 
     const blockNames = sorted.map(b => b.name);
     const pastureData = sorted.map(b => b.pasture);
@@ -1194,7 +1205,7 @@
 
     const theme = chartThemes[state.theme];
     const filteredBlocks = getFilteredBlocks();
-    const sorted = [...filteredBlocks].sort((a, b) => b.vulnerable_pct - a.vulnerable_pct);
+    const sorted = getStandardBlockSequence(filteredBlocks);
 
     const blockNames = sorted.map(b => b.name);
     const scPct = sorted.map(b => b.sc_pct);
@@ -1295,7 +1306,7 @@
 
     const theme = chartThemes[state.theme];
     const filteredBlocks = getFilteredBlocks();
-    const sorted = [...filteredBlocks].sort((a, b) => b.sex_ratio - a.sex_ratio);
+    const sorted = getStandardBlockSequence(filteredBlocks);
 
     const blockNames = sorted.map(b => b.name);
     const ratios = sorted.map(b => {
@@ -1375,14 +1386,14 @@
     chart.setOption(option, true);
   }
 
-  // CHART 8: VBGRAMG Restoration Works by Block
+  // CHART 8: Restoration Works by Block (VBGRAMG & other Govt programs)
   function renderVBGRAMGChart() {
     const chart = getChart('chart-mgnrega');
     if (!chart || !state.data) return;
 
     const theme = chartThemes[state.theme];
     const filteredBlocks = getFilteredBlocks();
-    const sorted = [...filteredBlocks].sort((a, b) => (b.vbgramg_ha || 0) - (a.vbgramg_ha || 0));
+    const sorted = getStandardBlockSequence(filteredBlocks);
 
     const blockNames = sorted.map(b => b.name);
     const vbgramgHa = sorted.map(b => b.vbgramg_ha || 0);
@@ -1399,11 +1410,13 @@
         formatter: (params) => {
           const bname = params[0].name;
           const b = sorted.find(x => x.name === bname);
+          const coveragePct = b.villages ? ((b.vbgramg_villages / b.villages) * 100).toFixed(1) : 0;
           return `
-            <div style="font-weight:700;margin-bottom:4px;color:#38bdf8;">${bname} (VBGRAMG)</div>
+            <div style="font-weight:700;margin-bottom:4px;color:#38bdf8;">${bname} (VBGRAMG & other Govt programs)</div>
             <div>Work Done Area: <b>${fmt.num(b.vbgramg_ha || 0)} Ha</b></div>
-            <div>Villages with Works: <b>${fmt.num(b.vbgramg_villages || 0)}</b></div>
-            <div>Total Block Villages: <b>${fmt.num(b.villages)}</b></div>
+            <div>Villages with Works: <b>${fmt.num(b.vbgramg_villages || 0)}</b> of ${fmt.num(b.villages)} (${coveragePct}%)</div>
+            <div>Total Pasture Land: <b>${fmt.num(b.pasture || 0)} Ha</b></div>
+            <div>Total Commons: <b>${fmt.num(b.common_land || 0)} Ha</b></div>
           `;
         }
       },
@@ -1448,7 +1461,7 @@
       ],
       series: [
         {
-          name: 'VBGRAMG Restored Land (Ha)',
+          name: 'VBGRAMG & other Govt programs Restored Land (Ha)',
           type: 'bar',
           itemStyle: { color: '#3b82f6', borderRadius: [4, 4, 0, 0] },
           data: vbgramgHa
@@ -1467,14 +1480,14 @@
     chart.setOption(option, true);
   }
 
-  // CHART 9: CVS Formation & Pasture Governance by Block
+  // CHART 9: CVS Formation & Governance of Commons by Block
   function renderFallowWastelandChart() {
     const chart = getChart('chart-fallow-wasteland');
     if (!chart || !state.data) return;
 
     const theme = chartThemes[state.theme];
     const filteredBlocks = getFilteredBlocks();
-    const sorted = [...filteredBlocks].sort((a, b) => (b.cvs_villages || 0) - (a.cvs_villages || 0));
+    const sorted = getStandardBlockSequence(filteredBlocks);
 
     const blockNames = sorted.map(b => b.name);
     const cvsData = sorted.map(b => b.cvs_villages || 0);
@@ -1493,7 +1506,7 @@
           const bname = params[0].name;
           const b = sorted.find(x => x.name === bname);
           return `
-            <div style="font-weight:700;margin-bottom:4px;color:#10b981;">${bname} (Pasture Governance)</div>
+            <div style="font-weight:700;margin-bottom:4px;color:#10b981;">${bname} (Governance of Commons)</div>
             <div>CVS Formed Villages: <b>${b.cvs_villages || 0}</b></div>
             <div>Pasture Demarcated: <b>${b.demarcated_villages || 0}</b></div>
             <div>Village Bylaws Passed: <b>${b.bylaws_villages || 0}</b></div>

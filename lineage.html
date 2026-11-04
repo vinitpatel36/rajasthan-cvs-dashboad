@@ -326,11 +326,20 @@
 
     <!-- Header -->
     <header class="header-box">
-      <div class="badge-pill">● Reference Guide</div>
-      <h1>Where Does Dashboard Data Come From? <span>(Simple Column Guide)</span></h1>
-      <p class="header-desc">
-        A simple, easy-to-read reference explaining exactly which Excel file, sheet, and column each number on the dashboard is taken from.
-      </p>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <div class="badge-pill">● Reference Guide</div>
+          <h1>Where Does Dashboard Data Come From? <span>(Simple Column Guide)</span></h1>
+          <p class="header-desc">
+            A simple, easy-to-read reference explaining exactly which Excel file, sheet, and column each number on the dashboard is taken from across all 15 target districts of Rajasthan.
+          </p>
+        </div>
+        <div>
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.1rem;background:#0284c7;color:#ffffff;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.85rem;box-shadow:0 2px 8px rgba(2,132,199,0.25);transition:all 0.2s;">
+            ← Back to Dashboard
+          </a>
+        </div>
+      </div>
     </header>
 
     <!-- SECTION 1: The Basics -->
@@ -409,34 +418,42 @@
               <td>Total marginalized community population (Scheduled Caste Col K + Scheduled Tribe Col M) and percentage share of rural population.</td>
             </tr>
             <tr>
-              <td><strong>6. VBGRAMG Works Done</strong></td>
+              <td><strong>6. VBGRAMG / MGNREGS Works Done</strong></td>
               <td><span class="col-badge">Column AB</span></td>
               <td><code>Work done under VBGRAMG/ other Govt schemes</code></td>
-              <td>Total Hectares of land restored or developed under VBGRAMG/government schemes, and number of villages with works.</td>
+              <td>Total Hectares of land restored or developed under VBGRAMG, MGNREGS, and other Government programs (Col AB / Col 27, with fallback to Col AA if numeric), plus count of villages with recorded restoration works.</td>
             </tr>
             <tr>
               <td><strong>NRM 1. Intervention Plots</strong></td>
-              <td><span class="col-badge">Columns AB, AC, Q</span></td>
-              <td><code>Works Narration & Scheme Rows</code></td>
-              <td>Count of field intervention plots actively tracked from village rows having recorded restoration actions or CVS committees.</td>
+              <td><span class="col-badge">Columns AB, AC, Q, R</span></td>
+              <td><code>Works Narration, Govt Schemes & CVS Resolution</code></td>
+              <td>
+                Count of field restoration intervention plots actively monitored. Highlights:
+                <br>• <strong>Active Villages</strong>: Physical restoration works (soil/moisture conservation, plantations, trenching) are actively ongoing (Col AB/AC), while formal CVS committee resolution is pending.
+                <br>• <strong>Governed Villages</strong>: Formal Charagah Vikas Samiti (CVS) committee has been established and resolution passed under Rule 170(1) (Col Q/R).
+              </td>
             </tr>
             <tr>
               <td><strong>NRM 2. Demarcation & Bylaws</strong></td>
               <td><span class="col-badge">Column W & Column V</span></td>
-              <td><code>Demarcation of Pasture land (Yes/No)</code> & <code>Bylaws</code></td>
-              <td>Number of villages where pasture boundaries have been officially demarcated and village resource bylaws adopted.</td>
+              <td><code>Action taken for demarcation</code> & <code>Bylaws</code></td>
+              <td>
+                Dual governance milestones displayed side-by-side:
+                <br>• <strong>Demarcated Villages</strong> (Col W): Official boundary pillars erected & physical pasture demarcation completed.
+                <br>• <strong>Bylaws Adopted Villages</strong> (Col V): Village-specific customary bylaws and grazing protection rules enacted by Gram Sabha.
+              </td>
             </tr>
             <tr>
               <td><strong>NRM 3. CVS Formed & Tenure</strong></td>
               <td><span class="col-badge">Column Q & Column T</span></td>
               <td><code>CVS Resolution</code> & <code>Tenure Recognized under 170(1)</code></td>
-              <td>Number of villages having formed Charagah Vikas Samitis (CVS) and total Hectares recognized under Rajasthan Tenancy Rule 170(1).</td>
+              <td>Number of villages having formed Charagah Vikas Samitis (CVS) and total Hectares recognized with community tenure security under Rajasthan Tenancy (Govt) Rule 170(1).</td>
             </tr>
             <tr>
-              <td><strong>NRM 4. VBGRAMG & Encroachment</strong></td>
+              <td><strong>NRM 4. VBGRAMG / MGNREGS & Protection</strong></td>
               <td><span class="col-badge">Column AB & Column Y</span></td>
-              <td><code>Work done under VBGRAMG (Ha)</code> & <code>Encroachment removed (Ha)</code></td>
-              <td>Total Hectares of commons restored under VBGRAMG alongside Hectares of pasture land successfully cleared of encroachment.</td>
+              <td><code>Work done under VBGRAMG (Ha)</code> & <code>Removal of encrochment (Ha)</code></td>
+              <td>Total Hectares of commons restored under VBGRAMG, MGNREGS, and other Government schemes alongside Hectares of pasture land successfully cleared of illegal encroachment.</td>
             </tr>
           </tbody>
         </table>
@@ -493,16 +510,17 @@
       <h2 class="card-title">📈 4. Interactive Charts & Data Provenance (All 6 Charts)</h2>
       <p class="card-subtitle">Detailed breakdown of every chart series, dual axes, formulas, and exact Excel column sources:</p>
 
-      <!-- 1. Land Resource Composition -->
+      <!-- 1. District Land Resource Composition -->
       <div class="chart-block">
         <div class="chart-block-header">
           <div class="chart-block-title">
-            <span>Chart 1: Land Resource Composition (Donut Chart)</span>
+            <span>Chart 1: District Land Resource Composition (Donut Chart)</span>
           </div>
           <span class="chart-type-badge">Nested Donut / Sunburst</span>
         </div>
         <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
-          Breaks down total district or block land into 4 distinct categories. Slices show Hectares and percentage share.
+          Breaks down total geographical area into 3 mutually exclusive land categories. Slices show Hectares and percentage share.
+          <br><em>Note: VBGRAMG restoration area is deliberately excluded from this chart to avoid double-counting, as restoration treatments are programmatic treatments implemented upon existing pasture/common lands rather than forming a separate land tenure class.</em>
         </p>
         <div class="table-wrap">
           <table>
@@ -531,13 +549,6 @@
                 <td>Area in Ha and <code>%</code> share of total geographical land.</td>
               </tr>
               <tr>
-                <td><span class="series-dot" style="background:#8b5cf6;"></span><strong>VBGRAMG Restored Land</strong></td>
-                <td><span class="col-badge">Column AB</span></td>
-                <td><code>Work done under VBGRAMG/ other Govt schemes (Ha)</code></td>
-                <td>Sum of land Hectares where restoration works have been implemented.</td>
-                <td>Area in Ha and <code>%</code> share of total geographical land.</td>
-              </tr>
-              <tr>
                 <td><span class="series-dot" style="background:#64748b;"></span><strong>Other Village Land Area</strong></td>
                 <td><span class="col-badge">Column F</span> minus (O + P)</td>
                 <td><code>Total Geographical Area</code> minus (Pasture + CFRR)</td>
@@ -549,16 +560,17 @@
         </div>
       </div>
 
-      <!-- 2. Block-wise Common Land Distribution -->
+      <!-- 2. Block-wise Common Land & Pasture Breakdown -->
       <div class="chart-block">
         <div class="chart-block-header">
           <div class="chart-block-title">
-            <span>Chart 2: Block-wise Common Land Distribution</span>
+            <span>Chart 2: Block-wise Common Land & Pasture Breakdown</span>
           </div>
           <span class="chart-type-badge">Stacked Bar Chart</span>
         </div>
         <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
-          Ranks blocks from highest to lowest common land acreage, stacking Permanent Pasture and Potential CFRR.
+          Stacks Permanent Pasture (Gauchar) and Potential Common Land (CFRR) per block.
+          <br><em>Standardized Layout: All 5 block charts follow a uniform alphabetical block sequence for seamless visual comparison across metrics.</em>
         </p>
         <div class="table-wrap">
           <table>
@@ -587,10 +599,10 @@
                 <td><code>Potential CFRR: YY ha</code></td>
               </tr>
               <tr>
-                <td><span class="series-dot" style="background:#0284c7;"></span><strong>Total Bar Height (Sort Order)</strong></td>
+                <td><span class="series-dot" style="background:#0284c7;"></span><strong>Total Commons & Sequence</strong></td>
                 <td><span class="col-badge">Column O + Column P</span></td>
                 <td><code>Pasture + Potential CFRR</code></td>
-                <td>Total Common Land = <code>Col O + Col P</code>. Blocks sorted in descending order of total commons.</td>
+                <td>Total Common Land = <code>Col O + Col P</code>. Blocks arranged in standardized alphabetical sequence matching Charts 3, 4, 5, and 6.</td>
                 <td><code>Total Common Land: ZZ ha (XX.X% of block area)</code></td>
               </tr>
             </tbody>
@@ -703,16 +715,17 @@
         </div>
       </div>
 
-      <!-- 5. VBGRAMG Restoration Works by Block -->
+      <!-- 5. Restoration Works by Block (VBGRAMG & other Government programs) -->
       <div class="chart-block">
         <div class="chart-block-header">
           <div class="chart-block-title">
-            <span>Chart 5: VBGRAMG Restoration Works by Block</span>
+            <span>Chart 5: Restoration Works by Block (VBGRAMG & other Government programs)</span>
           </div>
           <span class="chart-type-badge">Dual-Axis Combination (Bar + Line)</span>
         </div>
         <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
           Combines restored acreage on the left axis with the count of active villages on the right axis for each block.
+          <br><em>Standardized Layout: All 5 block charts follow a uniform alphabetical block sequence for seamless visual comparison across metrics.</em>
         </p>
         <div class="table-wrap">
           <table>
@@ -727,10 +740,10 @@
             </thead>
             <tbody>
               <tr>
-                <td><span class="series-dot" style="background:#3b82f6;"></span><strong>VBGRAMG Restored Land (Ha) [Left Axis Bars]</strong></td>
+                <td><span class="series-dot" style="background:#3b82f6;"></span><strong>Restored Land (Ha) [Left Axis Bars]</strong></td>
                 <td><span class="col-badge">Column AB</span></td>
                 <td><code>Work done under VBGRAMG/ other Govt schemes (Ha)</code></td>
-                <td>Direct sum of all restored or developed land Hectares recorded for every village in the block under VBGRAMG.</td>
+                <td>Direct sum of all restored or developed land Hectares recorded for every village in the block under VBGRAMG, MGNREGS, and other Government schemes (Col AB / Col 27).</td>
                 <td><code>Work Done Area: XX Ha</code></td>
               </tr>
               <tr>
@@ -738,30 +751,31 @@
                 <td><span class="col-badge">Column AB</span> & <span class="col-badge">Column AC</span></td>
                 <td><code>Work done under VBGRAMG</code> & <code>Activities narration</code></td>
                 <td>Count of distinct village rows in the block where work has taken place: <code>vbg_ha &gt; 0</code> or where a work name/narration is recorded in Col AC.</td>
-                <td><code>Villages with Works: YY</code> (e.g. 33 villages in Pali)</td>
+                <td><code>Villages with Works: YY of ZZ (XX.X%)</code></td>
               </tr>
               <tr>
-                <td><span class="series-dot" style="background:#64748b;"></span><strong>Total Block Villages (Context)</strong></td>
-                <td><span class="col-badge">Row Count</span></td>
-                <td>Total rows in block sheet</td>
-                <td>Total number of revenue villages surveyed in the block (e.g. 111 villages in Bali).</td>
-                <td><code>Total Block Villages: ZZ</code></td>
+                <td><span class="series-dot" style="background:#64748b;"></span><strong>Total Pasture & Commons (Context)</strong></td>
+                <td><span class="col-badge">Column O + P</span></td>
+                <td><code>Pasture (Col O)</code> & <code>CFRR (Col P)</code></td>
+                <td>Provides land scale context in tooltip showing block's total pasture land and total community common land.</td>
+                <td><code>Total Pasture: XX Ha<br>Total Commons: YY Ha</code></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- 6. CVS Formation & Pasture Governance -->
+      <!-- 6. CVS Formation & Governance of Commons -->
       <div class="chart-block">
         <div class="chart-block-header">
           <div class="chart-block-title">
-            <span>Chart 6: CVS Formation & Pasture Governance</span>
+            <span>Chart 6: CVS Formation & Governance of Commons</span>
           </div>
           <span class="chart-type-badge">Multi-Bar Comparison Chart</span>
         </div>
         <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">
-          Compares three key community pasture governance milestones across blocks side-by-side.
+          Compares three key community commons governance milestones across blocks side-by-side.
+          <br><em>Standardized Layout: All 5 block charts follow a uniform alphabetical block sequence for seamless visual comparison across metrics.</em>
         </p>
         <div class="table-wrap">
           <table>
@@ -896,10 +910,10 @@
       </div>
     </div>
 
-    <!-- SECTION 6: The 7 District Files -->
+    <!-- SECTION 6: The 15 District Files -->
     <div class="card">
-      <h2 class="card-title">📂 6. Excel Files for the 7 Districts</h2>
-      <p class="card-subtitle">These 7 files in the <code>/data</code> directory provide all data for the dashboard:</p>
+      <h2 class="card-title">📂 6. Excel Workbooks for All 15 Target Districts</h2>
+      <p class="card-subtitle">These 15 field workbooks in the <code>/data</code> directory provide 100% of all data for the dashboard with zero synthetic multipliers:</p>
 
       <div class="table-wrap">
         <table>
@@ -918,7 +932,28 @@
               <td><strong>Jodhpur</strong></td>
               <td><code>1Dataset_Jodhpur_Oct26.xlsx</code></td>
               <td>21 Blocks</td>
-              <td>1,859 Villages (2,231,415 Ha)</td>
+              <td>1,859 Villages (2,232,739 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td><strong>Barmer</strong></td>
+              <td><code>2Dataset_Barmer_Oct26.xlsx</code></td>
+              <td>22 Blocks</td>
+              <td>2,967 Villages (2,903,723 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>3</strong></td>
+              <td><strong>Jaisalmer</strong></td>
+              <td><code>3Dataset_Jaisalemer_Oct 26.xlsx</code></td>
+              <td>7 Blocks</td>
+              <td>1,145 Villages (3,326,427 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>4</strong></td>
+              <td><strong>Bikaner</strong></td>
+              <td><code>4Dataset_Bikaner_Oct26FF.xlsx</code></td>
+              <td>9 Blocks</td>
+              <td>1,258 Villages (2,684,398 Ha)</td>
             </tr>
             <tr>
               <td><strong>5</strong></td>
@@ -947,6 +982,41 @@
               <td><code>8Dataset_Baran_Oct26.xlsx</code></td>
               <td>8 Blocks</td>
               <td>1,409 Villages (682,306 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>10</strong></td>
+              <td><strong>Bhilwara</strong></td>
+              <td><code>10Dataset_Bhilwara_Oct26.xlsx</code></td>
+              <td>11 Blocks</td>
+              <td>1,686 Villages (935,050 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>11</strong></td>
+              <td><strong>Rajsamand (Devgarh)</strong></td>
+              <td><code>11Dataset_Udaipur-Devgarh_Oct 26.xlsx</code></td>
+              <td>7 Blocks</td>
+              <td>1,050 Villages (437,809 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>11</strong></td>
+              <td><strong>Udaipur</strong></td>
+              <td><code>11Dataset_Udaipur- Rajsamand_Oct 26.xls</code></td>
+              <td>11 Blocks</td>
+              <td>2,478 Villages (1,069,228 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>12</strong></td>
+              <td><strong>Pratapgarh</strong></td>
+              <td><code>12Dataset_Pratapgarh_Oct 26.xls</code></td>
+              <td>5 Blocks</td>
+              <td>1,003 Villages (407,483 Ha)</td>
+            </tr>
+            <tr>
+              <td><strong>13</strong></td>
+              <td><strong>Sirohi</strong></td>
+              <td><code>13Dataset_Sirohi_Oct 26.xlsx</code></td>
+              <td>5 Blocks</td>
+              <td>477 Villages (509,962 Ha)</td>
             </tr>
             <tr>
               <td><strong>15</strong></td>
